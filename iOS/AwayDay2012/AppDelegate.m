@@ -11,7 +11,6 @@
 #import "AppConstant.h"
 #import "DBService.h"
 
-#import "APService.h"
 #import "WeiboSDK.h"
 
 #import <Crashlytics/Crashlytics.h>
@@ -43,12 +42,7 @@
     [WeiboSDK registerApp:kAppKey];
     [WeiboSDK enableDebugMode:YES];
 
-    // Required
-    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                   UIRemoteNotificationTypeSound |
-                                                   UIRemoteNotificationTypeAlert)];
-    // Required
-    [APService setupWithOption:launchOptions];
+
     
     [Crashlytics startWithAPIKey:@"12cf69bcd58555af123af07396580d08d970eee1"];
     
@@ -135,14 +129,12 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    // Required
-    [APService registerDeviceToken:deviceToken];
+   
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
-    // Required
-    [APService handleRemoteNotification:userInfo];
+   
 }
 
 #pragma mark - util method

@@ -124,6 +124,7 @@
     loading = YES;
 
     NSURL *url = [NSURL URLWithString:urlString];
+    NSLog(@"url = %@", urlString);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
 
     AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest

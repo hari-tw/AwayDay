@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'ASILib' target in the 'ASILib' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif

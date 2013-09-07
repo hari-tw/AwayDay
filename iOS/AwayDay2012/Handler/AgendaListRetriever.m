@@ -8,6 +8,7 @@
     self = [super init];
     if (self) {
         NSURL *url = [NSURL URLWithString:(NSString *)kServiceLoadSessionList];
+        NSLog(@"url = %@", kServiceLoadSessionList);
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest
                                                                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
