@@ -12,6 +12,8 @@
 #import "MenuViewController.h"
 #import "SettingViewController.h"
 #import "UserPathViewController.h"
+
+#import "PathMenuViewController.h"
 #import "WeiboSDK.h"
 #import <sqlite3.h>
 
@@ -21,7 +23,8 @@
 @property(nonatomic, strong) UINavigationController *navigationController;
 @property(nonatomic, strong) AgendaViewController *agendaViewController;
 @property(nonatomic, strong) SettingViewController *settingViewController;
-@property(nonatomic, strong) MenuViewController *menuViewController;
+@property(nonatomic, strong) PathMenuViewController *menuViewController;
+//@property(nonatomic, strong) MenuViewController *menuViewController;
 @property(nonatomic, strong) UserPathViewController *userPathViewController;
 @property(nonatomic, strong) NSMutableDictionary *userState;
 @property(nonatomic, readonly) sqlite3 *database;

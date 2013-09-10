@@ -1,2 +1,2 @@
-rvm --create use ruby-1.9.3-p362@awayday
+rvm --create use ruby-2.0.0-p247@awayday
 

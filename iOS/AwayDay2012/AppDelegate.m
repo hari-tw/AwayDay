@@ -85,10 +85,10 @@
     [self.window addSubview:self.navigationController.view];
     
     if(self.menuViewController==nil){
-        MenuViewController *mvc=[[MenuViewController alloc]initWithNibName:@"MenuViewController" bundle:nil];
+        PathMenuViewController *mvc=[[PathMenuViewController alloc]initWithNibName:@"ViewController" bundle:nil];
         self.menuViewController=mvc;
     }
-    [self.menuViewController.view setFrame:CGRectMake(0, 450, 320, 160)];
+    [self.menuViewController.view setFrame:CGRectMake(0, self.window.bounds.size.height-100, 320, 100)];
     [self.window addSubview:self.menuViewController.view];
     
     self.window.backgroundColor = [UIColor whiteColor];

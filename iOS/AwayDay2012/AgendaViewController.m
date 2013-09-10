@@ -15,6 +15,9 @@
 #import "ASIHttpRequest.h"
 #import "DBService.h"
 #import "AFJSONRequestOperation.h"
+#import "CFShareCircleView.h"
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 
 #define tag_cell_view_start 1001
 #define tag_cell_session_title_view tag_cell_view_start+1
@@ -22,6 +25,13 @@
 #define tag_cell_session_detail_title_view 2001
 #define tag_cell_view_session_detail_view   10002
 #define tag_req_load_session_list   10003
+
+@interface AgendaViewController ()<CFShareCircleViewDelegate>
+
+@property (nonatomic, strong) CFShareCircleView *shareCircleView;
+
+@end
+
 
 @implementation AgendaViewController
 @synthesize agendaList = _agendaList;
@@ -39,6 +49,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.shareCircleView = [[CFShareCircleView alloc] init];
+    self.shareCircleView.delegate = self;
+
     self.selectedCell = [NSIndexPath indexPathForRow:-1 inSection:-1];
     loading = NO;
 
@@ -51,11 +65,16 @@
     [self.refreshView refreshLastUpdatedDate];
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
 
+
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSLog(@"%@",NSStringFromCGRect(appDelegate.menuViewController.view.frame));
+    
     NSString *userName = [appDelegate.userState objectForKey:kUserNameKey];
     if (userName == nil || userName.length == 0) {
         //1st lauch, ask for user's name
@@ -84,6 +103,18 @@
     if (self.agendaList != nil && self.agendaList.count > 0) {
         [self updateTopSession];
     }
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    [appDelegate.menuViewController.view setFrame:CGRectMake(0,380, 320, 100)];
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    [appDelegate.menuViewController hideNavigationMenu];
+    
+    
 }
 
 #pragma mark - util method
@@ -326,6 +357,12 @@
     [detailView addSubview:sessionNote];
 
     y += 3;
+    
+    UIView *transparentTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
+    transparentTopView.alpha=0.2f;
+    transparentTopView.backgroundColor=[UIColor blackColor];
+    [detailView addSubview:transparentTopView];
+    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
     [attend setFrame:CGRectMake(30, y, 52, 32)];
 
@@ -436,12 +473,13 @@
 }
 
 - (IBAction)shareButtonPressed:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    if ([appDelegate.userState objectForKey:kUserWeiboTokenKey]) {
-        [self displayPostShareVC];
-    } else {
-        [self authorizeWeibo];
-    }
+    [self.shareCircleView show];
+//    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+//    if ([appDelegate.userState objectForKey:kUserWeiboTokenKey]) {
+//        [self displayPostShareVC];
+//    } else {
+//        [self authorizeWeibo];
+//    }
 }
 
 - (void)authorizeWeibo {
@@ -672,5 +710,102 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+
+
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
+    NSLog(@"Selected sharer: %@", sharer.name);
+    
+    if([sharer.name isEqualToString:@"Facebook"])
+    {
+        [self postOnFacebookWall];
+    }
+    else if([sharer.name isEqualToString:@"Twitter"])
+    {
+        [self postOnTWitterWall];
+    }
+}
+
+
+
+- (void)shareCircleCanceled:(NSNotification *)notification{
+    NSLog(@"Share circle view was canceled.");
+}
+
+- (IBAction)shareButtonClicked:(id)sender {
+    [self.shareCircleView show];
+}
+
+-(void)postOnFacebookWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        
+        NSString *shareText = @"This is my share post!";
+        [mySLComposerSheet setInitialText:shareText];
+        
+//        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+ 
+    
+}
+
+-(void)postOnTWitterWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        
+        NSString *shareText = @"This is my share post!";
+        [mySLComposerSheet setInitialText:shareText];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    
+}
+
+
 
 @end
