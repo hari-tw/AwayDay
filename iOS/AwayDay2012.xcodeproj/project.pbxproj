@@ -148,6 +148,11 @@
 		95A7CE6417DDBDE300BCCB10 /* ExpandableNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A7CE6317DDBDE300BCCB10 /* ExpandableNavigation.m */; };
 		95A7CE6817DDC30100BCCB10 /* PathMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A7CE6617DDC30100BCCB10 /* PathMenuViewController.m */; };
 		95A7CE6917DDC30100BCCB10 /* PathMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A7CE6717DDC30100BCCB10 /* PathMenuViewController.xib */; };
+		95B2749717E2DF5D006AF8EC /* digital_counter_7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749617E2DF5D006AF8EC /* digital_counter_7.ttf */; };
+		95B2749917E2E120006AF8EC /* home-page-new2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749817E2E120006AF8EC /* home-page-new2.png */; };
+		95B2749B17E2E1C7006AF8EC /* DSDIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749A17E2E1C7006AF8EC /* DSDIGI.TTF */; };
+		95B2749D17E2E29F006AF8EC /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749C17E2E29F006AF8EC /* digitalism.ttf */; };
+		95B2749F17E2EE04006AF8EC /* wwDigital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749E17E2EE04006AF8EC /* wwDigital.ttf */; };
 		95B7CA8B17E2237A00163291 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B7CA8A17E2237A00163291 /* CoreLocation.framework */; };
 		95B7CA8D17E237AE00163291 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B7CA8C17E237AE00163291 /* MainStoryboard.storyboard */; };
 		95F27C8F17E0DE8700CAB38E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F27C8D17E0DE8700CAB38E /* HomeViewController.m */; };
@@ -390,6 +395,11 @@
 		95A7CE6517DDC30100BCCB10 /* PathMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathMenuViewController.h; sourceTree = "<group>"; };
 		95A7CE6617DDC30100BCCB10 /* PathMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathMenuViewController.m; sourceTree = "<group>"; };
 		95A7CE6717DDC30100BCCB10 /* PathMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PathMenuViewController.xib; path = AwayDay2012/PathMenuViewController.xib; sourceTree = "<group>"; };
+		95B2749617E2DF5D006AF8EC /* digital_counter_7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_counter_7.ttf; sourceTree = "<group>"; };
+		95B2749817E2E120006AF8EC /* home-page-new2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-page-new2.png"; sourceTree = "<group>"; };
+		95B2749A17E2E1C7006AF8EC /* DSDIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = DSDIGI.TTF; sourceTree = "<group>"; };
+		95B2749C17E2E29F006AF8EC /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digitalism.ttf; sourceTree = "<group>"; };
+		95B2749E17E2EE04006AF8EC /* wwDigital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wwDigital.ttf; sourceTree = "<group>"; };
 		95B7CA8A17E2237A00163291 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		95B7CA8C17E237AE00163291 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		95F27C8C17E0DE8700CAB38E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -661,16 +671,19 @@
 				49EBEFCF15D21BB700D1DB4F /* PostShareViewController.m */,
 				49073B4B15CB7A5900BB1522 /* SettingViewController.h */,
 				49073B4C15CB7A5900BB1522 /* SettingViewController.m */,
+				95B2749C17E2E29F006AF8EC /* digitalism.ttf */,
 				953300D417E1FD270069FC9F /* SpeakersViewController.h */,
 				953300D517E1FD270069FC9F /* SpeakersViewController.m */,
 				95A7CE6517DDC30100BCCB10 /* PathMenuViewController.h */,
 				95A7CE6617DDC30100BCCB10 /* PathMenuViewController.m */,
 				95F27C8C17E0DE8700CAB38E /* HomeViewController.h */,
 				95F27C8D17E0DE8700CAB38E /* HomeViewController.m */,
+				95B2749E17E2EE04006AF8EC /* wwDigital.ttf */,
 				95F27C9317E0DEE500CAB38E /* RNFrostedSidebar.h */,
 				95F27C9417E0DEE500CAB38E /* RNFrostedSidebar.m */,
 				95F27CCE17E0EBCA00CAB38E /* ContainerViewController.h */,
 				95F27CCF17E0EBCA00CAB38E /* ContainerViewController.m */,
+				95B2749817E2E120006AF8EC /* home-page-new2.png */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -900,6 +913,8 @@
 		95F27CB417E0E33C00CAB38E /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				95B2749A17E2E1C7006AF8EC /* DSDIGI.TTF */,
+				95B2749617E2DF5D006AF8EC /* digital_counter_7.ttf */,
 				95F27CB517E0E35A00CAB38E /* JDFlipNumberViewImageFactory.h */,
 				95F27CB617E0E35A00CAB38E /* JDFlipNumberViewImageFactory.m */,
 				95F27CB717E0E35A00CAB38E /* JDFlipNumberDigitView.h */,
@@ -1075,6 +1090,11 @@
 				953300E217E1FD280069FC9F /* Speakers_Info.json in Resources */,
 				953300E417E1FD280069FC9F /* top-banner.png in Resources */,
 				95B7CA8D17E237AE00163291 /* MainStoryboard.storyboard in Resources */,
+				95B2749717E2DF5D006AF8EC /* digital_counter_7.ttf in Resources */,
+				95B2749917E2E120006AF8EC /* home-page-new2.png in Resources */,
+				95B2749B17E2E1C7006AF8EC /* DSDIGI.TTF in Resources */,
+				95B2749D17E2E29F006AF8EC /* digitalism.ttf in Resources */,
+				95B2749F17E2EE04006AF8EC /* wwDigital.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

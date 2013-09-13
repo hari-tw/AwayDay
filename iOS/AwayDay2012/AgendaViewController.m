@@ -17,7 +17,10 @@
 #import "AFJSONRequestOperation.h"
 #import "CFShareCircleView.h"
 #import <Social/Social.h>
+#import "RNFrostedSidebar.h"
+#import "SpeakersViewController.h"
 #import <Accounts/Accounts.h>
+
 
 #define tag_cell_view_start 1001
 #define tag_cell_session_title_view tag_cell_view_start+1
@@ -26,7 +29,8 @@
 #define tag_cell_view_session_detail_view   10002
 #define tag_req_load_session_list   10003
 
-@interface AgendaViewController ()<CFShareCircleViewDelegate>
+@interface AgendaViewController ()<CFShareCircleViewDelegate,RNFrostedSidebarDelegate>
+@property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 
 @property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
@@ -49,7 +53,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.optionIndices=[[NSMutableIndexSet alloc]init];
     self.shareCircleView = [[CFShareCircleView alloc] init];
     self.shareCircleView.delegate = self;
 
@@ -807,5 +811,87 @@
 }
 
 
+-(IBAction)sideMenuTapped:(id)sender
+{
+    
+    NSArray *images = @[
+                        [UIImage imageNamed:@"agenda"],
+                        [UIImage imageNamed:@"speaker_icon"],
+                        [UIImage imageNamed:@"map"],
+                        [UIImage imageNamed:@"my_schedule"],
+                        ];
+    NSArray *colors = @[
+                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
+                        [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
+                        [UIColor colorWithRed:126/255.f green:242/255.f blue:195/255.f alpha:1],
+                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                        
+                        ];
+    
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:self.optionIndices borderColors:colors];
+    //    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout.delegate = self;
+    //    callout.showFromRight = YES;
+    [callout show];
+    
+}
+
+
+#pragma mark - RNFrostedSidebarDelegate
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+    NSLog(@"Tapped item at index %i",index);
+    
+    if(index==0)
+    {
+        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
+        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil ]] animated:YES];
+        [sidebar dismiss];
+        
+        
+    }
+    
+    else if(index==1)
+    {
+        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        SpeakersViewController *speakerViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"speakersViewIdentifier"];
+        [self.navigationController pushViewController:speakerViewController animated:YES];
+        
+        
+        
+        [sidebar dismiss];
+    }
+    else if(index==2)
+    {
+//        NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",self.locationManager.location.coordinate.latitude,self.locationManager.location.coordinate.longitude, 12.9610850,77.604692699999990];
+//        
+//        NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        
+//        NSURL *url=[NSURL URLWithString:escapedString];
+//        [[UIApplication sharedApplication]openURL:url];
+        
+        
+    }
+    else if(index==3)
+    {
+        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
+        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.userPathViewController] animated:YES];
+        [sidebar dismiss];
+    }
+    
+    
+    
+    
+    
+}
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {
+    if (itemEnabled) {
+        [self.optionIndices addIndex:index];
+    }
+    else {
+        [self.optionIndices removeIndex:index];
+    }
+}
 
 @end

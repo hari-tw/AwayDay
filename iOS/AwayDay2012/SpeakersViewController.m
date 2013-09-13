@@ -97,7 +97,7 @@
         
         cell.timeTextLabel.text=[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"time"];
         
-        cell.nameTextLabel.text=[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"];
+        cell.nameTextLabel.text=[NSString stringWithFormat:@"-%@",[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"]] ;
         
         cell.topicTextLabel.text=[NSString stringWithFormat:@" \"%@ \" ",
         [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"topic"]];
@@ -140,7 +140,7 @@
         
         cell.indexPath=indexPath;
         cell.delegate=self;
-        cell.nameTextLabel.text=[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"];
+         cell.nameTextLabel.text=[NSString stringWithFormat:@"-%@",[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"]] ;
         
         cell.topicTextLabel.text=[NSString stringWithFormat:@" \"%@ \" ",
                                   [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"topic"]];
@@ -163,7 +163,7 @@
 {
     CGSize maximumSize = CGSizeMake(COMMENT_LABEL_WIDTH, 10000);
     
-    CGSize labelHeighSize = [[[speakersInfo objectAtIndex:index] valueForKey:@"detail"] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:15.0f]
+    CGSize labelHeighSize = [[[speakersInfo objectAtIndex:index] valueForKey:@"detail"] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:13.0f]
                                                         constrainedToSize:maximumSize
                                                             lineBreakMode:NSLineBreakByWordWrapping];
     return labelHeighSize.height;
@@ -177,10 +177,10 @@
     //in relation to the label height otherwise we just return the minimum label height with padding
     if(selectedIndex == indexPath.row)
     {
-        return [self getLabelHeightForIndex:indexPath.row] + 170;
+        return [self getLabelHeightForIndex:indexPath.row] + 123;
     }
     else {
-        return 150;
+        return 120;
     }
 }
 
@@ -218,6 +218,17 @@
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:previousPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     
+    if(indexPath.row==5)
+    {
+        [self.speakerTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]
+                                     atScrollPosition:UITableViewScrollPositionTop
+                                             animated:YES];
+    }
+    else
+    [self.speakerTableView scrollToRowAtIndexPath:indexPath
+                                 atScrollPosition:UITableViewScrollPositionTop
+                                         animated:YES];
+
     //Finally set the selected index to the new selection and reload it to expand
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

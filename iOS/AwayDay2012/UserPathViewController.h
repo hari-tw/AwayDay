@@ -22,6 +22,7 @@
 -(IBAction)addPathButtonPressed:(id)sender;
 -(IBAction)pathImageButtonPressed:(id)sender;
 -(IBAction)handleTapGesture:(UITapGestureRecognizer *)sender;
+- (IBAction)sideMenuTapped:(id)sender;
 
 /**
  load user joined sessions

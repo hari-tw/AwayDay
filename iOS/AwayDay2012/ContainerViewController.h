@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *hoursTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minutesTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *daysTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *counterTextLabel;
 
 @end

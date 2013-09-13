@@ -20,26 +20,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "AwayDay2012/HomeViewController.h"
-         timestampString = "400656843.023171"
+         filePath = "Pods/ASIHTTPRequest/Classes/ASIDataDecompressor.m"
+         timestampString = "400760225.281766"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
-         landmarkName = "-onBurger:"
-         landmarkType = "4">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "AwayDay2012/HomeViewController.m"
-         timestampString = "400700354.943729"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "118"
-         endingLineNumber = "118"
-         landmarkName = "-onBurger:"
+         startingLineNumber = "189"
+         endingLineNumber = "189"
+         landmarkName = "+uncompressDataFromFile:toFile:error:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

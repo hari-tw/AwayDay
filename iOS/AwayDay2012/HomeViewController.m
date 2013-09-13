@@ -41,6 +41,23 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+    
+    [self.counterTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:40]];
+//     [self.minutesTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
+//     [self.secondTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
+//    [self.daysTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
+    
+    
 //[self showDateCountdown];
     self.optionIndices = [[NSMutableIndexSet alloc]init];
     
@@ -84,9 +101,18 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     
     
     //  self.lblDaysSetting.text=[NSString stringWithFormat:@"%02d",componentsDaysDiff.day];
-    self.hoursTextLabel.text=[NSString stringWithFormat:@"%02d",(24-componentsHours.hour)+componentsDaysDiff.day*24+12];
-    self.minutesTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentMint.minute)];
-    self.secondTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentSec.second)];
+//    self.hoursTextLabel.text=[NSString stringWithFormat:@"%02d",(24-componentsHours.hour)+componentsDaysDiff.day*24+12];
+//    self.minutesTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentMint.minute)];
+//    self.secondTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentSec.second)];
+    
+    
+//    self.daysTextLabel.text=[NSString stringWithFormat:@"%02dd",componentsDaysDiff.day];
+//    self.hoursTextLabel.text=[NSString stringWithFormat:@"%02dh",(24-componentsHours.hour)+12];
+//    self.minutesTextLabel.text=[NSString stringWithFormat:@"%02dm",(60-componentMint.minute)];
+//     self.secondTextLabel.text=[NSString stringWithFormat:@"%02ds",(60-componentSec.second)];
+    
+    
+    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour)+12,(60-componentMint.minute),(60-componentSec.second)];
     
     if(((24-componentsHours.hour)+componentsDaysDiff.day*24+12)==0)
     {
@@ -145,7 +171,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     if(index==0)
     {
         AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil ]] animated:YES];
+        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[AgendaViewController alloc]initWithNibName:@"RootViewController" bundle:nil ]] animated:YES];
         [sidebar dismiss];
 
         
@@ -163,7 +189,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     }
     else if(index==2)
     {
-           NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",self.locationManager.location.coordinate.latitude,self.locationManager.location.coordinate.longitude, 12.9610850,77.604692699999990];
+           NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",self.locationManager.location.coordinate.latitude,self.locationManager.location.coordinate.longitude, 12.969034,77.745137];
         
             NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         

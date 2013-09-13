@@ -31,7 +31,7 @@
 {
     
     
-    self.speakerImageView.layer.cornerRadius = 30;
+    self.speakerImageView.layer.cornerRadius = 50;
     self.speakerImageView.layer.masksToBounds=YES;
 }
 

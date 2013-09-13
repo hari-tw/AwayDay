@@ -36,6 +36,9 @@
 @property(nonatomic, strong) InputNameViewController *inputNameViewController;
 @property(nonatomic, strong) PostShareViewController *postShareViewController;
 
+
+-(IBAction)sideMenuTapped:(id)sender;
+
 /**
  load the agenda list and their sessions
  */

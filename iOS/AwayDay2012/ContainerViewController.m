@@ -115,6 +115,8 @@
     [self setHoursTextLabel:nil];
     [self setMinutesTextLabel:nil];
     [self setSecondTextLabel:nil];
+    [self setDaysTextLabel:nil];
+    [self setCounterTextLabel:nil];
     [super viewDidUnload];
 }
 @end
