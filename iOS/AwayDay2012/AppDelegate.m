@@ -78,20 +78,22 @@
     }
     
     if(self.navigationController==nil){
-        UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:self.agendaViewController];
+        UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:[[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil]];
+        nav.navigationBar.hidden=YES;
         self.navigationController=nav;
     }
     
     [self.window addSubview:self.navigationController.view];
     
     if(self.menuViewController==nil){
-        PathMenuViewController *mvc=[[PathMenuViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+        PathMenuViewController *mvc=[[PathMenuViewController alloc]initWithNibName:@"PathMenuViewController" bundle:nil];
         self.menuViewController=mvc;
     }
-    [self.menuViewController.view setFrame:CGRectMake(0, self.window.bounds.size.height-100, 320, 100)];
-    [self.window addSubview:self.menuViewController.view];
+    //[self.menuViewController.view setFrame:CGRectMake(0, self.window.bounds.size.height-100, 320, 100)];
+    //[self.window addSubview:self.menuViewController.view];
     
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController=self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

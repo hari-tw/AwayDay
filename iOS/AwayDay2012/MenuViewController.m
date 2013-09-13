@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
     [self.tapImageView addGestureRecognizer:tap];

@@ -12,7 +12,7 @@
 #import "MenuViewController.h"
 #import "SettingViewController.h"
 #import "UserPathViewController.h"
-
+#import "HomeViewController.h"
 #import "PathMenuViewController.h"
 #import "WeiboSDK.h"
 #import <sqlite3.h>
