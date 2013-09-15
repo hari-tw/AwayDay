@@ -14,6 +14,7 @@
 #import "AppHelper.h"
 #import "ASIFormDataRequest.h"
 #import "RNFrostedSidebar.h"
+#import "CustomSlider.h"
 #import "SpeakersViewController.h"
 
 #define tag_view_table_child_view   10001
@@ -23,7 +24,10 @@
 #define key_timer_path_image        @"timer_key_path_image"
 #define tag_req_delete_path     1001
 
-@interface UserPathViewController()
+@interface UserPathViewController()<RNFrostedSidebarDelegate>
+{
+    CustomSlider *slider;
+}
     @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 @end
 
@@ -39,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.optionIndices = [[NSMutableIndexSet alloc]init];
+
     if(self.pathList==nil){
         NSMutableArray *list=[[NSMutableArray alloc]initWithCapacity:0];
         self.pathList=list;
@@ -121,31 +125,68 @@
 }
 
 - (IBAction)sideMenuTapped:(id)sender {
-    NSArray *images = @[
-                        [UIImage imageNamed:@"agenda"],
-                        [UIImage imageNamed:@"speaker_icon"],
-                        [UIImage imageNamed:@"map"],
-                        [UIImage imageNamed:@"my_schedule"],
-                        
-                        ];
-    NSArray *colors = @[
-                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
-                        [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
-                        [UIColor colorWithRed:126/255.f green:242/255.f blue:195/255.f alpha:1],
-                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
-                        
-                        ];
-    
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:self.optionIndices borderColors:colors];
-    //    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
-    callout.delegate = self;
-    //    callout.showFromRight = YES;
-    [callout show];
-
-    
+    slider = [[CustomSlider alloc]init];
+    [slider showSliderMenu];
+    slider.callout.delegate=self;
     
     
 }
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
+{
+    
+    switch (index) {
+        case 0:
+        {
+            [slider showHomeScreen];
+            [sidebar dismiss];
+        }
+            break;
+            
+        case 1:
+        {
+            [slider showAgendaScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 2 :
+        {
+            [slider showSpeakersScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 3 :
+        {
+            [slider showMapScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 4 :
+        {
+            [slider showMyEventsScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 5 :
+        {
+            [slider showBreakOutSessionScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+            
+            
+            
+        default:
+            break;
+    }
+    
+}
+
 
 #pragma mark - util method
 -(void)loadUserActivity{
@@ -315,54 +356,6 @@
     [super viewDidUnload];
     [self.operationQueue cancelAllOperations];
 }
-
-
-#pragma mark - RNFrostedSidebarDelegate
-
-- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
-    NSLog(@"Tapped item at index %i",index);
-    
-    if(index==0)
-    {
-        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[AgendaViewController alloc]initWithNibName:@"RootViewController" bundle:nil ]] animated:YES];
-        [sidebar dismiss];
-        
-        
-    }
-    
-    else if(index==1)
-    {
-        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        SpeakersViewController *speakerViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"speakersViewIdentifier"];
-        [self.navigationController pushViewController:speakerViewController animated:YES];
-        
-        
-        
-        [sidebar dismiss];
-    }
-    else if(index==2)
-    {
-//        NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",self.locationManager.location.coordinate.latitude,self.locationManager.location.coordinate.longitude, 12.969034,77.745137];
-//        
-//        NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        
-//        NSURL *url=[NSURL URLWithString:escapedString];
-//        [[UIApplication sharedApplication]openURL:url];
-        
-        
-    }
-    else if(index==3)
-    {
-        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.userPathViewController] animated:YES];
-        [sidebar dismiss];
-    }
-    
-    
-    
-}
-
 
 
 

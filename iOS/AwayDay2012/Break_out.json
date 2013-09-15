@@ -1,0 +1,166 @@
+ [
+  
+  {
+  "speaker_topic":"Opening our Eyes",
+  "speaker_name":"Bala & Sasikala Mahesh",
+  "topics":
+  
+  {
+  "topic_name":"Lina's talk on Egypt",
+  "topic_speaker":"",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"Q & A with speakers",
+  "topic_speaker":"",
+  "time"  :"2:25-3:25"
+  },
+  {
+  "topic_name":"Who Moved my State",
+  "topic_speaker":"Kashi & Sagar",
+  "time"  :"3:30-3:50"
+  },
+  {
+  "topic_name":"India's first general elections",
+  "topic_speaker":"Abhinav Manchanda",
+  "time"  :"3:55-4:05"
+  }
+  
+  },
+  
+
+  {
+  "speaker_topic":"Innovation",
+  "speaker_name":"Pramod & Shyam Kurien",
+  "topics":
+  {
+  "topic_name":"Bahmni - Open Source Hospital System",
+  "topic_speaker":"Vivek Singh",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"R Analytics in Gruppo PAM",
+  "topic_speaker":"Bharani S",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"Elephants in the cloud ",
+  "topic_speaker":"Hemanth Yamijala",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Visualization using the public data",
+  "topic_speaker":"Amiruddin Nagri",
+  "time"  :"3:05-3:25"
+  },
+  {
+  "topic_name":"Another talk by analytics team -??",
+  "topic_speaker":"",
+  "time"  :"3:30-3:50"
+  }
+  
+  },
+  
+  
+  {
+  "speaker_topic":"Global South",
+  "speaker_name":"Amol & Preethi",
+  "topics":
+  {
+  "topic_name":"Healthcare Global Villages",
+  "topic_speaker":"Karl",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"China Mobile Labs ",
+  "topic_speaker":"Wang Zhe",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"The journey of creating internal startup products",
+  "topic_speaker":"Jinzhou Chen",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Stories from Africa",
+  "topic_speaker":"Raymond & Yashodhan",
+  "time"  :"3:05-3:25"
+  },
+  {
+  "topic_name":"Africa Jeoparady Game",
+  "topic_speaker":"",
+  "time"  :"3:30-4:05"
+  }
+  },
+  
+  
+  {
+  "speaker_topic":"Global South",
+  "speaker_name":"Amol & Preethi",
+  "topics":{
+  
+  "topic_name":"Healthcare Global Villages",
+  "topic_speaker":"Karl",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"China Mobile Labs ",
+  "topic_speaker":"Wang Zhe",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"The journey of creating internal startup products",
+  "topic_speaker":"Jinzhou Chen",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Stories from Africa",
+  "topic_speaker":"Raymond & Yashodhan",
+  "time"  :"3:05-3:25"
+  },
+  {
+  "topic_name":"Africa Jeoparady Game",
+  "topic_speaker":"",
+  "time"  :"3:30-4:05"
+  }
+  
+  },
+
+  
+  
+
+  {
+  "speaker_topic":"Global South",
+  "speaker_name":"Amol & Preethi",
+  "topics":
+  {
+  "topic_name":"Healthcare Global Villages",
+  "topic_speaker":"Karl",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"China Mobile Labs ",
+  "topic_speaker":"Wang Zhe",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"The journey of creating internal startup products",
+  "topic_speaker":"Jinzhou Chen",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Stories from Africa",
+  "topic_speaker":"Raymond & Yashodhan",
+  "time"  :"3:05-3:25"
+  },
+  {
+  "topic_name":"Africa Jeoparady Game",
+  "topic_speaker":"",
+  "time"  :"3:30-4:05"
+  }
+  
+  }
+
+  
+  
+]

@@ -15,11 +15,13 @@
 #import "ASIHttpRequest.h"
 #import "DBService.h"
 #import "AFJSONRequestOperation.h"
-#import "CFShareCircleView.h"
+//#import "CFShareCircleView.h"
 #import <Social/Social.h>
 #import "RNFrostedSidebar.h"
 #import "SpeakersViewController.h"
 #import <Accounts/Accounts.h>
+#import "CustomSlider.h"
+#import "RNFrostedSidebar.h"
 
 
 #define tag_cell_view_start 1001
@@ -29,10 +31,13 @@
 #define tag_cell_view_session_detail_view   10002
 #define tag_req_load_session_list   10003
 
-@interface AgendaViewController ()<CFShareCircleViewDelegate,RNFrostedSidebarDelegate>
+@interface AgendaViewController ()<RNFrostedSidebarDelegate>
+{
+    CustomSlider *slider;
+}
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 
-@property (nonatomic, strong) CFShareCircleView *shareCircleView;
+
 
 @end
 
@@ -54,8 +59,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.optionIndices=[[NSMutableIndexSet alloc]init];
-    self.shareCircleView = [[CFShareCircleView alloc] init];
-    self.shareCircleView.delegate = self;
+ 
 
     self.selectedCell = [NSIndexPath indexPathForRow:-1 inSection:-1];
     loading = NO;
@@ -136,7 +140,8 @@
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    for (Session *session in allSessions) {
+    for (Session *session in allSessions)
+    {
         NSString *sessionDateStr = [dateFormatter stringFromDate:session.sessionStartTime];
         Agenda *agenda = [tempAgendaMapping objectForKey:sessionDateStr];
         if (agenda == nil) {
@@ -145,7 +150,7 @@
 
             NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
             [agenda setSessions:list];
-        }
+    }
         [agenda.sessions addObject:session];
         [tempAgendaMapping setObject:agenda forKey:sessionDateStr];
     }
@@ -266,11 +271,13 @@
     [sessionTitle setBackgroundColor:[UIColor clearColor]];
     [sessionTitle setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
 
+    
     if ([userJoinList containsObject:session.sessionID]) {
         [sessionTitle setTextColor:[UIColor colorWithRed:214 / 255.0 green:95 / 255.0 blue:54 / 255.0 alpha:1.0f]];
     }
 
     [sessionTitle setFont:[UIFont systemFontOfSize:14.0f]];
+    [sessionTitle setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0f]];
     [sessionTitle setText:session.sessionTitle];
     [cell addSubview:sessionTitle];
 
@@ -362,11 +369,11 @@
 
     y += 3;
     
-    UIView *transparentTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
-    transparentTopView.alpha=0.2f;
-    transparentTopView.backgroundColor=[UIColor blackColor];
-    [detailView addSubview:transparentTopView];
-    
+//    UIView *transparentTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
+//    transparentTopView.alpha=0.2f;
+//    transparentTopView.backgroundColor=[UIColor blackColor];
+//    [detailView addSubview:transparentTopView];
+//    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
     [attend setFrame:CGRectMake(30, y, 52, 32)];
 
@@ -477,7 +484,7 @@
 }
 
 - (IBAction)shareButtonPressed:(id)sender {
-    [self.shareCircleView show];
+  
 //    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
 //    if ([appDelegate.userState objectForKey:kUserWeiboTokenKey]) {
 //        [self displayPostShareVC];
@@ -664,7 +671,7 @@
     [AppHelper removeInfoView:self.view];
     loading = NO;
     [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
-    [AppHelper showInfoView:self.view withText:@"Failed" withLoading:NO];
+    //[AppHelper showInfoView:self.view withText:@"Failed" withLoading:NO];
     [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(removeInfoView) userInfo:nil repeats:NO];
 }
 /*
@@ -716,28 +723,9 @@
 }
 
 
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
-    NSLog(@"Selected sharer: %@", sharer.name);
-    
-    if([sharer.name isEqualToString:@"Facebook"])
-    {
-        [self postOnFacebookWall];
-    }
-    else if([sharer.name isEqualToString:@"Twitter"])
-    {
-        [self postOnTWitterWall];
-    }
-}
 
 
 
-- (void)shareCircleCanceled:(NSNotification *)notification{
-    NSLog(@"Share circle view was canceled.");
-}
-
-- (IBAction)shareButtonClicked:(id)sender {
-    [self.shareCircleView show];
-}
 
 -(void)postOnFacebookWall
 {
@@ -814,84 +802,74 @@
 -(IBAction)sideMenuTapped:(id)sender
 {
     
-    NSArray *images = @[
-                        [UIImage imageNamed:@"agenda"],
-                        [UIImage imageNamed:@"speaker_icon"],
-                        [UIImage imageNamed:@"map"],
-                        [UIImage imageNamed:@"my_schedule"],
-                        ];
-    NSArray *colors = @[
-                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
-                        [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
-                        [UIColor colorWithRed:126/255.f green:242/255.f blue:195/255.f alpha:1],
-                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
-                        
-                        ];
-    
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images selectedIndices:self.optionIndices borderColors:colors];
-    //    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
-    callout.delegate = self;
-    //    callout.showFromRight = YES;
-    [callout show];
-    
-}
-
-
-#pragma mark - RNFrostedSidebarDelegate
-
-- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
-    NSLog(@"Tapped item at index %i",index);
-    
-    if(index==0)
-    {
-        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil ]] animated:YES];
-        [sidebar dismiss];
-        
-        
-    }
-    
-    else if(index==1)
-    {
-        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        SpeakersViewController *speakerViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"speakersViewIdentifier"];
-        [self.navigationController pushViewController:speakerViewController animated:YES];
-        
-        
-        
-        [sidebar dismiss];
-    }
-    else if(index==2)
-    {
-//        NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",self.locationManager.location.coordinate.latitude,self.locationManager.location.coordinate.longitude, 12.9610850,77.604692699999990];
-//        
-//        NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        
-//        NSURL *url=[NSURL URLWithString:escapedString];
-//        [[UIApplication sharedApplication]openURL:url];
-        
-        
-    }
-    else if(index==3)
-    {
-        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.userPathViewController] animated:YES];
-        [sidebar dismiss];
-    }
-    
-    
-    
+    slider = [[CustomSlider alloc]init];
+    [slider showSliderMenu];
+    slider.callout.delegate=self;
     
     
 }
 
-- (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {
-    if (itemEnabled) {
-        [self.optionIndices addIndex:index];
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
+{
+    
+    switch (index) {
+        case 0:
+        {
+            [slider showHomeScreen];
+            [sidebar dismiss];
+        }
+            break;
+            
+        case 1:
+        {
+            [slider showAgendaScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 2 :
+        {
+            [slider showSpeakersScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 3 :
+        {
+            [slider showMapScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 4 :
+        {
+            [slider showMyEventsScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+        case 5 :
+        {
+            [slider showBreakOutSessionScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+            
+        case 6 :
+        {
+            [slider showVideoScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
+
+            
+        default:
+            break;
     }
-    else {
-        [self.optionIndices removeIndex:index];
-    }
+    
 }
+
 
 @end

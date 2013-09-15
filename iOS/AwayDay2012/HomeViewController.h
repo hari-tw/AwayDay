@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNFrostedSidebar.h"
-#import "ContainerViewController.h"
 
 
-@interface HomeViewController : ContainerViewController
-<RNFrostedSidebarDelegate>
+
+@interface HomeViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *counterTextLabel;
 
 - (IBAction)onBurger:(id)sender;
 

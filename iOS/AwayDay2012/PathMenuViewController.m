@@ -8,7 +8,7 @@
 
 #import "PathMenuViewController.h"
 #import "AppDelegate.h"
-#import "ExpandableNavigation.h"
+//#import "ExpandableNavigation.h"
 
 @implementation PathMenuViewController
 
@@ -35,7 +35,7 @@
     // initialize ExpandableNavigation object with an array of buttons.
     NSArray* buttons = [NSArray arrayWithObjects:button1, button2,button3 ,nil];// button3, button4, button5, nil];
     
-    self.navigation = [[ExpandableNavigation alloc] initWithMenuItems:buttons mainButton:self.main radius:80.0] ;
+//    self.navigation = [[ExpandableNavigation alloc] initWithMenuItems:buttons mainButton:self.main radius:80.0] ;
 }
 
 - (void)viewDidUnload
@@ -114,10 +114,10 @@
 
 -(void)hideNavigationMenu
 {
-    if( self.navigation.expanded ) {
-        [self.navigation collapse];
-    }
-    
+//    if( self.navigation.expanded ) {
+//        [self.navigation collapse];
+//    }
+//    
 }
 
 @end
