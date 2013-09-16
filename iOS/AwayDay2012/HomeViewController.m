@@ -9,12 +9,15 @@
 #import "HomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "AppDelegate.h"
+#import "CFShareCircleView.h"
 #import "RNFrostedSidebar.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 #import "SpeakersViewController.h"
 #import "CustomSlider.h"
 static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 
-@interface HomeViewController () <RNFrostedSidebarDelegate>
+@interface HomeViewController () <RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
 {
     NSTimer *timer;
     CustomSlider *slider;
@@ -23,6 +26,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 @property (nonatomic) UIView *flipView;
 @property (nonatomic) NSIndexPath *indexPath;
 @property (nonatomic) UILabel *infoLabel;
+@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
@@ -104,7 +108,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     //     self.secondTextLabel.text=[NSString stringWithFormat:@"%02ds",(60-componentSec.second)];
     
     
-    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour)+15,(60-componentMint.minute),(60-componentSec.second)];
+    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour),(60-componentMint.minute),(60-componentSec.second)];
     
     if(((24-componentsHours.hour)+componentsDaysDiff.day*24+12)==0)
     {
@@ -165,6 +169,9 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
     
+    
+    NSLog(@"%d",index);
+    
     switch (index) {
         case 0:
         {
@@ -208,6 +215,8 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
             
         }
             break;
+            
+            
         case 6 :
         {
             [slider showVideoScreen];
@@ -216,13 +225,112 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
         }
             break;
             
+        case 7:
+        {
+            [sidebar dismiss];
+            // Do any additional setup after loading the view, typically from a nib.
+            self.shareCircleView = [[CFShareCircleView alloc] init];
+            self.shareCircleView.delegate = self;
+            [self.shareCircleView show];
             
+        }
+            break;
+            
+
             
             
             
         default:
             break;
     }
+    
+}
+
+
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
+{
+    NSLog(@"Selected sharer: %@", sharer.name);
+    if([sharer.name isEqualToString:@"Twitter"])
+        [self postOnTWitterWall];
+    else
+        [self postOnFacebookWall];
+    
+}
+
+- (void)shareCircleCanceled:(NSNotification *)notification{
+    NSLog(@"Share circle view was canceled.");
+}
+
+
+
+-(void)postOnFacebookWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        
+        NSString *shareText = @"This is my share post!";
+        [mySLComposerSheet setInitialText:shareText];
+        
+        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    
+}
+
+-(void)postOnTWitterWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        
+        NSString *shareText = @"This is my share post!";
+        [mySLComposerSheet setInitialText:shareText];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
     
 }
 

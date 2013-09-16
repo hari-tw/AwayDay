@@ -9,6 +9,7 @@
 #import "VideoViewController.h"
 #import "CustomSlider.h"
 #import "CustomVideoCell.h"
+#import "Reachability.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "HCYoutubeParser.h"
 @interface VideoViewController ()<RNFrostedSidebarDelegate>
@@ -39,13 +40,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",nil];
+   
     videoURL = [[NSMutableArray alloc]init];
     videoImages = [[NSMutableArray alloc]init];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)[[self videoCollectionView] collectionViewLayout];
     [flowLayout setMinimumInteritemSpacing:4.0];
     [flowLayout setMinimumLineSpacing:10.0];
     
+    
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
+    {
+        
+        
+    }
+    else
+    {
+
+     twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",nil];
     //parsing you tube web page to get video URL.
     for(NSUInteger i=0;i<twURL.count;i++)
     {
@@ -78,7 +89,7 @@
         }];
     }
     
-    
+    }
 	// Do any additional setup after loading the view.
 }
 
