@@ -11,6 +11,7 @@
 #import "BreakOutSectionHeaderView.h"
 #import "BreakOutSectionInfo.h"
 #import "CustomSlider.h"
+
 #import "BreakOutSession.h"
 #import "RNFrostedSidebar.h"
 
@@ -22,6 +23,7 @@
     NSMutableArray *sectionImages;
     CustomSlider *slider;
 }
+
 @property (nonatomic, assign) NSInteger openSectionIndex;
 @property (nonatomic,strong) NSMutableArray *breakOutSessionDetails;
 
@@ -289,32 +291,38 @@
     if (previousOpenSectionIndex != NSNotFound) {
 		
 		BreakOutSectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
-        // previousOpenSection.open = NO;
+        previousOpenSection.open = NO;
         [previousOpenSection.headerView toggleOpenWithUserAction:NO];
         NSInteger countOfRowsToDelete = [[previousOpenSection.play valueForKey:@"rowHeights"]count];
-        for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
+        for (NSInteger i = 0; i < countOfRowsToDelete; i++)
+        {
             [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
         }
     }
     
+    for(NSIndexPath *index in indexPathsToDelete)
+        NSLog(@"%@",index);
+    
     // Style the animation so that there's a smooth flow in either direction.
-    UITableViewRowAnimation insertAnimation;
-    // UITableViewRowAnimation deleteAnimation;
-    if (previousOpenSectionIndex == NSNotFound || sectionOpened < previousOpenSectionIndex) {
+    UITableViewRowAnimation insertAnimation=nil;
+    UITableViewRowAnimation deleteAnimation=nil;
+    if (previousOpenSectionIndex == NSNotFound || sectionOpened < previousOpenSectionIndex)
+    {
         insertAnimation = UITableViewRowAnimationFade;
-        // deleteAnimation = UITableViewRowAnimationFade;
+         deleteAnimation = UITableViewRowAnimationFade;
     }
     else {
         insertAnimation = UITableViewRowAnimationFade;
-        // deleteAnimation = UITableViewRowAnimationFade;
+        deleteAnimation = UITableViewRowAnimationFade;
     }
     
     // Apply the updates.
     [self.breakOutSessionTableView beginUpdates];
+//    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:insertAnimation];
     [self.breakOutSessionTableView insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:insertAnimation];
-    // [self.fullProfileTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
+     [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
     [self.breakOutSessionTableView endUpdates];
-    // self.openSectionIndex = sectionOpened;
+    self.openSectionIndex = sectionOpened;
     
 }
 //
@@ -338,7 +346,7 @@
         [self.breakOutSessionTableView
          deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationFade];
     }
-    //self.openSectionIndex = NSNotFound;
+    self.openSectionIndex = NSNotFound;
 }
 
 
@@ -355,6 +363,8 @@
 #pragma mark - RNFrostedSidebar delegate.
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
+    
+    NSLog(@"%d",index);
     
     switch (index) {
         case 0:
@@ -407,13 +417,14 @@
         }
             break;
             
-            
+                 
             
         default:
             break;
     }
     
 }
+
 
 
 #pragma mark - action ethod.

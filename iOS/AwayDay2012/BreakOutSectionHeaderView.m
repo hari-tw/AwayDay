@@ -25,6 +25,9 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleOpen:)];
         [self addGestureRecognizer:tapGesture];
         
+        
+        self.backgroundColor = [UIColor whiteColor];
+        
 //        self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
         
         _delegate = delegate;
