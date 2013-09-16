@@ -273,7 +273,7 @@
 
     
     if ([userJoinList containsObject:session.sessionID]) {
-        [sessionTitle setTextColor:[UIColor colorWithRed:214 / 255.0 green:95 / 255.0 blue:54 / 255.0 alpha:1.0f]];
+        [sessionTitle setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     }
 
     [sessionTitle setFont:[UIFont systemFontOfSize:14.0f]];
@@ -289,7 +289,7 @@
     [sessionDuration setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
 
     if ([userJoinList containsObject:session.sessionID]) {
-        [sessionDuration setTextColor:[UIColor colorWithRed:214 / 255.0 green:95 / 255.0 blue:54 / 255.0 alpha:1.0f]];
+        [sessionDuration setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     }
 
     NSDate *today = [NSDate date];
@@ -298,7 +298,7 @@
         [sessionDuration setTextColor:[UIColor colorWithRed:170 / 255.0 green:170 / 255.0 blue:170 / 255.0 alpha:1.0f]];
     }
 
-    [sessionDuration setFont:[UIFont systemFontOfSize:12.0f]];
+    [sessionDuration setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
     [sessionDuration setShadowColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:120 / 255.0]];
     [sessionDuration setShadowOffset:CGSizeMake(-0.1f, -0.1f)];
     [sessionDuration setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
@@ -324,15 +324,15 @@
     [sessionTitle setBackgroundColor:[UIColor clearColor]];
     [sessionTitle setText:session.sessionTitle];
     [sessionTitle setTextColor:view.textColor];
-    [sessionTitle setFont:[UIFont systemFontOfSize:14.0f]];
+    [sessionTitle setFont:[UIFont fontWithName:@"Helvetica-Light" size:15.0f]];
     [sessionTitle setUserInteractionEnabled:NO];
     [detailView addSubview:sessionTitle];
     y += sessionTitle.frame.size.height;
 
     UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 320, 16)];
     [sessionSpeaker setBackgroundColor:[UIColor clearColor]];
-    [sessionSpeaker setFont:[UIFont systemFontOfSize:12.0f]];
-    [sessionSpeaker setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
+    [sessionSpeaker setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionSpeaker setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionSpeaker setText:[NSString stringWithFormat:@"Speaker: %@", session.sessionSpeaker]];
     [detailView addSubview:sessionSpeaker];
     y += sessionSpeaker.frame.size.height;
@@ -341,16 +341,16 @@
     [formatter setDateFormat:@"HH:mm"];
     UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 110, 16)];
     [sessionTime setBackgroundColor:[UIColor clearColor]];
-    [sessionTime setFont:[UIFont systemFontOfSize:12.0f]];
-    [sessionTime setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
+    [sessionTime setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionTime setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionTime setText:[NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.sessionStartTime], [formatter stringFromDate:session.sessionEndTime]]];
     [detailView addSubview:sessionTime];
 
     y += sessionTime.frame.size.height;
     UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 290, 16)];
     [sessionLocation setBackgroundColor:[UIColor clearColor]];
-    [sessionLocation setFont:[UIFont systemFontOfSize:12.0f]];
-    [sessionLocation setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
+    [sessionLocation setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionLocation setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionLocation setText:[NSString stringWithFormat:@"Room: %@", session.sessionAddress]];
     [detailView addSubview:sessionLocation];
     y += sessionLocation.frame.size.height;
@@ -361,7 +361,7 @@
     [sessionNote setEditable:NO];
     [sessionNote setFrame:CGRectMake(0, y, 320, size.height + 14)];
     [sessionNote setText:session.sessionNote];
-    [sessionNote setFont:[UIFont systemFontOfSize:13.0f]];
+    [sessionNote setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
     [sessionNote setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
     [sessionNote sizeToFit];
     y += sessionNote.frame.size.height;
@@ -553,21 +553,29 @@
 
     UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 24)];
     [monthLabel setBackgroundColor:[UIColor clearColor]];
-    [monthLabel setTextColor:[UIColor colorWithRed:29 / 255.0 green:207 / 255.0 blue:219 / 255.0 alpha:1.0f]];
-    [monthLabel setFont:[UIFont systemFontOfSize:30.0f]];
+    [monthLabel setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
+    [monthLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:22]];
+    
+       
     [monthLabel setText:[dateFormatter stringFromDate:agenda.agendaDate]];
     [view addSubview:monthLabel];
+    NSLog(@"%@",monthLabel.text);
+
 
     [dateFormatter setDateFormat:@"MMM, yyyy"];;
-    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 15, 80, 20)];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 180, 24)];
     [dateLabel setBackgroundColor:[UIColor clearColor]];
-    [dateLabel setTextColor:[UIColor colorWithRed:29 / 255.0 green:207 / 255.0 blue:219 / 255.0 alpha:1.0f]];
-    [dateLabel setFont:[UIFont systemFontOfSize:15.0f]];
+    [dateLabel setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
+    [dateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
     NSString *text = [dateFormatter stringFromDate:agenda.agendaDate];
     text = [text uppercaseString];
     [dateLabel setText:text];
+     NSLog(@"%@",dateLabel.text);
     [view addSubview:dateLabel];
 
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"line.png"]];
+    imageView.frame = CGRectMake(10, 38, 300, 1);
+    [view addSubview:imageView];
 
     return view;
 }

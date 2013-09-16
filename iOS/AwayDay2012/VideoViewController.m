@@ -14,8 +14,10 @@
 @interface VideoViewController ()<RNFrostedSidebarDelegate>
 {
     NSMutableArray *videoURL;
+    NSMutableArray *twURL;
     CustomSlider *slider;
     NSURL *urlString;
+    MPMoviePlayerViewController *moviePlayerController;
     NSMutableArray *videoImages;
 }
 
@@ -37,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",nil];
     videoURL = [[NSMutableArray alloc]init];
     videoImages = [[NSMutableArray alloc]init];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)[[self videoCollectionView] collectionViewLayout];
@@ -44,10 +47,10 @@
     [flowLayout setMinimumLineSpacing:10.0];
     
     //parsing you tube web page to get video URL.
-    for(NSUInteger i=1;i<=10;i++)
+    for(NSUInteger i=0;i<twURL.count;i++)
     {
         
-        NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/watch?v=BmOpD46eZoA"];
+        NSURL *url = [NSURL URLWithString:[twURL objectAtIndex:i]];
         //_activityIndicator.hidden = NO;
         [HCYoutubeParser thumbnailForYoutubeURL:url thumbnailSize:YouTubeThumbnailDefaultHighQuality completeBlock:^(UIImage *image, NSError *error) {
             
@@ -99,7 +102,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return twURL.count;
 }
 
 
@@ -161,9 +164,22 @@
     {
         NSURL *url = [videoURL objectAtIndex:indexPath.item];
         
-        MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        UIGraphicsBeginImageContext(CGSizeMake(1, 1));
+        
+       moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        [[NSNotificationCenter defaultCenter] removeObserver:moviePlayerController
+                                                        name:MPMoviePlayerPlaybackDidFinishNotification
+                                                      object:moviePlayerController];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(videoPlaybackEndAction:)
+                                                     name:MPMoviePlayerPlaybackDidFinishNotification
+                                                   object:nil];
+
         //MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:_urlToLoad];
         [self presentViewController:moviePlayerController animated:YES completion:nil];
+        UIGraphicsEndImageContext();
+
     }
     
     
@@ -173,6 +189,22 @@
 
 
 
+#pragma mark --notifcation.
+-(void) videoPlaybackEndAction:(NSNotification *)receivedNotification
+{
+    NSDictionary *userInfo = [receivedNotification userInfo];
+    
+    MPMovieFinishReason reason = [[userInfo objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey] integerValue];
+    if (reason == MPMovieFinishReasonUserExited) {
+        
+        [moviePlayerController.moviePlayer stop];
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:MPMoviePlayerPlaybackDidFinishNotification
+                                                      object:nil];
+        [self dismissMoviePlayerViewControllerAnimated]; //Exiting the movie player due to user clicking on "Done" button
+        moviePlayerController = nil;
+    }
+}
 
 
 

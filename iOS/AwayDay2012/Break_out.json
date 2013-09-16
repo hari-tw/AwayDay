@@ -6,12 +6,12 @@
   "topics":[
   {
   "topic_name":"Lina's talk on Egypt",
-  "topic_speaker":"",
+  "topic_speaker":"Lina",
   "time"  :"2:00-2:20"
   },
   {
   "topic_name":"Q & A with speakers",
-  "topic_speaker":"",
+  "topic_speaker":"Bala & Sasikala Mahesh",
   "time"  :"2:25-3:25"
   },
   {
@@ -52,8 +52,8 @@
   "time"  :"3:05-3:25"
   },
   {
-  "topic_name":"Another talk by analytics team -??",
-  "topic_speaker":"",
+  "topic_name":"Another talk by analytics team",
+  "topic_speaker":"analytics team",
   "time"  :"3:30-3:50"
   }
 ]
@@ -95,7 +95,7 @@
   
   
   {
-  "trackTopic":"India & Business Relevance",
+  "trackTopic":"Business Relevance",
   "captainName":"Meghana",
   "topics":
  [

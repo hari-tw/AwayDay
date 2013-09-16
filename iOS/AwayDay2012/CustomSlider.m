@@ -29,13 +29,14 @@
     self.optionIndices=[[NSMutableIndexSet alloc]init];
     
     NSArray *images = @[
-                        [UIImage imageNamed:@"globe"],
+                        [UIImage imageNamed:@"home-button"],
                         [UIImage imageNamed:@"agenda"],
                         [UIImage imageNamed:@"speaker_icon"],
-                        [UIImage imageNamed:@"map"],
+                        [UIImage imageNamed:@"route-map"],
                         [UIImage imageNamed:@"my_schedule"],
-                        [UIImage imageNamed:@"star"],
-                         [UIImage imageNamed:@"play_button"],
+                        [UIImage imageNamed:@"breakout-icon"],
+                         [UIImage imageNamed:@"gallery"],
+                        [UIImage imageNamed:@"share_2"],
                         
                         ];
     NSArray *colors = @[
@@ -45,6 +46,8 @@
                         [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
                         [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
+                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                        
                         [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
                         
@@ -80,7 +83,7 @@
 -(void) showMapScreen
 {
     UserLocationUtilities *location = [[UserLocationUtilities alloc]init];
-    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",location.locationManager.location.coordinate.latitude,location.locationManager.location.coordinate.longitude, 12.969034,77.745137];
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",12.969034,77.745137,location.locationManager.location.coordinate.latitude,location.locationManager.location.coordinate.longitude];
     
     NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     

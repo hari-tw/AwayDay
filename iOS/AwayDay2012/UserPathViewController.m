@@ -218,18 +218,18 @@
     [timeLabel setBackgroundColor:[UIColor clearColor]];
     [timeLabel setTag:tag_view_table_child_view];
     [timeLabel setText:[formatter stringFromDate:path.pathCreateTime]];
-    [timeLabel setTextColor:[UIColor colorWithRed:31/255.0 green:206/255.0 blue:217/255.0 alpha:1.0f]];
-    [timeLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
+    [timeLabel setTextColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0f]];
+    [timeLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
     [cell addSubview:timeLabel];
     
     [formatter setDateFormat:@"MM-dd"];
     UILabel *dateLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 26, 50, 20)];
-    [dateLabel setTextColor:[UIColor colorWithRed:150/255.0 green:150/255.0 blue:150/255.0 alpha:1.0f]];
+    [dateLabel setTextColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0f]];
     [dateLabel setTag:tag_view_table_child_view];
     [dateLabel setBackgroundColor:[UIColor clearColor]];
     [dateLabel setTextAlignment:UITextAlignmentRight];
     [dateLabel setText:[formatter stringFromDate:path.pathCreateTime]];
-    [dateLabel setFont:[UIFont boldSystemFontOfSize:12.0f]];
+    [dateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
     [cell addSubview:dateLabel];
     
     
@@ -249,7 +249,7 @@
         [pathContent setText:path.pathContent];
         [pathContent setTag:tag_view_table_child_view];
         [pathContent setUserInteractionEnabled:NO];
-        [pathContent setFont:[UIFont systemFontOfSize:14.0f]];
+        [pathContent setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0f]];
         [pathContent setTextColor:[UIColor blackColor]];
         [cell addSubview:pathContent];
         y=57;

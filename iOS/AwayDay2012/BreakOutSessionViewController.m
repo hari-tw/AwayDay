@@ -14,11 +14,12 @@
 #import "BreakOutSession.h"
 #import "RNFrostedSidebar.h"
 
-#define HEADER_HEIGHT 100
+#define HEADER_HEIGHT 60
 
 @interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate>
 
 {
+    NSMutableArray *sectionImages;
     CustomSlider *slider;
 }
 @property (nonatomic, assign) NSInteger openSectionIndex;
@@ -51,7 +52,7 @@
     
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:0] topics]count];i++)
     {
-        [emailCellRowHeights addObject:[NSNumber numberWithFloat:70]];
+        [emailCellRowHeights addObject:[NSNumber numberWithFloat:45]];
     }
     [trackOneInfo setObject:emailCellRowHeights forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackOneInfo];
@@ -61,7 +62,7 @@
     [trackTwoInfo setObject:[sectionHeaderText objectAtIndex:1] forKey:@"sectionHeaderName"];
     NSMutableArray *telephoneCellrowHeight=[[NSMutableArray alloc]init];
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:1] topics]count];i++)
-        [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:70]];
+        [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:45]];
     
     [trackTwoInfo setObject:telephoneCellrowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackTwoInfo];
@@ -72,7 +73,7 @@
     [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:3] forKey:@"sectionHeaderName"];
     NSMutableArray *byConnectingCellrowHeight=[[NSMutableArray alloc]init];
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:2] topics]count];i++)
-        [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:70]];
+        [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:45]];
     
     [trackThreeInfo setObject:byConnectingCellrowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackThreeInfo];
@@ -83,7 +84,7 @@
     NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
     
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:3] topics]count];i++)
-        [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:70]];
+        [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:45]];
     [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackFourInfo];
     
@@ -94,7 +95,7 @@
     NSMutableArray *tarckFiveHeight=[[NSMutableArray alloc]init];
     
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
-        [tarckFiveHeight addObject:[NSNumber numberWithFloat:70]];
+        [tarckFiveHeight addObject:[NSNumber numberWithFloat:45]];
     [trackFiveInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackFourInfo];
     
@@ -104,6 +105,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    sectionImages = [[NSMutableArray alloc]initWithObjects:@"open-our-eyes 2.png",@"south-globe.png",@"Impact 2.png",@"relavance_c.png",@"innovation 3.png",nil];
     
     self.breakOutSessionDetails=[[NSMutableArray alloc]init];
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Break_out"
@@ -230,8 +232,8 @@
      */
 	BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
     if (!sectionInfo.headerView) {
-		NSString *playName = [sectionInfo.play valueForKey:@"sectionHeaderName"];
-        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:[[self.breakOutSessionDetails objectAtIndex:section] trackTopic]  coordinator:[[self.breakOutSessionDetails objectAtIndex:section] captainName] section:section delegate:self];
+		//NSString *playName = [sectionInfo.play valueForKey:@"sectionHeaderName"];
+        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:[[self.breakOutSessionDetails objectAtIndex:section] trackTopic]  coordinator:[[self.breakOutSessionDetails objectAtIndex:section] captainName] image:[sectionImages objectAtIndex:section]  section:section delegate:self];
     }
     
     return sectionInfo.headerView;

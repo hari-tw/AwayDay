@@ -12,7 +12,7 @@
 
 @implementation BreakOutSectionHeaderView
 
--(id)initWithFrame:(CGRect)frame title:(NSString*)trackTopic coordinator:(NSString *)coordinator section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate
+-(id)initWithFrame:(CGRect)frame title:(NSString*)trackTopic coordinator:(NSString *)coordinator image:(NSString *)imageName section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate
 {
     
     self = [super initWithFrame:frame];
@@ -37,11 +37,11 @@
         // Create and configure the title label.
         _section = sectionNumber;
         CGRect titleLabelFrame = self.bounds;
-        titleLabelFrame.origin.x += 10.0;
-        titleLabelFrame.origin.y+=10.0;
+        titleLabelFrame.origin.x += 80.0;
+        titleLabelFrame.origin.y+=3.0;
         titleLabelFrame.size.width -= 60.0;
         //CGRectInset(titleLabelFrame, 0.0, 5.0);
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20 , 10 , 200, 60)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(56 , 3 , 200, 30)];
         label.text =  [NSString  stringWithFormat:@" \"%@ \"" ,trackTopic];
         label.backgroundColor = [UIColor clearColor];
         [self addSubview:label];
@@ -51,17 +51,22 @@
         
         
         
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 3, 44, 44)];
+        imageView.image = [UIImage imageNamed:imageName];
+        [self addSubview:imageView];
         
-        self.dividerImageVIew =[[UIImageView alloc]initWithFrame:CGRectMake(10, 98 ,300, 1)];
-        self.dividerImageVIew.image = [UIImage imageNamed:@"line.png"];
-        [self addSubview:self.dividerImageVIew];
         
-        [self.trackLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:15]];
+//        
+//        self.dividerImageVIew =[[UIImageView alloc]initWithFrame:CGRectMake(10, 49 ,300, 1)];
+//        self.dividerImageVIew.image = [UIImage imageNamed:@"line.png"];
+//        [self addSubview:self.dividerImageVIew];
+        
+        [self.trackLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Regular" size:16]];
         [self.trackLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
        
         // Create and configure the disclosure button.
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(289, 75, 20, 20.0);
+        button.frame = CGRectMake(289, 25, 20, 20.0);
         [button setImage:[UIImage imageNamed:@"plus-symbol.png"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"plus-symbol.png"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(toggleOpen:) forControlEvents:UIControlEventTouchUpInside];
@@ -70,10 +75,10 @@
         
         
         
-        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 70, 250, 25)];
+        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(65, 25, 250, 25)];
         self.coordinatorLabel.backgroundColor= [UIColor clearColor];
         
-        [self.coordinatorLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:13]];
+        [self.coordinatorLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:11]];
         [self.coordinatorLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
         self.coordinatorLabel.text=[NSString  stringWithFormat:@"%@" ,coordinator];
         [self addSubview:self.coordinatorLabel];

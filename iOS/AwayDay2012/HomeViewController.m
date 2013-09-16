@@ -104,7 +104,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     //     self.secondTextLabel.text=[NSString stringWithFormat:@"%02ds",(60-componentSec.second)];
     
     
-    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour)+12,(60-componentMint.minute),(60-componentSec.second)];
+    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour)+15,(60-componentMint.minute),(60-componentSec.second)];
     
     if(((24-componentsHours.hour)+componentsDaysDiff.day*24+12)==0)
     {
