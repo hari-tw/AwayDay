@@ -13,7 +13,7 @@
 #import "CustomSlider.h"
 #import "RNFrostedSidebar.h"
 
-#define HEADER_HEIGHT 50
+#define HEADER_HEIGHT 100
 
 @interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate>
 
@@ -195,7 +195,7 @@
 	BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
     if (!sectionInfo.headerView) {
 		NSString *playName = [sectionInfo.play valueForKey:@"sectionHeaderName"];
-        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:playName section:section delegate:self];
+        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:playName coordinator:@" s hxasxjksa " section:section delegate:self];
     }
     
     return sectionInfo.headerView;
