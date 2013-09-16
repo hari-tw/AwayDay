@@ -49,7 +49,7 @@
     [trackOneInfo setObject:[sectionHeaderText objectAtIndex:0] forKey:@"sectionHeaderName"];
     NSMutableArray *emailCellRowHeights=[[NSMutableArray alloc]init];
     
-    for(int i=1;i<=5;i++)
+    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:0] topics]count];i++)
     {
         [emailCellRowHeights addObject:[NSNumber numberWithFloat:70]];
     }
@@ -60,7 +60,7 @@
     NSMutableDictionary *trackTwoInfo=[[NSMutableDictionary alloc]init];
     [trackTwoInfo setObject:[sectionHeaderText objectAtIndex:1] forKey:@"sectionHeaderName"];
     NSMutableArray *telephoneCellrowHeight=[[NSMutableArray alloc]init];
-    for(int i=0;i<=5;i++)
+    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:1] topics]count];i++)
         [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:70]];
     
     [trackTwoInfo setObject:telephoneCellrowHeight forKey:@"rowHeights"];
@@ -71,7 +71,7 @@
     NSMutableDictionary *trackThreeInfo=[[NSMutableDictionary alloc]init];
     [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:3] forKey:@"sectionHeaderName"];
     NSMutableArray *byConnectingCellrowHeight=[[NSMutableArray alloc]init];
-    for(int i=0;i<=5;i++)
+    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:2] topics]count];i++)
         [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:70]];
     
     [trackThreeInfo setObject:byConnectingCellrowHeight forKey:@"rowHeights"];
@@ -82,9 +82,20 @@
     [trackFourInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
     NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
     
-    for(int i=0;i<=5;i++)
+    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:3] topics]count];i++)
         [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:70]];
     [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
+    [self.sectionInfoDictionary addObject:trackFourInfo];
+    
+    
+    
+    NSMutableDictionary *trackFiveInfo=[[NSMutableDictionary alloc]init];
+    [trackFiveInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
+    NSMutableArray *tarckFiveHeight=[[NSMutableArray alloc]init];
+    
+    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
+        [tarckFiveHeight addObject:[NSNumber numberWithFloat:70]];
+    [trackFiveInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackFourInfo];
     
     
@@ -112,9 +123,12 @@
     {
         
         BreakOutSession *session = [[BreakOutSession alloc]init];
-        session.captainName= [json valueForKey:@"captainName"];
-        session.trackTopic= [json valueForKey:@"trackTopic"];
-        session.topics = [json valueForKey:@"topics"];
+        
+        NSLog(@"%@",[dict valueForKey:@"captainName"]);
+         NSLog(@"%@",[dict valueForKey:@"trackTopic"]);
+        session.captainName= [dict valueForKey:@"captainName"];
+        session.trackTopic= [dict valueForKey:@"trackTopic"];
+        session.topics = [dict valueForKey:@"topics"];
         [self.breakOutSessionDetails addObject:session];
         
     }
@@ -170,7 +184,7 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
     
     //  return [self.plays count];
-    return 4;
+    return self.breakOutSessionDetails.count;
 }
 
 
@@ -192,6 +206,15 @@
     
     CustomBreakOutSessionCell *cell = (CustomBreakOutSessionCell*)[tableView dequeueReusableCellWithIdentifier:emailListIdentifier];
     
+    BreakOutSession *session = [self.breakOutSessionDetails objectAtIndex:indexPath.section];
+    
+    cell.topicTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_name"]];
+    cell.topicSpeakerNameTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_speaker"]];
+     cell.timeTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"time"]];
+    
+    
+    
+    
     
     return cell;
     
@@ -208,7 +231,7 @@
 	BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
     if (!sectionInfo.headerView) {
 		NSString *playName = [sectionInfo.play valueForKey:@"sectionHeaderName"];
-        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:playName coordinator:@" s hxasxjksa " section:section delegate:self];
+        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:[[self.breakOutSessionDetails objectAtIndex:section] trackTopic]  coordinator:[[self.breakOutSessionDetails objectAtIndex:section] captainName] section:section delegate:self];
     }
     
     return sectionInfo.headerView;

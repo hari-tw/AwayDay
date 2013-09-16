@@ -42,7 +42,7 @@
         titleLabelFrame.size.width -= 60.0;
         //CGRectInset(titleLabelFrame, 0.0, 5.0);
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20 , 10 , 200, 60)];
-        label.text = trackTopic;
+        label.text =  [NSString  stringWithFormat:@" \"%@ \"" ,trackTopic];
         label.backgroundColor = [UIColor clearColor];
         [self addSubview:label];
         self.trackLabel = label;
@@ -56,7 +56,7 @@
         self.dividerImageVIew.image = [UIImage imageNamed:@"line.png"];
         [self addSubview:self.dividerImageVIew];
         
-        [self.trackLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:17]];
+        [self.trackLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:15]];
         [self.trackLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
        
         // Create and configure the disclosure button.
@@ -70,12 +70,12 @@
         
         
         
-        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 70, 100, 25)];
+        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 70, 250, 25)];
         self.coordinatorLabel.backgroundColor= [UIColor clearColor];
         
-        [self.coordinatorLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:14]];
+        [self.coordinatorLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:13]];
         [self.coordinatorLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
-        self.coordinatorLabel.text=coordinator;
+        self.coordinatorLabel.text=[NSString  stringWithFormat:@"%@" ,coordinator];
         [self addSubview:self.coordinatorLabel];
         
         
