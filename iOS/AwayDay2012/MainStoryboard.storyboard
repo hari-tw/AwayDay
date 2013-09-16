@@ -662,7 +662,8 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Videos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvr-I9-Ds0">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Fzf-r6-nYz"/>
+                                    <constraint firstAttribute="height" constant="29" id="OGz-y3-Lsg"/>
+                                    <constraint firstAttribute="width" constant="300" id="njQ-ej-yfU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -674,16 +675,15 @@
                             <constraint firstItem="qtT-oX-Mbf" firstAttribute="leading" secondItem="4TL-xf-jiN" secondAttribute="leading" type="default" id="0pb-Si-Prm"/>
                             <constraint firstItem="LW9-Ap-9T9" firstAttribute="leading" secondItem="4TL-xf-jiN" secondAttribute="leading" type="default" id="39D-Oh-V1X"/>
                             <constraint firstItem="LW9-Ap-9T9" firstAttribute="trailing" secondItem="4TL-xf-jiN" secondAttribute="trailing" type="default" id="6Yb-B0-drq"/>
+                            <constraint firstItem="pvr-I9-Ds0" firstAttribute="top" secondItem="4TL-xf-jiN" secondAttribute="top" constant="62" id="8xI-FD-rbW"/>
                             <constraint firstItem="ieB-un-Eq4" firstAttribute="trailing" secondItem="4TL-xf-jiN" secondAttribute="trailing" type="default" id="Es9-zm-e5l"/>
-                            <constraint firstAttribute="trailing" secondItem="pvr-I9-Ds0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Hit-sK-UTH"/>
                             <constraint firstItem="qtT-oX-Mbf" firstAttribute="trailing" secondItem="4TL-xf-jiN" secondAttribute="trailing" type="default" id="JO8-zc-8DM"/>
                             <constraint firstItem="LW9-Ap-9T9" firstAttribute="top" secondItem="4TL-xf-jiN" secondAttribute="top" type="default" id="Lex-ar-Zby"/>
-                            <constraint firstItem="pvr-I9-Ds0" firstAttribute="top" secondItem="Aak-Bc-5ZC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="V9G-zP-KKx"/>
-                            <constraint firstItem="pvr-I9-Ds0" firstAttribute="leading" secondItem="4TL-xf-jiN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h5R-g4-NkS"/>
-                            <constraint firstItem="qtT-oX-Mbf" firstAttribute="bottom" secondItem="4TL-xf-jiN" secondAttribute="bottom" type="default" id="sUI-pm-iGg"/>
+                            <constraint firstItem="qtT-oX-Mbf" firstAttribute="top" secondItem="4TL-xf-jiN" secondAttribute="top" constant="102" id="T3z-ec-t4w"/>
+                            <constraint firstItem="pvr-I9-Ds0" firstAttribute="centerX" secondItem="LW9-Ap-9T9" secondAttribute="centerX" type="default" id="ZGp-ai-WbG"/>
+                            <constraint firstItem="Aak-Bc-5ZC" firstAttribute="bottom" secondItem="LW9-Ap-9T9" secondAttribute="bottom" type="default" id="opP-GS-w1q"/>
                             <constraint firstItem="ieB-un-Eq4" firstAttribute="leading" secondItem="4TL-xf-jiN" secondAttribute="leading" type="default" id="uB3-lO-jzj"/>
                             <constraint firstItem="ieB-un-Eq4" firstAttribute="bottom" secondItem="4TL-xf-jiN" secondAttribute="bottom" type="default" id="uzm-aQ-hDY"/>
-                            <constraint firstItem="pvr-I9-Ds0" firstAttribute="top" secondItem="LW9-Ap-9T9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vhX-7R-CzA"/>
                             <constraint firstItem="Aak-Bc-5ZC" firstAttribute="leading" secondItem="4TL-xf-jiN" secondAttribute="leading" constant="11" id="wjP-g8-W8p"/>
                             <constraint firstItem="Aak-Bc-5ZC" firstAttribute="top" secondItem="4TL-xf-jiN" secondAttribute="top" type="default" id="yyO-pi-mzh"/>
                         </constraints>
@@ -706,6 +706,101 @@
         <image name="slider-menu-icon 2.png" width="44" height="44"/>
         <image name="top-banner.png" width="640" height="88"/>
     </resources>
+    <classes>
+        <class className="BreakOutSessionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BreakOutSessionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sideMenuTapped:"/>
+                <relationship kind="outlet" name="breakOutSessionTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CustomAgendaExpansionTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomAgendaExpansionTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="roomNameTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomAgendaTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomAgendaTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="eventTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeTextlabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomBreakOutSessionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomBreakOutSessionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topicSpeakerNameTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomVideoCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomVideoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="indicatorView" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="videoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewAgendaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewAgendaViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="joinButtonPressed:"/>
+                <relationship kind="action" name="remindButtonPressed:"/>
+                <relationship kind="action" name="shareButtonPressed:"/>
+                <relationship kind="action" name="sideMenuTapped:"/>
+                <relationship kind="outlet" name="agendaTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SpeakersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sideMenuTapped:"/>
+                <relationship kind="outlet" name="speakerTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="VideoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sideMenuTapped:"/>
+                <relationship kind="outlet" name="videoCollectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="customTableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/customTableCell.h"/>
+            <relationships>
+                <relationship kind="action" name="expandButtonTapped:"/>
+                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="expandCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/expandCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionTextlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

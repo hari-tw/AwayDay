@@ -161,6 +161,7 @@
 		95B274D017E4BD05006AF8EC /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B274CF17E4BD05006AF8EC /* down-arrow.png */; };
 		95B7CA8B17E2237A00163291 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B7CA8A17E2237A00163291 /* CoreLocation.framework */; };
 		95B7CA8D17E237AE00163291 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B7CA8C17E237AE00163291 /* MainStoryboard.storyboard */; };
+		95F11B9717E6C68300739F10 /* simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 95F11B9617E6C68300739F10 /* simple.json */; };
 		95F27C8F17E0DE8700CAB38E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F27C8D17E0DE8700CAB38E /* HomeViewController.m */; };
 		95F27C9017E0DE8700CAB38E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F27C8E17E0DE8700CAB38E /* HomeViewController.xib */; };
 		95F27C9517E0DEE500CAB38E /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F27C9417E0DEE500CAB38E /* RNFrostedSidebar.m */; };
@@ -416,6 +417,7 @@
 		95B274CF17E4BD05006AF8EC /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "down-arrow.png"; path = "../AwayDay2012/down-arrow.png"; sourceTree = "<group>"; };
 		95B7CA8A17E2237A00163291 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		95B7CA8C17E237AE00163291 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = AwayDay2012/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		95F11B9617E6C68300739F10 /* simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple.json; sourceTree = "<group>"; };
 		95F27C8C17E0DE8700CAB38E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		95F27C8D17E0DE8700CAB38E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		95F27C8E17E0DE8700CAB38E /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = AwayDay2012/HomeViewController.xib; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 			children = (
 				95B274B017E462BD006AF8EC /* Break_out.json */,
 				953300D317E1FD270069FC9F /* Speakers_Info.json */,
+				95F11B9617E6C68300739F10 /* simple.json */,
 			);
 			name = "json files";
 			sourceTree = "<group>";
@@ -1086,6 +1089,7 @@
 				9571A1C717E619CB001E3EC9 /* play_button_pressed.png in Resources */,
 				9571A1C817E619CB001E3EC9 /* play_button@2x.png in Resources */,
 				9571A1C917E619CB001E3EC9 /* play_button_pressed@2x.png in Resources */,
+				95F11B9717E6C68300739F10 /* simple.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

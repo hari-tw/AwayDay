@@ -16,10 +16,13 @@
 #define HEADER_HEIGHT 50
 
 @interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate>
+
 {
     CustomSlider *slider;
 }
 @property (nonatomic, assign) NSInteger openSectionIndex;
+
+
 @end
 
 @implementation BreakOutSessionViewController
@@ -32,19 +35,19 @@
     }
     return self;
 }
+
+
+
 -(void)loadInfo
 {
     
     NSMutableArray *sectionHeaderText=[[NSMutableArray alloc]initWithObjects:@"Track1",@"Track2",@"Track3",@"Track4",@"Track5",nil];
-    
-   
-    
     self.sectionInfoDictionary=[[NSMutableArray alloc]init];
     
     NSMutableDictionary *trackOneInfo=[[NSMutableDictionary alloc]init];
     [trackOneInfo setObject:[sectionHeaderText objectAtIndex:0] forKey:@"sectionHeaderName"];
     NSMutableArray *emailCellRowHeights=[[NSMutableArray alloc]init];
-   
+    
     for(int i=1;i<=5;i++)
     {
         [emailCellRowHeights addObject:[NSNumber numberWithFloat:70]];
@@ -57,18 +60,18 @@
     [trackTwoInfo setObject:[sectionHeaderText objectAtIndex:1] forKey:@"sectionHeaderName"];
     NSMutableArray *telephoneCellrowHeight=[[NSMutableArray alloc]init];
     for(int i=0;i<=5;i++)
-    [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:70]];
+        [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:70]];
     
     [trackTwoInfo setObject:telephoneCellrowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackTwoInfo];
     
     
-       
+    
     NSMutableDictionary *trackThreeInfo=[[NSMutableDictionary alloc]init];
     [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:3] forKey:@"sectionHeaderName"];
     NSMutableArray *byConnectingCellrowHeight=[[NSMutableArray alloc]init];
     for(int i=0;i<=5;i++)
-    [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:70]];
+        [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:70]];
     
     [trackThreeInfo setObject:byConnectingCellrowHeight forKey:@"rowHeights"];
     [self.sectionInfoDictionary addObject:trackThreeInfo];
@@ -77,7 +80,7 @@
     NSMutableDictionary *trackFourInfo=[[NSMutableDictionary alloc]init];
     [trackFourInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
     NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
-  
+    
     for(int i=0;i<=5;i++)
         [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:70]];
     [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
@@ -90,9 +93,6 @@
 {
     [super viewDidLoad];
     
-    
-    
-    
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Break_out"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -104,13 +104,7 @@
     
     
     
-    
-    for(NSDictionary *info in json)
-    {
-        NSLog(@"%@",info);
-    }
-    
-    
+    NSLog(@"%@",json);
     
     [self loadInfo];
     self.openSectionIndex = NSNotFound;
@@ -138,9 +132,11 @@
 		self.sectionInfoArray = infoArray;
 	}
     
-
+    
 	// Do any additional setup after loading the view.
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -168,8 +164,8 @@
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-   BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
-   NSLog(@"%@",sectionInfo);
+    BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
+    NSLog(@"%@",sectionInfo);
 	NSInteger numStoriesInSection = [[sectionInfo.play valueForKey:@"rowHeights"] count];
 	
     return sectionInfo.open ? numStoriesInSection : 0;
@@ -179,11 +175,11 @@
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
     
     
-        static NSString *emailListIdentifier = @"breakOutCellIdentifier";
-                
-                CustomBreakOutSessionCell *cell = (CustomBreakOutSessionCell*)[tableView dequeueReusableCellWithIdentifier:emailListIdentifier];
-                
-                
+    static NSString *emailListIdentifier = @"breakOutCellIdentifier";
+    
+    CustomBreakOutSessionCell *cell = (CustomBreakOutSessionCell*)[tableView dequeueReusableCellWithIdentifier:emailListIdentifier];
+    
+    
     return cell;
     
 }
@@ -223,13 +219,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
-    //    UIStoryboard *settingsStoryboard=[UIStoryboard storyboardWithName:@"Settings" bundle:nil];
-    //    AMGSettingsMainViewController *settingsViewController = (AMGSettingsMainViewController *)[settingsStoryboard instantiateViewControllerWithIdentifier:@"settingsViewIdentifier"];;
-    //
-    //    [self.navigationController pushViewController:settingsViewController animated:YES];
-    //
-    
-    
     
 }
 
@@ -239,9 +228,6 @@
 -(void)sectionHeaderView:(BreakOutSectionHeaderView*)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
 	
     BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionOpened];
-    
-    
-	
     NSLog(@"%d",sectionOpened);
     
     
@@ -319,18 +305,16 @@
 
 
 - (void)viewDidUnload {
-   
+    
     [self setBreakOutSessionTableView:nil];
     [super viewDidUnload];
 }
-- (IBAction)sideMenuTapped:(id)sender {
-    slider = [[CustomSlider alloc]init];
-    [slider showSliderMenu];
-    slider.callout.delegate=self;
-    
-    
-}
 
+
+
+
+
+#pragma mark - RNFrostedSidebar delegate.
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
     
@@ -384,12 +368,22 @@
             
         }
             break;
-
+            
             
             
         default:
             break;
     }
+    
+}
+
+
+#pragma mark - action ethod.
+- (IBAction)sideMenuTapped:(id)sender {
+    slider = [[CustomSlider alloc]init];
+    [slider showSliderMenu];
+    slider.callout.delegate=self;
+    
     
 }
 

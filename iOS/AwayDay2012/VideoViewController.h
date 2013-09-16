@@ -10,9 +10,11 @@
 
 @interface VideoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+
+//IBOutlets
 @property (weak, nonatomic) IBOutlet UICollectionView *videoCollectionView;
 
-
+//Action method.
 - (IBAction)sideMenuTapped:(id)sender;
 
 @end
