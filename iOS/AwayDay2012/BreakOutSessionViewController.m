@@ -11,6 +11,7 @@
 #import "BreakOutSectionHeaderView.h"
 #import "BreakOutSectionInfo.h"
 #import "CustomSlider.h"
+#import "BreakOutSession.h"
 #import "RNFrostedSidebar.h"
 
 #define HEADER_HEIGHT 50
@@ -21,7 +22,7 @@
     CustomSlider *slider;
 }
 @property (nonatomic, assign) NSInteger openSectionIndex;
-
+@property (nonatomic,strong) NSMutableArray *breakOutSessionDetails;
 
 @end
 
@@ -93,6 +94,7 @@
 {
     [super viewDidLoad];
     
+    self.breakOutSessionDetails=[[NSMutableArray alloc]init];
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Break_out"
                                                          ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
@@ -105,6 +107,17 @@
     
     
     NSLog(@"%@",json);
+    
+    for(NSDictionary *dict in json)
+    {
+        
+        BreakOutSession *session = [[BreakOutSession alloc]init];
+        session.captainName= [json valueForKey:@"captainName"];
+        session.trackTopic= [json valueForKey:@"trackTopic"];
+        session.topics = [json valueForKey:@"topics"];
+        [self.breakOutSessionDetails addObject:session];
+        
+    }
     
     [self loadInfo];
     self.openSectionIndex = NSNotFound;

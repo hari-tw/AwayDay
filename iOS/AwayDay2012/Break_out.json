@@ -1,8 +1,8 @@
 
 [
   {
-  "speaker_topic":"Opening our Eyes",
-  "speaker_name":"Bala & Sasikala Mahesh",
+  "trackTopic":"Opening our Eyes",
+  "captainName":"Bala & Sasikala Mahesh",
   "topics":[
   {
   "topic_name":"Lina's talk on Egypt",
@@ -28,8 +28,8 @@
   
 
   {
-  "speaker_topic":"Innovation",
-  "speaker_name":"Pramod & Shyam Kurien",
+  "trackTopic":"Innovation",
+  "captainName":"Pramod & Shyam Kurien",
   "topics":[
   {
   "topic_name":"Bahmni - Open Source Hospital System",
@@ -61,76 +61,8 @@
   
   
   {
-  "speaker_topic":"Global South",
-  "speaker_name":"Amol & Preethi",
-  "topics":[
-  {
-  "topic_name":"Healthcare Global Villages",
-  "topic_speaker":"Karl",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"China Mobile Labs ",
-  "topic_speaker":"Wang Zhe",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"The journey of creating internal startup products",
-  "topic_speaker":"Jinzhou Chen",
-  "time"  :"2:50-3:00"
-  },
-  {
-  "topic_name":"Stories from Africa",
-  "topic_speaker":"Raymond & Yashodhan",
-  "time"  :"3:05-3:25"
-  },
-  {
-  "topic_name":"Africa Jeoparady Game",
-  "topic_speaker":"",
-  "time"  :"3:30-4:05"
-  }]
-  },
-  
-  
-  {
-  "speaker_topic":"Global South",
-  "speaker_name":"Amol & Preethi",
-  "topics":
- [{
-  
-  "topic_name":"Healthcare Global Villages",
-  "topic_speaker":"Karl",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"China Mobile Labs ",
-  "topic_speaker":"Wang Zhe",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"The journey of creating internal startup products",
-  "topic_speaker":"Jinzhou Chen",
-  "time"  :"2:50-3:00"
-  },
-  {
-  "topic_name":"Stories from Africa",
-  "topic_speaker":"Raymond & Yashodhan",
-  "time"  :"3:05-3:25"
-  },
-  {
-  "topic_name":"Africa Jeoparady Game",
-  "topic_speaker":"",
-  "time"  :"3:30-4:05"
-  }]
-  
-  },
-
-  
-  
-
-  {
-  "speaker_topic":"Global South",
-  "speaker_name":"Amol & Preethi",
+  "trackTopic":"Global South",
+  "captainName":"Amol & Preethi",
   "topics":
  [
   {
@@ -157,7 +89,77 @@
   "topic_name":"Africa Jeoparady Game",
   "topic_speaker":"",
   "time"  :"3:30-4:05"
-  }]
+  }
+  ]
+  },
+  
+  
+  {
+  "trackTopic":"India & Business Relevance",
+  "captainName":"Meghana",
+  "topics":
+ [
+  {
+  "topic_name":"A firm's messaging house",
+  "topic_speaker":"Meghana Prasad",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"Experience of working with Indian Startup",
+  "topic_speaker":"Vineet & Ravinder",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"Solutioning for the Indian market",
+  "topic_speaker":"Feroz & Prashanth",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Personas of Indian corporate customers & Strategies",
+  "topic_speaker":"Jagbir & Jayesh",
+  "time"  :"3:05-3:25"
+  },
+  {
+  "topic_name":"My Journey As A 'Suncorpian'",
+  "topic_speaker":"Sunil Mundra",
+  "time"  :"3:30-3:50"
+  },
+  {
+  "topic_name":"What it takes to be a consultant with India Consulting?",
+  "topic_speaker":"Vinod Ramakrishnan",
+  "time"  :"3:55-4:05"
+  }
+  ]
+  
+  },
+
+
+  {
+  "trackTopic":"Twer Impact",
+  "captainName":"Amol & Preethi",
+  "topics":
+ [
+  {
+  "topic_name":"What I learnt in a year of running an art school",
+  "topic_speaker":"Mangalam",
+  "time"  :"2:00-2:20"
+  },
+  {
+  "topic_name":"TWU : A trainer's tale",
+  "topic_speaker":"Anand & Nishitha",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"Biotechnology & Hungry Planet",
+  "topic_speaker":"Karthiga",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"Experience of an Adoptive Parent",
+  "topic_speaker":"Satish V",
+  "time"  :"3:05-3:15"
+  }
+  ]
   
   }
 
