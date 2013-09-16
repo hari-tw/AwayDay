@@ -8,17 +8,20 @@
 
 #import <UIKit/UIKit.h>
 @protocol InviteFriendsSectionHeaderViewDelegate;
+
 @interface BreakOutSectionHeaderView : UIView
 
 
-@property (nonatomic, weak) UILabel *titleLabel;
+@property (nonatomic, weak) UILabel *trackLabel;
+@property (nonatomic, strong) UIImageView *dividerImageVIew;
+
 @property (nonatomic, weak) UIButton *disclosureButton;
-@property(nonatomic,weak)UIImageView *backgroundImageView;
+@property(nonatomic,strong) UILabel *coordinatorLabel;
 @property (nonatomic, assign) NSInteger section;
-@property(nonatomic,strong) UIImageView *verticalDividerView;
+
 @property (nonatomic, weak) id <InviteFriendsSectionHeaderViewDelegate> delegate;
 
--(id)initWithFrame:(CGRect)frame title:(NSString*)title section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate;
+-(id)initWithFrame:(CGRect)frame title:(NSString*)trackTopic coordinator:(NSString *)coordinator section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate;
 -(void)toggleOpenWithUserAction:(BOOL)userAction;
 
 @end
