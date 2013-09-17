@@ -411,19 +411,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="nYH-l2-qDL" customClass="CustomVideoCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnG-Oj-Ufh">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="139" type="user" id="FyT-k2-o07"/>
-                                                        <constraint firstAttribute="height" constant="139" id="VDL-bo-DYH"/>
-                                                        <constraint firstAttribute="width" constant="296" id="mAR-NJ-Hs6"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="video-1-screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="NnG-Oj-Ufh"/>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xj4-tE-KaS"/>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Away Day Antakshari " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-02-vQY">
                                                     <constraints>
@@ -453,16 +447,16 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="NnG-Oj-Ufh" firstAttribute="centerY" secondItem="wrn-0g-65C" secondAttribute="centerY" type="default" id="87E-3w-D7M"/>
-                                            <constraint firstItem="NnG-Oj-Ufh" firstAttribute="centerX" secondItem="nYH-l2-qDL" secondAttribute="centerX" type="default" id="9IZ-Of-hbp"/>
-                                            <constraint firstItem="9oz-02-vQY" firstAttribute="top" secondItem="nYH-l2-qDL" secondAttribute="top" constant="15" id="NYf-sY-NDV"/>
+                                            <constraint firstItem="9oz-02-vQY" firstAttribute="leading" secondItem="nYH-l2-qDL" secondAttribute="leading" constant="9" id="DYu-7H-2Ub"/>
+                                            <constraint firstItem="wrn-0g-65C" firstAttribute="top" secondItem="nYH-l2-qDL" secondAttribute="top" constant="73" id="E5A-AS-aYf"/>
+                                            <constraint firstItem="NnG-Oj-Ufh" firstAttribute="leading" secondItem="nYH-l2-qDL" secondAttribute="leading" type="default" id="Gcb-od-B1F"/>
+                                            <constraint firstItem="9oz-02-vQY" firstAttribute="top" secondItem="nYH-l2-qDL" secondAttribute="top" constant="7" id="PFZ-wU-OUJ"/>
                                             <constraint firstItem="Xj4-tE-KaS" firstAttribute="centerY" secondItem="wrn-0g-65C" secondAttribute="centerY" type="default" id="Swp-Is-cdD"/>
-                                            <constraint firstAttribute="bottom" secondItem="NnG-Oj-Ufh" secondAttribute="bottom" constant="20" type="default" id="ZqO-Ob-EGb"/>
-                                            <constraint firstItem="9oz-02-vQY" firstAttribute="leading" secondItem="nYH-l2-qDL" secondAttribute="leading" constant="20" type="default" id="e32-oY-e6C"/>
-                                            <constraint firstItem="9oz-02-vQY" firstAttribute="centerX" secondItem="Xj4-tE-KaS" secondAttribute="centerX" type="default" id="fwG-lo-ESx"/>
+                                            <constraint firstItem="NnG-Oj-Ufh" firstAttribute="bottom" secondItem="nYH-l2-qDL" secondAttribute="bottom" type="default" id="d3s-LJ-eYV"/>
+                                            <constraint firstItem="wrn-0g-65C" firstAttribute="leading" secondItem="nYH-l2-qDL" secondAttribute="leading" constant="141" id="l4G-En-nh6"/>
                                             <constraint firstItem="Xj4-tE-KaS" firstAttribute="centerX" secondItem="wrn-0g-65C" secondAttribute="centerX" type="default" id="rvc-3B-KrO"/>
                                         </constraints>
-                                        <size key="customSize" width="320" height="200"/>
+                                        <size key="customSize" width="320" height="160"/>
                                         <connections>
                                             <outlet property="indicatorView" destination="Xj4-tE-KaS" id="Udz-2K-KZp"/>
                                             <outlet property="playButton" destination="wrn-0g-65C" id="xxo-ST-Hgo"/>
@@ -541,78 +535,8 @@
         <image name="plus-symbol.png" width="44" height="44"/>
         <image name="slider-menu-icon 2.png" width="44" height="44"/>
         <image name="top-banner.png" width="16" height="16"/>
+        <image name="video-1-screen.png" width="320" height="130"/>
     </resources>
-    <classes>
-        <class className="BreakOutSessionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BreakOutSessionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="breakOutSessionTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CustomBreakOutSessionCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomBreakOutSessionCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicSpeakerNameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CustomVideoCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomVideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="indicatorView" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="videoHeaderLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SpeakersViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="speakerTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="VideoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="videoCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="customTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/customTableCell.h"/>
-            <relationships>
-                <relationship kind="action" name="expandButtonTapped:"/>
-                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="expandCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/expandCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionTextlabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

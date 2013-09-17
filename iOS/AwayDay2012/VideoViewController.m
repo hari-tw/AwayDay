@@ -43,8 +43,8 @@
     videoURL = [[NSMutableArray alloc]init];
     videoImages = [[NSMutableArray alloc]init];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)[[self videoCollectionView] collectionViewLayout];
-    [flowLayout setMinimumInteritemSpacing:30.0];
-    [flowLayout setMinimumLineSpacing:30.0];
+    [flowLayout setMinimumInteritemSpacing:10.0];
+    [flowLayout setMinimumLineSpacing:10.0];
     
     if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
     {
@@ -137,7 +137,7 @@
     {
         cell.indicatorView.hidden=YES;
         cell.playButton.hidden=NO;
-        cell.videoImageView.image= [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"image"];
+        //cell.videoImageView.image= [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"image"];
     }
     return cell;
 }
@@ -154,7 +154,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(320 , 170);
+    return CGSizeMake(320 , 160);
 }
 
 
