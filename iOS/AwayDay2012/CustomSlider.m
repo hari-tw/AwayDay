@@ -82,8 +82,10 @@
 
 -(void) showMapScreen
 {
-    UserLocationUtilities *location = [[UserLocationUtilities alloc]init];
-    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",12.969034,77.745137,location.locationManager.location.coordinate.latitude,location.locationManager.location.coordinate.longitude];
+    //UserLocationUtilities *location = [[UserLocationUtilities alloc]init];
+    AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
+
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?daddr=%f,%f&saddr=%f,%f",12.969034,77.745137,appDelegate.locationManager.location.coordinate.latitude,appDelegate.locationManager.location.coordinate.longitude];
     
     NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     

@@ -14,6 +14,7 @@
 #import "HomeViewController.h"
 #import "PathMenuViewController.h"
 #import "WeiboSDK.h"
+#import <CoreLocation/CoreLocation.h>
 #import <sqlite3.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WeiboSDKDelegate>
@@ -27,6 +28,7 @@
 @property(nonatomic, strong) UserPathViewController *userPathViewController;
 @property(nonatomic, strong) NSMutableDictionary *userState;
 @property(nonatomic, readonly) sqlite3 *database;
+@property(nonatomic,strong) CLLocationManager *locationManager;
 
 /**
  save user's state to the NSUserDefault

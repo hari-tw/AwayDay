@@ -41,6 +41,13 @@
     //Register Weibo
     [WeiboSDK registerApp:kAppKey];
     [WeiboSDK enableDebugMode:YES];
+    
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100
+    [self.locationManager startUpdatingLocation];
+
 
 
     
