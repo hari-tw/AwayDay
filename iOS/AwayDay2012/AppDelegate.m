@@ -48,7 +48,7 @@
     
     [self copyDatabaseIfNeeded];
     [self openDatabase];
-    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(8 * 3600)]];
+    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
     
     //restore user state
     NSMutableDictionary *tmpDic=[[NSUserDefaults standardUserDefaults] objectForKey:away_day_user_state_key];

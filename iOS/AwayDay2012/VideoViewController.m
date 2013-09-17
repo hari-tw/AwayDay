@@ -57,6 +57,7 @@
     {
 
      twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",nil];
+        
     //parsing you tube web page to get video URL.
     for(NSUInteger i=0;i<twURL.count;i++)
     {
@@ -162,7 +163,7 @@
 #pragma mark -playing video
 -(void)videoButtonSelected:(UIButton *)sender
 {
-    NSURL *movieURL;
+    //NSURL *movieURL;
     NSLog(@"%d",sender.tag);
     
     NSLog(@"%@",sender.superview.superview);

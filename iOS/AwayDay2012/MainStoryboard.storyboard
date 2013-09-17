@@ -190,7 +190,6 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-uv-lUE">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="3Ey-5G-Znp"/>
                                     <constraint firstAttribute="width" constant="44" id="lau-Wg-6At"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -448,7 +447,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l88-WJ-Htq">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="6kb-hd-Mlz"/>
-                                    <constraint firstAttribute="height" constant="44" id="Ak9-MC-aOq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" backgroundImage="slider-menu-icon 2.png">
@@ -471,7 +469,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-eV-SgH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-eV-SgH">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="356" id="MRx-TH-zGd"/>
@@ -486,7 +484,7 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lina's talk on Egypt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atF-Ra-cp2">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="170" id="80J-hs-Czz"/>
+                                                        <constraint firstAttribute="width" constant="232" id="5PA-Wy-cO5"/>
                                                         <constraint firstAttribute="height" constant="21" id="G47-HO-HHI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -517,7 +515,7 @@
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="atF-Ra-cp2" firstAttribute="baseline" secondItem="ypr-s8-O1t" secondAttribute="baseline" type="default" id="5hL-B9-TV4"/>
-                                            <constraint firstAttribute="trailing" secondItem="ypr-s8-O1t" secondAttribute="trailing" constant="9" id="czU-ol-rKH"/>
+                                            <constraint firstItem="ypr-s8-O1t" firstAttribute="leading" secondItem="atF-Ra-cp2" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="JMb-87-LJi"/>
                                             <constraint firstItem="ypr-s8-O1t" firstAttribute="top" secondItem="3AI-0g-Q3j" secondAttribute="top" constant="2" id="fLI-ua-mDG"/>
                                             <constraint firstAttribute="bottom" secondItem="9sV-yE-f4Q" secondAttribute="bottom" constant="8" id="gC4-Ox-wlq"/>
                                             <constraint firstItem="9sV-yE-f4Q" firstAttribute="leading" secondItem="atF-Ra-cp2" secondAttribute="leading" type="default" id="k6C-2h-4xg"/>
@@ -650,7 +648,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top-banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="LW9-Ap-9T9"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aak-Bc-5ZC">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="FI5-xY-sh5"/>
                                     <constraint firstAttribute="width" constant="44" id="mwC-Gg-kUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -707,12 +704,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="inner-page-backdrop.png" width="640" height="920"/>
-        <image name="line.png" width="579" height="2"/>
-        <image name="play_button.png" width="31" height="31"/>
-        <image name="plus-symbol.png" width="44" height="44"/>
-        <image name="slider-menu-icon 2.png" width="44" height="44"/>
-        <image name="top-banner.png" width="640" height="88"/>
+        <image name="inner-page-backdrop.png" width="16" height="16"/>
+        <image name="line.png" width="16" height="16"/>
+        <image name="play_button.png" width="16" height="16"/>
+        <image name="plus-symbol.png" width="16" height="16"/>
+        <image name="slider-menu-icon 2.png" width="16" height="16"/>
+        <image name="top-banner.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

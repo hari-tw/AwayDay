@@ -36,7 +36,7 @@
                         [UIImage imageNamed:@"my_schedule"],
                         [UIImage imageNamed:@"breakout-icon"],
                          [UIImage imageNamed:@"gallery"],
-                        [UIImage imageNamed:@"share_2"],
+                        [UIImage imageNamed:@"share2"],
                         
                         ];
     NSArray *colors = @[

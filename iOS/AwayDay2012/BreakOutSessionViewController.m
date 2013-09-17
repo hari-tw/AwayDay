@@ -17,7 +17,7 @@
 
 #define HEADER_HEIGHT 60
 
-@interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate>
+@interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate,UIScrollViewDelegate>
 
 {
     NSMutableArray *sectionImages;
@@ -98,8 +98,8 @@
     
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
         [tarckFiveHeight addObject:[NSNumber numberWithFloat:45]];
-    [trackFiveInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
-    [self.sectionInfoDictionary addObject:trackFourInfo];
+    [trackFiveInfo setObject:tarckFiveHeight forKey:@"rowHeights"];
+    [self.sectionInfoDictionary addObject:trackFiveInfo];
     
     
 }
@@ -212,6 +212,7 @@
     
     BreakOutSession *session = [self.breakOutSessionDetails objectAtIndex:indexPath.section];
     
+      
     cell.topicTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_name"]];
     cell.topicSpeakerNameTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_speaker"]];
      cell.timeTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"time"]];
@@ -424,6 +425,34 @@
     }
     
 }
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    // Fades out top and bottom cells in table view as they leave the screen
+//    NSArray *visibleCells = [self.breakOutSessionTableView visibleCells];
+//    NSLog(@"%d",visibleCells.count);
+//    
+//    CGPoint offset = self.breakOutSessionTableView.contentOffset;
+//    CGRect bounds = self.breakOutSessionTableView.bounds;
+//    CGSize size = self.breakOutSessionTableView.contentSize;
+//    UIEdgeInsets inset = self.breakOutSessionTableView.contentInset;
+//    float y = offset.y + bounds.size.height - inset.bottom;
+//    float h = size.height;
+//    
+//    
+//    if (y > h) {
+//        //self.breakOutSessionTableView.alpha = 1 - (y/h - 1)*4;
+//        for (CustomBreakOutSessionCell *cell in visibleCells) {
+//            cell.contentView.alpha = 0.0;//- (y/h - 1)*4;
+//        }
+//    } else {
+//        for (CustomBreakOutSessionCell *cell in visibleCells) {
+//            cell.contentView.alpha = 1;
+//        }
+//       // self.breakOutSessionTableView.alpha = 1;
+//    }
+//}
+//
 
 
 

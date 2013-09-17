@@ -21,7 +21,7 @@
 -(Session *)createSession:(NSDictionary *)sessionProperies{
     NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'+0800'"];
-    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(8 * 3600)]];
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
     
     Session *session = [[Session alloc] init];
     [session setSessionTitle:[sessionProperies objectForKey:@"session_title"]];

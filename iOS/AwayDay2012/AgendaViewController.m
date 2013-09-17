@@ -90,7 +90,7 @@
             InputNameViewController *invc = [[InputNameViewController alloc] init];
             self.inputNameViewController = invc;
         }
-        [self presentModalViewController:self.inputNameViewController animated:NO];
+       // [self presentModalViewController:self.inputNameViewController animated:NO];
     }
 
     if (self.agendaList == nil) {
@@ -375,7 +375,7 @@
 //    [detailView addSubview:transparentTopView];
 //    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [attend setFrame:CGRectMake(30, y, 52, 32)];
+    [attend setFrame:CGRectMake(30, y, 35, 35)];
 
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
@@ -388,7 +388,7 @@
     [detailView addSubview:attend];
 
     UIButton *remind = [UIButton buttonWithType:UIButtonTypeCustom];
-    [remind setFrame:CGRectMake(134, y, 52, 32)];
+    [remind setFrame:CGRectMake(134, y, 35, 35)];
 
     [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
     for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
@@ -404,7 +404,7 @@
     [detailView addSubview:remind];
 
     UIButton *share = [UIButton buttonWithType:UIButtonTypeCustom];
-    [share setFrame:CGRectMake(234, y, 52, 32)];
+    [share setFrame:CGRectMake(234, y, 35, 35)];
     [share setImage:[UIImage imageNamed:@"share_button.png"] forState:UIControlStateNormal];
     [share addTarget:self action:@selector(shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [detailView addSubview:share];

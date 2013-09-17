@@ -505,12 +505,12 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="back.png">{640, 960}</string>
-			<string key="back_button.png">{18, 14}</string>
-			<string key="share_image_icon.png">{16, 14}</string>
-			<string key="share_post_button.png">{286, 54}</string>
-			<string key="share_text_back.png">{500, 336}</string>
-			<string key="vertical_line.png">{3, 28}</string>
+			<string key="back.png">{16, 16}</string>
+			<string key="back_button.png">{16, 16}</string>
+			<string key="share_image_icon.png">{16, 16}</string>
+			<string key="share_post_button.png">{16, 16}</string>
+			<string key="share_text_back.png">{16, 16}</string>
+			<string key="vertical_line.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

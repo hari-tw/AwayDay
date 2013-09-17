@@ -405,11 +405,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="agenda_view_icon.png">{31, 31}</string>
+			<string key="agenda_view_icon.png">{16, 16}</string>
 			<string key="email-button.png">{38, 38}</string>
-			<string key="main-button.png">{38, 38}</string>
-			<string key="path_view_icon.png">{32, 31}</string>
-			<string key="setting_view_icon.png">{32, 32}</string>
+			<string key="main-button.png">{16, 16}</string>
+			<string key="path_view_icon.png">{16, 16}</string>
+			<string key="setting_view_icon.png">{16, 16}</string>
 			<string key="smile-button.png">{38, 38}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
