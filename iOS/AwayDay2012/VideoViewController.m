@@ -16,6 +16,7 @@
 {
     NSMutableArray *videoURL;
     NSMutableArray *twURL;
+    NSMutableArray *videoInfo;
     CustomSlider *slider;
     NSURL *urlString;
     MPMoviePlayerViewController *moviePlayerController;
@@ -35,18 +36,15 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    videoInfo = [[NSMutableArray alloc]init];
     videoURL = [[NSMutableArray alloc]init];
     videoImages = [[NSMutableArray alloc]init];
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)[[self videoCollectionView] collectionViewLayout];
-    [flowLayout setMinimumInteritemSpacing:4.0];
-    [flowLayout setMinimumLineSpacing:10.0];
-    
+    [flowLayout setMinimumInteritemSpacing:30.0];
+    [flowLayout setMinimumLineSpacing:30.0];
     
     if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
     {
@@ -55,46 +53,52 @@
     }
     else
     {
-
-     twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",nil];
         
-    //parsing you tube web page to get video URL.
-    for(NSUInteger i=0;i<twURL.count;i++)
-    {
+        twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",nil];
         
-        NSURL *url = [NSURL URLWithString:[twURL objectAtIndex:i]];
-        //_activityIndicator.hidden = NO;
-        [HCYoutubeParser thumbnailForYoutubeURL:url thumbnailSize:YouTubeThumbnailDefaultHighQuality completeBlock:^(UIImage *image, NSError *error) {
+        //parsing you tube web page to get video URL.
+        for(NSUInteger i=0;i<twURL.count;i++)
+        {
             
-            if(image!=nil)
-                [videoImages addObject:image];
-            
-            if (!error) {
-                NSDictionary *qualities = [HCYoutubeParser h264videosWithYoutubeURL:url];
+            NSURL *url = [NSURL URLWithString:[twURL objectAtIndex:i]];
+            //_activityIndicator.hidden = NO;
+            [HCYoutubeParser thumbnailForYoutubeURL:url thumbnailSize:YouTubeThumbnailDefaultHighQuality completeBlock:^(UIImage *image, NSError *error) {
                 
-                urlString=[NSURL URLWithString:[qualities objectForKey:@"medium"]];
-                if(urlString!=nil)
-                    [videoURL addObject:urlString];
+                if(image!=nil)
+                    [videoImages addObject:image];
                 
-                //if(i==10)
-                {
-                    [self.videoCollectionView reloadData];
+                if (!error) {
+                    NSDictionary *qualities = [HCYoutubeParser h264videosWithYoutubeURL:url];
+                    
+                    urlString=[NSURL URLWithString:[qualities objectForKey:@"medium"]];
+                    
+                    
+                    [videoInfo addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:image,urlString,nil] forKeys:[NSArray arrayWithObjects:@"image",@"url",nil]]];
+                    
+                    if(urlString!=nil)
+                        [videoURL addObject:urlString];
+                    
+                    //if(i==10)
+                    {
+                        [self.videoCollectionView reloadData];
+                    }
+                    
+                    for(NSDictionary *dict in videoInfo)
+             NSLog(@"%@",dict);
+             
+             
+                    
                 }
-                
-                
-            }
-            else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                [alert show];
-            }
-        }];
-    }
-    
+                else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                    [alert show];
+                }
+            }];
+        }
+        
     }
 	// Do any additional setup after loading the view.
 }
-
-
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -102,28 +106,22 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark-UICollection view data source.
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return twURL.count;
 }
 
-
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
 {
     return 1;
 }
-
-
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -135,11 +133,11 @@
     cell.playButton.hidden=YES;
     [cell.playButton addTarget:self action:@selector(videoButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-    if(videoImages.count>indexPath.item)
+    if(videoInfo.count>indexPath.item)
     {
         cell.indicatorView.hidden=YES;
         cell.playButton.hidden=NO;
-        cell.videoImageView.image= [videoImages objectAtIndex:indexPath.item];
+        cell.videoImageView.image= [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"image"];
     }
     return cell;
 }
@@ -148,7 +146,7 @@
 
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(5, 10, 10, 10);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 
@@ -156,7 +154,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(147, 71);
+    return CGSizeMake(320 , 170);
 }
 
 
@@ -174,11 +172,11 @@
     NSLog(@"%d",videoURL.count);
     if(videoURL.count>=indexPath.item)
     {
-        NSURL *url = [videoURL objectAtIndex:indexPath.item];
+        NSURL *url =  [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"url"];
         
         UIGraphicsBeginImageContext(CGSizeMake(1, 1));
         
-       moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
         [[NSNotificationCenter defaultCenter] removeObserver:moviePlayerController
                                                         name:MPMoviePlayerPlaybackDidFinishNotification
                                                       object:moviePlayerController];
@@ -187,41 +185,30 @@
                                                  selector:@selector(videoPlaybackEndAction:)
                                                      name:MPMoviePlayerPlaybackDidFinishNotification
                                                    object:nil];
-
+        
         //MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:_urlToLoad];
         [self presentViewController:moviePlayerController animated:YES completion:nil];
         UIGraphicsEndImageContext();
-
+        
     }
-    
-    
-    
-    
 }
-
-
 
 #pragma mark --notifcation.
 -(void) videoPlaybackEndAction:(NSNotification *)receivedNotification
 {
     NSDictionary *userInfo = [receivedNotification userInfo];
-    
     MPMovieFinishReason reason = [[userInfo objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey] integerValue];
-    if (reason == MPMovieFinishReasonUserExited) {
-        
+    if (reason == MPMovieFinishReasonUserExited)
+    {
         [moviePlayerController.moviePlayer stop];
         [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:MPMoviePlayerPlaybackDidFinishNotification
-                                                      object:nil];
+                                                        name: MPMoviePlayerPlaybackDidFinishNotification object:nil];
         [self dismissMoviePlayerViewControllerAnimated]; //Exiting the movie player due to user clicking on "Done" button
         moviePlayerController = nil;
     }
 }
 
-
-
 #pragma mark -RNFrostedSidebar delegate method.
-
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
     
@@ -275,7 +262,7 @@
             
         }
             break;
-                        
+            
         default:
             break;
     }

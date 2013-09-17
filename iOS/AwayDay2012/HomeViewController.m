@@ -270,15 +270,15 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
         
-        NSString *shareText = @"This is my share post!";
+        NSString *shareText = @"Thoughtworks Away Day-2013!";
         [mySLComposerSheet setInitialText:shareText];
         
         //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
         
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
         
         
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
         
         [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -307,12 +307,12 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        NSString *shareText = @"This is my share post!";
+        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
         [mySLComposerSheet setInitialText:shareText];
         
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
         
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
         
         [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             

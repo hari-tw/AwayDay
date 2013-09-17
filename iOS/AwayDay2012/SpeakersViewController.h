@@ -17,9 +17,10 @@ NSMutableArray *speakersInfo;
 NSInteger selectedIndex;
 }
 
-
+//IBoutlets
 @property (weak, nonatomic) IBOutlet UITableView *speakerTableView;
 
+//Action m
 - (IBAction)sideMenuTapped:(id)sender;
 
 @end

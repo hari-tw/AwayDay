@@ -17,10 +17,11 @@
 #import "AFJSONRequestOperation.h"
 //#import "CFShareCircleView.h"
 #import <Social/Social.h>
-#import "RNFrostedSidebar.h"
+
 #import "SpeakersViewController.h"
 #import <Accounts/Accounts.h>
 #import "CustomSlider.h"
+#import "CFShareCircleView.h"
 #import "RNFrostedSidebar.h"
 
 
@@ -31,13 +32,13 @@
 #define tag_cell_view_session_detail_view   10002
 #define tag_req_load_session_list   10003
 
-@interface AgendaViewController ()<RNFrostedSidebarDelegate>
+@interface AgendaViewController ()<RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
 {
     CustomSlider *slider;
 }
 @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 
-
+@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
@@ -276,8 +277,8 @@
         [sessionTitle setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     }
 
-    [sessionTitle setFont:[UIFont systemFontOfSize:14.0f]];
-    [sessionTitle setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0f]];
+    [sessionTitle setFont:[UIFont systemFontOfSize:16.0f]];
+    [sessionTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]];
     [sessionTitle setText:session.sessionTitle];
     [cell addSubview:sessionTitle];
 
@@ -298,7 +299,7 @@
         [sessionDuration setTextColor:[UIColor colorWithRed:170 / 255.0 green:170 / 255.0 blue:170 / 255.0 alpha:1.0f]];
     }
 
-    [sessionDuration setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionDuration setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionDuration setShadowColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:120 / 255.0]];
     [sessionDuration setShadowOffset:CGSizeMake(-0.1f, -0.1f)];
     [sessionDuration setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
@@ -324,14 +325,14 @@
     [sessionTitle setBackgroundColor:[UIColor clearColor]];
     [sessionTitle setText:session.sessionTitle];
     [sessionTitle setTextColor:view.textColor];
-    [sessionTitle setFont:[UIFont fontWithName:@"Helvetica-Light" size:15.0f]];
+    [sessionTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]];
     [sessionTitle setUserInteractionEnabled:NO];
     [detailView addSubview:sessionTitle];
     y += sessionTitle.frame.size.height;
 
-    UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 320, 16)];
+    UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 320, 16)];
     [sessionSpeaker setBackgroundColor:[UIColor clearColor]];
-    [sessionSpeaker setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionSpeaker setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionSpeaker setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionSpeaker setText:[NSString stringWithFormat:@"Speaker: %@", session.sessionSpeaker]];
     [detailView addSubview:sessionSpeaker];
@@ -339,17 +340,17 @@
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
-    UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 110, 16)];
+    UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 110, 16)];
     [sessionTime setBackgroundColor:[UIColor clearColor]];
-    [sessionTime setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionTime setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionTime setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionTime setText:[NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.sessionStartTime], [formatter stringFromDate:session.sessionEndTime]]];
     [detailView addSubview:sessionTime];
 
     y += sessionTime.frame.size.height;
-    UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(8, y, 290, 16)];
+    UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 290, 16)];
     [sessionLocation setBackgroundColor:[UIColor clearColor]];
-    [sessionLocation setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionLocation setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionLocation setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
     [sessionLocation setText:[NSString stringWithFormat:@"Room: %@", session.sessionAddress]];
     [detailView addSubview:sessionLocation];
@@ -361,7 +362,7 @@
     [sessionNote setEditable:NO];
     [sessionNote setFrame:CGRectMake(0, y, 320, size.height + 14)];
     [sessionNote setText:session.sessionNote];
-    [sessionNote setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [sessionNote setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionNote setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
     [sessionNote sizeToFit];
     y += sessionNote.frame.size.height;
@@ -483,14 +484,19 @@
     [self.navigationController pushViewController:self.reminderViewController animated:YES];
 }
 
-- (IBAction)shareButtonPressed:(id)sender {
-  
-//    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-//    if ([appDelegate.userState objectForKey:kUserWeiboTokenKey]) {
-//        [self displayPostShareVC];
-//    } else {
-//        [self authorizeWeibo];
-//    }
+- (IBAction)shareButtonPressed:(id)sender
+{
+//    NSLog(@"%@",sender.superview.superview);
+//    UITableViewCell *cell=(UITableViewCell *)sender.superview.superview;
+//    NSIndexPath *indexPath=[self.agendaTable indexPathForCell:cell];
+    
+    self.shareCircleView = [[CFShareCircleView alloc] init];
+    self.shareCircleView.delegate = self;
+    [self.shareCircleView show];
+
+
+
+
 }
 
 - (void)authorizeWeibo {
@@ -554,7 +560,7 @@
     UILabel *monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 24)];
     [monthLabel setBackgroundColor:[UIColor clearColor]];
     [monthLabel setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    [monthLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:22]];
+    [monthLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:22]];
     
        
     [monthLabel setText:[dateFormatter stringFromDate:agenda.agendaDate]];
@@ -566,7 +572,7 @@
     UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 180, 24)];
     [dateLabel setBackgroundColor:[UIColor clearColor]];
     [dateLabel setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    [dateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
+    [dateLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:20]];
     NSString *text = [dateFormatter stringFromDate:agenda.agendaDate];
     text = [text uppercaseString];
     [dateLabel setText:text];
@@ -742,15 +748,15 @@
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
         
-        NSString *shareText = @"This is my share post!";
+        NSString *shareText = @"Thoughtworks Away Day-2013!";
         [mySLComposerSheet setInitialText:shareText];
         
-//        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
+        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
         
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
-
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
         
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
         
         [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -768,7 +774,7 @@
         
         [self presentViewController:mySLComposerSheet animated:YES completion:nil];
     }
- 
+    
     
 }
 
@@ -779,12 +785,12 @@
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        NSString *shareText = @"This is my share post!";
+        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
         [mySLComposerSheet setInitialText:shareText];
         
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"Default.png"]];
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
         
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://yourURL.com"]];
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
         
         [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
@@ -878,6 +884,26 @@
     }
     
 }
+
+
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
+{
+    NSLog(@"Selected sharer: %@", sharer.name);
+    if([sharer.name isEqualToString:@"Twitter"])
+        [self postOnTWitterWall];
+    else
+        [self postOnFacebookWall];
+    
+}
+
+- (void)shareCircleCanceled:(NSNotification *)notification{
+    NSLog(@"Share circle view was canceled.");
+}
+
+
+
+
+
 
 
 @end

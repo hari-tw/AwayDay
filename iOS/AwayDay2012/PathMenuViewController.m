@@ -33,7 +33,7 @@
     [super viewDidLoad];
        
     // initialize ExpandableNavigation object with an array of buttons.
-    NSArray* buttons = [NSArray arrayWithObjects:button1, button2,button3 ,nil];// button3, button4, button5, nil];
+  //  NSArray* buttons = [NSArray arrayWithObjects:button1, button2,button3 ,nil];// button3, button4, button5, nil];
     
 //    self.navigation = [[ExpandableNavigation alloc] initWithMenuItems:buttons mainButton:self.main radius:80.0] ;
 }
@@ -101,8 +101,8 @@
     
     else
     {
-        AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.settingViewController] animated:YES];
+       // AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
+//        [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.settingViewController] animated:YES];
         
     }
     

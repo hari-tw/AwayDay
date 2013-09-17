@@ -129,7 +129,7 @@
         BreakOutSession *session = [[BreakOutSession alloc]init];
         
         NSLog(@"%@",[dict valueForKey:@"captainName"]);
-         NSLog(@"%@",[dict valueForKey:@"trackTopic"]);
+        NSLog(@"%@",[dict valueForKey:@"trackTopic"]);
         session.captainName= [dict valueForKey:@"captainName"];
         session.trackTopic= [dict valueForKey:@"trackTopic"];
         session.topics = [dict valueForKey:@"topics"];
@@ -162,7 +162,6 @@
 		
 		self.sectionInfoArray = infoArray;
 	}
-    
     
 	// Do any additional setup after loading the view.
 }
@@ -212,10 +211,10 @@
     
     BreakOutSession *session = [self.breakOutSessionDetails objectAtIndex:indexPath.section];
     
-      
+    
     cell.topicTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_name"]];
     cell.topicSpeakerNameTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_speaker"]];
-     cell.timeTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"time"]];
+    cell.timeTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"time"]];
     
     
     
@@ -310,7 +309,7 @@
     if (previousOpenSectionIndex == NSNotFound || sectionOpened < previousOpenSectionIndex)
     {
         insertAnimation = UITableViewRowAnimationFade;
-         deleteAnimation = UITableViewRowAnimationFade;
+        deleteAnimation = UITableViewRowAnimationFade;
     }
     else {
         insertAnimation = UITableViewRowAnimationFade;
@@ -319,9 +318,9 @@
     
     // Apply the updates.
     [self.breakOutSessionTableView beginUpdates];
-//    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:insertAnimation];
+    //    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:insertAnimation];
     [self.breakOutSessionTableView insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:insertAnimation];
-     [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
+    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
     [self.breakOutSessionTableView endUpdates];
     self.openSectionIndex = sectionOpened;
     
@@ -418,7 +417,7 @@
         }
             break;
             
-                 
+            
             
         default:
             break;
@@ -431,15 +430,15 @@
 //    // Fades out top and bottom cells in table view as they leave the screen
 //    NSArray *visibleCells = [self.breakOutSessionTableView visibleCells];
 //    NSLog(@"%d",visibleCells.count);
-//    
+//
 //    CGPoint offset = self.breakOutSessionTableView.contentOffset;
 //    CGRect bounds = self.breakOutSessionTableView.bounds;
 //    CGSize size = self.breakOutSessionTableView.contentSize;
 //    UIEdgeInsets inset = self.breakOutSessionTableView.contentInset;
 //    float y = offset.y + bounds.size.height - inset.bottom;
 //    float h = size.height;
-//    
-//    
+//
+//
 //    if (y > h) {
 //        //self.breakOutSessionTableView.alpha = 1 - (y/h - 1)*4;
 //        for (CustomBreakOutSessionCell *cell in visibleCells) {

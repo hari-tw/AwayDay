@@ -48,7 +48,7 @@
                                               options:kNilOptions
                                                 error:&error];
     
-     speakersInfo = [[NSMutableArray alloc] init];
+    speakersInfo = [[NSMutableArray alloc] init];
     for (NSDictionary *speaker in json)
     {
         NSMutableDictionary *speakerInfo = [[NSMutableDictionary alloc]init];
@@ -58,14 +58,10 @@
         [speakerInfo setObject:[speaker valueForKey:@"speaker_details"] forKey:@"detail"];
         [speakersInfo addObject:speakerInfo];
     }
-    
-    
-    
+     
     selectedIndex=-1;
     
-   
-   
-       
+      
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -85,46 +81,46 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-       
+    
     
     if(selectedIndex == indexPath.row)
     {
         
         static NSString *CellIdentifier = @"expandCell";
-
+        
         expandCell *cell = (expandCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-         [cell setLabelFontsColor];
+        [cell setLabelFontsColor];
         
         cell.timeTextLabel.text=[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"time"];
         
         cell.nameTextLabel.text=[NSString stringWithFormat:@"-%@",[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"]] ;
         
         cell.topicTextLabel.text=[NSString stringWithFormat:@" \"%@ \" ",
-        [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"topic"]];
+                                  [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"topic"]];
         
         cell.speakerImageView.image =[UIImage imageNamed:
-                                 [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"image"]];
+                                      [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"image"]];
         NSLog(@"%@",[[speakersInfo objectAtIndex:indexPath.row]valueForKey:@"detail"]);
-       cell.descriptionTextlabel.text=[[speakersInfo objectAtIndex:indexPath.row]valueForKey:@"detail"];
+        cell.descriptionTextlabel.text=[[speakersInfo objectAtIndex:indexPath.row]valueForKey:@"detail"];
         
         cell.speakerImageView.layer.cornerRadius = cell.speakerImageView.frame.size.width/2.0;
         cell.speakerImageView.layer.masksToBounds=YES;
         
         
-              
+        
         
         
         CGFloat labelHeight = [self getLabelHeightForIndex:indexPath.row];
-       
+        
         
         
         
         
         cell.descriptionTextlabel.frame = CGRectMake(cell.descriptionTextlabel.frame.origin.x,
-                                                 cell.descriptionTextlabel.frame.origin.y,
-                                                 cell.descriptionTextlabel.frame.size.width,
-                                                 labelHeight);
+                                                     cell.descriptionTextlabel.frame.origin.y,
+                                                     cell.descriptionTextlabel.frame.size.width,
+                                                     labelHeight);
         
         return cell;
     }
@@ -132,27 +128,27 @@
     {
         
         static NSString *CellIdentifier = @"customCell";
-       
+        
         
         customTableCell *cell = (customTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         
-         [cell setLabelFontsColor];
+        [cell setLabelFontsColor];
         
         cell.indexPath=indexPath;
         cell.delegate=self;
-         cell.nameTextLabel.text=[NSString stringWithFormat:@"-%@",[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"]] ;
+        cell.nameTextLabel.text=[NSString stringWithFormat:@"-%@",[[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"speakerName"]] ;
         
         cell.topicTextLabel.text=[NSString stringWithFormat:@" \"%@ \" ",
                                   [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"topic"]];
         
         cell.speakerImageView.image =[UIImage imageNamed:
-                                  [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"image"]];
+                                      [[speakersInfo objectAtIndex:indexPath.row] valueForKey:@"image"]];
         
-    
+        
         return cell;
-    
-    
+        
+        
     }
     
 }
@@ -165,8 +161,8 @@
     CGSize maximumSize = CGSizeMake(COMMENT_LABEL_WIDTH, 10000);
     
     CGSize labelHeighSize = [[[speakersInfo objectAtIndex:index] valueForKey:@"detail"] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:13.0f]
-                                                        constrainedToSize:maximumSize
-                                                            lineBreakMode:NSLineBreakByWordWrapping];
+                                                                                   constrainedToSize:maximumSize
+                                                                                       lineBreakMode:NSLineBreakByWordWrapping];
     return labelHeighSize.height;
     
 }
@@ -226,16 +222,16 @@
                                              animated:YES];
     }
     else
-    [self.speakerTableView scrollToRowAtIndexPath:indexPath
-                                 atScrollPosition:UITableViewScrollPositionTop
-                                         animated:YES];
-
+        [self.speakerTableView scrollToRowAtIndexPath:indexPath
+                                     atScrollPosition:UITableViewScrollPositionTop
+                                             animated:YES];
+    
     //Finally set the selected index to the new selection and reload it to expand
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     //The user is selecting the cell which is currently expanded
     //we want to minimize it back
-   
+    
 }
 
 -(void)didButtonTappedAt:(NSIndexPath *)indexPath
@@ -263,8 +259,8 @@
     selectedIndex = indexPath.row;
     
     [self.speakerTableView scrollToRowAtIndexPath:indexPath
-                         atScrollPosition:UITableViewScrollPositionTop
-                                 animated:YES];
+                                 atScrollPosition:UITableViewScrollPositionTop
+                                         animated:YES];
     NSLog(@"%@",indexPath);
     [self.speakerTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
@@ -273,7 +269,7 @@
 
 -(void)sideMenuTapped:(id)sender
 {
-  
+    
     slider = [[CustomSlider alloc]init];
     [slider showSliderMenu];
     slider.callout.delegate=self;
@@ -334,7 +330,7 @@
             
         }
             break;
-
+            
             
             
         default:

@@ -259,9 +259,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="inner-page-backdrop.png">{640, 920}</string>
+			<string key="inner-page-backdrop.png">{320, 460}</string>
 			<string key="slider-menu-icon 2.png">{44, 44}</string>
-			<string key="top-banner.png">{640, 88}</string>
+			<string key="top-banner.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

@@ -16,18 +16,5 @@
          landmarkName = "-applyBlurWithRadius:tintColor:saturationDeltaFactor:maskImage:"
          landmarkType = "5">
       </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Pods/ASIHTTPRequest/Classes/ASIDataDecompressor.m"
-         timestampString = "400760225.281766"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
-         landmarkName = "+uncompressDataFromFile:toFile:error:"
-         landmarkType = "5">
-      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "AgendaViewController.h"
-#import "MenuViewController.h"
-#import "SettingViewController.h"
+//#import "SettingViewController.h"
 #import "UserPathViewController.h"
 #import "HomeViewController.h"
 #import "PathMenuViewController.h"
@@ -22,7 +21,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic, strong) UINavigationController *navigationController;
 @property(nonatomic, strong) AgendaViewController *agendaViewController;
-@property(nonatomic, strong) SettingViewController *settingViewController;
+//@property(nonatomic, strong) SettingViewController *settingViewController;
 @property(nonatomic, strong) PathMenuViewController *menuViewController;
 //@property(nonatomic, strong) MenuViewController *menuViewController;
 @property(nonatomic, strong) UserPathViewController *userPathViewController;

@@ -76,10 +76,10 @@
         [self.remindTimeLabel setText:@"No Alarm"];
         [self.timePicker selectRow:0 inComponent:0 animated:NO];
         self.choosedTime=[NSNumber numberWithInt:0];
-        [self.remindIconView setImage:[UIImage imageNamed:@"unreminder_icon.png"]];
+        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_button.png"]];
     }else{
         [self.remindTimeLabel setTextColor:[UIColor colorWithRed:214/255.0 green:95/255.0 blue:54/255.0 alpha:1.0f]];
-        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_icon.png"]];
+        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_button.png"]];
     }
 }
 
@@ -196,10 +196,10 @@
     
     if(self.choosedTime==nil || self.choosedTime.intValue==0){
         [self.remindTimeLabel setTextColor:[UIColor lightGrayColor]];
-        [self.remindIconView setImage:[UIImage imageNamed:@"unreminder_icon.png"]];
+        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_button.png"]];
     }else{
         [self.remindTimeLabel setTextColor:[UIColor colorWithRed:214/255.0 green:95/255.0 blue:54/255.0 alpha:1.0f]];
-        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_icon.png"]];
+        [self.remindIconView setImage:[UIImage imageNamed:@"reminder_button.png"]];
     }
 }
 

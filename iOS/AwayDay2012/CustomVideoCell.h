@@ -13,5 +13,6 @@
 @property(nonatomic,strong) IBOutlet UIActivityIndicatorView *indicatorView;
 @property(nonatomic,weak) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *videoHeaderLabel;
 
 @end

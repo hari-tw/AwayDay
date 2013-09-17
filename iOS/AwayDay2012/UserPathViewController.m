@@ -178,6 +178,13 @@
             
         }
             break;
+        case 6 :
+        {
+            [slider showVideoScreen];
+            [sidebar dismiss];
+            
+        }
+            break;
             
             
             
@@ -219,7 +226,7 @@
     [timeLabel setTag:tag_view_table_child_view];
     [timeLabel setText:[formatter stringFromDate:path.pathCreateTime]];
     [timeLabel setTextColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0f]];
-    [timeLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [timeLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [cell addSubview:timeLabel];
     
     [formatter setDateFormat:@"MM-dd"];
@@ -229,16 +236,16 @@
     [dateLabel setBackgroundColor:[UIColor clearColor]];
     [dateLabel setTextAlignment:UITextAlignmentRight];
     [dateLabel setText:[formatter stringFromDate:path.pathCreateTime]];
-    [dateLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]];
+    [dateLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [cell addSubview:dateLabel];
     
     
-    UIView *seperator=[[UIView alloc]initWithFrame:CGRectMake(65, 0, 2, 70)];
+    UIView *seperator=[[UIView alloc]initWithFrame:CGRectMake(65, 0, 1, 70)];
     if(path.hasImage!=nil && path.hasImage.boolValue && path.pathContent!=nil && path.pathContent.length>0){
-        [seperator setFrame:CGRectMake(65, 0, 2, 120)];
+        [seperator setFrame:CGRectMake(65, 0, 1, 120)];
     }
     [seperator setTag:tag_view_table_child_view];
-    [seperator setBackgroundColor:[UIColor colorWithRed:186/255.0 green:233/255.0 blue:236/255.0 alpha:1.0f]];
+    [seperator setBackgroundColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.5f]];
     [cell addSubview:seperator];
     
     int y=5;
@@ -249,7 +256,7 @@
         [pathContent setText:path.pathContent];
         [pathContent setTag:tag_view_table_child_view];
         [pathContent setUserInteractionEnabled:NO];
-        [pathContent setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0f]];
+        [pathContent setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]];
         [pathContent setTextColor:[UIColor blackColor]];
         [cell addSubview:pathContent];
         y=57;

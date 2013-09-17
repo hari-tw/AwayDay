@@ -25,7 +25,7 @@
 @synthesize userState=_userState;
 @synthesize navigationController=_navigationController;
 @synthesize menuViewController=_menuViewController;
-@synthesize settingViewController=_settingViewController;
+//@synthesize settingViewController=_settingViewController;
 @synthesize userPathViewController=_userPathViewController;
 @synthesize database;
 
@@ -68,11 +68,7 @@
         AgendaViewController *rvc=[[AgendaViewController alloc]initWithNibName:@"RootViewController" bundle:nil];
         self.agendaViewController=rvc;
     }
-    if(self.settingViewController==nil){
-        SettingViewController *svc=[[SettingViewController alloc]initWithNibName:@"SettingViewController" bundle:nil];
-        self.settingViewController=svc;
-    }
-    if(self.userPathViewController==nil){
+      if(self.userPathViewController==nil){
         UserPathViewController *uavc=[[UserPathViewController alloc]initWithNibName:@"UserPathViewController" bundle:nil];
         self.userPathViewController=uavc;
     }
