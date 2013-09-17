@@ -15,6 +15,10 @@
 #import "ASIFormDataRequest.h"
 #import "RNFrostedSidebar.h"
 #import "CustomSlider.h"
+#import "CFShareCircleView.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+
 #import "SpeakersViewController.h"
 
 #define tag_view_table_child_view   10001
@@ -24,11 +28,12 @@
 #define key_timer_path_image        @"timer_key_path_image"
 #define tag_req_delete_path     1001
 
-@interface UserPathViewController()<RNFrostedSidebarDelegate>
+@interface UserPathViewController()<RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
 {
     CustomSlider *slider;
 }
     @property (nonatomic, strong) NSMutableIndexSet *optionIndices;
+@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 @end
 
 @implementation UserPathViewController
@@ -185,6 +190,18 @@
             
         }
             break;
+        case 7:
+        {
+            [sidebar dismiss];
+            // Do any additional setup after loading the view, typically from a nib.
+            self.shareCircleView = [[CFShareCircleView alloc] init];
+            self.shareCircleView.delegate = self;
+            [self.shareCircleView show];
+            
+        }
+            break;
+            
+            
             
             
             
@@ -194,6 +211,93 @@
     
 }
 
+
+- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
+{
+    NSLog(@"Selected sharer: %@", sharer.name);
+    if([sharer.name isEqualToString:@"Twitter"])
+        [self postOnTWitterWall];
+    else
+        [self postOnFacebookWall];
+    
+}
+
+- (void)shareCircleCanceled:(NSNotification *)notification{
+    NSLog(@"Share circle view was canceled.");
+}
+
+
+
+-(void)postOnFacebookWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        
+        NSString *shareText = @"Thoughtworks Away Day-2013!";
+        [mySLComposerSheet setInitialText:shareText];
+        
+        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
+        
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    
+}
+
+-(void)postOnTWitterWall
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        
+        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
+        [mySLComposerSheet setInitialText:shareText];
+        
+        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    
+}
 
 #pragma mark - util method
 -(void)loadUserActivity{

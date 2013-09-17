@@ -25,7 +25,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="143" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-Q0-PId">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="356" id="hbJ-0V-peZ"/>
+                                    <constraint firstAttribute="height" constant="356" type="user" id="hbJ-0V-peZ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="customCell" rowHeight="120" id="5yI-zr-VoY" customClass="customTableCell">
@@ -215,21 +215,21 @@
                         <constraints>
                             <constraint firstItem="Ytv-SC-BOQ" firstAttribute="centerX" secondItem="n51-8H-169" secondAttribute="centerX" type="default" id="2Py-d9-pWv"/>
                             <constraint firstItem="n51-8H-169" firstAttribute="bottom" secondItem="FHg-uv-lUE" secondAttribute="bottom" type="user" id="52c-11-thb"/>
-                            <constraint firstItem="Ytv-SC-BOQ" firstAttribute="top" secondItem="pnN-Q0-PId" secondAttribute="top" type="default" id="Bhg-hl-uvn"/>
-                            <constraint firstItem="wn6-WR-PjK" firstAttribute="top" secondItem="3" secondAttribute="top" constant="60" id="E4b-24-tEM"/>
                             <constraint firstItem="jgV-uL-Il7" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="NTK-LL-DZT"/>
                             <constraint firstItem="FHg-uv-lUE" firstAttribute="leading" secondItem="JfX-U9-Xep" secondAttribute="leading" type="default" id="QtH-wb-YkD"/>
                             <constraint firstItem="n51-8H-169" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="RC7-CW-bkO"/>
-                            <constraint firstItem="wn6-WR-PjK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="11" id="TNf-eX-Hr8"/>
                             <constraint firstItem="n51-8H-169" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="XIv-3z-ewU"/>
                             <constraint firstItem="FHg-uv-lUE" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="Yg5-0d-h3x"/>
+                            <constraint firstItem="wn6-WR-PjK" firstAttribute="leading" secondItem="JfX-U9-Xep" secondAttribute="leading" type="default" id="dlm-gW-zUQ"/>
                             <constraint firstItem="pnN-Q0-PId" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="doy-Hw-g1z"/>
-                            <constraint firstItem="Ytv-SC-BOQ" firstAttribute="leading" secondItem="JfX-U9-Xep" secondAttribute="leading" type="default" id="fGC-Ad-wip"/>
+                            <constraint firstItem="wn6-WR-PjK" firstAttribute="leading" secondItem="Ytv-SC-BOQ" secondAttribute="leading" type="default" id="epX-P9-Ok6"/>
                             <constraint firstItem="pnN-Q0-PId" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="g5x-H6-lOY"/>
                             <constraint firstItem="n51-8H-169" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="ja0-wQ-WmL"/>
+                            <constraint firstItem="Ytv-SC-BOQ" firstAttribute="top" secondItem="3" secondAttribute="top" constant="99" id="kAY-LA-Ytz"/>
                             <constraint firstItem="jgV-uL-Il7" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="lRu-ne-Rii"/>
-                            <constraint firstItem="FHg-uv-lUE" firstAttribute="bottom" secondItem="JfX-U9-Xep" secondAttribute="bottom" type="default" id="nzZ-IN-Mx2"/>
-                            <constraint firstAttribute="bottom" secondItem="pnN-Q0-PId" secondAttribute="bottom" type="user" id="vkA-d7-ibM"/>
+                            <constraint firstItem="wn6-WR-PjK" firstAttribute="top" secondItem="FHg-uv-lUE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mvZ-Js-Voq"/>
+                            <constraint firstAttribute="bottom" secondItem="pnN-Q0-PId" secondAttribute="bottom" type="user" id="ntQ-PM-qzD"/>
+                            <constraint firstItem="wn6-WR-PjK" firstAttribute="top" secondItem="JfX-U9-Xep" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xBL-ij-QSR"/>
                             <constraint firstItem="JfX-U9-Xep" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="yjP-F7-YFP"/>
                         </constraints>
                     </view>
@@ -537,77 +537,6 @@
         <image name="top-banner.png" width="16" height="16"/>
         <image name="video-1-screen_new.png" width="320" height="130"/>
     </resources>
-    <classes>
-        <class className="BreakOutSessionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BreakOutSessionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="breakOutSessionTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CustomBreakOutSessionCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomBreakOutSessionCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicSpeakerNameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CustomVideoCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomVideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="indicatorView" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="videoHeaderLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SpeakersViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="speakerTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="VideoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sideMenuTapped:"/>
-                <relationship kind="outlet" name="videoCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="customTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/customTableCell.h"/>
-            <relationships>
-                <relationship kind="action" name="expandButtonTapped:"/>
-                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="expandCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/expandCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionTextlabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speakerImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topicTextLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
