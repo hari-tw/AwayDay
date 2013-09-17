@@ -823,6 +823,7 @@
     
 }
 
+#pragma mark -RNFrostedSidebar delegate method.
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
     
@@ -850,8 +851,10 @@
             break;
         case 3 :
         {
-            [slider showMapScreen];
+            [slider showBreakOutSessionScreen];
             [sidebar dismiss];
+            
+            
             
         }
             break;
@@ -864,15 +867,15 @@
             break;
         case 5 :
         {
-            [slider showBreakOutSessionScreen];
+            [slider showVideoScreen];
             [sidebar dismiss];
+            
             
         }
             break;
-            
         case 6 :
         {
-            [slider showVideoScreen];
+            [slider showMapScreen];
             [sidebar dismiss];
             
         }

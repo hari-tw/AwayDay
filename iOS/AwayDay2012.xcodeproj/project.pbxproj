@@ -137,6 +137,7 @@
 		95469D1117E8A19700841C93 /* video-1-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95469D0D17E8A18C00841C93 /* video-1-screen_new.png */; };
 		95469D1217E8A19700841C93 /* video-2-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95469D0E17E8A19000841C93 /* video-2-screen_new.png */; };
 		95469D1317E8A19700841C93 /* video-3-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95469D0F17E8A19400841C93 /* video-3-screen_new.png */; };
+		95469D1517E8D5C000841C93 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 95469D1417E8D5C000841C93 /* video.json */; };
 		954AA71117E58FA4001E5DBC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 954AA71017E58FA4001E5DBC /* Default-568h@2x.png */; };
 		9550D5CC17E72C0300E359AF /* home-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5CB17E72C0300E359AF /* home-button.png */; };
 		9550D5CE17E72C0800E359AF /* breakout-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5CD17E72C0800E359AF /* breakout-icon.png */; };
@@ -168,9 +169,6 @@
 		95B2749B17E2E1C7006AF8EC /* DSDIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749A17E2E1C7006AF8EC /* DSDIGI.TTF */; };
 		95B2749D17E2E29F006AF8EC /* digitalism.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749C17E2E29F006AF8EC /* digitalism.ttf */; };
 		95B2749F17E2EE04006AF8EC /* wwDigital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749E17E2EE04006AF8EC /* wwDigital.ttf */; };
-		95B274A217E43AFE006AF8EC /* CustomAgendaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B274A117E43AFE006AF8EC /* CustomAgendaTableViewCell.m */; };
-		95B274A517E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B274A417E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.m */; };
-		95B274A817E43D9C006AF8EC /* NewAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B274A717E43D9C006AF8EC /* NewAgendaViewController.m */; };
 		95B274AB17E44569006AF8EC /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B274AA17E44569006AF8EC /* CustomSlider.m */; };
 		95B274AE17E446B3006AF8EC /* UserLOcationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B274AD17E446B2006AF8EC /* UserLOcationUtilities.m */; };
 		95B274B117E462BE006AF8EC /* Break_out.json in Resources */ = {isa = PBXBuildFile; fileRef = 95B274B017E462BD006AF8EC /* Break_out.json */; };
@@ -393,6 +391,7 @@
 		95469D0D17E8A18C00841C93 /* video-1-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-1-screen_new.png"; sourceTree = "<group>"; };
 		95469D0E17E8A19000841C93 /* video-2-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-2-screen_new.png"; sourceTree = "<group>"; };
 		95469D0F17E8A19400841C93 /* video-3-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-3-screen_new.png"; sourceTree = "<group>"; };
+		95469D1417E8D5C000841C93 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		954AA71017E58FA4001E5DBC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9550D5CB17E72C0300E359AF /* home-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-button.png"; path = "../AwayDay2012/home-button.png"; sourceTree = "<group>"; };
 		9550D5CD17E72C0800E359AF /* breakout-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "breakout-icon.png"; path = "../AwayDay2012/breakout-icon.png"; sourceTree = "<group>"; };
@@ -430,12 +429,6 @@
 		95B2749A17E2E1C7006AF8EC /* DSDIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = DSDIGI.TTF; path = AwayDay2012/DSDIGI.TTF; sourceTree = "<group>"; };
 		95B2749C17E2E29F006AF8EC /* digitalism.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = digitalism.ttf; path = AwayDay2012/digitalism.ttf; sourceTree = "<group>"; };
 		95B2749E17E2EE04006AF8EC /* wwDigital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = wwDigital.ttf; path = AwayDay2012/wwDigital.ttf; sourceTree = "<group>"; };
-		95B274A017E43AFE006AF8EC /* CustomAgendaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAgendaTableViewCell.h; sourceTree = "<group>"; };
-		95B274A117E43AFE006AF8EC /* CustomAgendaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAgendaTableViewCell.m; sourceTree = "<group>"; };
-		95B274A317E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAgendaExpansionTableViewCell.h; sourceTree = "<group>"; };
-		95B274A417E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAgendaExpansionTableViewCell.m; sourceTree = "<group>"; };
-		95B274A617E43D9C006AF8EC /* NewAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAgendaViewController.h; sourceTree = "<group>"; };
-		95B274A717E43D9C006AF8EC /* NewAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAgendaViewController.m; sourceTree = "<group>"; };
 		95B274A917E44569006AF8EC /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
 		95B274AA17E44569006AF8EC /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
 		95B274AC17E446B2006AF8EC /* UserLOcationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLOcationUtilities.h; sourceTree = "<group>"; };
@@ -711,8 +704,6 @@
 				95F27C9417E0DEE500CAB38E /* RNFrostedSidebar.m */,
 				95F27C8C17E0DE8700CAB38E /* HomeViewController.h */,
 				95F27C8D17E0DE8700CAB38E /* HomeViewController.m */,
-				95B274A617E43D9C006AF8EC /* NewAgendaViewController.h */,
-				95B274A717E43D9C006AF8EC /* NewAgendaViewController.m */,
 				9550D5ED17E7648900E359AF /* CFShareCircleView.h */,
 				9550D5EE17E7648900E359AF /* CFShareCircleView.m */,
 				9550D5EF17E7648900E359AF /* CFSharer.h */,
@@ -818,10 +809,6 @@
 				9571A1CB17E619E3001E3EC9 /* CustomVideoCell.m */,
 				95B274B217E4AA54006AF8EC /* CustomBreakOutSessionCell.h */,
 				95B274B317E4AA55006AF8EC /* CustomBreakOutSessionCell.m */,
-				95B274A017E43AFE006AF8EC /* CustomAgendaTableViewCell.h */,
-				95B274A117E43AFE006AF8EC /* CustomAgendaTableViewCell.m */,
-				95B274A317E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.h */,
-				95B274A417E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.m */,
 				953300C617E1FD260069FC9F /* customTableCell.h */,
 				953300C717E1FD260069FC9F /* customTableCell.m */,
 				953300C817E1FD260069FC9F /* ExpandCell.h */,
@@ -950,6 +937,7 @@
 			children = (
 				95B274B017E462BD006AF8EC /* Break_out.json */,
 				953300D317E1FD270069FC9F /* Speakers_Info.json */,
+				95469D1417E8D5C000841C93 /* video.json */,
 			);
 			name = "json files";
 			sourceTree = "<group>";
@@ -1147,6 +1135,7 @@
 				95469D1117E8A19700841C93 /* video-1-screen_new.png in Resources */,
 				95469D1217E8A19700841C93 /* video-2-screen_new.png in Resources */,
 				95469D1317E8A19700841C93 /* video-3-screen_new.png in Resources */,
+				95469D1517E8D5C000841C93 /* video.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,9 +1256,6 @@
 				953300D717E1FD280069FC9F /* customTableCell.m in Sources */,
 				953300D817E1FD280069FC9F /* ExpandCell.m in Sources */,
 				953300E317E1FD280069FC9F /* SpeakersViewController.m in Sources */,
-				95B274A217E43AFE006AF8EC /* CustomAgendaTableViewCell.m in Sources */,
-				95B274A517E43B31006AF8EC /* CustomAgendaExpansionTableViewCell.m in Sources */,
-				95B274A817E43D9C006AF8EC /* NewAgendaViewController.m in Sources */,
 				95B274AB17E44569006AF8EC /* CustomSlider.m in Sources */,
 				95B274AE17E446B3006AF8EC /* UserLOcationUtilities.m in Sources */,
 				95B274B417E4AA56006AF8EC /* CustomBreakOutSessionCell.m in Sources */,

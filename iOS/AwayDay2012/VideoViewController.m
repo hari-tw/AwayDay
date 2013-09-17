@@ -18,8 +18,6 @@
 #import <Social/Social.h>
 @interface VideoViewController ()<RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
 {
-    NSMutableArray *videoURL;
-    NSMutableArray *twURL;
     NSMutableArray *videoInfo;
     CustomSlider *slider;
     NSURL *urlString;
@@ -44,63 +42,80 @@
 {
     [super viewDidLoad];
     videoInfo = [[NSMutableArray alloc]init];
-    videoURL = [[NSMutableArray alloc]init];
-    videoImages = [[NSMutableArray alloc]init];
+    
+    
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)[[self videoCollectionView] collectionViewLayout];
     [flowLayout setMinimumInteritemSpacing:10.0];
     [flowLayout setMinimumLineSpacing:10.0];
     
-    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
-    {
+//    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != NotReachable)
+//    {
+        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"video"
+                                                             ofType:@"json"];
         
+        NSData *data = [NSData dataWithContentsOfFile:jsonPath];
         
-    }
-    else
-    {
-        
-        twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",nil];
-        
-        //parsing you tube web page to get video URL.
-        for(NSUInteger i=0;i<twURL.count;i++)
+        NSError *error = nil;
+        NSLog(@"%@",data);
+        id json = [NSJSONSerialization JSONObjectWithData:data
+                                                  options:kNilOptions
+                                                    error:&error];
+        NSLog(@"%@",json);
+        for (NSDictionary *video in json)
         {
             
-            NSURL *url = [NSURL URLWithString:[twURL objectAtIndex:i]];
-            //_activityIndicator.hidden = NO;
-            [HCYoutubeParser thumbnailForYoutubeURL:url thumbnailSize:YouTubeThumbnailDefaultHighQuality completeBlock:^(UIImage *image, NSError *error) {
-                
-                if(image!=nil)
-                    [videoImages addObject:image];
-                
-                if (!error) {
-                    NSDictionary *qualities = [HCYoutubeParser h264videosWithYoutubeURL:url];
-                    
-                    urlString=[NSURL URLWithString:[qualities objectForKey:@"medium"]];
-                    
-                    
-                    [videoInfo addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:image,urlString,nil] forKeys:[NSArray arrayWithObjects:@"image",@"url",nil]]];
-                    
-                    if(urlString!=nil)
-                        [videoURL addObject:urlString];
-                    
-                    //if(i==10)
-                    {
-                        [self.videoCollectionView reloadData];
-                    }
-                    
-                    for(NSDictionary *dict in videoInfo)
-             NSLog(@"%@",dict);
-             
-             
-                    
-                }
-                else {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                    [alert show];
-                }
-            }];
+            [videoInfo addObject:video];
         }
-        
-    }
+   // }
+//
+//    else
+//    {
+    
+//       NSMutableArray *twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",nil];
+//        
+//        //parsing you tube web page to get video URL.
+//        for(NSUInteger i=0;i<twURL.count;i++)
+//        {
+//            
+//            NSURL *url = [NSURL URLWithString:[twURL objectAtIndex:i]];
+//            //_activityIndicator.hidden = NO;
+//            [HCYoutubeParser thumbnailForYoutubeURL:url thumbnailSize:YouTubeThumbnailDefaultHighQuality completeBlock:^(UIImage *image, NSError *error) {
+//                
+//                if(image!=nil)
+//                    [videoImages addObject:image];
+//                
+//                if (!error) {
+//                    NSDictionary *qualities = [HCYoutubeParser h264videosWithYoutubeURL:url];
+//                    
+//                    urlString=[NSURL URLWithString:[qualities objectForKey:@"medium"]];
+//                    
+//                    NSLog(@"%@",urlString);
+//                    
+//                    
+//            
+//                    
+//                    if(urlString!=nil)
+//                      //  [videoURL addObject:urlString];
+//                    
+//                    //if(i==10)
+//                    {
+//                        [self.videoCollectionView reloadData];
+//                    }
+//                    
+//                    for(NSDictionary *dict in videoInfo)
+//             NSLog(@"%@",dict);
+//             
+//             
+//                    
+//                }
+//                else {
+//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+//                    [alert show];
+//                }
+//            }];
+//        }
+    
+
 	// Do any additional setup after loading the view.
 }
 
@@ -119,7 +134,7 @@
 #pragma mark-UICollection view data source.
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return twURL.count;
+    return videoInfo.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
@@ -136,13 +151,13 @@
     [cell.indicatorView startAnimating];
     cell.playButton.hidden=YES;
     [cell.playButton addTarget:self action:@selector(videoButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
-    
-    if(videoInfo.count>indexPath.item)
-    {
-        cell.indicatorView.hidden=YES;
+  
+        //cell.indicatorView.hidden=YES;
         cell.playButton.hidden=NO;
-        //cell.videoImageView.image= [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"image"];
-    }
+        cell.videoImageView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@",[[videoInfo objectAtIndex:indexPath.item] valueForKey:@"video_image"]]];
+    
+    cell.videoHeaderLabel.text=[NSString stringWithFormat:@"%@",[[videoInfo objectAtIndex:indexPath.item] valueForKey:@"video_theme"]];
+   
     return cell;
 }
 
@@ -173,10 +188,10 @@
     NSIndexPath *indexPath=[self.videoCollectionView indexPathForCell:cell];
     
     NSLog(@"%d",indexPath.item);
-    NSLog(@"%d",videoURL.count);
-    if(videoURL.count>=indexPath.item)
+    //NSLog(@"%d",videoURL.count);
+    if(videoInfo.count>=indexPath.item)
     {
-        NSURL *url =  [[videoInfo objectAtIndex:indexPath.item] valueForKey:@"url"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",[[videoInfo objectAtIndex:indexPath.item] valueForKey:@"video_url"]]] ;
         
         UIGraphicsBeginImageContext(CGSizeMake(1, 1));
         
@@ -240,8 +255,10 @@
             break;
         case 3 :
         {
-            [slider showMapScreen];
+            [slider showBreakOutSessionScreen];
             [sidebar dismiss];
+
+         
             
         }
             break;
@@ -254,16 +271,17 @@
             break;
         case 5 :
         {
-            [slider showBreakOutSessionScreen];
+            [slider showVideoScreen];
             [sidebar dismiss];
+
             
         }
             break;
         case 6 :
         {
-            [slider showVideoScreen];
+            [slider showMapScreen];
             [sidebar dismiss];
-            
+                       
         }
             break;
         case 7:

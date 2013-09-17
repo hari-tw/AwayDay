@@ -34,10 +34,10 @@
                         [UIImage imageNamed:@"home-button"],
                         [UIImage imageNamed:@"agenda"],
                         [UIImage imageNamed:@"speaker_icon"],
-                        [UIImage imageNamed:@"route-map"],
+                         [UIImage imageNamed:@"breakout-icon"],
                         [UIImage imageNamed:@"my_schedule"],
-                        [UIImage imageNamed:@"breakout-icon"],
                          [UIImage imageNamed:@"gallery"],
+                        [UIImage imageNamed:@"route-map"],
                         [UIImage imageNamed:@"share2"],
                         
                         ];

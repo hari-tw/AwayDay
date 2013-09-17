@@ -166,11 +166,9 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     
 }
 
+#pragma mark -RNFrostedSidebar delegate method.
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
 {
-    
-    
-    NSLog(@"%d",index);
     
     switch (index) {
         case 0:
@@ -196,8 +194,10 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
             break;
         case 3 :
         {
-            [slider showMapScreen];
+            [slider showBreakOutSessionScreen];
             [sidebar dismiss];
+            
+            
             
         }
             break;
@@ -210,21 +210,19 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
             break;
         case 5 :
         {
-            [slider showBreakOutSessionScreen];
-            [sidebar dismiss];
-            
-        }
-            break;
-            
-            
-        case 6 :
-        {
             [slider showVideoScreen];
             [sidebar dismiss];
             
+            
         }
             break;
+        case 6 :
+        {
+            [slider showMapScreen];
+            [sidebar dismiss];
             
+        }
+            break;
         case 7:
         {
             [sidebar dismiss];
@@ -236,7 +234,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
         }
             break;
             
-
+            
             
             
             
@@ -245,7 +243,6 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     }
     
 }
-
 
 - (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
 {
