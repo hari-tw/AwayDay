@@ -98,7 +98,6 @@
 		953300E317E1FD280069FC9F /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953300D517E1FD270069FC9F /* SpeakersViewController.m */; };
 		953300E417E1FD280069FC9F /* top-banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953300D617E1FD280069FC9F /* top-banner@2x.png */; };
 		95432B6E17DE17B60080EB87 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95432B6D17DE17B60080EB87 /* Accounts.framework */; };
-		95432B7017DE17BD0080EB87 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95432B6F17DE17BD0080EB87 /* Social.framework */; };
 		95469C0C17E82A9E00841C93 /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95469C0B17E82A9E00841C93 /* ReminderViewController.xib */; };
 		95469C1117E8325F00841C93 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 95469C0D17E8325F00841C93 /* facebook.png */; };
 		95469C1217E8325F00841C93 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95469C0E17E8325F00841C93 /* facebook@2x.png */; };
@@ -163,6 +162,7 @@
 		9571A1CF17E619E3001E3EC9 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571A1CD17E619E3001E3EC9 /* VideoViewController.m */; };
 		9571A1D217E61A0C001E3EC9 /* HCYoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571A1D117E61A0C001E3EC9 /* HCYoutubeParser.m */; };
 		9571A1D417E61A2C001E3EC9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9571A1D317E61A2C001E3EC9 /* MediaPlayer.framework */; };
+		9572447F17EB05BF003D08A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95432B6F17DE17BD0080EB87 /* Social.framework */; };
 		95A7CE6817DDC30100BCCB10 /* PathMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A7CE6617DDC30100BCCB10 /* PathMenuViewController.m */; };
 		95B2749717E2DF5D006AF8EC /* digital_counter_7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749617E2DF5D006AF8EC /* digital_counter_7.ttf */; };
 		95B2749917E2E120006AF8EC /* home-page-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95B2749817E2E120006AF8EC /* home-page-new@2x.png */; };
@@ -468,10 +468,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9572447F17EB05BF003D08A0 /* Social.framework in Frameworks */,
 				9571A1D417E61A2C001E3EC9 /* MediaPlayer.framework in Frameworks */,
 				95B7CA8B17E2237A00163291 /* CoreLocation.framework in Frameworks */,
 				95F27C9717E0DEF400CAB38E /* Accelerate.framework in Frameworks */,
-				95432B7017DE17BD0080EB87 /* Social.framework in Frameworks */,
 				95432B6E17DE17B60080EB87 /* Accounts.framework in Frameworks */,
 				49D937F617C1168500889AA7 /* libWeiboSDK.a in Frameworks */,
 				492D43DC17B8FF9E0082C814 /* CoreTelephony.framework in Frameworks */,
