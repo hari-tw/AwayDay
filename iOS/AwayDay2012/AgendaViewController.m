@@ -17,6 +17,7 @@
 #import "AFJSONRequestOperation.h"
 //#import "CFShareCircleView.h"
 #import <Social/Social.h>
+#import "AgendatableViewCell.h"
 
 #import "SpeakersViewController.h"
 #import <Accounts/Accounts.h>
@@ -593,26 +594,34 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"agendaCellIdentifier";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    AgendatableViewCell *cell = (AgendatableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+       NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AgendaCustomCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
     }
 
     for (UIView *view in cell.subviews) {
-        if (view.tag >= tag_cell_view_start) {
+       if (view.tag >= tag_cell_view_start) {
             [view removeFromSuperview];
-        }
+       }
     }
+    
 
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [cell.backgroundView setBackgroundColor:[UIColor colorWithRed:245 / 255.0 green:245 / 255.0 blue:245 / 255.0 alpha:1.0f]];
+//    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    [cell.backgroundView setBackgroundColor:[UIColor colorWithRed:245 / 255.0 green:245 / 255.0 blue:245 / 255.0 alpha:1.0f]];
 
     Agenda *agenda = [self.agendaList objectAtIndex:indexPath.section];
     Session *session = [agenda.sessions objectAtIndex:indexPath.row];
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+   //[self buildSessionCell:cell withSession:session];
 
-    [self buildSessionCell:cell withSession:session];
+    [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
+    [cell.sessionTitleTextLabel setText:session.sessionTitle];
 
     if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
         [self buildSessionDetailView:cell withSession:session];
@@ -677,7 +686,7 @@
             [self.agendaList addObject:agenda];
             NSLog(@"%d",self.agendaList.count);
             [DBService saveSessionList:agenda.sessions];
-            [self.agendaTable reloadData];
+           [self.agendaTable reloadData];
             [self updateTopSession];
         }
 

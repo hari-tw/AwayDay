@@ -38,7 +38,7 @@
                         [UIImage imageNamed:@"my_schedule"],
                          [UIImage imageNamed:@"gallery"],
                         [UIImage imageNamed:@"route-map"],
-                        //[UIImage imageNamed:@"share2"],
+                        [UIImage imageNamed:@"share2"],
                         
                         ];
     NSArray *colors = @[
@@ -50,7 +50,7 @@
                         [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
                         [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
-                        //[UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
                         
                         
@@ -87,7 +87,9 @@
     //UserLocationUtilities *location = [[UserLocationUtilities alloc]init];
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
 
-    NSString *urlString = [NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&saddr=%f,%f&mapmode=streetview",12.9792,77.7281,appDelegate.locationManager.location.coordinate.latitude,appDelegate.locationManager.location.coordinate.longitude];
+
+    NSString *urlString = [NSString stringWithFormat:@"comgooglemaps://?daddr=%f,%f&saddr=%f,%f&mapmode=streetview",12.969034,77.745137,appDelegate.locationManager.location.coordinate.latitude,appDelegate.locationManager.location.coordinate.longitude];
+
     
     NSString *escapedString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     

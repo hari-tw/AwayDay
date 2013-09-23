@@ -9,4 +9,5 @@ build/
 *.perspectivev3
 */.idea/workspace.xml
 *.lock
+*.xcuserstate
 Pods

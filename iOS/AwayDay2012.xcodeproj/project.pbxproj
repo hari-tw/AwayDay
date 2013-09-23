@@ -192,6 +192,8 @@
 		95F27CDB17E18B7E00CAB38E /* my_schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F27CDA17E18B7E00CAB38E /* my_schedule.png */; };
 		95F27CE117E18E4100CAB38E /* slider-menu-icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F27CE017E18E4000CAB38E /* slider-menu-icon 2.png */; };
 		95F79D1317E7282900D9A328 /* inner-page-backdrop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F79D1217E7282900D9A328 /* inner-page-backdrop@2x.png */; };
+		EAC7B18B17F077E300646667 /* AgendatableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC7B18A17F077E300646667 /* AgendatableViewCell.m */; };
+		EAC7B19217F07DF700646667 /* AgendaCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC7B19117F07DF700646667 /* AgendaCustomCell.xib */; };
 		F1E342C117C49EB3002A9084 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E342C017C49EB3002A9084 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
@@ -463,6 +465,9 @@
 		95F27CE017E18E4000CAB38E /* slider-menu-icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-menu-icon 2.png"; path = "../AwayDay2012/slider-menu-icon 2.png"; sourceTree = "<group>"; };
 		95F79D1217E7282900D9A328 /* inner-page-backdrop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inner-page-backdrop@2x.png"; sourceTree = "<group>"; };
 		DA31FC6A029E44789304C379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAC7B18917F077E300646667 /* AgendatableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendatableViewCell.h; sourceTree = "<group>"; };
+		EAC7B18A17F077E300646667 /* AgendatableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendatableViewCell.m; sourceTree = "<group>"; };
+		EAC7B19117F07DF700646667 /* AgendaCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaCustomCell.xib; sourceTree = "<group>"; };
 		F1E342C017C49EB3002A9084 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F7D551287C6643CE899432D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -827,6 +832,9 @@
 				95B274C617E4BC74006AF8EC /* BreakOutSectionInfo.m */,
 				95B274C317E4BC74006AF8EC /* BreakOutSectionHeaderView.h */,
 				95B274C417E4BC74006AF8EC /* BreakOutSectionHeaderView.m */,
+				EAC7B18917F077E300646667 /* AgendatableViewCell.h */,
+				EAC7B18A17F077E300646667 /* AgendatableViewCell.m */,
+				EAC7B19117F07DF700646667 /* AgendaCustomCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -978,7 +986,6 @@
 				49168F4915C769D300DEA67C /* Sources */,
 				49168F4A15C769D300DEA67C /* Frameworks */,
 				49168F4B15C769D300DEA67C /* Resources */,
-				F1E342BF17C49DB5002A9084 /* ShellScript */,
 				C627BE75A50C40849099EF2E /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1135,6 +1142,7 @@
 				95469CFD17E8942600841C93 /* my_schedule@2x.png in Resources */,
 				95469CFE17E8942600841C93 /* share2@2x.png in Resources */,
 				95469CFF17E8942600841C93 /* unjoin@2x.png in Resources */,
+				EAC7B19217F07DF700646667 /* AgendaCustomCell.xib in Resources */,
 				95469D0517E89C7D00841C93 /* video-2-screen.png in Resources */,
 				95469D0717E89C8800841C93 /* video-3-screen.png in Resources */,
 				95469D1017E8A19700841C93 /* play-button.png in Resources */,
@@ -1199,19 +1207,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
-		F1E342BF17C49DB5002A9084 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 12cf69bcd58555af123af07396580d08d970eee1";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1246,6 +1241,7 @@
 				44FEFD25178DA1DB00032CAA /* SBJsonStreamParserState.m in Sources */,
 				44FEFD26178DA1DB00032CAA /* SBJsonStreamTokeniser.m in Sources */,
 				44FEFD27178DA1DB00032CAA /* SBJsonStreamWriter.m in Sources */,
+				EAC7B18B17F077E300646667 /* AgendatableViewCell.m in Sources */,
 				44FEFD28178DA1DB00032CAA /* SBJsonStreamWriterAccumulator.m in Sources */,
 				44FEFD29178DA1DB00032CAA /* SBJsonStreamWriterState.m in Sources */,
 				44FEFD2A178DA1DB00032CAA /* SBJsonWriter.m in Sources */,
@@ -1379,8 +1375,8 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ThoughtWorks Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ThoughtWorks Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1388,7 +1384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AwayDay2012/AwayDay2012-Prefix.pch";
 				INFOPLIST_FILE = "AwayDay2012/AwayDay2012-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AwayDay2012\"",
@@ -1412,8 +1408,8 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ThoughtWorks Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ThoughtWorks Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1421,7 +1417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AwayDay2012/AwayDay2012-Prefix.pch";
 				INFOPLIST_FILE = "AwayDay2012/AwayDay2012-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/AwayDay2012\"",
