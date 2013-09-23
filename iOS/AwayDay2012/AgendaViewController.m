@@ -1,4 +1,4 @@
-//
+ //
 //  RootViewController.m
 //  AwayDay2012
 //
@@ -169,7 +169,8 @@
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
 
     AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest
-                                                                                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                                                                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    {
                                                                                                    NSLog(@"success response:%@", JSON);
                                                                                                    [self handleAgendaListRequestSuccess:JSON];
                                                                                                }
@@ -520,11 +521,14 @@
 
 #pragma mark - UITableView method
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    NSLog(@"%d",self.agendaList.count);
     return self.agendaList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     Agenda *agenda = [self.agendaList objectAtIndex:section];
+    NSLog(@"%d",agenda.sessions.count);
     return agenda.sessions.count;
 }
 
@@ -660,15 +664,17 @@
 }
 #pragma mark - Netowork callback method
 - (void)handleAgendaListRequestSuccess:(NSArray *)agendaList {
-    if (agendaList.count > 0) {
+    
+    if (self.agendaList.count > 0) {
+    [self.agendaList removeAllObjects];
         for (NSDictionary *object in agendaList) {
-            [self.agendaList removeAllObjects];
             [DBService deleteAllSessions];
-
+            NSLog(@"%@",object);
+           
             Agenda *agenda = [Agenda createAgenda:object];
             [self.agendaList addObject:agenda];
+            NSLog(@"%d",self.agendaList.count);
             [DBService saveSessionList:agenda.sessions];
-
             [self.agendaTable reloadData];
             [self updateTopSession];
         }
