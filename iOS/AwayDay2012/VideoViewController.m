@@ -51,8 +51,8 @@
     [flowLayout setMinimumInteritemSpacing:10.0];
     [flowLayout setMinimumLineSpacing:10.0];
     
-//    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != NotReachable)
-//    {
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != NotReachable)
+  {
         NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"video"
                                                              ofType:@"json"];
         
@@ -126,7 +126,15 @@
                 }
             }];
         }
-    
+  }
+      else
+      {
+          
+          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"NO network connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+          [alert show];
+          
+      }
+  
 
 	// Do any additional setup after loading the view.
 }
