@@ -313,7 +313,7 @@
 - (void)buildSessionDetailView:(UITableViewCell *)cell withSession:(Session *)session {
     CGSize size = [session.sessionNote sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
     CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
-    float height = 125 + titleSize.height + size.height;
+    float height = 125 + titleSize.height + size.height-30;
 
     UIView *detailView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
     [detailView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]]];
@@ -377,7 +377,7 @@
 //    [detailView addSubview:transparentTopView];
 //    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [attend setFrame:CGRectMake(130, y, 35, 35)];
+    [attend setFrame:CGRectMake(250, 10, 35, 35)];
 
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
@@ -390,7 +390,7 @@
     [detailView addSubview:attend];
 
     UIButton *remind = [UIButton buttonWithType:UIButtonTypeCustom];
-    [remind setFrame:CGRectMake(234, y, 35, 35)];
+    [remind setFrame:CGRectMake(250, 60, 35, 35)];
 
     [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
     for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
@@ -415,6 +415,8 @@
     transition.duration = 0.15f;
     [detailView.layer addAnimation:transition forKey:@"add"];
     [cell addSubview:detailView];
+    
+    NSLog(@"%@",NSStringFromCGRect(detailView.frame));
 
     float detaily = self.selectedCell.row * 50 + detailView.frame.size.height;
     float tabley = self.agendaTable.contentOffset.y + self.agendaTable.frame.size.height;
@@ -539,7 +541,7 @@
         CGSize size = [session.sessionNote sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
         CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
         float height = 126 + titleSize.height + size.height;
-        return height;
+        return height-30;
     } else {
         return 50.0f;
     }
