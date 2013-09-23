@@ -68,6 +68,8 @@
 		49A0C63215D9F9B900083B9F /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A0C63115D9F9B900083B9F /* ImageService.m */; };
 		49B99D3415D887A5009B02A8 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B99D3315D887A5009B02A8 /* Reminder.m */; };
 		49B99D5E15D8D80B009B02A8 /* path_content_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B99D5D15D8D80B009B02A8 /* path_content_back.png */; };
+		49BD116E17F03FAF00CDF15B /* slider-menu-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 49BD116D17F03FAF00CDF15B /* slider-menu-icon-2.png */; };
+		49BD117017F040E900CDF15B /* video-4-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 49BD116F17F040E900CDF15B /* video-4-screen_new.png */; };
 		49D32444160C575300B9CE19 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49168F6915C769D300DEA67C /* SenTestingKit.framework */; };
 		49D32445160C575300B9CE19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49168F5115C769D300DEA67C /* UIKit.framework */; };
 		49D32446160C575300B9CE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49168F5315C769D300DEA67C /* Foundation.framework */; };
@@ -311,6 +313,8 @@
 		49B99D3615D888F0009B02A8 /* DBServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBServiceTest.h; path = AwayDay2012Tests/DBServiceTest.h; sourceTree = SOURCE_ROOT; };
 		49B99D3715D888F0009B02A8 /* DBServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBServiceTest.m; path = AwayDay2012Tests/DBServiceTest.m; sourceTree = SOURCE_ROOT; };
 		49B99D5D15D8D80B009B02A8 /* path_content_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path_content_back.png; sourceTree = "<group>"; };
+		49BD116D17F03FAF00CDF15B /* slider-menu-icon-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-menu-icon-2.png"; sourceTree = "<group>"; };
+		49BD116F17F040E900CDF15B /* video-4-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-4-screen_new.png"; sourceTree = "<group>"; };
 		49D32443160C575300B9CE19 /* AwayDay2012Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwayDay2012Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D32449160C575300B9CE19 /* AwayDay2012Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AwayDay2012Test-Info.plist"; sourceTree = "<group>"; };
 		49D3244B160C575300B9CE19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -830,10 +834,6 @@
 		49EC240315CA129000DF9B34 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				95469D0C17E8A18900841C93 /* play-button.png */,
-				95469D0D17E8A18C00841C93 /* video-1-screen_new.png */,
-				95469D0E17E8A19000841C93 /* video-2-screen_new.png */,
-				95469D0F17E8A19400841C93 /* video-3-screen_new.png */,
 				95F27CD617E1875600CAB38E /* agenda.png */,
 				95469CD017E8908B00841C93 /* agenda@2x.png */,
 				95469C1517E8687A00841C93 /* back@2x.png */,
@@ -870,6 +870,7 @@
 				9550D5E817E73E5A00E359AF /* open-our-eyes 2.png */,
 				95469CE017E891E900841C93 /* open-our-eyes-2@2x.png */,
 				49B99D5D15D8D80B009B02A8 /* path_content_back.png */,
+				95469D0C17E8A18900841C93 /* play-button.png */,
 				9571A1C217E619CB001E3EC9 /* play_button.png */,
 				9571A1C417E619CB001E3EC9 /* play_button@2x.png */,
 				9571A1C317E619CB001E3EC9 /* play_button_pressed.png */,
@@ -883,16 +884,15 @@
 				9550D5EB17E7484D00E359AF /* route-map.png */,
 				95469CE617E8922300841C93 /* route-map@2x.png */,
 				95469CE817E8922B00841C93 /* share _button@2x.png */,
-				95469D0617E89C8500841C93 /* video-3-screen.png */,
 				9550D5D417E72EF400E359AF /* share2.png */,
 				95469CFA17E8941B00841C93 /* share2@2x.png */,
 				9550D5FE17E8240C00E359AF /* share_button.png */,
 				95F27CE017E18E4000CAB38E /* slider-menu-icon 2.png */,
 				9550D5E217E73DC000E359AF /* south-globe.png */,
 				95469CEA17E8925E00841C93 /* south-globe@2x.png */,
-				95469D0417E89C7A00841C93 /* video-2-screen.png */,
 				95469CEC17E892BC00841C93 /* speaker-1.png */,
 				953300CD17E1FD270069FC9F /* speaker-1@2x.png */,
+				49BD116D17F03FAF00CDF15B /* slider-menu-icon-2.png */,
 				95469CED17E892BF00841C93 /* speaker-2.png */,
 				953300CE17E1FD270069FC9F /* speaker-2@2x.png */,
 				95469CEE17E892C100841C93 /* speaker-3.png */,
@@ -910,9 +910,15 @@
 				95469CFB17E8942100841C93 /* unjoin@2x.png */,
 				9550D5FC17E8233000E359AF /* unjoin_button.png */,
 				49EC240715CA129000DF9B34 /* vertical_line.png */,
+				95469D0D17E8A18C00841C93 /* video-1-screen_new.png */,
+				95469D0417E89C7A00841C93 /* video-2-screen.png */,
+				95469D0E17E8A19000841C93 /* video-2-screen_new.png */,
+				95469D0617E89C8500841C93 /* video-3-screen.png */,
+				95469D0F17E8A19400841C93 /* video-3-screen_new.png */,
 				95469CCE17E87DC700841C93 /* video-box.png */,
 				95469CCC17E87DBF00841C93 /* video-box@2x.png */,
 				4934F9E815CA671700427597 /* whiteArrow.png */,
+				49BD116F17F040E900CDF15B /* video-4-screen_new.png */,
 				4934F9E915CA671700427597 /* whiteArrow@2x.png */,
 			);
 			path = Image;
@@ -1136,6 +1142,8 @@
 				95469D1217E8A19700841C93 /* video-2-screen_new.png in Resources */,
 				95469D1317E8A19700841C93 /* video-3-screen_new.png in Resources */,
 				95469D1517E8D5C000841C93 /* video.json in Resources */,
+				49BD116E17F03FAF00CDF15B /* slider-menu-icon-2.png in Resources */,
+				49BD117017F040E900CDF15B /* video-4-screen_new.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,8 +1379,8 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ThoughtWorks Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ThoughtWorks Inc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1389,8 +1397,8 @@
 					"\"$(SRCROOT)/AwayDay2012/ExternalLibs/JPush\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1404,8 +1412,8 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ThoughtWorks Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ThoughtWorks Inc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1422,8 +1430,8 @@
 					"\"$(SRCROOT)/AwayDay2012/ExternalLibs/JPush\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

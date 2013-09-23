@@ -76,7 +76,7 @@
     
     [AppHelper showInfoView:self.view withText:@"Buffering!" withLoading:YES];
     
-       NSMutableArray *twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",nil];
+       NSMutableArray *twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",@"https://www.youtube.com/watch?v=fNOThb3e_Q8",nil];
         
         //parsing you tube web page to get video URL.
         for(NSUInteger i=0;i<twURL.count;i++)
