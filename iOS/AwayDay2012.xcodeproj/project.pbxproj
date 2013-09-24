@@ -1021,7 +1021,7 @@
 		49168F4415C769D200DEA67C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 49168F4715C769D200DEA67C /* Build configuration list for PBXProject "AwayDay2012" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1309,10 +1309,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				COPY_PHASE_STRIP = NO;
@@ -1330,6 +1326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-objC";
 				PROVISIONING_PROFILE = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
@@ -1342,10 +1339,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				COPY_PHASE_STRIP = YES;
@@ -1370,10 +1363,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7D551287C6643CE899432D7 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					arvm6,
-					armv7,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
@@ -1403,10 +1392,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7D551287C6643CE899432D7 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					arvm6,
-					armv7,
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";

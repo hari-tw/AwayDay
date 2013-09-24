@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8260DEB4-9D31-43B6-A03C-E75FB6599F82</string>
+	<string>76D69C21-13F3-4A61-8194-963DA3E3B395</string>
 	<key>IDESourceControlProjectName</key>
 	<string>AwayDay2012</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>166E039D-30CE-41D6-B488-1AC8A7126C99</key>
-		<string>https://github.com/hari-tw/AwayDay.git</string>
+		<key>2BE0D236-5F93-40B3-AA69-3BE22890EBF4</key>
+		<string>http://github.com/hari-tw/AwayDay</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iOS/AwayDay2012.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>166E039D-30CE-41D6-B488-1AC8A7126C99</key>
+		<key>2BE0D236-5F93-40B3-AA69-3BE22890EBF4</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/hari-tw/AwayDay.git</string>
+	<string>http://github.com/hari-tw/AwayDay</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>166E039D-30CE-41D6-B488-1AC8A7126C99</string>
+	<string>2BE0D236-5F93-40B3-AA69-3BE22890EBF4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>166E039D-30CE-41D6-B488-1AC8A7126C99</string>
+			<string>2BE0D236-5F93-40B3-AA69-3BE22890EBF4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AwayDay</string>
 		</dict>
