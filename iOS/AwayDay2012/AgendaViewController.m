@@ -632,8 +632,10 @@
     [cell.sessionTitleTextLabel setText:session.sessionTitle];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];  
 
-    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
-        [self buildSessionDetailView:cell withSession:session];
+    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row)
+    {
+        UITableViewCell *cell1 =(UITableViewCell *)cell;
+        [self buildSessionDetailView:cell1 withSession:session];
     }
 
     return cell;

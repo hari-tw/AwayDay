@@ -86,6 +86,11 @@
 		49EC240B15CA129000DF9B34 /* vertical_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EC240715CA129000DF9B34 /* vertical_line.png */; };
 		49EC241215CA1AD800DF9B34 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EC241115CA1AD800DF9B34 /* AppHelper.m */; };
 		7D052E6030064B5C96D0D455 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA31FC6A029E44789304C379 /* libPods.a */; };
+		95193B6A17F2124C00F32C1D /* video-5-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6917F2124C00F32C1D /* video-5-screen_new.png */; };
+		95193B6C17F212D200F32C1D /* video-5-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6B17F212D200F32C1D /* video-5-screen.png */; };
+		95193B6E17F2148000F32C1D /* AgendaExpndedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6D17F2148000F32C1D /* AgendaExpndedCell.xib */; };
+		95193B7117F216F000F32C1D /* agendExpandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95193B7017F216F000F32C1D /* agendExpandTableViewCell.m */; };
+		95193B7317F2188800F32C1D /* game.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95193B7217F2188800F32C1D /* game.jpg */; };
 		953300D717E1FD280069FC9F /* customTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953300C717E1FD260069FC9F /* customTableCell.m */; };
 		953300D817E1FD280069FC9F /* ExpandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953300C917E1FD260069FC9F /* ExpandCell.m */; };
 		953300DA17E1FD280069FC9F /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 953300CB17E1FD270069FC9F /* line.png */; };
@@ -345,6 +350,12 @@
 		49EC240715CA129000DF9B34 /* vertical_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_line.png; sourceTree = "<group>"; };
 		49EC241015CA1AD800DF9B34 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
 		49EC241115CA1AD800DF9B34 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		95193B6917F2124C00F32C1D /* video-5-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen_new.png"; sourceTree = "<group>"; };
+		95193B6B17F212D200F32C1D /* video-5-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen.png"; sourceTree = "<group>"; };
+		95193B6D17F2148000F32C1D /* AgendaExpndedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaExpndedCell.xib; sourceTree = "<group>"; };
+		95193B6F17F216F000F32C1D /* agendExpandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agendExpandTableViewCell.h; sourceTree = "<group>"; };
+		95193B7017F216F000F32C1D /* agendExpandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = agendExpandTableViewCell.m; sourceTree = "<group>"; };
+		95193B7217F2188800F32C1D /* game.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game.jpg; sourceTree = "<group>"; };
 		953300C617E1FD260069FC9F /* customTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTableCell.h; sourceTree = "<group>"; };
 		953300C717E1FD260069FC9F /* customTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTableCell.m; sourceTree = "<group>"; };
 		953300C817E1FD260069FC9F /* ExpandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandCell.h; sourceTree = "<group>"; };
@@ -852,6 +863,9 @@
 				956A838217F1DAFC00E577C2 /* gameTableViewCell.m */,
 				956A838717F1DB7900E577C2 /* gameExpandedTableViewCell.h */,
 				956A838817F1DB7900E577C2 /* gameExpandedTableViewCell.m */,
+				95193B6D17F2148000F32C1D /* AgendaExpndedCell.xib */,
+				95193B6F17F216F000F32C1D /* agendExpandTableViewCell.h */,
+				95193B7017F216F000F32C1D /* agendExpandTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -859,6 +873,7 @@
 		49EC240315CA129000DF9B34 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				95193B7217F2188800F32C1D /* game.jpg */,
 				95F27CD617E1875600CAB38E /* agenda.png */,
 				95469CD017E8908B00841C93 /* agenda@2x.png */,
 				95469C1517E8687A00841C93 /* back@2x.png */,
@@ -940,6 +955,8 @@
 				95469D0E17E8A19000841C93 /* video-2-screen_new.png */,
 				95469D0617E89C8500841C93 /* video-3-screen.png */,
 				95469D0F17E8A19400841C93 /* video-3-screen_new.png */,
+				95193B6B17F212D200F32C1D /* video-5-screen.png */,
+				95193B6917F2124C00F32C1D /* video-5-screen_new.png */,
 				95469CCE17E87DC700841C93 /* video-box.png */,
 				95469CCC17E87DBF00841C93 /* video-box@2x.png */,
 				4934F9E815CA671700427597 /* whiteArrow.png */,
@@ -1083,6 +1100,7 @@
 				49B99D5E15D8D80B009B02A8 /* path_content_back.png in Resources */,
 				492D43DE17B9BD870082C814 /* PushConfig.plist in Resources */,
 				49D937F717C1168500889AA7 /* WeiboSDK.bundle in Resources */,
+				95193B6C17F212D200F32C1D /* video-5-screen.png in Resources */,
 				95F27C9017E0DE8700CAB38E /* HomeViewController.xib in Resources */,
 				95F27CCA17E0E8F300CAB38E /* icon.png in Resources */,
 				95F27CCB17E0E8F300CAB38E /* icon@2x.png in Resources */,
@@ -1124,6 +1142,7 @@
 				9550D5E317E73DC000E359AF /* south-globe.png in Resources */,
 				9550D5E517E73DC500E359AF /* Impact 2.png in Resources */,
 				9550D5E717E73DCD00E359AF /* relavance_c.png in Resources */,
+				95193B6A17F2124C00F32C1D /* video-5-screen_new.png in Resources */,
 				9550D5E917E73E5D00E359AF /* open-our-eyes 2.png in Resources */,
 				9550D5EC17E7485000E359AF /* route-map.png in Resources */,
 				9550D5F517E8210F00E359AF /* reminder_button.png in Resources */,
@@ -1136,6 +1155,7 @@
 				95469C1417E8325F00841C93 /* twitter@2x.png in Resources */,
 				95469C1617E8687A00841C93 /* back@2x.png in Resources */,
 				95469CCD17E87DC000841C93 /* video-box@2x.png in Resources */,
+				95193B6E17F2148000F32C1D /* AgendaExpndedCell.xib in Resources */,
 				95469CCF17E87DC800841C93 /* video-box.png in Resources */,
 				95469CD117E8908E00841C93 /* agenda@2x.png in Resources */,
 				95469CD317E890A600841C93 /* breakout-icon@2x.png in Resources */,
@@ -1167,6 +1187,7 @@
 				95469D1017E8A19700841C93 /* play-button.png in Resources */,
 				95469D1117E8A19700841C93 /* video-1-screen_new.png in Resources */,
 				95469D1217E8A19700841C93 /* video-2-screen_new.png in Resources */,
+				95193B7317F2188800F32C1D /* game.jpg in Resources */,
 				95469D1317E8A19700841C93 /* video-3-screen_new.png in Resources */,
 				95469D1517E8D5C000841C93 /* video.json in Resources */,
 				49BD116E17F03FAF00CDF15B /* slider-menu-icon-2.png in Resources */,
@@ -1266,6 +1287,7 @@
 				44FEFD28178DA1DB00032CAA /* SBJsonStreamWriterAccumulator.m in Sources */,
 				44FEFD29178DA1DB00032CAA /* SBJsonStreamWriterState.m in Sources */,
 				44FEFD2A178DA1DB00032CAA /* SBJsonWriter.m in Sources */,
+				95193B7117F216F000F32C1D /* agendExpandTableViewCell.m in Sources */,
 				36867FEC347E89351575287C /* AFHTTPClient.m in Sources */,
 				3686726430BA535E252B3A50 /* AFHTTPRequestOperation.m in Sources */,
 				36867FBF4B1BE9B93520C01F /* AFImageRequestOperation.m in Sources */,
