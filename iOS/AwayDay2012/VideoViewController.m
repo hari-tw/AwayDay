@@ -76,7 +76,7 @@
     
     [AppHelper showInfoView:self.view withText:@"Buffering!" withLoading:YES];
     
-       NSMutableArray *twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",@"https://www.youtube.com/watch?v=fNOThb3e_Q8",nil];
+       NSMutableArray *twURL = [[NSMutableArray alloc]initWithObjects:@"http://www.youtube.com/watch?v=Ex2hEG5mwM4",@"http://www.youtube.com/watch?v=QcIQa2VDwEw",@"https://www.youtube.com/watch?v=Zb3MsrpEJDM",@"https://www.youtube.com/watch?v=fNOThb3e_Q8",@"http://youtu.be/mn-peucYveo",nil];
         
         //parsing you tube web page to get video URL.
         for(NSUInteger i=0;i<twURL.count;i++)
@@ -317,10 +317,11 @@
         case 7:
         {
             [sidebar dismiss];
+             [slider showGameInfoSCreen];
             // Do any additional setup after loading the view, typically from a nib.
-            self.shareCircleView = [[CFShareCircleView alloc] init];
-            self.shareCircleView.delegate = self;
-            [self.shareCircleView show];
+//            self.shareCircleView = [[CFShareCircleView alloc] init];
+//            self.shareCircleView.delegate = self;
+//            [self.shareCircleView show];
             
         }
             break;

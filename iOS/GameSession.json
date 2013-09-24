@@ -1,0 +1,22 @@
+ [
+  {"game_name":"Beat Works",
+  "game_capacity":"350",
+  "game_details":"Beatswork is an activity that portrays the spirit of harmony and the self motivation of “I Can!”, using various latin and samba percussion instruments. Within a few hours, ThoughtWorkers will transform into a  the a Brazilian Batucada band! Join us and be part of a jaw-dropping performance."
+  },
+  
+  {"game_name":"Actuator",
+  "game_capacity":"150",
+  "game_details":"The Actuator is a game that fosters problem solving, working towards deadlines and is a lot of fun. It connects people and leaves everyone with a huge sense of achievement. Enjoyed the Rube Goldberg machine last year? Then you will love the Actuator this year! "
+  },
+  
+  {"game_name":"Collaborator",
+  "game_capacity":"150",
+  "game_details":"A little bit of the Treasure Hunt, a little bit of the Amazing Race - this game will ensure you're constantly on the run! From meeting new people to cracking challenges, there's never a dull moment here! "
+  },
+
+  
+  {"game_name":"Quiz - opening our eyes to India ",
+  "game_capacity":"50",
+  "game_details":"This quiz tests your knowledge on how much you actually know about India! Join us, get those brain cells whizzing and discover something new about India! "
+  }
+  ]

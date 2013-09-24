@@ -386,7 +386,7 @@
 //    [detailView addSubview:transparentTopView];
 //    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [attend setFrame:CGRectMake(250, 10, 35, 35)];
+    [attend setFrame:CGRectMake(280, 10, 35, 35)];
 
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
@@ -399,14 +399,14 @@
     [detailView addSubview:attend];
 
     UIButton *remind = [UIButton buttonWithType:UIButtonTypeCustom];
-    [remind setFrame:CGRectMake(250, 60, 35, 35)];
+    [remind setFrame:CGRectMake(280, 60, 35, 35)];
 
     [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
     for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
         if (notification.userInfo != nil && notification.userInfo.count > 0) {
             NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
             if ([sessionID isEqualToString:session.sessionID]) {
-                [remind setImage:[UIImage imageNamed:@"unreminder_button.png"] forState:UIControlStateNormal];
+                [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
             }
         }
     }
@@ -910,9 +910,10 @@
         {
             [sidebar dismiss];
             // Do any additional setup after loading the view, typically from a nib.
-            self.shareCircleView = [[CFShareCircleView alloc] init];
-            self.shareCircleView.delegate = self;
-            [self.shareCircleView show];
+//            self.shareCircleView = [[CFShareCircleView alloc] init];
+//            self.shareCircleView.delegate = self;
+//            [self.shareCircleView show];
+             [slider showGameInfoSCreen];
             
         }
             break;

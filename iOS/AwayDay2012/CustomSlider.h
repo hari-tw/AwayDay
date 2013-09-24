@@ -32,6 +32,8 @@
 
 -(void)showVideoScreen;
 
+-(void)showGameInfoSCreen;
+
 
  
 @end

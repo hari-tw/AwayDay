@@ -235,10 +235,11 @@ bool blinkStatus = NO;
         case 7:
         {
             [sidebar dismiss];
+             [slider showGameInfoSCreen];
             // Do any additional setup after loading the view, typically from a nib.
-            self.shareCircleView = [[CFShareCircleView alloc] init];
-            self.shareCircleView.delegate = self;
-            [self.shareCircleView show];
+//            self.shareCircleView = [[CFShareCircleView alloc] init];
+//            self.shareCircleView.delegate = self;
+//            [self.shareCircleView show];
             
         }
             break;

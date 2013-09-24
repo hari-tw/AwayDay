@@ -198,9 +198,10 @@
         {
             [sidebar dismiss];
             // Do any additional setup after loading the view, typically from a nib.
-            self.shareCircleView = [[CFShareCircleView alloc] init];
-            self.shareCircleView.delegate = self;
-            [self.shareCircleView show];
+             [slider showGameInfoSCreen];
+//            self.shareCircleView = [[CFShareCircleView alloc] init];
+//            self.shareCircleView.delegate = self;
+//            [self.shareCircleView show];
             
         }
             break;

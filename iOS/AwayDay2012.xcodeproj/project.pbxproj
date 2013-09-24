@@ -156,6 +156,10 @@
 		9550D5F517E8210F00E359AF /* reminder_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5F417E8210F00E359AF /* reminder_button.png */; };
 		9550D5FD17E8233800E359AF /* unjoin_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5FC17E8233000E359AF /* unjoin_button.png */; };
 		9550D5FF17E8241300E359AF /* share_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5FE17E8240C00E359AF /* share_button.png */; };
+		956A838017F1D6BC00E577C2 /* GameSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */; };
+		956A838317F1DAFC00E577C2 /* gameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A838217F1DAFC00E577C2 /* gameTableViewCell.m */; };
+		956A838917F1DB7900E577C2 /* gameExpandedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A838817F1DB7900E577C2 /* gameExpandedTableViewCell.m */; };
+		956A838B17F1E18400E577C2 /* GameSession.json in Resources */ = {isa = PBXBuildFile; fileRef = 956A838A17F1E18400E577C2 /* GameSession.json */; };
 		9571A1C617E619CB001E3EC9 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9571A1C217E619CB001E3EC9 /* play_button.png */; };
 		9571A1C717E619CB001E3EC9 /* play_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9571A1C317E619CB001E3EC9 /* play_button_pressed.png */; };
 		9571A1C817E619CB001E3EC9 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9571A1C417E619CB001E3EC9 /* play_button@2x.png */; };
@@ -417,6 +421,13 @@
 		9550D5F417E8210F00E359AF /* reminder_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder_button.png; sourceTree = "<group>"; };
 		9550D5FC17E8233000E359AF /* unjoin_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unjoin_button.png; sourceTree = "<group>"; };
 		9550D5FE17E8240C00E359AF /* share_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_button.png; sourceTree = "<group>"; };
+		956A837E17F1D6BC00E577C2 /* GameSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSessionViewController.h; sourceTree = "<group>"; };
+		956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSessionViewController.m; sourceTree = "<group>"; };
+		956A838117F1DAFC00E577C2 /* gameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameTableViewCell.h; sourceTree = "<group>"; };
+		956A838217F1DAFC00E577C2 /* gameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameTableViewCell.m; sourceTree = "<group>"; };
+		956A838717F1DB7900E577C2 /* gameExpandedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameExpandedTableViewCell.h; sourceTree = "<group>"; };
+		956A838817F1DB7900E577C2 /* gameExpandedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameExpandedTableViewCell.m; sourceTree = "<group>"; };
+		956A838A17F1E18400E577C2 /* GameSession.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameSession.json; sourceTree = "<group>"; };
 		9571A1C217E619CB001E3EC9 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
 		9571A1C317E619CB001E3EC9 /* play_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button_pressed.png; sourceTree = "<group>"; };
 		9571A1C417E619CB001E3EC9 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
@@ -717,6 +728,8 @@
 				9550D5EE17E7648900E359AF /* CFShareCircleView.m */,
 				9550D5EF17E7648900E359AF /* CFSharer.h */,
 				9550D5F017E7648900E359AF /* CFSharer.m */,
+				956A837E17F1D6BC00E577C2 /* GameSessionViewController.h */,
+				956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -835,6 +848,10 @@
 				EAC7B18917F077E300646667 /* AgendatableViewCell.h */,
 				EAC7B18A17F077E300646667 /* AgendatableViewCell.m */,
 				EAC7B19117F07DF700646667 /* AgendaCustomCell.xib */,
+				956A838117F1DAFC00E577C2 /* gameTableViewCell.h */,
+				956A838217F1DAFC00E577C2 /* gameTableViewCell.m */,
+				956A838717F1DB7900E577C2 /* gameExpandedTableViewCell.h */,
+				956A838817F1DB7900E577C2 /* gameExpandedTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -952,6 +969,7 @@
 				95B274B017E462BD006AF8EC /* Break_out.json */,
 				953300D317E1FD270069FC9F /* Speakers_Info.json */,
 				95469D1417E8D5C000841C93 /* video.json */,
+				956A838A17F1E18400E577C2 /* GameSession.json */,
 			);
 			name = "json files";
 			sourceTree = "<group>";
@@ -1082,6 +1100,7 @@
 				953300E117E1FD280069FC9F /* speaker-6@2x.png in Resources */,
 				953300E217E1FD280069FC9F /* Speakers_Info.json in Resources */,
 				953300E417E1FD280069FC9F /* top-banner@2x.png in Resources */,
+				956A838B17F1E18400E577C2 /* GameSession.json in Resources */,
 				95B7CA8D17E237AE00163291 /* MainStoryboard.storyboard in Resources */,
 				95B2749717E2DF5D006AF8EC /* digital_counter_7.ttf in Resources */,
 				95B2749917E2E120006AF8EC /* home-page-new@2x.png in Resources */,
@@ -1217,8 +1236,10 @@
 				49851FA115E329A6007A665A /* GTMBase64.m in Sources */,
 				4934FA0215CA705200427597 /* AgendaViewController.m in Sources */,
 				4934F9E115CA668600427597 /* EGORefreshTableHeaderView.m in Sources */,
+				956A838317F1DAFC00E577C2 /* gameTableViewCell.m in Sources */,
 				49168F5E15C769D300DEA67C /* main.m in Sources */,
 				49168F6215C769D300DEA67C /* AppDelegate.m in Sources */,
+				956A838917F1DB7900E577C2 /* gameExpandedTableViewCell.m in Sources */,
 				49168F9315C775CB00DEA67C /* Agenda.m in Sources */,
 				49168F9A15C7764800DEA67C /* Session.m in Sources */,
 				4969AD6915C7A0AC005B6A54 /* SessionAddress.m in Sources */,
@@ -1248,6 +1269,7 @@
 				36867FEC347E89351575287C /* AFHTTPClient.m in Sources */,
 				3686726430BA535E252B3A50 /* AFHTTPRequestOperation.m in Sources */,
 				36867FBF4B1BE9B93520C01F /* AFImageRequestOperation.m in Sources */,
+				956A838017F1D6BC00E577C2 /* GameSessionViewController.m in Sources */,
 				368677E52690BD756B7ADD11 /* AFJSONRequestOperation.m in Sources */,
 				368671B0B0262A1163811FE1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3686712E0FE28015B0CDF628 /* AFPropertyListRequestOperation.m in Sources */,
