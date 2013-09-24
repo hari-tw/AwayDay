@@ -676,7 +676,7 @@
 #pragma mark - Netowork callback method
 - (void)handleAgendaListRequestSuccess:(NSArray *)agendaList {
     
-    if (self.agendaList.count > 0) {
+    //if (self.agendaList.count > 0) {
     [self.agendaList removeAllObjects];
         for (NSDictionary *object in agendaList) {
             [DBService deleteAllSessions];
@@ -690,7 +690,7 @@
             [self updateTopSession];
         }
 
-    }
+   // }
     loading = NO;
     [AppHelper removeInfoView:self.view];
 
