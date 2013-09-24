@@ -336,8 +336,16 @@
     [sessionSpeaker setBackgroundColor:[UIColor clearColor]];
     [sessionSpeaker setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionSpeaker setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
+    
+    if(![session.sessionSpeaker isEqualToString:@""])
+    {
     [sessionSpeaker setText:[NSString stringWithFormat:@"Speaker: %@", session.sessionSpeaker]];
-    [detailView addSubview:sessionSpeaker];
+    }
+    else
+    {
+        sessionSpeaker.hidden=YES;
+    }
+        [detailView addSubview:sessionSpeaker];
     y += sessionSpeaker.frame.size.height;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
