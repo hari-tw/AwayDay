@@ -36,26 +36,32 @@
   "topic_speaker":"Vivek Singh",
   "time"  :"2:00-2:20"
   },
+            {
+            "topic_name":"Elephants in the cloud ",
+            "topic_speaker":"Hemanth Yamijala",
+            "time"  :"2:25-2:45"
+            },
   {
-  "topic_name":"R Analytics in Gruppo PAM",
-  "topic_speaker":"Bharani S",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"Elephants in the cloud ",
-  "topic_speaker":"Hemanth Yamijala",
+  "topic_name":"Playing with peta bytes - Big Data",
+  "topic_speaker":"TripAdvisor - Avinash Kumar, Amit Kumar, Akash Mishra",
   "time"  :"2:50-3:00"
   },
+  
   {
   "topic_name":"Visualization using the public data",
   "topic_speaker":"Amiruddin Nagri",
   "time"  :"3:05-3:25"
   },
   {
-  "topic_name":"Another talk by analytics team",
-  "topic_speaker":"analytics team",
+  "topic_name":"R Analytics in Gruppo PAM",
+  "topic_speaker":"Bharani S",
   "time"  :"3:30-3:50"
-  }
+  },
+            {
+            "topic_name":"Becoming a Data Scientist",
+            "topic_speaker":"Anand Krishnaswamy",
+            "time"  :"3:55-4:05"
+            }
 ]
   },
   
@@ -66,25 +72,27 @@
   "topics":
  [
   {
-  "topic_name":"Healthcare Global Villages",
-  "topic_speaker":"Karl",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"China Mobile Labs ",
-  "topic_speaker":"Wang Zhe",
-  "time"  :"2:25-2:45"
-  },
-  {
   "topic_name":"The journey of creating internal startup products",
   "topic_speaker":"Jinzhou Chen",
-  "time"  :"2:50-3:00"
+  "time"  :"2:00-2:20"
   },
   {
   "topic_name":"Stories from Africa",
   "topic_speaker":"Raymond & Yashodhan",
+  "time"  :"2:25-2:45"
+  },
+  {
+  "topic_name":"e-Health at ThoughtWorks",
+  "topic_speaker":"Dr.David Walton",
+  "time"  :"2:50-3:00"
+  },
+  {
+  "topic_name":"China Mobile Labs ",
+  "topic_speaker":"Wang Zhe",
   "time"  :"3:05-3:25"
   },
+  
+ 
   {
   "topic_name":"Africa Jeoparady Game",
   "topic_speaker":"",
@@ -96,12 +104,12 @@
   
   {
   "trackTopic":"Business Relevance",
-  "captainName":"Meghana",
+  "captainName":"Meghana & Rashi",
   "topics":
  [
   {
-  "topic_name":"A firm's messaging house",
-  "topic_speaker":"Meghana Prasad",
+  "topic_name":"Mission Game",
+  "topic_speaker":"Meghna Prasad & Shaun Jayraj",
   "time"  :"2:00-2:20"
   },
   {
@@ -111,7 +119,7 @@
   },
   {
   "topic_name":"Solutioning for the Indian market",
-  "topic_speaker":"Feroz & Prashanth",
+  "topic_speaker":"Feroz & Prashanth ",
   "time"  :"2:50-3:00"
   },
   {
@@ -150,15 +158,26 @@
   "time"  :"2:25-2:45"
   },
   {
-  "topic_name":"Biotechnology & Hungry Planet",
-  "topic_speaker":"Karthiga",
+  "topic_name":"Experience of an Adoptive Parent",
+  "topic_speaker":"Satish V",
   "time"  :"2:50-3:00"
   },
   {
-  "topic_name":"Experience of an Adoptive Parent",
-  "topic_speaker":"Satish V",
-  "time"  :"3:05-3:15"
+  "topic_name":"L&D for the Soul",
+  "topic_speaker":"Sathiya and Mayur",
+  "time"  :"3:05-3:20"
+  },
+  {
+  "topic_name":"Grill a ThoughtWorker",
+  "topic_speaker":" Anand Vishwanath",
+  "time"  :"3:30-3:50"
+  },
+  {
+  "topic_name":"Biotechnology & Hungry Planet",
+  "topic_speaker":" Karthiga",
+  "time"  :"3:55-4:05"
   }
+  
   ]
   
   }
