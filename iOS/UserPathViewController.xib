@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="inner-page-backdrop.png" translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="566"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top-banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="21">
@@ -89,6 +89,8 @@
                 <constraint firstItem="25" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" id="50"/>
                 <constraint firstItem="25" firstAttribute="leading" secondItem="22" secondAttribute="leading" id="51"/>
                 <constraint firstItem="9" firstAttribute="top" secondItem="1" secondAttribute="top" constant="86" id="53"/>
+                <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" constant="-86" id="GYE-gz-cWU"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="1" secondAttribute="top" id="j7e-ln-VYK"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
         </view>
