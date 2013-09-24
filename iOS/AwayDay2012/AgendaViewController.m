@@ -622,6 +622,7 @@
 
     [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
     [cell.sessionTitleTextLabel setText:session.sessionTitle];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];  
 
     if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
         [self buildSessionDetailView:cell withSession:session];
