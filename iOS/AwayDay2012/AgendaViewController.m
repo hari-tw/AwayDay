@@ -322,7 +322,7 @@
 
     int y = 8;
     UILabel *view = (UILabel *) [cell viewWithTag:tag_cell_session_title_view];
-    UITextView *sessionTitle = [[UITextView alloc] initWithFrame:CGRectMake(2, y, 310, titleSize.height + 10)];
+    UITextView *sessionTitle = [[UITextView alloc] initWithFrame:CGRectMake(8, y, 310, titleSize.height + 10)];
     [sessionTitle setTag:tag_cell_session_detail_title_view];
     [sessionTitle setBackgroundColor:[UIColor clearColor]];
     [sessionTitle setText:session.sessionTitle];
@@ -332,7 +332,7 @@
     [detailView addSubview:sessionTitle];
     y += sessionTitle.frame.size.height;
 
-    UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 320, 16)];
+    UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(14, y+3, 320, 16)];
     [sessionSpeaker setBackgroundColor:[UIColor clearColor]];
     [sessionSpeaker setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionSpeaker setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
@@ -342,7 +342,7 @@
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
-    UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 110, 16)];
+    UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(14, y+3, 110, 16)];
     [sessionTime setBackgroundColor:[UIColor clearColor]];
     [sessionTime setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionTime setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
@@ -350,7 +350,7 @@
     [detailView addSubview:sessionTime];
 
     y += sessionTime.frame.size.height;
-    UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, y+3, 290, 16)];
+    UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(14, y+3, 290, 16)];
     [sessionLocation setBackgroundColor:[UIColor clearColor]];
     [sessionLocation setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
     [sessionLocation setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
