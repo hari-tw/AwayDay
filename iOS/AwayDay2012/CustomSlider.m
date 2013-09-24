@@ -39,7 +39,7 @@
                         [UIImage imageNamed:@"my_schedule"],
                          [UIImage imageNamed:@"gallery"],
                         [UIImage imageNamed:@"route-map"],
-                        [UIImage imageNamed:@"share2"],
+                      //  [UIImage imageNamed:@"share2"],
                         
                         ];
     NSArray *colors = @[
@@ -51,7 +51,7 @@
                         [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
                         [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
-                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                       // [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
                         
                         

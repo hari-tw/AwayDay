@@ -18,6 +18,7 @@
 //#import "CFShareCircleView.h"
 #import <Social/Social.h>
 #import "AgendatableViewCell.h"
+#import "agendExpandTableViewCell.h"
 
 #import "SpeakersViewController.h"
 #import <Accounts/Accounts.h>
@@ -43,6 +44,7 @@
 
 @end
 
+NSUInteger selectedRow;
 
 @implementation AgendaViewController
 @synthesize agendaList = _agendaList;
@@ -78,6 +80,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    selectedRow=-1;
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
 
@@ -544,13 +547,16 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
-        Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
-        Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
-        CGSize size = [session.sessionNote sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
-        CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
-        float height = 126 + titleSize.height + size.height;
-        return height-30;
+//    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
+//        Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
+//        Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
+//        CGSize size = [session.sessionNote sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
+//        CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
+//        float height = 126 + titleSize.height + size.height;
+//        //return height-30;
+    if(selectedRow==indexPath.row)
+    {
+        return 136;
     } else {
         return 50.0f;
     }
@@ -602,26 +608,86 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Agenda *agenda = [self.agendaList objectAtIndex:indexPath.section];
+    Session *session = [agenda.sessions objectAtIndex:indexPath.row];
+    if (selectedRow==indexPath.row)
+    {
+        
+        static NSString *CellIdentifier = @"agendaExpandCell";
+        agendExpandTableViewCell *cell1 = (agendExpandTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell1 == nil)
+        {
+            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AgendaExpndedCell" owner:self options:nil];
+            cell1 = [topLevelObjects objectAtIndex:0];
+        }
+            cell1.agendaTitleTextLabel.text=session.sessionTitle;
+           
+            cell1.speakerTextLabel.text=session.sessionSpeaker;
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"HH:mm"];
+            cell1.timeTextLabel.text=[NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.sessionStartTime], [formatter stringFromDate:session.sessionEndTime]];
+            cell1.roomTextLabel.text=session.sessionAddress;
+        
+        
+        
+        AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
+        if (userJoinList != nil && [userJoinList containsObject:session.sessionID]) {
+            
+            [cell1.joinButton setImage:nil forState:UIControlStateNormal];
+            [cell1.joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
+        } else {
+          
+            [cell1.joinButton  setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
+        }
+        [cell1.joinButton  addTarget:self action:@selector(joinButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+
+        
+    
+        
+        [cell1.reminderBUtton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
+        for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+            if (notification.userInfo != nil && notification.userInfo.count > 0) {
+                NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
+                if ([sessionID isEqualToString:session.sessionID]) {
+                    [cell1.reminderBUtton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
+                }
+            }
+        }
+        
+        [cell1.reminderBUtton addTarget:self action:@selector(remindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+
+        
+        return cell1;
+        }
+        
+        
+        
+        //[self buildSessionDetailView:cell1 withSession:session];
+
+else
+{
     static NSString *CellIdentifier = @"agendaCellIdentifier";
 
     AgendatableViewCell *cell = (AgendatableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AgendaCustomCell" owner:self options:nil];
         cell = [topLevelObjects objectAtIndex:0];
+      
     }
 
-    for (UIView *view in cell.subviews) {
-       if (view.tag >= tag_cell_view_start) {
-            [view removeFromSuperview];
-       }
-    }
+//    for (UIView *view in cell.subviews) {
+//       if (view.tag >= tag_cell_view_start) {
+//            [view removeFromSuperview];
+//       }
+//    }
     
 
 //    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 //    [cell.backgroundView setBackgroundColor:[UIColor colorWithRed:245 / 255.0 green:245 / 255.0 blue:245 / 255.0 alpha:1.0f]];
 
-    Agenda *agenda = [self.agendaList objectAtIndex:indexPath.section];
-    Session *session = [agenda.sessions objectAtIndex:indexPath.row];
+   
     
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -630,31 +696,34 @@
 
     [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
     [cell.sessionTitleTextLabel setText:session.sessionTitle];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];  
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+       return cell;
+}
 
-    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row)
-    {
-        UITableViewCell *cell1 =(UITableViewCell *)cell;
-        [self buildSessionDetailView:cell1 withSession:session];
-    }
-
-    return cell;
+   
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *lastSelectedCell = [self.agendaTable cellForRowAtIndexPath:self.selectedCell];
-    if (lastSelectedCell != nil) {
-        if ([lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] != nil) {
-            [[lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] removeFromSuperview];
-        }
+//    UITableViewCell *lastSelectedCell = [self.agendaTable cellForRowAtIndexPath:self.selectedCell];
+//    if (lastSelectedCell != nil) {
+//        if ([lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] != nil) {
+//            [[lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] removeFromSuperview];
+//        }
+//    }
+    if (selectedRow==indexPath.row)
+    {
+      self.selectedCell=NULL;
+        selectedRow=-1;
     }
-    if (self.selectedCell.section == indexPath.section && self.selectedCell.row == indexPath.row) {
-        self.selectedCell = [NSIndexPath indexPathForRow:-1 inSection:-1];
-    } else {
+    else
+    {
+        selectedRow=indexPath.row;
         self.selectedCell = indexPath;
     }
 
-    [self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    [self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.agendaTable reloadData];
 }
 
 

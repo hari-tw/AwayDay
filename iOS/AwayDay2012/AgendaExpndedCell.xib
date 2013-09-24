@@ -16,7 +16,7 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-AN-uNi">
                         <rect key="frame" x="10" y="11" width="285" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -56,17 +56,18 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-XF-Gmp">
-                        <rect key="frame" x="278" y="39" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" backgroundImage="join_button.png">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-W6-RNn">
                         <rect key="frame" x="278" y="85" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" backgroundImage="reminder_button.png">
+                        <state key="normal">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gso-P1-3na">
+                        <rect key="frame" x="278" y="39" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="join_button.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -74,7 +75,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="agendaTitleTextLabel" destination="ADc-AN-uNi" id="Rbp-m3-FaO"/>
-                <outlet property="joinButton" destination="aUM-XF-Gmp" id="hAn-eh-QMG"/>
+                <outlet property="joinButton" destination="gso-P1-3na" id="fkF-CV-PnM"/>
                 <outlet property="reminderBUtton" destination="DhE-W6-RNn" id="R9h-yV-ezb"/>
                 <outlet property="roomTextLabel" destination="Z2I-JX-egA" id="VUk-N6-aJH"/>
                 <outlet property="speakerTextLabel" destination="826-rx-SCU" id="d2R-B0-97Y"/>
@@ -84,6 +85,5 @@
     </objects>
     <resources>
         <image name="join_button.png" width="44" height="44"/>
-        <image name="reminder_button.png" width="44" height="44"/>
     </resources>
 </document>
