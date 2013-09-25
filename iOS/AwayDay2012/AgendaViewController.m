@@ -712,7 +712,7 @@ else
 //            [[lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] removeFromSuperview];
 //        }
 //    }
-    if (selectedRow==indexPath.row)
+    if (selectedRow==indexPath.row && selectedSection == indexPath.section)
     {
       self.selectedCell=NULL;
         selectedRow=-1;
@@ -724,8 +724,8 @@ else
         selectedSection=indexPath.section;
         self.selectedCell = indexPath;
     }
-    [self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-   // [self.agendaTable reloadData];
+    //[self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.agendaTable reloadData];
 }
 
 
