@@ -45,6 +45,7 @@
 @end
 
 NSUInteger selectedRow;
+NSUInteger selectedSection;
 
 @implementation AgendaViewController
 @synthesize agendaList = _agendaList;
@@ -554,7 +555,7 @@ NSUInteger selectedRow;
 //        CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
 //        float height = 126 + titleSize.height + size.height;
 //        //return height-30;
-    if(selectedRow==indexPath.row)
+    if(selectedRow==indexPath.row && selectedSection == indexPath.section)
     {
         return 136;
     } else {
@@ -611,7 +612,7 @@ NSUInteger selectedRow;
     
     Agenda *agenda = [self.agendaList objectAtIndex:indexPath.section];
     Session *session = [agenda.sessions objectAtIndex:indexPath.row];
-    if (selectedRow==indexPath.row)
+    if (selectedRow==indexPath.row && selectedSection == indexPath.section)
     {
         
         static NSString *CellIdentifier = @"agendaExpandCell";
@@ -715,15 +716,16 @@ else
     {
       self.selectedCell=NULL;
         selectedRow=-1;
+        selectedSection=-1;
     }
     else
     {
         selectedRow=indexPath.row;
+        selectedSection=indexPath.section;
         self.selectedCell = indexPath;
     }
-
-//    [self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [self.agendaTable reloadData];
+    [self.agendaTable reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+   // [self.agendaTable reloadData];
 }
 
 
