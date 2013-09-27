@@ -532,7 +532,7 @@
     </scenes>
     <resources>
         <image name="inner-page-backdrop.png" width="320" height="460"/>
-        <image name="line.png" width="16" height="16"/>
+        <image name="line.png" width="579" height="2"/>
         <image name="play-button.png" width="88" height="88"/>
         <image name="plus-symbol.png" width="44" height="44"/>
         <image name="slider-menu-icon 2.png" width="44" height="44"/>
