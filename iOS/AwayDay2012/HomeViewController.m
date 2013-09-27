@@ -1,10 +1,4 @@
-//
-//  HomeViewController.
-//  AwayDay2012
-//
-//  Created by safadmoh on 11/09/13.
-//
-//
+
 
 #import "HomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
@@ -16,7 +10,7 @@
 #import "SpeakersViewController.h"
 #import "CustomSlider.h"
 static CGFloat const FVEDetailControllerTargetedViewTag = 111;
-
+bool blinkStatus = NO;
 @interface HomeViewController () <RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
 {
     NSTimer *timer;
@@ -56,12 +50,7 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     }
     
     [self.counterTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:40]];
-    //     [self.minutesTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
-    //     [self.secondTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
-    //    [self.daysTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:35]];
     
-    
-    //[self showDateCountdown];
     
 }
 
@@ -69,54 +58,61 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 -(void) updateCountdown
 {
     
-    NSString *dateString = @"27-09-2013";
+    NSString *dateString = @"2013-09-27 15:00";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+ 
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSDate *dateFromString = [[NSDate alloc] init];
-    // voila!
+    
     dateFromString = [dateFormatter dateFromString:dateString];
-    
-    
-    NSDate *now = [NSDate date];
+
+//
+//    
+   NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
+//    
+//    
+//    
+//    NSDateComponents *componentsHours = [calendar components:NSHourCalendarUnit fromDate:now];
+//    NSDateComponents *componentMint = [calendar components:NSMinuteCalendarUnit fromDate:now];
+//    NSDateComponents *componentSec = [calendar components:NSSecondCalendarUnit fromDate:now];
+//    
+//    
+//  NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+//    NSDateComponents *componentsDaysDiff = [gregorianCalendar components:NSDayCalendarUnit
+//                                                                fromDate:now
+//                                                                  toDate:dateFromString
+//                                                                 options:0];
     
     
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit| NSSecondCalendarUnit;
     
-    NSDateComponents *componentsHours = [calendar components:NSHourCalendarUnit fromDate:now];
-    NSDateComponents *componentMint = [calendar components:NSMinuteCalendarUnit fromDate:now];
-    NSDateComponents *componentSec = [calendar components:NSSecondCalendarUnit fromDate:now];
+    NSDateComponents *conversionInfo = [calendar components:unitFlags fromDate:now  toDate:dateFromString  options:0];
     
-    
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *componentsDaysDiff = [gregorianCalendar components:NSDayCalendarUnit
-                                                                fromDate:now
-                                                                  toDate:dateFromString
-                                                                 options:0];
+    //int months = [conversionInfo month];
+    int days = [conversionInfo day];
+    int hours = [conversionInfo hour];
+    int minutes = [conversionInfo minute];
+    int seconds=[conversionInfo second];
     
     
-    
-    //  self.lblDaysSetting.text=[NSString stringWithFormat:@"%02d",componentsDaysDiff.day];
-    //    self.hoursTextLabel.text=[NSString stringWithFormat:@"%02d",(24-componentsHours.hour)+componentsDaysDiff.day*24+12];
-    //    self.minutesTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentMint.minute)];
-    //    self.secondTextLabel.text=[NSString stringWithFormat:@"%02d",(60-componentSec.second)];
+       
+    NSLog(@"%@",[NSString stringWithFormat:@"%dd:%dh:%dm:%ds",days,hours,minutes,seconds]);
+   self.counterTextLabel.text=[NSString stringWithFormat:@"%dd:%dh:%dm:%ds",days,hours,minutes,seconds];
     
     
-    //    self.daysTextLabel.text=[NSString stringWithFormat:@"%02dd",componentsDaysDiff.day];
-    //    self.hoursTextLabel.text=[NSString stringWithFormat:@"%02dh",(24-componentsHours.hour)+12];
-    //    self.minutesTextLabel.text=[NSString stringWithFormat:@"%02dm",(60-componentMint.minute)];
-    //     self.secondTextLabel.text=[NSString stringWithFormat:@"%02ds",(60-componentSec.second)];
-    
-    
-    self.counterTextLabel.text=[NSString stringWithFormat:@"%02dd:%02dh:%02dm:%02ds",componentsDaysDiff.day,(24-componentsHours.hour),(60-componentMint.minute),(60-componentSec.second)];
-    
-    if(((24-componentsHours.hour)+componentsDaysDiff.day*24+12)==0)
-    {
-        [timer invalidate];
-        self.counterTextLabel.hidden=YES;
-//        self.hoursTextLabel.hidden=YES;
-//        self.minutesTextLabel.hidden=YES;
-//        self.secondTextLabel.hidden=YES;
+    NSComparisonResult result = [now compare:dateFromString];
+    if (result == NSOrderedAscending) {
+        
+    } else if (result == NSOrderedDescending) {
+       // [timer invalidate];
+        [self blink];
+        self.counterTextLabel.text=@"Started";
+        
+    }  else {
+        //[timer invalidate];
+        [self blink];
+        self.counterTextLabel.hidden=@"Started";
     }
     
     
@@ -139,10 +135,12 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown)userInfo:nil repeats: YES];
     
     [self layoutSubviews];
 }
+
+
 
 - (void)layoutSubviews
 {
@@ -156,6 +154,17 @@ static CGFloat const FVEDetailControllerTargetedViewTag = 111;
     //    floor((self.view.frame.size.height/2)*0.9));
 }
 
+-(void)blink{
+    self.counterTextLabel.font=[UIFont fontWithName:@"HelveticaNeue-Light" size:24];
+    if(blinkStatus == NO){
+        self.counterTextLabel.textColor = [UIColor blackColor];
+        
+        blinkStatus = YES;
+    }else {
+        self.counterTextLabel.textColor = [UIColor grayColor];
+        blinkStatus = NO;
+    }
+}
 
 -(IBAction)onBurger:(id)sender
 {
