@@ -28,13 +28,13 @@
 #import <UIKit/UIKit.h>
 
 /**
- `AFNetworkActivityIndicatorManager` manages the state of the network activity indicator in the status bar. When enabled, it will listen for notifications indicating that a network request operation has started or finished, and start or stop animating the indicator accordingly. The number of active requests is incremented and decremented much like a stack or a semaphore, and the activity indicator will animate so long as that number is greater than zero.
+ `AFNetworkActivityIndicatorManager` manages the state of the network activity indicator in the status bar. When enabled, it will listen for notifications indicating that a network request operation has started or finished, and startTime or stop animating the indicator accordingly. The number of active requests is incremented and decremented much like a stack or a semaphore, and the activity indicator will animate so long as that number is greater than zero.
 
  You should enable the shared instance of `AFNetworkActivityIndicatorManager` when your application finishes launching. In `AppDelegate application:didFinishLaunchingWithOptions:` you can do so with the following code:
 
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
- By setting `isNetworkActivityIndicatorVisible` to `YES` for `sharedManager`, the network activity indicator will show and hide automatically as requests start and finish. You should not ever need to call `incrementActivityCount` or `decrementActivityCount` yourself.
+ By setting `isNetworkActivityIndicatorVisible` to `YES` for `sharedManager`, the network activity indicator will show and hide automatically as requests startTime and finish. You should not ever need to call `incrementActivityCount` or `decrementActivityCount` yourself.
 
  See the Apple Human Interface Guidelines section about the Network Activity Indicator for more information:
  http://developer.apple.com/library/iOS/#documentation/UserExperience/Conceptual/MobileHIG/UIElementGuidelines/UIElementGuidelines.html#//apple_ref/doc/uid/TP40006556-CH13-SW44
@@ -61,7 +61,7 @@
 + (instancetype)sharedManager;
 
 /**
- Increments the number of active network requests. If this number was zero before incrementing, this will start animating the status bar network activity indicator.
+ Increments the number of active network requests. If this number was zero before incrementing, this will startTime animating the status bar network activity indicator.
  */
 - (void)incrementActivityCount;
 

@@ -272,7 +272,7 @@
 - (void)postUserShare2Server {
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithCapacity:0];
     if (self.session != nil) {
-        [param setObject:self.session.sessionID forKey:kSessionIDKey];
+        [param setObject:self.session.id forKey:kSessionIDKey];
     }
     if (self.userImage != nil) {
         [param setObject:[AppHelper base64EncodeImage:self.userImage] forKey:kShareImageKey];

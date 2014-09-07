@@ -70,7 +70,7 @@
 - (NSString*)tokenName:(sbjson_token_t)token {
 	switch (token) {
 		case sbjson_token_array_open:
-			return @"start of array";
+			return @"startTime of array";
 			break;
 
 		case sbjson_token_array_close:
@@ -104,7 +104,7 @@
 			break;
 
 		case sbjson_token_object_open:
-			return @"start of object";
+			return @"startTime of object";
 			break;
 
 		case sbjson_token_object_close:

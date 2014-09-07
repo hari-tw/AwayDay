@@ -85,6 +85,7 @@
 		49EC240915CA129000DF9B34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EC240515CA129000DF9B34 /* back_button.png */; };
 		49EC240B15CA129000DF9B34 /* vertical_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EC240715CA129000DF9B34 /* vertical_line.png */; };
 		49EC241215CA1AD800DF9B34 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EC241115CA1AD800DF9B34 /* AppHelper.m */; };
+		5E75DF85C90F9C7656025661 /* TWSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75D5203319352041299081 /* TWSession.m */; };
 		7D052E6030064B5C96D0D455 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA31FC6A029E44789304C379 /* libPods.a */; };
 		95193B6A17F2124C00F32C1D /* video-5-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6917F2124C00F32C1D /* video-5-screen_new.png */; };
 		95193B6C17F212D200F32C1D /* video-5-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6B17F212D200F32C1D /* video-5-screen.png */; };
@@ -350,6 +351,8 @@
 		49EC240715CA129000DF9B34 /* vertical_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_line.png; sourceTree = "<group>"; };
 		49EC241015CA1AD800DF9B34 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
 		49EC241115CA1AD800DF9B34 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		5E75D26BF28FB867823985BA /* TWSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSession.h; sourceTree = "<group>"; };
+		5E75D5203319352041299081 /* TWSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSession.m; sourceTree = "<group>"; };
 		95193B6917F2124C00F32C1D /* video-5-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen_new.png"; sourceTree = "<group>"; };
 		95193B6B17F212D200F32C1D /* video-5-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen.png"; sourceTree = "<group>"; };
 		95193B6D17F2148000F32C1D /* AgendaExpndedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaExpndedCell.xib; sourceTree = "<group>"; };
@@ -777,6 +780,8 @@
 				49B99D3315D887A5009B02A8 /* Reminder.m */,
 				490BE77617E6DE1B00153EF3 /* BreakOutSession.h */,
 				490BE77717E6DE1B00153EF3 /* BreakOutSession.m */,
+				5E75D5203319352041299081 /* TWSession.m */,
+				5E75D26BF28FB867823985BA /* TWSession.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1316,6 +1321,7 @@
 				490BE77817E6DE1B00153EF3 /* BreakOutSession.m in Sources */,
 				9550D5F117E7648900E359AF /* CFShareCircleView.m in Sources */,
 				9550D5F217E7648900E359AF /* CFSharer.m in Sources */,
+				5E75DF85C90F9C7656025661 /* TWSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1372,8 +1378,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-objC";
-				PROVISIONING_PROFILE = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
+				PROVISIONING_PROFILE = "BACED5E3-5EA5-4510-8CCC-7AC85094A5B9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BACED5E3-5EA5-4510-8CCC-7AC85094A5B9";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ExternalLibs/JPush/**";
 			};
@@ -1395,8 +1401,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-objC";
-				PROVISIONING_PROFILE = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DDFC61CB-7AC5-4349-B28A-40C8571A5D55";
+				PROVISIONING_PROFILE = "BACED5E3-5EA5-4510-8CCC-7AC85094A5B9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BACED5E3-5EA5-4510-8CCC-7AC85094A5B9";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ExternalLibs/JPush/**";
 				VALIDATE_PRODUCT = YES;
@@ -1408,8 +1414,8 @@
 			baseConfigurationReference = F7D551287C6643CE899432D7 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1437,8 +1443,8 @@
 			baseConfigurationReference = F7D551287C6643CE899432D7 /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Senthil Kumar V (M29CCF4G2Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hari Saravana Prabhu Balamani (PJ559HC453)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

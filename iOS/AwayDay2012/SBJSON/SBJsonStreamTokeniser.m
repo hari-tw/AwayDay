@@ -379,7 +379,7 @@
 
         }
         default: {
-            self.error = [NSString stringWithFormat:@"Illegal start of token [%c]", ch];
+            self.error = [NSString stringWithFormat:@"Illegal startTime of token [%c]", ch];
             tok = sbjson_token_error;
             break;
         }
@@ -387,7 +387,7 @@
 
     if (tok == sbjson_token_eof) {
         // We ran out of bytes before we could finish parsing the current token.
-        // Back up to the start & wait for more data.
+        // Back up to the startTime & wait for more data.
         index = copyOfIndex;
     }
 

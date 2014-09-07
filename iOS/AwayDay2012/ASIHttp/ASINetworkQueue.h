@@ -82,7 +82,7 @@
 - (void)addHEADOperation:(NSOperation *)operation;
 
 // All ASINetworkQueues are paused when created so that total size can be calculated before the queue starts
-// This method will start the queue
+// This method will startTime the queue
 - (void)go;
 
 @property (assign, nonatomic, setter=setUploadProgressDelegate:) id uploadProgressDelegate;

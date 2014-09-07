@@ -50,7 +50,7 @@ typedef enum {
  */
 @protocol SBJsonStreamParserDelegate
 
-/// Called when object start is found
+/// Called when object startTime is found
 - (void)parserFoundObjectStart:(SBJsonStreamParser*)parser;
 
 /// Called when object key is found
@@ -59,7 +59,7 @@ typedef enum {
 /// Called when object end is found
 - (void)parserFoundObjectEnd:(SBJsonStreamParser*)parser;
 
-/// Called when array start is found
+/// Called when array startTime is found
 - (void)parserFoundArrayStart:(SBJsonStreamParser*)parser;
 
 /// Called when array end is found
@@ -84,7 +84,7 @@ typedef enum {
  Parse a stream of JSON data.
 
  Using this class directly you can reduce the apparent latency for each
- download/parse cycle of documents over a slow connection. You can start
+ download/parse cycle of documents over a slow connection. You can startTime
  parsing *and return chunks of the parsed document* before the entire
  document is downloaded.
 

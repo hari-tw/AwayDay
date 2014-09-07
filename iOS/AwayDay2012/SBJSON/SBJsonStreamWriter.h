@@ -73,7 +73,7 @@
 
  This class provides a range of high-, mid- and low-level methods. You can mix
  and match calls to these. For example, you may want to call -writeArrayOpen
- to start an array and then repeatedly call -writeObject: with various objects
+ to startTime an array and then repeatedly call -writeObject: with various objects
  before finishing off with a -writeArrayClose call.
 
  Objective-C types are mapped to JSON types in the following way:

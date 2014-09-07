@@ -290,7 +290,7 @@ SINGLETON
 
 SINGLETON
 
-- (NSString*)name { return @"at array start"; }
+- (NSString*)name { return @"at array startTime"; }
 
 - (BOOL)parser:(SBJsonStreamParser*)parser shouldAcceptToken:(sbjson_token_t)token {
 	switch (token) {
