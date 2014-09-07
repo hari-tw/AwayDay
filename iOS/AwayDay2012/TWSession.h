@@ -22,6 +22,7 @@
 @property(nonatomic, strong) NSString *location;
 
 + (void)findAllInBackgroundWithBlock:(PFArrayResultBlock)resultBlock;
++ (NSArray *)findAll;
 //+ (void)findFavorites:(NSArray *)talkIds inBackgroundWithBlock:(PFArrayResultBlock)resultBlock;
 + (NSArray *)sortedTalkArray:(NSArray *)talks;
 + (NSString *)stringTime:(NSDate *)startTime;

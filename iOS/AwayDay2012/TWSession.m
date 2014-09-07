@@ -38,6 +38,13 @@
     }];
 }
 
++ (NSArray *)findAll {
+    PFQuery *query = [TWSession query];
+    [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
+    return [query findObjects];
+}
+
+
 //+ (void)findFavorites:(NSArray *)talkIds inBackgroundWithBlock:(PFArrayResultBlock)resultBlock {
 //    PFQuery *query = [TWSession query];
 //    [query whereKey:@"alwaysFavorite" equalTo:@(YES)];

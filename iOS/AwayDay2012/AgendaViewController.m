@@ -105,7 +105,9 @@ NSUInteger selectedSection;
     if (self.reminderList != nil) {
         [self.reminderList removeAllObjects];
     }
+
     self.reminderList = [Reminder getAllReminder];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -145,29 +147,36 @@ load the agenda list and their sessions
             NSLog(@"twSession = %@", twSession);
         }
         allSessions = sessions;
+        NSDictionary *sessionsGroupedByDate = [self groupObjectsInArray:sessions byKey:@"date"];
+
+        NSMutableDictionary *tempAgendaMapping = [[NSMutableDictionary alloc] initWithCapacity:0];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        self.agendaList = [[NSMutableArray alloc]init];
+
+        for (NSString *agendaDate in sessionsGroupedByDate.allKeys) {
+            NSString *sessionDateStr = [dateFormatter stringFromDate:agendaDate];
+            Agenda *agenda = [tempAgendaMapping objectForKey:sessionDateStr];
+            if (agenda == nil) {
+                agenda = [[Agenda alloc] init];
+                [agenda setAgendaDate:sessionDateStr];
+
+                [agenda setSessions:sessionsGroupedByDate[agendaDate]];
+            }
+
+            [self.agendaList addObject:agenda];
+            [self reloadTableViewDataSource];
+
+        }
+
+        [self.agendaTable reloadData];
+        [self updateTopSession];
+
+        NSLog(@"self.agendaList = %@", self.agendaList);
     }];
 
-    NSMutableDictionary *tempAgendaMapping = [[NSMutableDictionary alloc] initWithCapacity:0];
-
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    for (Session *session in allSessions) {
-        NSString *sessionDateStr = [dateFormatter stringFromDate:session.sessionStartTime];
-        Agenda *agenda = [tempAgendaMapping objectForKey:sessionDateStr];
-        if (agenda == nil) {
-            agenda = [[Agenda alloc] init];
-            [agenda setAgendaDate:session.sessionStartTime];
-
-            NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
-            [agenda setSessions:list];
-        }
-        [agenda.sessions addObject:session];
-        [tempAgendaMapping setObject:agenda forKey:sessionDateStr];
-    }
-
-    [self.agendaList addObjectsFromArray:tempAgendaMapping.allValues];
-
-    [self getAgendaListFromServer:(NSString *) kServiceLoadSessionList showLoading:YES];
+//    [self getAgendaListFromServer:(NSString *) kServiceLoadSessionList showLoading:YES];
 }
 
 - (void)getAgendaListFromServer:(NSString *)urlString showLoading:(BOOL)showLoading {
@@ -246,18 +255,18 @@ update the top session area's UI
     }
 
     Agenda *agenda = [self.agendaList objectAtIndex:topAgendaIndex];
-    Session *session = [agenda.sessions objectAtIndex:topSessionIndex];
+    TWSession  *session = [agenda.sessions objectAtIndex:topSessionIndex];
 //    NSIndexPath *path=[NSIndexPath indexPathForRow:topSessionIndex inSection:topAgendaIndex];
 
 //    [self.agendaTable scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
-    [self.topSessionTitleLabel setText:session.sessionTitle];
-    NSLog(@"%@", session.sessionTitle);
+    [self.topSessionTitleLabel setText:session.title];
+    NSLog(@"%@", session.title);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
-    [self.topSessionDurationLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
+    [self.topSessionDurationLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.startTime], [dateFormatter stringFromDate:session.endTime]]];
 
-    NSTimeInterval interval = [session.sessionStartTime timeIntervalSinceDate:today];
+    NSTimeInterval interval = [session.startTime timeIntervalSinceDate:today];
 
     if (interval > 0) {
         [self.clockView setRestMinutes:[NSNumber numberWithFloat:interval]];
@@ -502,48 +511,16 @@ build the selection effect of the choosed session
     [self.navigationController pushViewController:self.reminderViewController animated:YES];
 }
 
-- (IBAction)shareButtonPressed:(id)sender {
-//    NSLog(@"%@",sender.superview.superview);
-//    UITableViewCell *cell=(UITableViewCell *)sender.superview.superview;
-//    NSIndexPath *indexPath=[self.agendaTable indexPathForCell:cell];
-
-    self.shareCircleView = [[CFShareCircleView alloc] init];
-    self.shareCircleView.delegate = self;
-    [self.shareCircleView show];
-
-
-}
-
-- (void)authorizeWeibo {
-    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
-    request.redirectURI = kRedirectURI;
-    request.scope = @"email,direct_messages_write";
-    [WeiboSDK sendRequest:request];
-}
-
-- (void)displayPostShareVC {
-    if (self.postShareViewController == nil) {
-        PostShareViewController *psvc = [[PostShareViewController alloc] initWithNibName:@"PostShareViewController" bundle:nil];
-        self.postShareViewController = psvc;
-    }
-
-    Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
-    Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
-    [self.postShareViewController setSession:session];
-    [self.navigationController pushViewController:self.postShareViewController animated:YES];
-}
-
 #pragma mark - UITableView method
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     NSLog(@"%d", self.agendaList.count);
     return self.agendaList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     Agenda *agenda = [self.agendaList objectAtIndex:section];
-    NSLog(@"%d", agenda.sessions.count);
+    NSLog(@"agenda sessions count %d", agenda.sessions.count);
     return agenda.sessions.count;
 }
 
@@ -610,7 +587,7 @@ build the selection effect of the choosed session
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     Agenda *agenda = [self.agendaList objectAtIndex:indexPath.section];
-    Session *session = [agenda.sessions objectAtIndex:indexPath.row];
+    TWSession *session = [agenda.sessions objectAtIndex:indexPath.row];
     if (selectedRow == indexPath.row && selectedSection == indexPath.section) {
 
         static NSString *CellIdentifier = @"agendaExpandCell";
@@ -619,18 +596,18 @@ build the selection effect of the choosed session
             NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AgendaExpndedCell" owner:self options:nil];
             cell1 = [topLevelObjects objectAtIndex:0];
         }
-        cell1.agendaTitleTextLabel.text = session.sessionTitle;
+        cell1.agendaTitleTextLabel.text = session.title;
 
-        cell1.speakerTextLabel.text = session.sessionSpeaker;
+        cell1.speakerTextLabel.text = session.speaker;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"HH:mm"];
-        cell1.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.sessionStartTime], [formatter stringFromDate:session.sessionEndTime]];
-        cell1.roomTextLabel.text = session.sessionAddress;
+        cell1.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.startTime], [formatter stringFromDate:session.endTime]];
+        cell1.roomTextLabel.text = session.address;
 
 
         AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
-        if (userJoinList != nil && [userJoinList containsObject:session.sessionID]) {
+        if (userJoinList != nil && [userJoinList containsObject:session.id]) {
 
             [cell1.joinButton setImage:nil forState:UIControlStateNormal];
             [cell1.joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
@@ -645,7 +622,7 @@ build the selection effect of the choosed session
         for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
             if (notification.userInfo != nil && notification.userInfo.count > 0) {
                 NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
-                if ([sessionID isEqualToString:session.sessionID]) {
+                if ([sessionID isEqualToString:session.id]) {
                     [cell1.reminderBUtton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
                 }
             }
@@ -657,10 +634,6 @@ build the selection effect of the choosed session
         return cell1;
     }
 
-
-
-        //[self buildSessionDetailView:cell1 withSession:session];
-
     else {
         static NSString *CellIdentifier = @"agendaCellIdentifier";
 
@@ -671,25 +644,12 @@ build the selection effect of the choosed session
 
         }
 
-//    for (UIView *view in cell.subviews) {
-//       if (view.tag >= tag_cell_view_start) {
-//            [view removeFromSuperview];
-//       }
-//    }
-
-
-//    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    [cell.backgroundView setBackgroundColor:[UIColor colorWithRed:245 / 255.0 green:245 / 255.0 blue:245 / 255.0 alpha:1.0f]];
-
-
-
-
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
         //[self buildSessionCell:cell withSession:session];
 
-        [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
-        [cell.sessionTitleTextLabel setText:session.sessionTitle];
+        [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.startTime], [dateFormatter stringFromDate:session.endTime]]];
+        [cell.sessionTitleTextLabel setText:session.title];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
         return cell;
@@ -699,12 +659,7 @@ build the selection effect of the choosed session
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *lastSelectedCell = [self.agendaTable cellForRowAtIndexPath:self.selectedCell];
-//    if (lastSelectedCell != nil) {
-//        if ([lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] != nil) {
-//            [[lastSelectedCell viewWithTag:tag_cell_view_session_detail_view] removeFromSuperview];
-//        }
-//    }
+
     if (selectedRow == indexPath.row && selectedSection == indexPath.section) {
         self.selectedCell = NULL;
         selectedRow = -1;
@@ -781,50 +736,6 @@ build the selection effect of the choosed session
     //[AppHelper showInfoView:self.view withText:@"Failed" withLoading:NO];
     [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(removeInfoView) userInfo:nil repeats:NO];
 }
-
-/*
-- (void)requestFinished:(ASIHTTPRequest *)request {
-//    NSLog(@"%@", request.responseString);
-    if (request.tag == tag_req_load_session_list) {
-
-        NSString *resp = [request responseString];
-        resp = [resp stringByReplacingOccurrencesOfString:@"(null)" withString:@""];
-        resp = [resp stringByReplacingOccurrencesOfString:@"'" withString:@"\'"];
-
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        NSMutableArray *receivedObjects = [parser objectWithString:resp];
-
-        if (receivedObjects.count > 0) {
-            [self.agendaList removeAllObjects];
-            [DBService deleteAllSessions];
-
-            for (NSDictionary *object in receivedObjects) {
-                Agenda *agenda = [Agenda createAgenda:object];
-                [self.agendaList addObject:agenda];
-                [DBService saveSessionList:agenda.sessions];
-            }
-
-            [self.agendaTable reloadData];
-            [self updateTopSession];
-        }
-
-        loading = NO;
-        [AppHelper removeInfoView:self.view];
-
-        [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
-    }
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request {
-    if (request.tag == tag_req_load_session_list) {
-        NSLog(@"%@", [request.error localizedDescription]);
-        [AppHelper removeInfoView:self.view];
-        loading = NO;
-        [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
-        [AppHelper showInfoView:self.view withText:@"Failed" withLoading:NO];
-        [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(removeInfoView) userInfo:nil repeats:NO];
-    }
-}*/
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -991,5 +902,21 @@ build the selection effect of the choosed session
     NSLog(@"Share circle view was canceled.");
 }
 
+-(NSDictionary *) groupObjectsInArray:(NSArray *)array byKey:(NSString *) key {
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+
+    for (id obj in array) {
+        id keyValue = [obj valueForKey:key];
+        NSMutableArray *arr = dictionary[keyValue];
+        if (! arr) {
+            arr = [NSMutableArray array];
+            dictionary[keyValue] = arr;
+        }
+        [arr addObject:obj];
+
+    }
+    NSLog(@"dictionary = %@", dictionary);
+    return [dictionary copy];
+}
 
 @end

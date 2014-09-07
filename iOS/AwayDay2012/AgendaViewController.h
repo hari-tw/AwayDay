@@ -11,7 +11,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AgendaViewController.h"
 #import "Agenda.h"
-#import "Session.h"
 #import "ReminderViewController.h"
 #import "TopSessionClockView.h"
 #import "EGORefreshTableHeaderView.h"
@@ -63,6 +62,5 @@
 
 -(IBAction)joinButtonPressed:(id)sender;
 -(IBAction)remindButtonPressed:(id)sender;
--(IBAction)shareButtonPressed:(id)sender;
 
 @end
