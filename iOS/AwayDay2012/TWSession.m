@@ -38,11 +38,6 @@
     }];
 }
 
-+ (NSArray *)findAll {
-    PFQuery *query = [TWSession query];
-    [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
-    return [query findObjects];
-}
 
 
 //+ (void)findFavorites:(NSArray *)talkIds inBackgroundWithBlock:(PFArrayResultBlock)resultBlock {
@@ -70,6 +65,34 @@
 - (NSString *)talkTime {
     return [[self class] stringTime:self.startTime];
 }
+
+//- (NSDate *)startTime {
+//
+//    NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
+//    [dateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'+0800'"];
+//    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
+//
+//    return [dateFormatter2 dateFromString:self.startTime];
+//}
+
+//- (NSDate *)endTime {
+//
+//    NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
+//    [dateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'+0800'"];
+//    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
+//
+//    return [dateFormatter2 dateFromString:self.endTime];
+//}
+
+//- (NSDate *)date {
+//
+//    NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
+//    [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
+//
+//    return [dateFormatter2 dateFromString:self.date];
+//}
+
+
 
 //- (void)toggleFavorite:(BOOL)isFavorite {
 //    NSArray *favorites = [[NSUserDefaults standardUserDefaults] objectForKey:kDefaultsFavoriteKey];

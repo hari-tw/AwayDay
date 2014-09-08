@@ -58,8 +58,6 @@
  */
 -(void)buildSessionDetailView:(UITableViewCell *)cell withSession:(Session *)session;
 
--(NSMutableArray *)checkSessionJoinConflict:(Session *)session;
-
 -(IBAction)joinButtonPressed:(id)sender;
 -(IBAction)remindButtonPressed:(id)sender;
 

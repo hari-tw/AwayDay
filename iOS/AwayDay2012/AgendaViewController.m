@@ -10,8 +10,6 @@
 #import "AppHelper.h"
 #import "AppDelegate.h"
 #import "AppConstant.h"
-#import "DBService.h"
-#import "AFJSONRequestOperation.h"
 
 //#import "CFShareCircleView.h"
 #import <Social/Social.h>
@@ -138,7 +136,7 @@ NSUInteger selectedSection;
 load the agenda list and their sessions
 */
 - (void)loadAgendaList {
-    __block NSMutableArray *allSessions = [[NSMutableArray alloc]init];
+    __block NSMutableArray *allSessions = [[NSMutableArray alloc] init];
 //    allSessions = [DBService getLocalAgendaList];
 
     [TWSession findAllInBackgroundWithBlock:^(NSArray *sessions, NSError *error) {
@@ -152,22 +150,26 @@ load the agenda list and their sessions
         NSMutableDictionary *tempAgendaMapping = [[NSMutableDictionary alloc] initWithCapacity:0];
 
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        self.agendaList = [[NSMutableArray alloc]init];
+        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
 
-        for (NSString *agendaDate in sessionsGroupedByDate.allKeys) {
-            NSString *sessionDateStr = [dateFormatter stringFromDate:agendaDate];
-            Agenda *agenda = [tempAgendaMapping objectForKey:sessionDateStr];
+        self.agendaList = [[NSMutableArray alloc] init];
+
+        for (NSString *agendaDate in [sessionsGroupedByDate.allKeys sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)]) {
+            NSLog(@"agendaDate = %@", agendaDate);
+
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+
+            [format setDateFormat:@"dd/MM/yyyy"];
+            NSDate *date = [format dateFromString:agendaDate];
+
+            Agenda *agenda = [tempAgendaMapping objectForKey:date];
             if (agenda == nil) {
                 agenda = [[Agenda alloc] init];
-                [agenda setAgendaDate:sessionDateStr];
-
+                [agenda setAgendaDate:date];
                 [agenda setSessions:sessionsGroupedByDate[agendaDate]];
             }
 
             [self.agendaList addObject:agenda];
-            [self reloadTableViewDataSource];
-
         }
 
         [self.agendaTable reloadData];
@@ -175,53 +177,6 @@ load the agenda list and their sessions
 
         NSLog(@"self.agendaList = %@", self.agendaList);
     }];
-
-//    [self getAgendaListFromServer:(NSString *) kServiceLoadSessionList showLoading:YES];
-}
-
-- (void)getAgendaListFromServer:(NSString *)urlString showLoading:(BOOL)showLoading {
-    loading = YES;
-
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSLog(@"url = %@", urlString);
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-
-    AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest
-                                                                                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                                                                   NSLog(@"success response:%@", JSON);
-                                                                                                   [self handleAgendaListRequestSuccess:JSON];
-                                                                                               }
-                                                                                               failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                                                                   NSLog(@"fail response:%@", JSON);
-                                                                                                   [self handleAgendaListRequestFailure:error];
-                                                                                               }
-    ];
-    [requestOperation start];
-
-    if (showLoading) {
-        [AppHelper showInfoView:self.view withText:@"Loading..." withLoading:YES];
-    }
-}
-
-- (NSMutableArray *)checkSessionJoinConflict:(Session *)session {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSMutableArray *userJoinList = (NSMutableArray *) [appDelegate.userState objectForKey:kUserJoinListKey];
-    NSMutableArray *joinedSessionList = [DBService getSessionListBySessionIDList:userJoinList];
-    if (joinedSessionList == nil || joinedSessionList.count == 0) return nil;
-
-
-    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:0];
-    for (Session *joinedSession in joinedSessionList) {
-        NSDate *joinedSessionStart = joinedSession.sessionStartTime;
-        NSDate *joinedSessionEnd = joinedSession.sessionEndTime;
-
-        if ([[joinedSessionStart laterDate:session.sessionEndTime] isEqualToDate:session.sessionEndTime] ||
-                [[joinedSessionEnd earlierDate:session.sessionStartTime] isEqualToDate:joinedSessionEnd]) {
-            [result addObject:joinedSession];
-        }
-    }
-
-    return result;
 }
 
 /**
@@ -232,7 +187,7 @@ update the top session area's UI
     NSDate *today = [NSDate date];
 
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd"];
+    [df setDateFormat:@"dd/MM/yyy"];
     NSString *todayString = [df stringFromDate:today];
 
     int topAgendaIndex = 0;
@@ -241,6 +196,7 @@ update the top session area's UI
     for (int i = 0; i < self.agendaList.count; i++) {
         Agenda *agenda = [self.agendaList objectAtIndex:i];
         NSString *agendaDateString = [df stringFromDate:agenda.agendaDate];
+        NSLog(@"agendaDateString = %@", agendaDateString);
         if ([todayString isEqualToString:agendaDateString]) {
             for (int k = 0; k < agenda.sessions.count; k++) {
                 Session *session = [agenda.sessions objectAtIndex:k];
@@ -255,18 +211,15 @@ update the top session area's UI
     }
 
     Agenda *agenda = [self.agendaList objectAtIndex:topAgendaIndex];
-    TWSession  *session = [agenda.sessions objectAtIndex:topSessionIndex];
-//    NSIndexPath *path=[NSIndexPath indexPathForRow:topSessionIndex inSection:topAgendaIndex];
-
-//    [self.agendaTable scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    TWSession *session = [agenda.sessions objectAtIndex:topSessionIndex];
 
     [self.topSessionTitleLabel setText:session.title];
     NSLog(@"%@", session.title);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
-    [self.topSessionDurationLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.startTime], [dateFormatter stringFromDate:session.endTime]]];
+    [self.topSessionDurationLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:[self getDate:session.startTime]], [dateFormatter stringFromDate:[self getDate:session.endTime]]]];
 
-    NSTimeInterval interval = [session.startTime timeIntervalSinceDate:today];
+    NSTimeInterval interval = [[self getDate:session.startTime] timeIntervalSinceDate:today];
 
     if (interval > 0) {
         [self.clockView setRestMinutes:[NSNumber numberWithFloat:interval]];
@@ -302,6 +255,7 @@ build the common session cell of the table
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
+
     UILabel *sessionDuration = [[UILabel alloc] initWithFrame:CGRectMake(240, 10, 75, 30)];
     [sessionDuration setTag:tag_cell_session_time_view];
     [sessionDuration setBackgroundColor:[UIColor clearColor]];
@@ -394,11 +348,6 @@ build the selection effect of the choosed session
 
     y += 3;
 
-//    UIView *transparentTopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
-//    transparentTopView.alpha=0.2f;
-//    transparentTopView.backgroundColor=[UIColor blackColor];
-//    [detailView addSubview:transparentTopView];
-//    
     UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
     [attend setFrame:CGRectMake(280, 10, 35, 35)];
 
@@ -427,12 +376,6 @@ build the selection effect of the choosed session
 
     [remind addTarget:self action:@selector(remindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [detailView addSubview:remind];
-
-//    UIButton *share = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [share setFrame:CGRectMake(234, y, 35, 35)];
-//    [share setImage:[UIImage imageNamed:@"share_button.png"] forState:UIControlStateNormal];
-//    [share addTarget:self action:@selector(shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-//    [detailView addSubview:share];
 
     CATransition *transition = [CATransition animation];
     transition.duration = 0.15f;
@@ -463,11 +406,6 @@ build the selection effect of the choosed session
 
     Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
     Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
-
-    NSMutableArray *conflictList = [self checkSessionJoinConflict:session];
-    if (conflictList != nil && conflictList.count > 0) {
-        //need to handle session confiction
-    }
 
     if ([userJoinList containsObject:session.sessionID]) {
         [userJoinList removeObject:session.sessionID];
@@ -601,7 +539,7 @@ build the selection effect of the choosed session
         cell1.speakerTextLabel.text = session.speaker;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"HH:mm"];
-        cell1.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.startTime], [formatter stringFromDate:session.endTime]];
+        cell1.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:[self getDate:session.startTime]], [formatter stringFromDate:[self getDate:session.endTime]]];
         cell1.roomTextLabel.text = session.address;
 
 
@@ -644,11 +582,11 @@ build the selection effect of the choosed session
 
         }
 
-      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
         //[self buildSessionCell:cell withSession:session];
 
-        [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.startTime], [dateFormatter stringFromDate:session.endTime]]];
+        [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:[self getDate:session.startTime]], [dateFormatter stringFromDate:[self getDate:session.endTime]]]];
         [cell.sessionTitleTextLabel setText:session.title];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
@@ -692,7 +630,7 @@ build the selection effect of the choosed session
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView *)view {
     loading = YES;
-    [self getAgendaListFromServer:(NSString *) kServiceLoadSessionList showLoading:YES];
+    [self loadAgendaList];
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view {
@@ -704,38 +642,6 @@ build the selection effect of the choosed session
 }
 
 #pragma mark - Netowork callback method
-
-- (void)handleAgendaListRequestSuccess:(NSArray *)agendaList {
-
-    //if (self.agendaList.count > 0) {
-    [self.agendaList removeAllObjects];
-    for (NSDictionary *object in agendaList) {
-        [DBService deleteAllSessions];
-        NSLog(@"%@", object);
-
-        Agenda *agenda = [Agenda createAgenda:object];
-        [self.agendaList addObject:agenda];
-        NSLog(@"%d", self.agendaList.count);
-        [DBService saveSessionList:agenda.sessions];
-        [self.agendaTable reloadData];
-        [self updateTopSession];
-    }
-
-    // }
-    loading = NO;
-    [AppHelper removeInfoView:self.view];
-
-    [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
-}
-
-- (void)handleAgendaListRequestFailure:(NSError *)error {
-    NSLog(@"%@", [error localizedDescription]);
-    [AppHelper removeInfoView:self.view];
-    loading = NO;
-    [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
-    //[AppHelper showInfoView:self.view withText:@"Failed" withLoading:NO];
-    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(removeInfoView) userInfo:nil repeats:NO];
-}
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -902,13 +808,13 @@ build the selection effect of the choosed session
     NSLog(@"Share circle view was canceled.");
 }
 
--(NSDictionary *) groupObjectsInArray:(NSArray *)array byKey:(NSString *) key {
+- (NSDictionary *)groupObjectsInArray:(NSArray *)array byKey:(NSString *)key {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 
     for (id obj in array) {
         id keyValue = [obj valueForKey:key];
         NSMutableArray *arr = dictionary[keyValue];
-        if (! arr) {
+        if (!arr) {
             arr = [NSMutableArray array];
             dictionary[keyValue] = arr;
         }
@@ -917,6 +823,14 @@ build the selection effect of the choosed session
     }
     NSLog(@"dictionary = %@", dictionary);
     return [dictionary copy];
+}
+
+- (NSDate *) getDate:(NSString *)dateString {
+    NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
+    [dateFormatter2 setDateFormat:@"dd/MM/yyyy HH:mm"];
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
+
+    return [dateFormatter2 dateFromString:dateString];
 }
 
 @end
