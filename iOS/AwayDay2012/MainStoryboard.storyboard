@@ -524,7 +524,7 @@
         <!--Game Session View Controller-->
         <scene sceneID="4tw-U9-cZc">
             <objects>
-                <viewController storyboardIdentifier="gameViewIdentifier" id="mqf-20-VUd" customClass="GameSessionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewIdentifier" id="mqf-20-VUd" customClass="NotificationsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jva-uM-XpN"/>
                         <viewControllerLayoutGuide type="bottom" id="SXR-fA-q0c"/>
@@ -533,7 +533,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="inner-page-backdrop.png" translatesAutoresizingMaskIntoConstraints="NO" id="i2g-7G-0pn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="inner-page-backdrop.png" translatesAutoresizingMaskIntoConstraints="NO" id="i2g-7G-0pn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -598,20 +598,8 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Capacity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-p5-dQP">
-                                                    <rect key="frame" x="20" y="49" width="70" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wn-75-Kgt">
-                                                    <rect key="frame" x="119" y="49" width="92" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-Gf-zQo">
-                                                    <rect key="frame" x="20" y="78" width="266" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-Gf-zQo">
+                                                    <rect key="frame" x="20" y="60" width="266" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -621,14 +609,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="Bcg-Gf-zQo" secondAttribute="bottom" constant="21" id="1bx-Mq-aWf"/>
                                                 <constraint firstItem="Bcg-Gf-zQo" firstAttribute="top" secondItem="W3A-2z-T6T" secondAttribute="top" constant="78" id="2wb-Lm-69N"/>
                                                 <constraint firstItem="Bcg-Gf-zQo" firstAttribute="leading" secondItem="W3A-2z-T6T" secondAttribute="leading" constant="20" id="YyK-y8-sst"/>
-                                                <constraint firstItem="5wn-75-Kgt" firstAttribute="top" secondItem="W3A-2z-T6T" secondAttribute="top" constant="49" id="r3a-Mc-IvH"/>
                                                 <constraint firstItem="f8O-f2-8tg" firstAttribute="top" secondItem="W3A-2z-T6T" secondAttribute="top" constant="20" id="wbx-Ye-fjg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Bcg-Gf-zQo" secondAttribute="trailing" constant="34" id="wiZ-R3-iDh"/>
-                                                <constraint firstItem="dNf-p5-dQP" firstAttribute="top" secondItem="W3A-2z-T6T" secondAttribute="top" constant="49" id="yWj-uI-Cms"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="capacityCountTextLabel" destination="5wn-75-Kgt" id="ZqR-Dl-i6O"/>
                                             <outlet property="descriptionTextLabel" destination="Bcg-Gf-zQo" id="8ha-7T-MPR"/>
                                             <outlet property="gameNameTextLabel" destination="f8O-f2-8tg" id="kdi-Mx-vZN"/>
                                         </connections>
@@ -639,7 +624,7 @@
                                     <outlet property="delegate" destination="mqf-20-VUd" id="lNV-jY-PpS"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Game Session" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-Z5-1ZN">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-Z5-1ZN">
                                 <rect key="frame" x="10" y="62" width="250" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="PvN-Il-Afq"/>
@@ -666,7 +651,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameSessionTableView" destination="gGf-Ma-oYM" id="XO6-gD-uR4"/>
+                        <outlet property="notificationsTableView" destination="gGf-Ma-oYM" id="XO6-gD-uR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khy-BP-98Z" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,7 +14,7 @@
 #import "UserLocationUtilities.h"
 #import "VideoViewController.h"
 #import <Accounts/Accounts.h>
-#import "GameSessionViewController.h"
+#import "NotificationsController.h"
 
 
 
@@ -37,7 +37,7 @@
                         [UIImage imageNamed:@"speaker_icon"],
                          [UIImage imageNamed:@"breakout-icon"],
                         [UIImage imageNamed:@"my_schedule"],
-                        [UIImage imageNamed:@"share2"],
+                        [UIImage imageNamed:@"notification"],
                       //  [UIImage imageNamed:@"share2"],
                         
                         ];
@@ -82,10 +82,10 @@
 
 }
 
--(void) showMapScreen
+-(void)showNotificationScreen
 {
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    VideoViewController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"videoViewIdentifier"];
+    NotificationsController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"gameViewIdentifier"];
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate.navigationController pushViewController:videoViewController animated:YES];
 }
@@ -130,7 +130,7 @@
 -(void)showGameInfoSCreen
 {
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    GameSessionViewController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"gameViewIdentifier"];
+    NotificationsController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"gameViewIdentifier"];
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate.navigationController pushViewController:videoViewController animated:YES];
     

@@ -20,7 +20,7 @@
 
 -(void) showHomeScreen;
 
--(void) showMapScreen;
+-(void)showNotificationScreen;
 
 -(void) showAgendaScreen;
 

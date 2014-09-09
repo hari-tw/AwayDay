@@ -137,7 +137,6 @@ load the agenda list and their sessions
 */
 - (void)loadAgendaList {
     __block NSMutableArray *allSessions = [[NSMutableArray alloc] init];
-//    allSessions = [DBService getLocalAgendaList];
 
     [TWSession findAllInBackgroundWithBlock:^(NSArray *sessions, NSError *error) {
         NSLog(@"after loading the session from parse.. ");
@@ -231,167 +230,6 @@ update the top session area's UI
     }
 }
 
-/**
-build the common session cell of the table
-*/
-- (void)buildSessionCell:(UITableViewCell *)cell withSession:(Session *)session {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
-
-    UILabel *sessionTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 230, 30)];
-    [sessionTitle setTag:tag_cell_session_title_view];
-    [sessionTitle setBackgroundColor:[UIColor clearColor]];
-    [sessionTitle setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
-
-
-    if ([userJoinList containsObject:session.sessionID]) {
-        [sessionTitle setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    }
-
-    [sessionTitle setFont:[UIFont systemFontOfSize:16.0f]];
-    [sessionTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]];
-    [sessionTitle setText:session.sessionTitle];
-    [cell addSubview:sessionTitle];
-
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
-
-    UILabel *sessionDuration = [[UILabel alloc] initWithFrame:CGRectMake(240, 10, 75, 30)];
-    [sessionDuration setTag:tag_cell_session_time_view];
-    [sessionDuration setBackgroundColor:[UIColor clearColor]];
-    [sessionDuration setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
-
-    if ([userJoinList containsObject:session.sessionID]) {
-        [sessionDuration setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    }
-
-    NSDate *today = [NSDate date];
-    if ([[today earlierDate:session.sessionEndTime] isEqualToDate:session.sessionEndTime]) {
-        [sessionTitle setTextColor:[UIColor colorWithRed:170 / 255.0 green:170 / 255.0 blue:170 / 255.0 alpha:1.0f]];
-        [sessionDuration setTextColor:[UIColor colorWithRed:170 / 255.0 green:170 / 255.0 blue:170 / 255.0 alpha:1.0f]];
-    }
-
-    [sessionDuration setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
-    [sessionDuration setShadowColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:120 / 255.0]];
-    [sessionDuration setShadowOffset:CGSizeMake(-0.1f, -0.1f)];
-    [sessionDuration setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:session.sessionStartTime], [dateFormatter stringFromDate:session.sessionEndTime]]];
-    [cell addSubview:sessionDuration];
-}
-
-/**
-build the selection effect of the choosed session
-*/
-- (void)buildSessionDetailView:(UITableViewCell *)cell withSession:(Session *)session {
-    CGSize size = [session.sessionNote sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
-    CGSize titleSize = [session.sessionTitle sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
-    float height = 125 + titleSize.height + size.height - 30;
-
-    UIView *detailView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, height)];
-    [detailView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]]];
-    [detailView setTag:tag_cell_view_session_detail_view];
-
-    int y = 8;
-    UILabel *view = (UILabel *) [cell viewWithTag:tag_cell_session_title_view];
-    UITextView *sessionTitle = [[UITextView alloc] initWithFrame:CGRectMake(8, y, 310, titleSize.height + 10)];
-    [sessionTitle setTag:tag_cell_session_detail_title_view];
-    [sessionTitle setBackgroundColor:[UIColor clearColor]];
-    [sessionTitle setText:session.sessionTitle];
-    [sessionTitle setTextColor:view.textColor];
-    [sessionTitle setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0f]];
-    [sessionTitle setUserInteractionEnabled:NO];
-    [detailView addSubview:sessionTitle];
-    y += sessionTitle.frame.size.height;
-
-    UILabel *sessionSpeaker = [[UILabel alloc] initWithFrame:CGRectMake(14, y + 3, 320, 16)];
-    [sessionSpeaker setBackgroundColor:[UIColor clearColor]];
-    [sessionSpeaker setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
-    [sessionSpeaker setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-
-    if (![session.sessionSpeaker isEqualToString:@""]) {
-        [sessionSpeaker setText:[NSString stringWithFormat:@"Speaker: %@", session.sessionSpeaker]];
-    }
-    else {
-        sessionSpeaker.hidden = YES;
-    }
-    [detailView addSubview:sessionSpeaker];
-    y += sessionSpeaker.frame.size.height;
-
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"HH:mm"];
-    UILabel *sessionTime = [[UILabel alloc] initWithFrame:CGRectMake(14, y + 3, 110, 16)];
-    [sessionTime setBackgroundColor:[UIColor clearColor]];
-    [sessionTime setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
-    [sessionTime setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    [sessionTime setText:[NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:session.sessionStartTime], [formatter stringFromDate:session.sessionEndTime]]];
-    [detailView addSubview:sessionTime];
-
-    y += sessionTime.frame.size.height;
-    UILabel *sessionLocation = [[UILabel alloc] initWithFrame:CGRectMake(14, y + 3, 290, 16)];
-    [sessionLocation setBackgroundColor:[UIColor clearColor]];
-    [sessionLocation setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
-    [sessionLocation setTextColor:[UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0f]];
-    [sessionLocation setText:[NSString stringWithFormat:@"Room: %@", session.sessionAddress]];
-    [detailView addSubview:sessionLocation];
-    y += sessionLocation.frame.size.height;
-
-    UITextView *sessionNote = [[UITextView alloc] initWithFrame:CGRectMake(0, y, 320, 100)];
-    [sessionNote setBackgroundColor:[UIColor clearColor]];
-    [sessionNote setUserInteractionEnabled:YES];
-    [sessionNote setEditable:NO];
-    [sessionNote setFrame:CGRectMake(0, y, 320, size.height + 14)];
-    [sessionNote setText:session.sessionNote];
-    [sessionNote setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12.0f]];
-    [sessionNote setTextColor:[UIColor colorWithRed:120 / 255.0 green:120 / 255.0 blue:120 / 255.0 alpha:1.0f]];
-    [sessionNote sizeToFit];
-    y += sessionNote.frame.size.height;
-    [detailView addSubview:sessionNote];
-
-    y += 3;
-
-    UIButton *attend = [UIButton buttonWithType:UIButtonTypeCustom];
-    [attend setFrame:CGRectMake(280, 10, 35, 35)];
-
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
-    if (userJoinList != nil && [userJoinList containsObject:session.sessionID]) {
-        [attend setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
-    } else {
-        [attend setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
-    }
-    [attend addTarget:self action:@selector(joinButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [detailView addSubview:attend];
-
-    UIButton *remind = [UIButton buttonWithType:UIButtonTypeCustom];
-    [remind setFrame:CGRectMake(280, 60, 35, 35)];
-
-    [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
-    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
-        if (notification.userInfo != nil && notification.userInfo.count > 0) {
-            NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
-            if ([sessionID isEqualToString:session.sessionID]) {
-                [remind setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
-            }
-        }
-    }
-
-    [remind addTarget:self action:@selector(remindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [detailView addSubview:remind];
-
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.15f;
-    [detailView.layer addAnimation:transition forKey:@"add"];
-    [cell addSubview:detailView];
-
-    NSLog(@"%@", NSStringFromCGRect(detailView.frame));
-
-    float detaily = self.selectedCell.row * 50 + detailView.frame.size.height;
-    float tabley = self.agendaTable.contentOffset.y + self.agendaTable.frame.size.height;
-    if (detaily > tabley) {
-        [self.agendaTable setContentOffset:CGPointMake(0, self.agendaTable.contentOffset.y + (detaily - tabley) + 40) animated:YES];
-    }
-
-}
-
 #pragma mark - UIAction method
 
 - (IBAction)joinButtonPressed:(id)sender {
@@ -463,13 +301,6 @@ build the selection effect of the choosed session
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == self.selectedCell.section && indexPath.row == self.selectedCell.row) {
-//        Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
-//        Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
-//        CGSize size = [session.note sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(320, 100) lineBreakMode:UILineBreakModeWordWrap];
-//        CGSize titleSize = [session.title sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(310, 100)];
-//        float height = 126 + titleSize.height + size.height;
-//        //return height-30;
     if (selectedRow == indexPath.row && selectedSection == indexPath.section) {
         return 136;
     } else {
@@ -648,76 +479,6 @@ build the selection effect of the choosed session
 }
 
 
-- (void)postOnFacebookWall {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-
-
-        NSString *shareText = @"Thoughtworks Away Day-2013!";
-        [mySLComposerSheet setInitialText:shareText];
-
-        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
-
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-
-
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
-    }
-
-
-}
-
-- (void)postOnTWitterWall {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-
-
-        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
-        [mySLComposerSheet setInitialText:shareText];
-
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
-    }
-
-
-}
-
-
 - (IBAction)sideMenuTapped:(id)sender {
 
     slider = [[CustomSlider alloc] init];
@@ -764,17 +525,17 @@ build the selection effect of the choosed session
         }
             break;
         case 5 : {
-            [slider showVideoScreen];
+            [slider showNotificationScreen];
             [sidebar dismiss];
 
 
         }
             break;
-        case 6 : {
-            [slider showMapScreen];
-            [sidebar dismiss];
-
-        }
+//        case 6 : {
+//            [slider showNotificationScreen];
+//            [sidebar dismiss];
+//
+//        }
             break;
         case 7: {
             [sidebar dismiss];
@@ -794,19 +555,6 @@ build the selection effect of the choosed session
 
 }
 
-
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer {
-    NSLog(@"Selected sharer: %@", sharer.name);
-    if ([sharer.name isEqualToString:@"Twitter"])
-        [self postOnTWitterWall];
-    else
-        [self postOnFacebookWall];
-
-}
-
-- (void)shareCircleCanceled:(NSNotification *)notification {
-    NSLog(@"Share circle view was canceled.");
-}
 
 - (NSDictionary *)groupObjectsInArray:(NSArray *)array byKey:(NSString *)key {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];

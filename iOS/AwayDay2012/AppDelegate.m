@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "AppConstant.h"
+#import "TWNotification.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -33,6 +34,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [TWSession registerSubclass];
+    [TWNotification registerSubclass];
     [Parse setApplicationId:@"gnSo56AL0uBWZXlDa0e9q8hsF1YHrttGJCGdcAAV"
                   clientKey:@"1HPWsQhiudFqbar66fzd6yVACSBkqUrqB8ggSMe1"];
 

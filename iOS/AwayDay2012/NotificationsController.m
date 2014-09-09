@@ -1,21 +1,23 @@
 //
-//  GameSessionViewController.m
+//  NotificationsController.m
 //  AwayDay2012
 //
 //  Created by safadmoh on 24/09/13.
 //
 //
 
-#import "GameSessionViewController.h"
+#import "NotificationsController.h"
 #import "gameExpandedTableViewCell.h"
 #import "CustomSlider.h"
 #import "gameTableViewCell.h"
+#import "TWNotification.h"
+
 #define COMMENT_LABEL_WIDTH 230
 #define COMMENT_LABEL_MIN_HEIGHT 21
 
-@interface GameSessionViewController ()<CustomTableDelegate,RNFrostedSidebarDelegate>
+@interface NotificationsController ()<CustomTableDelegate,RNFrostedSidebarDelegate>
 {
-    NSMutableArray *gameInfo;
+    NSMutableArray *notifications;
     NSInteger selectedIndex;
      CustomSlider *slider;
 }
@@ -24,7 +26,7 @@
 
 
 
-@implementation GameSessionViewController
+@implementation NotificationsController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,31 +40,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"GameSession"
-                                                         ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
-    NSError *error = nil;
-    NSLog(@"%@",data);
-    id json = [NSJSONSerialization JSONObjectWithData:data
-                                              options:kNilOptions
-                                                error:&error];
-    
-    gameInfo = [[NSMutableArray alloc] init];
-    for (NSDictionary *game in json)
-    {
-        NSMutableDictionary *speakerInfo = [[NSMutableDictionary alloc]init];
-        [speakerInfo setObject:[game valueForKey:@"game_name"] forKey:@"game_name"];
-        [speakerInfo setObject:[game valueForKey:@"game_capacity"] forKey:@"game_capacity"];
-        [speakerInfo setObject:[game valueForKey:@"game_details"] forKey:@"game_details"];
-        [gameInfo addObject:speakerInfo];
-    }
-    
-    self.gameSessionTableView.delegate=self;
-    self.gameSessionTableView.dataSource=self;
-    
-    selectedIndex=-1;
 
-	// Do any additional setup after loading the view.
+    self.notificationsTableView.delegate=self;
+    self.notificationsTableView.dataSource=self;
+
+    notifications = [[NSMutableArray alloc] init];
+
+    [TWNotification findAllInBackgroundWithBlock:^(NSArray *notifs, NSError *error) {
+
+        notifications = [notifs mutableCopy];
+
+        [self.notificationsTableView reloadData];
+
+        selectedIndex=-1;
+
+    }];
+
+
 }
 
 #pragma mark -
@@ -74,15 +68,14 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [gameInfo count];
+    return [notifications count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
-    
+
+
+    TWNotification *notification = notifications[(NSUInteger) indexPath.row];
     if(selectedIndex == indexPath.row)
     {
         
@@ -91,12 +84,10 @@
         gameExpandedTableViewCell *cell = (gameExpandedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
        // [cell setLabelFontsColor];
+
         
-        cell.gameNameTextLabel.text=[[gameInfo objectAtIndex:indexPath.row] valueForKey:@"game_name"];
+        cell.gameNameTextLabel.text=notification.title;
         
-        cell.capacityCountTextLabel.text=[NSString stringWithFormat:@"%@",[[gameInfo objectAtIndex:indexPath.row] valueForKey:@"game_capacity"]] ;
-        
-         
         CGFloat labelHeight = [self getLabelHeightForIndex:indexPath.row];
         
         
@@ -110,7 +101,7 @@
         
      //   NSUInteger numberOfLines=labelHeight/21.0f;
         
-        cell.descriptionTextLabel.text=[[gameInfo objectAtIndex:indexPath.row]valueForKey:@"game_details"];
+        cell.descriptionTextLabel.text=notification.message;
         NSLog(@"%@",NSStringFromCGRect(cell.descriptionTextLabel.frame));
         
         return cell;
@@ -124,7 +115,7 @@
         gameTableViewCell *cell = (gameTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
         
-        cell.gameNameTextLabel.text=[[gameInfo objectAtIndex:indexPath.row] valueForKey:@"game_name"];
+        cell.gameNameTextLabel.text=notification.title;
         cell.indexPath=indexPath;
         cell.delegate=self;
         
@@ -141,10 +132,11 @@
 -(CGFloat)getLabelHeightForIndex:(NSInteger)index
 {
     CGSize maximumSize = CGSizeMake(COMMENT_LABEL_WIDTH, 10000);
+
+    TWNotification *notification = notifications[(NSUInteger) index];
+    NSLog(@"%@",notification.title);
     
-    NSLog(@"%@",[[gameInfo objectAtIndex:index] valueForKey:@"game_details"]);
-    
-    CGSize labelHeighSize = [[[gameInfo objectAtIndex:index] valueForKey:@"game_details"] sizeWithFont: [UIFont fontWithName:@"Helvetica" size:13.0f]
+    CGSize labelHeighSize = [notification.message sizeWithFont: [UIFont fontWithName:@"Helvetica" size:13.0f]
                                                                                    constrainedToSize:maximumSize
                                                                                        lineBreakMode:NSLineBreakByWordWrapping];
     return labelHeighSize.height;
@@ -202,14 +194,14 @@
     
     if(indexPath.row==5)
     {
-        [self.gameSessionTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]
-                                     atScrollPosition:UITableViewScrollPositionTop
-                                             animated:YES];
+        [self.notificationsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]
+                                           atScrollPosition:UITableViewScrollPositionTop
+                                                   animated:YES];
     }
     else
-        [self.gameSessionTableView scrollToRowAtIndexPath:indexPath
-                                     atScrollPosition:UITableViewScrollPositionTop
-                                             animated:YES];
+        [self.notificationsTableView scrollToRowAtIndexPath:indexPath
+                                           atScrollPosition:UITableViewScrollPositionTop
+                                                   animated:YES];
     
     //Finally set the selected index to the new selection and reload it to expand
     selectedIndex = indexPath.row;
@@ -226,7 +218,7 @@
     if(selectedIndex == indexPath.row)
     {
         selectedIndex = -1;
-        [self.gameSessionTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.notificationsTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         return;
     }
@@ -237,17 +229,17 @@
     {
         NSIndexPath *previousPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
         selectedIndex = indexPath.row;
-        [self.gameSessionTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:previousPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.notificationsTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:previousPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     
     //Finally set the selected index to the new selection and reload it to expand
     selectedIndex = indexPath.row;
     
-    [self.gameSessionTableView scrollToRowAtIndexPath:indexPath
-                                 atScrollPosition:UITableViewScrollPositionTop
-                                         animated:YES];
+    [self.notificationsTableView scrollToRowAtIndexPath:indexPath
+                                       atScrollPosition:UITableViewScrollPositionTop
+                                               animated:YES];
     NSLog(@"%@",indexPath);
-    [self.gameSessionTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.notificationsTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
 }
 
@@ -306,19 +298,19 @@
             break;
         case 5 :
         {
-            [slider showVideoScreen];
+            [slider showNotificationScreen];
             [sidebar dismiss];
             
             
         }
             break;
-        case 6 :
-        {
-            [slider showMapScreen];
-            [sidebar dismiss];
-            
-        }
-            break;
+//        case 6 :
+//        {
+//            [slider showNotificationScreen];
+//            [sidebar dismiss];
+//
+//        }
+//            break;
         case 7:
         {
             [slider showGameInfoSCreen];

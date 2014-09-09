@@ -85,7 +85,10 @@
 		49EC240915CA129000DF9B34 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EC240515CA129000DF9B34 /* back_button.png */; };
 		49EC240B15CA129000DF9B34 /* vertical_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EC240715CA129000DF9B34 /* vertical_line.png */; };
 		49EC241215CA1AD800DF9B34 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EC241115CA1AD800DF9B34 /* AppHelper.m */; };
+		5769FDBC19BEA58E0079AD51 /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 5769FDBA19BEA58E0079AD51 /* notification.png */; };
+		5769FDBD19BEA58E0079AD51 /* notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5769FDBB19BEA58E0079AD51 /* notification@2x.png */; };
 		579F991D19BE179900213A2F /* top-banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F991C19BE179900213A2F /* top-banner@2x.png */; };
+		5E75DBECDF6657DD67AF9E7B /* TWNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75D5FB13BADFC78ED298F5 /* TWNotification.m */; };
 		5E75DF85C90F9C7656025661 /* TWSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75D5203319352041299081 /* TWSession.m */; };
 		7D052E6030064B5C96D0D455 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA31FC6A029E44789304C379 /* libPods.a */; };
 		95193B6A17F2124C00F32C1D /* video-5-screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 95193B6917F2124C00F32C1D /* video-5-screen_new.png */; };
@@ -163,7 +166,7 @@
 		9550D5F517E8210F00E359AF /* reminder_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5F417E8210F00E359AF /* reminder_button.png */; };
 		9550D5FD17E8233800E359AF /* unjoin_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5FC17E8233000E359AF /* unjoin_button.png */; };
 		9550D5FF17E8241300E359AF /* share_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9550D5FE17E8240C00E359AF /* share_button.png */; };
-		956A838017F1D6BC00E577C2 /* GameSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */; };
+		956A838017F1D6BC00E577C2 /* NotificationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A837F17F1D6BC00E577C2 /* NotificationsController.m */; };
 		956A838317F1DAFC00E577C2 /* gameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A838217F1DAFC00E577C2 /* gameTableViewCell.m */; };
 		956A838917F1DB7900E577C2 /* gameExpandedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 956A838817F1DB7900E577C2 /* gameExpandedTableViewCell.m */; };
 		956A838B17F1E18400E577C2 /* GameSession.json in Resources */ = {isa = PBXBuildFile; fileRef = 956A838A17F1E18400E577C2 /* GameSession.json */; };
@@ -352,9 +355,13 @@
 		49EC240715CA129000DF9B34 /* vertical_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_line.png; sourceTree = "<group>"; };
 		49EC241015CA1AD800DF9B34 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
 		49EC241115CA1AD800DF9B34 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		5769FDBA19BEA58E0079AD51 /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		5769FDBB19BEA58E0079AD51 /* notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification@2x.png"; sourceTree = "<group>"; };
 		579F991C19BE179900213A2F /* top-banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top-banner@2x.png"; sourceTree = "<group>"; };
 		5E75D26BF28FB867823985BA /* TWSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSession.h; sourceTree = "<group>"; };
 		5E75D5203319352041299081 /* TWSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSession.m; sourceTree = "<group>"; };
+		5E75D5FB13BADFC78ED298F5 /* TWNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWNotification.m; sourceTree = "<group>"; };
+		5E75D76337761064E2009953 /* TWNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWNotification.h; sourceTree = "<group>"; };
 		95193B6917F2124C00F32C1D /* video-5-screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen_new.png"; sourceTree = "<group>"; };
 		95193B6B17F212D200F32C1D /* video-5-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-5-screen.png"; sourceTree = "<group>"; };
 		95193B6D17F2148000F32C1D /* AgendaExpndedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaExpndedCell.xib; sourceTree = "<group>"; };
@@ -437,8 +444,8 @@
 		9550D5F417E8210F00E359AF /* reminder_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder_button.png; sourceTree = "<group>"; };
 		9550D5FC17E8233000E359AF /* unjoin_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unjoin_button.png; sourceTree = "<group>"; };
 		9550D5FE17E8240C00E359AF /* share_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_button.png; sourceTree = "<group>"; };
-		956A837E17F1D6BC00E577C2 /* GameSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSessionViewController.h; sourceTree = "<group>"; };
-		956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSessionViewController.m; sourceTree = "<group>"; };
+		956A837E17F1D6BC00E577C2 /* NotificationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsController.h; sourceTree = "<group>"; };
+		956A837F17F1D6BC00E577C2 /* NotificationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsController.m; sourceTree = "<group>"; };
 		956A838117F1DAFC00E577C2 /* gameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameTableViewCell.h; sourceTree = "<group>"; };
 		956A838217F1DAFC00E577C2 /* gameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameTableViewCell.m; sourceTree = "<group>"; };
 		956A838717F1DB7900E577C2 /* gameExpandedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameExpandedTableViewCell.h; sourceTree = "<group>"; };
@@ -744,8 +751,8 @@
 				9550D5EE17E7648900E359AF /* CFShareCircleView.m */,
 				9550D5EF17E7648900E359AF /* CFSharer.h */,
 				9550D5F017E7648900E359AF /* CFSharer.m */,
-				956A837E17F1D6BC00E577C2 /* GameSessionViewController.h */,
-				956A837F17F1D6BC00E577C2 /* GameSessionViewController.m */,
+				956A837E17F1D6BC00E577C2 /* NotificationsController.h */,
+				956A837F17F1D6BC00E577C2 /* NotificationsController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -784,6 +791,8 @@
 				490BE77717E6DE1B00153EF3 /* BreakOutSession.m */,
 				5E75D5203319352041299081 /* TWSession.m */,
 				5E75D26BF28FB867823985BA /* TWSession.h */,
+				5E75D5FB13BADFC78ED298F5 /* TWNotification.m */,
+				5E75D76337761064E2009953 /* TWNotification.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -880,6 +889,8 @@
 		49EC240315CA129000DF9B34 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				5769FDBA19BEA58E0079AD51 /* notification.png */,
+				5769FDBB19BEA58E0079AD51 /* notification@2x.png */,
 				95193B7217F2188800F32C1D /* game.jpg */,
 				95F27CD617E1875600CAB38E /* agenda.png */,
 				95469CD017E8908B00841C93 /* agenda@2x.png */,
@@ -1148,11 +1159,13 @@
 				9550D5D217E72C9100E359AF /* gallery.png in Resources */,
 				9550D5D517E72EF400E359AF /* share2.png in Resources */,
 				9550D5E117E73B9D00E359AF /* innovation 3.png in Resources */,
+				5769FDBD19BEA58E0079AD51 /* notification@2x.png in Resources */,
 				9550D5E317E73DC000E359AF /* south-globe.png in Resources */,
 				9550D5E517E73DC500E359AF /* Impact 2.png in Resources */,
 				9550D5E717E73DCD00E359AF /* relavance_c.png in Resources */,
 				95193B6A17F2124C00F32C1D /* video-5-screen_new.png in Resources */,
 				9550D5E917E73E5D00E359AF /* open-our-eyes 2.png in Resources */,
+				5769FDBC19BEA58E0079AD51 /* notification.png in Resources */,
 				9550D5EC17E7485000E359AF /* route-map.png in Resources */,
 				9550D5F517E8210F00E359AF /* reminder_button.png in Resources */,
 				9550D5FD17E8233800E359AF /* unjoin_button.png in Resources */,
@@ -1300,7 +1313,7 @@
 				36867FEC347E89351575287C /* AFHTTPClient.m in Sources */,
 				3686726430BA535E252B3A50 /* AFHTTPRequestOperation.m in Sources */,
 				36867FBF4B1BE9B93520C01F /* AFImageRequestOperation.m in Sources */,
-				956A838017F1D6BC00E577C2 /* GameSessionViewController.m in Sources */,
+				956A838017F1D6BC00E577C2 /* NotificationsController.m in Sources */,
 				368677E52690BD756B7ADD11 /* AFJSONRequestOperation.m in Sources */,
 				368671B0B0262A1163811FE1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3686712E0FE28015B0CDF628 /* AFPropertyListRequestOperation.m in Sources */,
@@ -1326,6 +1339,7 @@
 				9550D5F117E7648900E359AF /* CFShareCircleView.m in Sources */,
 				9550D5F217E7648900E359AF /* CFSharer.m in Sources */,
 				5E75DF85C90F9C7656025661 /* TWSession.m in Sources */,
+				5E75DBECDF6657DD67AF9E7B /* TWNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

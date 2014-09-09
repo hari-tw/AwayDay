@@ -48,16 +48,6 @@
  */
 -(void)updateTopSession;
 
-/**
- build the common session cell of the table
- */
--(void)buildSessionCell:(UITableViewCell *)cell withSession:(Session *)session;
-
-/**
- build the selection effect of the choosed session
- */
--(void)buildSessionDetailView:(UITableViewCell *)cell withSession:(Session *)session;
-
 -(IBAction)joinButtonPressed:(id)sender;
 -(IBAction)remindButtonPressed:(id)sender;
 

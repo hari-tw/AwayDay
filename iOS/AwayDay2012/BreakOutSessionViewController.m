@@ -404,19 +404,19 @@
             break;
         case 5 :
         {
-            [slider showVideoScreen];
+            [slider showNotificationScreen];
             [sidebar dismiss];
             
             
         }
             break;
-        case 6 :
-        {
-            [slider showMapScreen];
-            [sidebar dismiss];
-            
-        }
-            break;
+//        case 6 :
+//        {
+//            [slider showNotificationScreen];
+//            [sidebar dismiss];
+//
+//        }
+//            break;
         case 7:
         {
             [sidebar dismiss];
