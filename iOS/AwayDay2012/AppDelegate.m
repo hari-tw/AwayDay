@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "AppConstant.h"
 #import "TWNotification.h"
+#import "NotificationsController.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -50,6 +51,8 @@
 
 //    [Crashlytics startWithAPIKey:@"12cf69bcd58555af123af07396580d08d970eee1"];
 
+
+
     [self copyDatabaseIfNeeded];
     [self openDatabase];
     [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
@@ -72,6 +75,13 @@
         AgendaViewController *rvc = [[AgendaViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
         self.agendaViewController = rvc;
     }
+    
+    if (self.notificationsViewController == nil) {
+        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        NotificationsController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"gameViewIdentifier"];
+        self.notificationsViewController = videoViewController;
+    }
+
     if (self.userPathViewController == nil) {
         UserPathViewController *uavc = [[UserPathViewController alloc] initWithNibName:@"UserPathViewController" bundle:nil];
         self.userPathViewController = uavc;
@@ -88,6 +98,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+
+    if(!launchOptions){
+        NSLog(@"App invoked directly");
+    }
+    else {
+        NSLog(@"Launch options  %@", launchOptions );
+        [self.navigationController pushViewController:self.notificationsViewController animated:YES];
+    }
     return YES;
 }
 

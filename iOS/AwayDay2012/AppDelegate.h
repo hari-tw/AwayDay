@@ -17,6 +17,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <sqlite3.h>
 
+@class NotificationsController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WeiboSDKDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -29,6 +31,8 @@
 @property(nonatomic, strong) NSMutableDictionary *userState;
 @property(nonatomic, readonly) sqlite3 *database;
 @property(nonatomic,strong) CLLocationManager *locationManager;
+
+@property(nonatomic) NotificationsController *notificationsViewController;
 
 /**
  save user's state to the NSUserDefault

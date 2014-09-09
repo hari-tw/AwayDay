@@ -39,19 +39,8 @@ bool blinkStatus = NO;
 {
     [super viewDidLoad];
     
-    for (NSString* family in [UIFont familyNames])
-    {
-        NSLog(@"%@", family);
-        
-        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-        {
-            NSLog(@"  %@", name);
-        }
-    }
-    
     [self.counterTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:40]];
-    
-    
+
 }
 
 
