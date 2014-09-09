@@ -48,7 +48,7 @@
 -(void)loadInfo
 {
     
-    NSMutableArray *sectionHeaderText=[[NSMutableArray alloc]initWithObjects:@"Track1",@"Track2",@"Track3",@"Track4",@"Track5",nil];
+    NSMutableArray *sectionHeaderText=[[NSMutableArray alloc]initWithObjects:@"Track1",@"Track2",@"Track3",nil];
     self.sectionInfoDictionary=[[NSMutableArray alloc]init];
     
     NSMutableDictionary *trackOneInfo=[[NSMutableDictionary alloc]init];
@@ -75,7 +75,7 @@
     
     
     NSMutableDictionary *trackThreeInfo=[[NSMutableDictionary alloc]init];
-    [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:3] forKey:@"sectionHeaderName"];
+    [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:2] forKey:@"sectionHeaderName"];
     NSMutableArray *byConnectingCellrowHeight=[[NSMutableArray alloc]init];
     for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:2] topics]count];i++)
         [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:45]];
@@ -84,25 +84,25 @@
     [self.sectionInfoDictionary addObject:trackThreeInfo];
     
     
-    NSMutableDictionary *trackFourInfo=[[NSMutableDictionary alloc]init];
-    [trackFourInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
-    NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
-    
-    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:3] topics]count];i++)
-        [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:45]];
-    [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
-    [self.sectionInfoDictionary addObject:trackFourInfo];
-    
-    
-    
-    NSMutableDictionary *trackFiveInfo=[[NSMutableDictionary alloc]init];
-    [trackFiveInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
-    NSMutableArray *tarckFiveHeight=[[NSMutableArray alloc]init];
-    
-    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
-        [tarckFiveHeight addObject:[NSNumber numberWithFloat:45]];
-    [trackFiveInfo setObject:tarckFiveHeight forKey:@"rowHeights"];
-    [self.sectionInfoDictionary addObject:trackFiveInfo];
+//    NSMutableDictionary *trackFourInfo=[[NSMutableDictionary alloc]init];
+//    [trackFourInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
+//    NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
+//
+//    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:3] topics]count];i++)
+//        [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:45]];
+//    [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
+//    [self.sectionInfoDictionary addObject:trackFourInfo];
+//
+//
+//
+//    NSMutableDictionary *trackFiveInfo=[[NSMutableDictionary alloc]init];
+//    [trackFiveInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
+//    NSMutableArray *tarckFiveHeight=[[NSMutableArray alloc]init];
+//
+//    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
+//        [tarckFiveHeight addObject:[NSNumber numberWithFloat:45]];
+//    [trackFiveInfo setObject:tarckFiveHeight forKey:@"rowHeights"];
+//    [self.sectionInfoDictionary addObject:trackFiveInfo];
     
     
 }

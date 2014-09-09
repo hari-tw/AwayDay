@@ -1,187 +1,113 @@
-
 [
-  {
-  "trackTopic":"Opening our Eyes",
-  "captainName":"Bala & Sasikala Mahesh",
-  "topics":[
-  {
-  "topic_name":"Lina's talk on Egypt",
-  "topic_speaker":"Lina",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"Q & A with speakers",
-  "topic_speaker":"Bala & Sasikala Mahesh",
-  "time"  :"2:25-3:25"
-  },
-  {
-  "topic_name":"Who Moved my State",
-  "topic_speaker":"Kashi & Sagar",
-  "time"  :"3:30-3:50"
-  },
-  {
-  "topic_name":"India's first general elections",
-  "topic_speaker":"Abhinav Manchanda",
-  "time"  :"3:55-4:05"
-  }]
-  },
-  
-
-  {
-  "trackTopic":"Continuous Innovation",
-  "captainName":"Pramod & Shyam Kurien",
-  "topics":[
-  {
-  "topic_name":"Bahmni - Open Source Hospital System",
-  "topic_speaker":"Vivek Singh",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"Elephants in the cloud ",
-  "topic_speaker":"Hemanth Yamijala",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"Playing with peta bytes - Big Data",
-  "topic_speaker":"TripAdvisor - Avinash Kumar, Amit Kumar, Akash Mishra",
-  "time"  :"2:50-3:00"
-  },
-  
-  {
-  "topic_name":"Visualization using the public data",
-  "topic_speaker":"Amiruddin Nagri",
-  "time"  :"3:05-3:25"
-  },
-  {
-  "topic_name":"R Analytics in Gruppo PAM",
-  "topic_speaker":"Bharani S",
-  "time"  :"3:30-3:50"
-  },
-  {
-  "topic_name":"Becoming a Data Scientist",
-  "topic_speaker":"Anand Krishnaswamy",
-  "time"  :"3:55-4:05"
-  }
-]
-  },
-  
-  
-  {
-  "trackTopic":"Global South",
-  "captainName":"Preethi Madhu & Reshmi Buthello",
-  "topics":
- [
-  {
-  "topic_name":"The journey of creating internal startup products",
-  "topic_speaker":"Jinzhou(Micheal) Chen",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"Stories from Africa",
-  "topic_speaker":"Raymond & Yashodhan",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"e-Health at ThoughtWorks",
-  "topic_speaker":"Dr.David Walton",
-  "time"  :"2:50-3:00"
-  },
-  {
-  "topic_name":"China Mobile Labs ",
-  "topic_speaker":"Wang Zhe",
-  "time"  :"3:05-3:25"
-  },
-  
- 
-  {
-  "topic_name":"Africa Jeoparady Game",
-  "topic_speaker":"A team from Africa",
-  "time"  :"3:30-4:00"
-  }
-  ]
-  },
-  
-  
-  {
-  "trackTopic":"Business Relevance",
-  "captainName":"Meghana Prasad & Rashi Rastogi",
-  "topics":
- [
-  {
-  "topic_name":"Mission Game",
-  "topic_speaker":"Meghna Prasad & Shaun Jayraj",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"Experience of working with Indian Startup",
-  "topic_speaker":"Vineet & Ravinder",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"Solutioning for the Indian market",
-  "topic_speaker":"Feroz, Joseph & Prashanth ",
-  "time"  :"2:50-3:00"
-  },
-  {
-  "topic_name":"Personas of Indian corporate customers & Strategies",
-  "topic_speaker":"Jagbir & Jayesh",
-  "time"  :"3:05-3:25"
-  },
-  {
-  "topic_name":"My Journey As A 'Suncorpian'",
-  "topic_speaker":"Sunil Mundra",
-  "time"  :"3:30-3:50"
-  },
-  {
-  "topic_name":"What does it takes to be a consultant?",
-  "topic_speaker":"Vinod Ramakrishnan",
-  "time"  :"3:55-4:05"
-  }
-  ]
-  
-  },
+    {
+        "trackTopic": "P2 Track",
+        "captainName": "X & Y",
+        "topics": [
+            {
+                "topic_name": "MicroServices",
+                "topic_speaker": "Sam Newman",
+                "time": "20 mins"
+            },
+            {
+                "topic_name": "Challenges of Deploying Bahmni & the Business of Social Impac",
+                "topic_speaker": "Gurpreet Luthra & Vivek Singh",
+                "time": "30 mins"
+            },
+            {
+                "topic_name": "Go'Matha",
+                "topic_speaker": "Arvind Ram Anantharam",
+                "time": "20 mins"
+            },
+            {
+                "topic_name": "Defending the Free Internet",
+                "topic_speaker": "Andy Muller",
+                "time": "20 mins"
+            }
+        ]
+    },
 
 
-  {
-  "trackTopic":"Twer Impact",
-  "captainName":"Shree & Charan Singh",
-  "topics":
- [
-  {
-  "topic_name":"What I learnt in a year of running an art school",
-  "topic_speaker":"Mangalam",
-  "time"  :"2:00-2:20"
-  },
-  {
-  "topic_name":"TWU : A trainer's tale",
-  "topic_speaker":"Anand & Nishitha",
-  "time"  :"2:25-2:45"
-  },
-  {
-  "topic_name":"Experience of an Adoptive Parent",
-  "topic_speaker":"Satish V",
-  "time"  :"2:50-3:00"
-  },
-  {
-  "topic_name":"L&D for the Human Context",
-  "topic_speaker":"Sathiya and Mayur",
-  "time"  :"3:05-3:25"
-  },
-  {
-  "topic_name":"Grill a ThoughtWorker",
-  "topic_speaker":" Anand Vishwanath",
-  "time"  :"3:30-3:50"
-  },
-  {
-  "topic_name":"Biotechnology & Hungry Planet",
-  "topic_speaker":" Karthiga",
-  "time"  :"3:55-4:05"
-  }
-  
-  ]
-  
-  }
+    {
+        "trackTopic": "Personal Journeys",
+        "captainName": "Y & Z",
+        "topics": [
+            {
+                "topic_name": "Inclusivity",
+                "topic_speaker": "Nayana U",
+                "time": "20 mins"
+            },
+            {
+                "topic_name": "A STEP in our Journey",
+                "topic_speaker": "Srijayanth & Swamiji",
+                "time": "30 mins"
+            },
+            {
+                "topic_name": "What it is like to be a woman in my country",
+                "topic_speaker": "Desiree Santos",
+                "time": "20 mins"
+            },
 
-  
-  
+            {
+                "topic_name": "Life lessons",
+                "topic_speaker": "John & Nitish",
+                "time": "20 mins"
+            },
+            {
+                "topic_name": "Society, Decisions, Opinions, Environment Variables & Virtual Machines",
+                "topic_speaker": "Mihir",
+                "time": "7 mins"
+            }
+        ]
+    },
+
+
+    {
+        "trackTopic": "Open Track",
+        "captainName": "Z & A",
+        "topics": [
+            {
+                "topic_name": "Working with Large Enterprises",
+                "topic_speaker": "Jagbir Singh Lehl",
+                "time": "20 mins"
+            },
+            {
+                "topic_name": "Introducing the People's Archive of Rural India",
+                "topic_speaker": "P. Sainath",
+                "time": "30 mins"
+            },
+            {
+                "topic_name": "The Amazing Ecuador",
+                "topic_speaker": "María Fernanda Escudero ",
+                "time": "10 mins"
+            },
+            {
+                "topic_name": "Introducing TW Germany",
+                "topic_speaker": "Sophie Randel & Milena Trautloff",
+                "time": "10 mins"
+            },
+
+
+            {
+                "topic_name": "Redefining our IT Organisation",
+                "topic_speaker": "Sreedevi",
+                "time": "10 mins"
+            },
+
+
+            {
+                "topic_name": "Recruiting with BEE Regulations",
+                "topic_speaker": "Caroline Matsimela",
+                "time": "10 mins"
+            },
+
+
+            {
+                "topic_name": "P4 at TWI",
+                "topic_speaker": "Pradipta",
+                "time": "10 mins"
+            }
+        ]
+    }
+
+
 ]

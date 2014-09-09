@@ -17,7 +17,7 @@
 
 @implementation TWSession
 
-@dynamic id;
+@dynamic objectId;
 @dynamic title;
 @dynamic note;
 @dynamic speaker;

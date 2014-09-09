@@ -10,8 +10,6 @@
 #import "AppDelegate.h"
 #import "AppConstant.h"
 
-#import "TWSession.h"
-
 #import <Crashlytics/Crashlytics.h>
 
 #define away_day_user_state_key @"away_day_2012_user_state"
@@ -38,6 +36,8 @@
     [Parse setApplicationId:@"gnSo56AL0uBWZXlDa0e9q8hsF1YHrttGJCGdcAAV"
                   clientKey:@"1HPWsQhiudFqbar66fzd6yVACSBkqUrqB8ggSMe1"];
 
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     self.locationManager = [[CLLocationManager alloc] init];
@@ -46,7 +46,7 @@
     [self.locationManager startUpdatingLocation];
 
 
-    [Crashlytics startWithAPIKey:@"12cf69bcd58555af123af07396580d08d970eee1"];
+//    [Crashlytics startWithAPIKey:@"12cf69bcd58555af123af07396580d08d970eee1"];
 
     [self copyDatabaseIfNeeded];
     [self openDatabase];
@@ -83,9 +83,6 @@
 
     [self.window addSubview:self.navigationController.view];
 
-    //[self.menuViewController.view setFrame:CGRectMake(0, self.window.bounds.size.height-100, 320, 100)];
-    //[self.window addSubview:self.menuViewController.view];
-
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
@@ -119,14 +116,25 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global"];
+    [currentInstallation saveInBackground];
+}
 
-
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    if (error.code == 3010) {
+        NSLog(@"Push notifications are not supported in the iOS Simulator.");
+    } else {
+        // show some alert or otherwise handle the failure to register.
+        NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-
-
+    [PFPush handlePush:userInfo];
 }
+
 
 #pragma mark - util method
 
@@ -180,26 +188,6 @@ show the bottom menu view
     NSString *databasePath = [documentsDir stringByAppendingPathComponent:databaseName];
 //    NSLog(@"%@", databasePath);
     sqlite3_open([databasePath UTF8String], &database);
-}
-
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
-
-}
-
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
-    if ([response isKindOfClass:WBAuthorizeResponse.class] && response.statusCode == WeiboSDKResponseStatusCodeSuccess) {
-        AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-        [appDelegate.userState setObject:[(WBAuthorizeResponse *) response accessToken] forKey:kUserWeiboTokenKey];
-        [appDelegate.userState setObject:[(WBAuthorizeResponse *) response userID] forKey:kUserWeiboIDKey];
-    }
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [WeiboSDK handleOpenURL:url delegate:self];
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 @end

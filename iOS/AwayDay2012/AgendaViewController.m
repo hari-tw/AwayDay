@@ -405,10 +405,10 @@ build the selection effect of the choosed session
     UILabel *sessionTimeLabel = (UILabel *) [cell viewWithTag:tag_cell_session_time_view];
 
     Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
-    Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
+    TWSession *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
 
-    if ([userJoinList containsObject:session.sessionID]) {
-        [userJoinList removeObject:session.sessionID];
+    if ([userJoinList containsObject:session.objectId]) {
+        [userJoinList removeObject:session.objectId];
         [joinButton setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
         [sessionTitleLabel setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
         [sessionTimeLabel setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
@@ -416,11 +416,11 @@ build the selection effect of the choosed session
     } else {
         UserPath *path = [[UserPath alloc] init];
         [path setPathID:[AppHelper generateUDID]];
-        [path setPathContent:[NSString stringWithFormat:@"Join %@", session.sessionTitle]];
+        [path setPathContent:[NSString stringWithFormat:@"Join %@", session.title]];
         [path setPathCreateTime:[NSDate date]];
         [path save];
 
-        [userJoinList addObject:session.sessionID];
+        [userJoinList addObject:session.objectId];
         [joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
         [sessionTitleLabel setTextColor:[UIColor colorWithRed:214 / 255.0 green:95 / 255.0 blue:54 / 255.0 alpha:1.0f]];
         [sessionTimeLabel setTextColor:[UIColor colorWithRed:214 / 255.0 green:95 / 255.0 blue:54 / 255.0 alpha:1.0f]];
@@ -545,7 +545,7 @@ build the selection effect of the choosed session
 
         AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
-        if (userJoinList != nil && [userJoinList containsObject:session.id]) {
+        if (userJoinList != nil && [userJoinList containsObject:session.objectId]) {
 
             [cell1.joinButton setImage:nil forState:UIControlStateNormal];
             [cell1.joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
@@ -560,7 +560,7 @@ build the selection effect of the choosed session
         for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
             if (notification.userInfo != nil && notification.userInfo.count > 0) {
                 NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
-                if ([sessionID isEqualToString:session.id]) {
+                if ([sessionID isEqualToString:session.objectId]) {
                     [cell1.reminderBUtton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
                 }
             }

@@ -12,7 +12,7 @@
 
 @interface TWSession : PFObject<PFSubclassing>
 
-@property(nonatomic, strong) NSString *id;
+@property(nonatomic, strong) NSString *objectId;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *note;
 @property(nonatomic, strong) NSString *speaker;

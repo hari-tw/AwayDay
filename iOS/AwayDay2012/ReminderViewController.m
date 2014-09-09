@@ -58,7 +58,7 @@
                 [[UIApplication sharedApplication] cancelLocalNotification:notification];
                 continue;
             }
-            if([sessionID isEqualToString:self.session.sessionID]){
+            if([sessionID isEqualToString:self.session.objectId]){
                 found=YES;
                 NSNumber *timeIndex=[notification.userInfo objectForKey:key_notification_time_index];
                 if(timeIndex!=nil){
@@ -117,13 +117,13 @@
     for(UILocalNotification *notification in [[UIApplication sharedApplication]scheduledLocalNotifications]){
         if(notification.userInfo!=nil && notification.userInfo.count>0){
             NSString *sessionID=[notification.userInfo objectForKey:key_notification_session_id];
-            if([sessionID isEqualToString:self.session.sessionID]){
+            if([sessionID isEqualToString:self.session.objectId]){
                 [[UIApplication sharedApplication] cancelLocalNotification:notification];
             }
         }
     }
     
-    Reminder *reminder=[Reminder getReminderBySessionID:self.session.sessionID];
+    Reminder *reminder=[Reminder getReminderBySessionID:self.session.objectId];
     if(reminder!=nil){
         [reminder drop];
     }
@@ -133,10 +133,10 @@
  schedule a new local notification with the timer interval user choosed for the current session
  */
 -(void)scheduleNotificationForCurrentSession{
-    NSDate *fireDate=[self.session.sessionStartTime dateByAddingTimeInterval:self.choosedTime.intValue * 60];
+    NSDate *fireDate= [[self getDate:self.session.startTime] dateByAddingTimeInterval:self.choosedTime.intValue * 60];
     
     NSMutableDictionary *userInfo=[[NSMutableDictionary alloc]initWithCapacity:2];
-    [userInfo setObject:self.session.sessionID forKey:key_notification_session_id];
+    [userInfo setObject:self.session.objectId forKey:key_notification_session_id];
     [userInfo setObject:[NSNumber numberWithInt:[self.timePicker selectedRowInComponent:0]] forKey:key_notification_time_index];
     
     UILocalNotification *notification=[[UILocalNotification alloc]init];
@@ -146,7 +146,7 @@
     [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication]applicationIconBadgeNumber]+1];
     
     NSString *text=[self.remindTimeKeyArray objectAtIndex:[self.timePicker selectedRowInComponent:0]];
-    text=[text stringByAppendingFormat:@" %@", self.session.sessionTitle];
+    text=[text stringByAppendingFormat:@" %@", self.session.title];
     [notification setAlertBody:text];
     
     [notification setUserInfo:userInfo];
@@ -155,7 +155,7 @@
     
     
     Reminder *reminder=[[Reminder alloc]init];
-    [reminder setSessionID:self.session.sessionID];
+    [reminder setSessionID:self.session.objectId];
     [reminder setReminderMinute:self.choosedTime];
     [reminder save];
 }
@@ -206,6 +206,14 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+}
+
+- (NSDate *) getDate:(NSString *)dateString {
+    NSDateFormatter *dateFormatter2=[[NSDateFormatter alloc]init];
+    [dateFormatter2 setDateFormat:@"dd/MM/yyyy HH:mm"];
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
+
+    return [dateFormatter2 dateFromString:dateString];
 }
 
 @end

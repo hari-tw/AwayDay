@@ -8,11 +8,11 @@
 //  user uses the view to set a reminder
 
 #import <UIKit/UIKit.h>
-#import "Session.h"
+#import "TWSession.h"
 
 @interface ReminderViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property(nonatomic, strong) Session *session;
+@property(nonatomic, strong) TWSession *session;
 @property(nonatomic, strong) IBOutlet UIImageView *remindIconView;
 @property(nonatomic, strong) NSMutableArray *remindTimeKeyArray;
 @property(nonatomic, strong) NSMutableDictionary *remindTimeList;
