@@ -168,6 +168,9 @@ load the agenda list and their sessions
                 [agenda setSessions:sessionsGroupedByDate[agendaDate]];
             }
 
+            loading = NO;
+            [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.agendaTable];
+
             [self.agendaList addObject:agenda];
         }
 

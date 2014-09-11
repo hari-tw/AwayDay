@@ -19,8 +19,7 @@
     
     if (self != nil) {
         
-        
-        
+
         // Set up the tap gesture recognizer.
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleOpen:)];
         [self addGestureRecognizer:tapGesture];
@@ -50,16 +49,13 @@
         [self addSubview:label];
         self.trackLabel = label;
         
-        
-        
-        
-        
+
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 3, 44, 44)];
         imageView.image = [UIImage imageNamed:imageName];
         [self addSubview:imageView];
         
-        
-//        
+
+//
 //        self.dividerImageVIew =[[UIImageView alloc]initWithFrame:CGRectMake(10, 49 ,300, 1)];
 //        self.dividerImageVIew.image = [UIImage imageNamed:@"line.png"];
 //        [self addSubview:self.dividerImageVIew];

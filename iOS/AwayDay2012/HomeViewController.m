@@ -1,33 +1,30 @@
-
-
 #import "HomeViewController.h"
-#import <CoreLocation/CoreLocation.h>
-#import "AppDelegate.h"
 #import "CFShareCircleView.h"
 #import "RNFrostedSidebar.h"
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
-#import "SpeakersViewController.h"
 #import "CustomSlider.h"
+#import "STTwitterAPI.h"
+#import "Post.h"
+#import "PostTableViewCell.h"
+
 static CGFloat const FVEDetailControllerTargetedViewTag = 111;
 bool blinkStatus = NO;
-@interface HomeViewController () <RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
-{
-    NSTimer *timer;
+
+@interface HomeViewController () <RNFrostedSidebarDelegate, CFShareCircleViewDelegate> {
     CustomSlider *slider;
 }
 
-@property (nonatomic) UIView *flipView;
-@property (nonatomic) NSIndexPath *indexPath;
-@property (nonatomic) UILabel *infoLabel;
-@property (nonatomic, strong) CFShareCircleView *shareCircleView;
+@property(nonatomic) UIView *flipView;
+@property(nonatomic) NSIndexPath *indexPath;
+@property(nonatomic) UILabel *infoLabel;
+@property(nonatomic, strong) CFShareCircleView *shareCircleView;
 
 @end
 
-@implementation HomeViewController
+@implementation HomeViewController {
+    BOOL loading;
+}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -35,299 +32,184 @@ bool blinkStatus = NO;
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self.counterTextLabel setFont:[UIFont fontWithName:@"Digitalism" size:40]];
+- (void)viewDidLoad {
+    [super viewDidLoad]  ;
 
-}
-
-
--(void) updateCountdown
-{
-    
-    NSString *dateString = @"2013-09-27 15:00";
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
- 
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSDate *dateFromString = [[NSDate alloc] init];
-    
-    dateFromString = [dateFormatter dateFromString:dateString];
-
-//
-//    
-   NSDate *now = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    
-//    
-//    
-//    NSDateComponents *componentsHours = [calendar components:NSHourCalendarUnit fromDate:now];
-//    NSDateComponents *componentMint = [calendar components:NSMinuteCalendarUnit fromDate:now];
-//    NSDateComponents *componentSec = [calendar components:NSSecondCalendarUnit fromDate:now];
-//    
-//    
-//  NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *componentsDaysDiff = [gregorianCalendar components:NSDayCalendarUnit
-//                                                                fromDate:now
-//                                                                  toDate:dateFromString
-//                                                                 options:0];
-    
-    
-    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit| NSSecondCalendarUnit;
-    
-    NSDateComponents *conversionInfo = [calendar components:unitFlags fromDate:now  toDate:dateFromString  options:0];
-    
-    //int months = [conversionInfo month];
-    int days = [conversionInfo day];
-    int hours = [conversionInfo hour];
-    int minutes = [conversionInfo minute];
-    int seconds=[conversionInfo second];
-    
-    
-       
-    NSLog(@"%@",[NSString stringWithFormat:@"%dd:%dh:%dm:%ds",days,hours,minutes,seconds]);
-   self.counterTextLabel.text=[NSString stringWithFormat:@"%dd:%dh:%dm:%ds",days,hours,minutes,seconds];
-    
-    
-    NSComparisonResult result = [now compare:dateFromString];
-    if (result == NSOrderedAscending) {
-        
-    } else if (result == NSOrderedDescending) {
-       // [timer invalidate];
-        [self blink];
-        self.counterTextLabel.text=@"Started";
-        
-    }  else {
-        //[timer invalidate];
-        [self blink];
-        self.counterTextLabel.hidden=@"Started";
+    if (self.refreshView == nil) {
+        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, -200, 320, 200)];
+        self.refreshView = view;
     }
-    
-    
-    
+    [self.refreshView setDelegate:self];
+    [self.feedView addSubview:self.refreshView];
+    [self.refreshView refreshLastUpdatedDate];
+    self.feedView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
+    [self loadTweets];
+}
+
+- (void)loadTweets {
+    STTwitterAPI *twitter = [STTwitterAPI twitterAPIWithOAuthConsumerKey:@"CyqRuU77Lbyv7i9EOkDMGinSo" consumerSecret:@"h2ElL2l13ANJG5qYCUqGacL1uGNnPKkA6mfJmWwnofOI8w6bUb" oauthToken:@"97134656-DGmVyE2Npqw5AEx6tI4r8KY2pEFBcsWkN74YnkOOX" oauthTokenSecret:@"qoVv6SRRFHQF2CRZ0t66xTUCf3L78aY4402qjOlTmJpRp"];
+
+    [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
+
+        [twitter getSearchTweetsWithQuery:@"indiaawayday" successBlock:^(NSDictionary *searchMetadata, NSArray *statuses) {
+
+            NSLog(@"statuses = %@", statuses);
+
+            self.tweets = [NSMutableArray arrayWithCapacity:[statuses count]];
+
+            for (NSDictionary *attributes in statuses) {
+                Post *post = [[Post alloc] initWithAttributes:attributes];
+                [self.tweets addObject:post];
+            }
+
+            [self.feedView reloadData];
+            loading = NO;
+
+            loading = NO;
+            [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.feedView];
+
+        }                      errorBlock:^(NSError *error) {
+            NSLog(@"search query error.debugDescription = %@", error.debugDescription);
+        }];
+
+    }                               errorBlock:^(NSError *error) {
+        NSLog(@"credential verify error.debugDescription = %@", error.debugDescription);
+    }];
 }
 
 
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
-
-
-
-
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown)userInfo:nil repeats: YES];
-    
-    [self layoutSubviews];
+
 }
 
-
-
-- (void)layoutSubviews
-{
-    if (!self.flipView)
-    {
+- (void)layoutSubviews {
+    if (!self.flipView) {
         return;
     }
-    
     self.flipView.frame = CGRectMake(60, 380, 200, 200);//CGRectInset(self.view.bounds, 20, 20);
-    //self.flipView.center = CGPointMake(floor(self.view.frame.size.width/2),
-    //    floor((self.view.frame.size.height/2)*0.9));
+
 }
 
--(void)blink{
-    self.counterTextLabel.font=[UIFont fontWithName:@"HelveticaNeue-Light" size:24];
-    if(blinkStatus == NO){
-        self.counterTextLabel.textColor = [UIColor blackColor];
-        
-        blinkStatus = YES;
-    }else {
-        self.counterTextLabel.textColor = [UIColor grayColor];
-        blinkStatus = NO;
-    }
-}
-
--(IBAction)onBurger:(id)sender
-{
-    slider = [[CustomSlider alloc]init];
+- (IBAction)onBurger:(id)sender {
+    slider = [[CustomSlider alloc] init];
     [slider showSliderMenu];
-    slider.callout.delegate=self;
-    
-    
+    slider.callout.delegate = self;
 }
 
 #pragma mark -RNFrostedSidebar delegate method.
-- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
-{
-    
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+
     switch (index) {
-        case 0:
-        {
+        case 0: {
             [slider showHomeScreen];
             [sidebar dismiss];
         }
             break;
-            
-        case 1:
-        {
+
+        case 1: {
             [slider showAgendaScreen];
             [sidebar dismiss];
-            
         }
             break;
-        case 2 :
-        {
+        case 2 : {
             [slider showSpeakersScreen];
             [sidebar dismiss];
-            
         }
             break;
-        case 3 :
-        {
+        case 3 : {
             [slider showBreakOutSessionScreen];
             [sidebar dismiss];
-            
-            
-            
         }
             break;
-        case 4 :
-        {
+        case 4 : {
             [slider showMyEventsScreen];
             [sidebar dismiss];
-            
         }
             break;
-        case 5 :
-        {
+        case 5 : {
             [slider showNotificationScreen];
             [sidebar dismiss];
-            
-            
         }
             break;
-//        case 6 :
-//        {
-//            [slider showNotificationScreen];
-//            [sidebar dismiss];
-//
-//        }
-//            break;
-        case 7:
-        {
-            [sidebar dismiss];
-             [slider showGameInfoSCreen];
-            // Do any additional setup after loading the view, typically from a nib.
-//            self.shareCircleView = [[CFShareCircleView alloc] init];
-//            self.shareCircleView.delegate = self;
-//            [self.shareCircleView show];
-            
-        }
-            break;
-            
-            
-            
-            
-            
+
         default:
             break;
     }
-    
-}
 
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
-{
-    NSLog(@"Selected sharer: %@", sharer.name);
-    if([sharer.name isEqualToString:@"Twitter"])
-        [self postOnTWitterWall];
-    else
-        [self postOnFacebookWall];
-    
-}
-
-- (void)shareCircleCanceled:(NSNotification *)notification{
-    NSLog(@"Share circle view was canceled.");
 }
 
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
--(void)postOnFacebookWall
-{
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        
-        NSString *shareText = @"Thoughtworks Away Day-2013!";
-        [mySLComposerSheet setInitialText:shareText];
-        
-        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
-        
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-        
-        
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-        
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-            
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-        
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.tweets count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    static NSString *CellIdentifier = @"Cell";
+
+    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[PostTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
-    
+
+    cell.post = [self.tweets objectAtIndex:(NSUInteger) indexPath.row];
+
+    return cell;
+
 }
 
--(void)postOnTWitterWall
-{
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-        
-        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
-        [mySLComposerSheet setInitialText:shareText];
-        
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-        
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-        
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-            
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-        
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
-    }
-    
-    
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [PostTableViewCell heightForCellWithPost:[self.tweets objectAtIndex:(NSUInteger) indexPath.row]];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
+}
+
+#pragma mark - Pull Refresh delegate
+
+- (void)reloadTableViewDataSource {
+    loading = YES;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.refreshView egoRefreshScrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.refreshView egoRefreshScrollViewDidEndDragging:scrollView];
+
+}
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView *)view {
+    loading = YES;
+    [self loadTweets];
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView *)view {
+    return loading;
+}
+
+- (NSDate *)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView *)view {
+    return [NSDate date];
 }
 
 

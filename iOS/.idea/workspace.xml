@@ -2,28 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7da09c0-2011-4630-b58b-51fc118b74ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-40@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-60.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-60@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-72@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-76@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-Small-50.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-Small-50@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon-Small@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/Icon@2x.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Image/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Image/icon@2x.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/Default-568h@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/AppIcon.appiconset/Icon-40@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/AppIcon.appiconset/Icon-60@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/AppIcon.appiconset/Icon-Small@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/home-page-new@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/jayati@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/jaythi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/kalyan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/kalyan@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/liang.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/liang@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/mallu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/mallu@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/megha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/megha@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/paranjoy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/paranjoy@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/profile-image-placeholder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/profile-image-placeholder@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Post.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Post.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/User.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/User.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/home-page-new@2x.png" afterPath="$PROJECT_DIR$/AwayDay2012/home-page-new1@2x.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Image/home-page-new.png" afterPath="$PROJECT_DIR$/Image/home-page-new1.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012.xcworkspace/xcuserdata/harib.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/AwayDay2012.xcworkspace/xcuserdata/harib.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AppDelegate.h" afterPath="$PROJECT_DIR$/AwayDay2012/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image/home-page-new.png" afterPath="$PROJECT_DIR$/Image/home-page-new.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" afterPath="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AwayDay2012-Info.plist" afterPath="$PROJECT_DIR$/AwayDay2012/AwayDay2012-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/AwayDay2012/MainStoryboard.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReminderViewController.xib" afterPath="$PROJECT_DIR$/ReminderViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/RootViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/RootViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/SettingViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/SettingViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" afterPath="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserPathViewController.xib" afterPath="$PROJECT_DIR$/UserPathViewController.xib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/AwayDay2012.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -48,14 +71,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TWNotification.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/TWNotification.h">
+      <file leaf-file-name="HomeViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5021739" vertical-offset="697" max-vertical-offset="3616">
+              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding>
-                <marker date="1410230949000" expanded="true" signature="139:355" placeholder="..." />
+                <element signature="e#0#30#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgendaViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="816">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EGORefreshTableHeaderView.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/EGORefreshTableHeaderView.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1120">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,115 +106,73 @@
       <file leaf-file-name="AgendaViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2071" max-vertical-offset="9440">
-              <caret line="140" column="82" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2167" max-vertical-offset="9344">
+              <caret line="171" column="98" selection-start-line="170" selection-start-column="11" selection-end-line="171" selection-end-column="97" />
               <folding>
-                <element signature="e#153#185#0" expanded="true" />
-                <element signature="e#289#314#0" expanded="true" />
                 <element signature="e#1099#1136#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationsController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/NotificationsController.h">
+      <file leaf-file-name="AppHelper.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/AppHelper.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
-              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="2224">
+              <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationsController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/NotificationsController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4775" max-vertical-offset="5600">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding>
-                <element signature="e#96#131#0" expanded="true" />
-                <marker date="1410232181000" expanded="true" signature="405:502" placeholder="..." />
-                <marker date="1410232181000" expanded="true" signature="549:9631" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDelegate.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="880">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-              <folding>
-                <marker date="1410232570000" expanded="true" signature="565:1576" placeholder="..." />
-                <marker date="1410232570000" expanded="true" signature="1313:1360" placeholder="/**...*/" />
-                <marker date="1410232570000" expanded="true" signature="1384:1417" placeholder="/.../" />
-                <marker date="1410232570000" expanded="true" signature="1440:1474" placeholder="/**...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDelegate.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="3504">
-              <caret line="106" column="100" selection-start-line="106" selection-start-column="100" selection-end-line="106" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Podfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Podfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.84" vertical-offset="0" max-vertical-offset="192">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeViewController.h" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HomeViewController.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49015316" vertical-offset="0" max-vertical-offset="457">
-              <caret line="14" column="49" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="5376">
-              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomSlider.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/CustomSlider.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="2240">
-              <caret line="87" column="130" selection-start-line="86" selection-start-column="4" selection-end-line="87" selection-end-column="130" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
-                <marker date="1410232022000" expanded="true" signature="469:5432" placeholder="..." />
-                <marker date="1410232022000" expanded="true" signature="495:2310" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="580:1057" placeholder="@[...]" />
-                <marker date="1410232022000" expanded="true" signature="1081:1989" placeholder="@[...]" />
-                <marker date="1410232022000" expanded="true" signature="2339:2611" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="2638:2909" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="2941:3353" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="3382:3808" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="3837:4067" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="4104:4546" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="4572:4982" placeholder="{...}" />
-                <marker date="1410232022000" expanded="true" signature="5010:5427" placeholder="{...}" />
+                <element signature="e#91#114#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/User.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostTableViewCell.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostTableViewCell.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1072">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UIImageView+AFNetworking.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/UIImageView+AFNetworking.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1296">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -206,7 +207,6 @@
         <option value="$PROJECT_DIR$/AwayDay2012/Break_out.json" />
         <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.h" />
         <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/UserPathViewController.m" />
@@ -219,8 +219,17 @@
         <option value="$PROJECT_DIR$/AwayDay2012/CustomSlider.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/GameSessionViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/NotificationsController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
         <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Post.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Post.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/User.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
       </list>
     </option>
@@ -228,7 +237,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -289,24 +298,6 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AwayDay2012" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AwayDay2012" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="DirectoryView.Xcode" />
@@ -322,6 +313,23 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="LayoutCode.rearrangeEntriesC/C++/Objective-C" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="147" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="945" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="147" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="945" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RunManager" selected="Application.AwayDay2012">
     <configuration default="false" name="AwayDay2012" type="AppleRunConfiguration" factoryName="Application" temporary="true" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="AwayDay2012" TARGET_NAME="AwayDay2012" CONFIG_NAME="Debug" SCHEME_NAME="AwayDay2012" RUN_TARGET_PROJECT_NAME="AwayDay2012" RUN_TARGET_NAME="AwayDay2012" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -417,8 +425,8 @@
       <item index="5" class="java.lang.String" itemvalue="Application.Pods-Bolts" />
       <item index="6" class="java.lang.String" itemvalue="Application.Pods-Facebook-iOS-SDK" />
       <item index="7" class="java.lang.String" itemvalue="Application.Pods-Parse" />
-      <item index="8" class="java.lang.String" itemvalue="Application.AwayDay2012" />
-      <item index="9" class="java.lang.String" itemvalue="Application.Pods-STTwitter" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-STTwitter" />
+      <item index="9" class="java.lang.String" itemvalue="Application.AwayDay2012" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -461,29 +469,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="813" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5041783" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50208044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32451254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231623" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819591" sideWeight="0.67318434" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32451254" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819591" sideWeight="0.67318434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3231623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3259053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32454923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -589,99 +597,14 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/speaker-1@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/speaker-2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/speaker-2@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/south-globe.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/south-globe@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/share_button.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/route-map.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/route-map@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/reminder_button.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/reminder_button@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Agenda.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="384">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Session.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="464">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Session.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="672">
-          <caret line="30" column="64" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/my_schedule.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/my_schedule@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/Break_out.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-69.76" vertical-offset="0" max-vertical-offset="1888">
           <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,19 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="695" max-vertical-offset="1152">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="496">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1312">
           <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1208" max-vertical-offset="2112">
           <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1192" max-vertical-offset="2688">
           <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3448" max-vertical-offset="8736">
           <caret line="231" column="8" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1543" max-vertical-offset="2000">
           <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="8320">
           <caret line="23" column="34" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="480">
           <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,9 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#196#219#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,15 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="457">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6184" max-vertical-offset="9056">
-          <caret line="406" column="31" selection-start-line="406" selection-start-column="31" selection-end-line="406" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,9 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2464">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#168#186#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,9 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#183#201#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1410230949000" expanded="true" signature="139:355" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -899,31 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
           <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/NotificationsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4775" max-vertical-offset="5600">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="e#96#131#0" expanded="true" />
-            <marker date="1410232181000" expanded="true" signature="405:502" placeholder="..." />
-            <marker date="1410232181000" expanded="true" signature="549:9631" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2071" max-vertical-offset="9440">
-          <caret line="140" column="82" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="82" />
-          <folding>
-            <element signature="e#153#185#0" expanded="true" />
-            <element signature="e#289#314#0" expanded="true" />
-            <element signature="e#1099#1136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -931,12 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="880">
           <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <marker date="1410232570000" expanded="true" signature="565:1576" placeholder="..." />
-            <marker date="1410232570000" expanded="true" signature="1313:1360" placeholder="/**...*/" />
-            <marker date="1410232570000" expanded="true" signature="1384:1417" placeholder="/.../" />
-            <marker date="1410232570000" expanded="true" signature="1440:1474" placeholder="/**...*/" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,52 +797,198 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="2240">
           <caret line="87" column="130" selection-start-line="86" selection-start-column="4" selection-end-line="87" selection-end-column="130" />
-          <folding>
-            <marker date="1410232022000" expanded="true" signature="469:5432" placeholder="..." />
-            <marker date="1410232022000" expanded="true" signature="495:2310" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="580:1057" placeholder="@[...]" />
-            <marker date="1410232022000" expanded="true" signature="1081:1989" placeholder="@[...]" />
-            <marker date="1410232022000" expanded="true" signature="2339:2611" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="2638:2909" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="2941:3353" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="3382:3808" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="3837:4067" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="4104:4546" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="4572:4982" placeholder="{...}" />
-            <marker date="1410232022000" expanded="true" signature="5010:5427" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="3504">
-          <caret line="106" column="100" selection-start-line="106" selection-start-column="100" selection-end-line="106" selection-end-column="100" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Podfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.84" vertical-offset="0" max-vertical-offset="192">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="192">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/NotificationsController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3143" max-vertical-offset="5600">
+          <caret line="212" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.m">
+    <entry file="file://$PROJECT_DIR$/Pods/Headers/STTwitter/STTwitterAPI.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="5376">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3351" max-vertical-offset="33024">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="692" max-vertical-offset="4160">
+          <caret line="258" column="27" selection-start-line="256" selection-start-column="42" selection-end-line="256" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSession.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="693">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2288">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionInfo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="976">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/Speakers_Info.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="528">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/STTwitter/STTwitter/STTwitterAppOnly.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4139" max-vertical-offset="4832">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2951" max-vertical-offset="9056">
+          <caret line="207" column="18" selection-start-line="207" selection-start-column="18" selection-end-line="207" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/Post.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/STTwitter/STTwitter/STTwitterAPI.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18727" max-vertical-offset="70080">
+          <caret line="1186" column="8" selection-start-line="1186" selection-start-column="8" selection-end-line="1186" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/Post.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding>
+            <element signature="e#2#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/User.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/UIImageView+AFNetworking.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1344">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1072">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/EGORefreshTableHeaderView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1120">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="816">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppHelper.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="2224">
+          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2167" max-vertical-offset="9344">
+          <caret line="171" column="98" selection-start-line="170" selection-start-column="11" selection-end-line="171" selection-end-column="97" />
+          <folding>
+            <element signature="e#1099#1136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49015316" vertical-offset="0" max-vertical-offset="457">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#91#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5021739" vertical-offset="697" max-vertical-offset="3616">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

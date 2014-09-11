@@ -106,6 +106,13 @@
         NSLog(@"Launch options  %@", launchOptions );
         [self.navigationController pushViewController:self.notificationsViewController animated:YES];
     }
+    
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+//        self.window.clipsToBounds =YES;
+//        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+//        
+//        self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height);
+//    }
     return YES;
 }
 
@@ -208,6 +215,50 @@ show the bottom menu view
     NSString *databasePath = [documentsDir stringByAppendingPathComponent:databaseName];
 //    NSLog(@"%@", databasePath);
     sqlite3_open([databasePath UTF8String], &database);
+}
+
+
+- (NSDictionary *)parametersDictionaryFromQueryString:(NSString *)queryString {
+
+    NSMutableDictionary *md = [NSMutableDictionary dictionary];
+
+    NSArray *queryComponents = [queryString componentsSeparatedByString:@"&"];
+
+    for(NSString *s in queryComponents) {
+        NSArray *pair = [s componentsSeparatedByString:@"="];
+        if([pair count] != 2) continue;
+
+        NSString *key = pair[0];
+        NSString *value = pair[1];
+
+        md[key] = value;
+    }
+
+    return md;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+
+    if ([[url scheme] isEqualToString:@"awaydayapp"] == NO) return NO;
+
+    NSDictionary *d = [self parametersDictionaryFromQueryString:[url query]];
+
+    NSString *token = d[@"oauth_token"];
+    NSString *verifier = d[@"oauth_verifier"];
+
+    NSLog(@"token = %@", token);
+    NSLog(@"verifier = %@", verifier);
+
+    // Store the data
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    [defaults setObject:token forKey:@"token"];
+    [defaults setObject:verifier forKey:@"verifier"];
+
+    [defaults synchronize];
+
+    return YES;
 }
 
 @end
