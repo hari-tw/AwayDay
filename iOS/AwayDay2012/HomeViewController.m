@@ -33,7 +33,7 @@ bool blinkStatus = NO;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad]  ;
+    [super viewDidLoad];
 
     if (self.refreshView == nil) {
         EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0, -200, 320, 200)];
@@ -43,6 +43,8 @@ bool blinkStatus = NO;
     [self.feedView addSubview:self.refreshView];
     [self.refreshView refreshLastUpdatedDate];
     self.feedView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.feedView.backgroundColor = [UIColor clearColor];
+    self.feedView.alpha = 0.9;
 
     [self loadTweets];
 }
@@ -65,14 +67,10 @@ bool blinkStatus = NO;
 
             [self.feedView reloadData];
             loading = NO;
-
-            loading = NO;
             [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.feedView];
-
         }                      errorBlock:^(NSError *error) {
             NSLog(@"search query error.debugDescription = %@", error.debugDescription);
         }];
-
     }                               errorBlock:^(NSError *error) {
         NSLog(@"credential verify error.debugDescription = %@", error.debugDescription);
     }];

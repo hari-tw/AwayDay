@@ -11,6 +11,7 @@
 @protocol CustomTableDelegate <NSObject>
 
 -(void)didButtonTappedAt:(NSIndexPath *)indexPath;
+-(void)questionTappedAt:(NSIndexPath *)indexPath;
 @end
 
 
@@ -25,9 +26,7 @@
 @property(strong,nonatomic) NSIndexPath *indexPath;
 
 - (IBAction)expandButtonTapped:(id)sender;
-
-
-
+- (IBAction)questionButtonTapped:(id)sender;
 
 
 -(void)setLabelFontsColor;

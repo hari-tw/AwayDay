@@ -1,24 +1,27 @@
 
 
-#import "TWNotification.h"
+#import "TWQuestion.h"
 
-@interface TWNotification()
+@interface TWQuestion ()
+
 
 @end
 
-@implementation TWNotification
+@implementation TWQuestion
 
 @dynamic objectId;
-@dynamic title;
-@dynamic message;
+@dynamic questionText;
+@dynamic sessionTitle;
+@dynamic questionerName;
+@dynamic deviceToken;
 
 
 + (NSString *)parseClassName {
-    return @"Notification";
+    return @"Questions";
 }
 
 + (void)findAllInBackgroundWithBlock:(PFArrayResultBlock)resultBlock {
-    PFQuery *query = [TWNotification query];
+    PFQuery *query = [TWQuestion query];
     [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
     [query findObjectsInBackgroundWithBlock:^(NSArray *notifications, NSError *error) {
         resultBlock(notifications, error);

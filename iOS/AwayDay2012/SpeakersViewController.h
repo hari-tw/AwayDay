@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class QuestionsController;
+
 @interface SpeakersViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
 //This array will store our coments
@@ -19,6 +21,8 @@ NSInteger selectedIndex;
 
 //IBoutlets
 @property (weak, nonatomic) IBOutlet UITableView *speakerTableView;
+
+@property(nonatomic, strong) QuestionsController *questionsController;
 
 //Action m
 - (IBAction)sideMenuTapped:(id)sender;

@@ -11,6 +11,7 @@
 #import "AppConstant.h"
 #import "TWNotification.h"
 #import "NotificationsController.h"
+#import "TWQuestion.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -36,8 +37,9 @@
 
     [TWSession registerSubclass];
     [TWNotification registerSubclass];
-    [Parse setApplicationId:@"gnSo56AL0uBWZXlDa0e9q8hsF1YHrttGJCGdcAAV"
-                  clientKey:@"1HPWsQhiudFqbar66fzd6yVACSBkqUrqB8ggSMe1"];
+    [TWQuestion registerSubclass];
+    [Parse setApplicationId:@"cRkqJtkVvjyuC5pvKRzLNz8CFm6WgrbPqX0uKX7a"
+                  clientKey:@"o4Dr0m1oV8PBWw0DQSeaYmd9T3LSayKIPJCkbIxd"];
 
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
 

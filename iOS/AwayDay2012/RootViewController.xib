@@ -18,14 +18,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="inner-page-backdrop.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="top-banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="top-banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="90"/>
-                        <constraint firstAttribute="width" constant="320" id="91"/>
-                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25">
                     <rect key="frame" x="15" y="20" width="44" height="44"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" backgroundImage="slider-menu-icon 2.png">
@@ -47,17 +43,13 @@
                         <outlet property="delegate" destination="-1" id="13"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Agenda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46">
-                    <rect key="frame" x="15" y="66" width="226" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="51"/>
-                        <constraint firstAttribute="width" constant="226" id="54"/>
-                    </constraints>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Agenda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46">
+                    <rect key="frame" x="20" y="66" width="226" height="33"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="59">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="59">
                     <rect key="frame" x="10" y="98" width="300" height="1"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="72"/>
@@ -68,19 +60,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="23" firstAttribute="top" secondItem="1" secondAttribute="top" id="29"/>
-                <constraint firstItem="25" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="30"/>
-                <constraint firstItem="21" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="32"/>
                 <constraint firstItem="23" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="34"/>
-                <constraint firstItem="21" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="35"/>
                 <constraint firstItem="8" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="37"/>
-                <constraint firstItem="21" firstAttribute="top" secondItem="1" secondAttribute="top" id="38"/>
                 <constraint firstItem="8" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="39"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="25" secondAttribute="bottom" id="55"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="8" symbolic="YES" id="56"/>
-                <constraint firstItem="59" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" id="71"/>
-                <constraint firstItem="59" firstAttribute="leading" secondItem="25" secondAttribute="leading" id="86"/>
-                <constraint firstItem="46" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="9" id="87"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="1" secondAttribute="top" constant="52" id="88"/>
                 <constraint firstItem="8" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="92"/>
                 <constraint firstItem="8" firstAttribute="top" secondItem="1" secondAttribute="top" constant="100" id="93"/>
                 <constraint firstItem="8" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="94"/>

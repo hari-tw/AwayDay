@@ -3,4 +3,5 @@ pod 'Reveal-iOS-SDK'
 pod 'ASIHTTPRequest', '~> 1.8.1'
 pod 'Parse', '~> 1.2'
 pod 'STTwitter'
+pod 'JVFloatLabeledTextField', '~> 0.0'
 

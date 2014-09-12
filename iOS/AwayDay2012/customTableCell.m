@@ -39,6 +39,15 @@
     
 }
 
+- (IBAction)questionButtonTapped:(id)sender
+{
+    if(self.delegate!=nil && [self.delegate respondsToSelector:@selector(questionTappedAt:)])
+    {
+        [self.delegate questionTappedAt:self.indexPath];
+    }
+    
+}
+
 -(void)setLabelFontsColor
 {
     

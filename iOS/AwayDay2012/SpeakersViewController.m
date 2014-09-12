@@ -19,6 +19,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "CustomSlider.h"
+#import "QuestionsController.h"
 
 #define COMMENT_LABEL_WIDTH 230
 #define COMMENT_LABEL_MIN_HEIGHT 21
@@ -180,7 +181,7 @@
         return [self getLabelHeightForIndex:indexPath.row] + 123;
     }
     else {
-        return 120;
+        return 140;
     }
 }
 
@@ -236,6 +237,21 @@
     //we want to minimize it back
     
 }
+
+-(void)questionTappedAt:(NSIndexPath *)indexPath
+{
+    NSLog(@"question tapped at indexPath = %@", indexPath);
+    NSDictionary *speakerInfo = [speakersInfo objectAtIndex:indexPath.row];
+
+    if (self.questionsController == nil) {
+        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        QuestionsController *rvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"questionsController"];
+        self.questionsController = rvc;
+    }
+    [self.questionsController setSessionTitle:[speakerInfo valueForKey:@"speaker_topic"]];
+    [self.navigationController pushViewController:self.questionsController animated:YES];
+}
+
 
 -(void)didButtonTappedAt:(NSIndexPath *)indexPath
 {
@@ -420,7 +436,7 @@
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         
-        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
+        NSString *shareText = @"Thoughtworks Away Day-2014 (19, 20 & 21 September)! ";
         [mySLComposerSheet setInitialText:shareText];
         
         [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];

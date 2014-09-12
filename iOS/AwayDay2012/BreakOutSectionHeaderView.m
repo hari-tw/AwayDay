@@ -43,16 +43,16 @@
         titleLabelFrame.origin.y+=3.0;
         titleLabelFrame.size.width -= 60.0;
         //CGRectInset(titleLabelFrame, 0.0, 5.0);
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(56 , 3 , 200, 30)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10 , 3 , 200, 30)];
         label.text =  [NSString  stringWithFormat:@" \"%@ \"" ,trackTopic];
         label.backgroundColor = [UIColor clearColor];
         [self addSubview:label];
         self.trackLabel = label;
         
 
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 3, 44, 44)];
-        imageView.image = [UIImage imageNamed:imageName];
-        [self addSubview:imageView];
+//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 3, 44, 44)];
+//        imageView.image = [UIImage imageNamed:imageName];
+//        [self addSubview:imageView];
         
 
 //
@@ -74,7 +74,7 @@
         
         
         
-        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(65, 25, 250, 25)];
+        self.coordinatorLabel = [[UILabel alloc]initWithFrame:CGRectMake(25, 25, 250, 25)];
         self.coordinatorLabel.backgroundColor= [UIColor clearColor];
         
         [self.coordinatorLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:11]];
