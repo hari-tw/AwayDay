@@ -20,8 +20,11 @@
     return @"Questions";
 }
 
-+ (void)findAllInBackgroundWithBlock:(PFArrayResultBlock)resultBlock {
++ (void)findAllInBackgroundForSessionTitle:(NSString *)sessionTitle withBlock:(PFArrayResultBlock)resultBlock {
+
     PFQuery *query = [TWQuestion query];
+    [query whereKey:@"sessionTitle" containsString:sessionTitle];
+    [query orderByAscending:@"createdAt"];
     [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
     [query findObjectsInBackgroundWithBlock:^(NSArray *notifications, NSError *error) {
         resultBlock(notifications, error);

@@ -1,27 +1,19 @@
 //
-//  HomeViewController.h
-//  AwayDay2012
+//  VideoViewController.h
+//  YouTubePlayer
 //
-//  Created by safadmoh on 11/09/13.
-//
+//  Created by safadmoh on 15/09/13.
+//  Copyright (c) 2013 safadmoh. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "EGORefreshTableHeaderView.h"
 
-@class STTwitterAPI;
+@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
+    //IBOutlets
+    @property (weak, nonatomic) IBOutlet UICollectionView *videoCollectionView;
 
-@interface HomeViewController : UIViewController<UITabBarDelegate,UITableViewDataSource, EGORefreshTableHeaderDelegate>
-
-@property (weak, nonatomic) IBOutlet UILabel *counterTextLabel;
-@property (weak, nonatomic) IBOutlet UITableView *feedView;
-@property(nonatomic, strong) EGORefreshTableHeaderView *refreshView;
-
-@property(nonatomic, strong) id tweets;
-
-@property(nonatomic, strong) STTwitterAPI *twitter;
-
-- (IBAction)onBurger:(id)sender;
+    //Action method.
+    - (IBAction)sideMenuTapped:(id)sender;
 
 @end

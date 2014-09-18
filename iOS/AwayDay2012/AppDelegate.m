@@ -12,6 +12,9 @@
 #import "TWNotification.h"
 #import "NotificationsController.h"
 #import "TWQuestion.h"
+#import "HomeViewController.h"
+#import "TWBreakoutSession.h"
+#import "TWSpeaker.h"
 
 #import <Crashlytics/Crashlytics.h>
 
@@ -38,6 +41,9 @@
     [TWSession registerSubclass];
     [TWNotification registerSubclass];
     [TWQuestion registerSubclass];
+    [TWBreakoutSession registerSubclass];
+    [TWSpeaker registerSubclass];
+
     [Parse setApplicationId:@"cRkqJtkVvjyuC5pvKRzLNz8CFm6WgrbPqX0uKX7a"
                   clientKey:@"o4Dr0m1oV8PBWw0DQSeaYmd9T3LSayKIPJCkbIxd"];
 
@@ -90,7 +96,10 @@
     }
 
     if (self.navigationController == nil) {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil]];
+
+        UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        HomeViewController *homeViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewIdentifier"];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeViewController];
         nav.navigationBar.hidden = YES;
         self.navigationController = nav;
     }

@@ -8,24 +8,17 @@
 
 #import "UserPathViewController.h"
 #import "AppDelegate.h"
-#import "DBService.h"
 #import "AppConstant.h"
-#import "UserPath.h"
 #import "AppHelper.h"
-#import "ASIFormDataRequest.h"
 #import "RNFrostedSidebar.h"
 #import "CustomSlider.h"
 #import "CFShareCircleView.h"
-#import <Accounts/Accounts.h>
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import <Social/Social.h>
-
-#import "SpeakersViewController.h"
 
 #define tag_view_table_child_view   10001
 #define tag_view_table_path_image   tag_view_table_child_view+1
-#define key_timer_table_cell        @"timer_key_cell"
-#define key_timer_user_path         @"timer_key_path"
-#define key_timer_path_image        @"timer_key_path_image"
 #define tag_req_delete_path     1001
 
 @interface UserPathViewController()<RNFrostedSidebarDelegate,CFShareCircleViewDelegate>
@@ -59,32 +52,27 @@
         self.operationQueue=queue;
     }
     [self.operationQueue setMaxConcurrentOperationCount:5];
+
+    [self buildUI];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self loadUserActivity];
-    [self buildUI];
 }
 
 #pragma mark - UIAction method
 -(IBAction)backButtonPressed:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 -(IBAction)addPathButtonPressed:(id)sender{
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     if ([appDelegate.userState objectForKey:kUserWeiboTokenKey]) {
         [self displayPostShareVC];
     } else {
-        [self authorizeWeibo];
+//        [self authorizeWeibo];
     }
-}
-
-- (void)authorizeWeibo {
-    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
-    request.redirectURI = kRedirectURI;
-    request.scope = @"email,direct_messages_write";
-    [WeiboSDK sendRequest:request];
 }
 
 - (void)displayPostShareVC {
@@ -142,8 +130,7 @@
 {
     
     switch (index) {
-        case 0:
-        {
+        case 0: {
             [slider showHomeScreen];
             [sidebar dismiss];
         }
@@ -183,33 +170,22 @@
         {
             [slider showNotificationScreen];
             [sidebar dismiss];
-            
-            
         }
             break;
-//        case 6 :
-//        {
-//            [slider showNotificationScreen];
-//            [sidebar dismiss];
-//
-//        }
-//            break;
+        case 6 :
+        {
+            [slider showHomeScreen];
+            [sidebar dismiss];
+
+        }
+            break;
         case 7:
         {
             [sidebar dismiss];
             // Do any additional setup after loading the view, typically from a nib.
              [slider showGameInfoSCreen];
-//            self.shareCircleView = [[CFShareCircleView alloc] init];
-//            self.shareCircleView.delegate = self;
-//            [self.shareCircleView show];
-            
         }
             break;
-            
-            
-            
-            
-            
         default:
             break;
     }

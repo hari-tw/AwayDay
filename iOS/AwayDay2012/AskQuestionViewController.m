@@ -9,8 +9,6 @@
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <JVFloatLabeledTextField/JVFloatLabeledTextView.h>
 #import "AskQuestionViewController.h"
-#import "JVFloatLabeledTextField.h"
-#import "JVFloatLabeledTextView.h"
 
 const static CGFloat kJVFieldHeight = 44.0f;
 const static CGFloat kJVFieldHMargin = 50.0f;
@@ -41,7 +39,7 @@ const static CGFloat kJVFieldFloatingLabelFontSize = 11.0f;
     self.titleField = [[JVFloatLabeledTextField alloc] initWithFrame:
             CGRectMake(kJVFieldHMargin, topOffset, self.view.frame.size.width - 2 * kJVFieldHMargin, kJVFieldHeight)];
     self.titleField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"Name", @"")
-                                                                       attributes:@{NSForegroundColorAttributeName : [UIColor darkGrayColor]}];
+                                                                            attributes:@{NSForegroundColorAttributeName : [UIColor darkGrayColor]}];
     self.titleField.font = [UIFont systemFontOfSize:kJVFieldFontSize];
     self.titleField.floatingLabel.font = [UIFont boldSystemFontOfSize:kJVFieldFloatingLabelFontSize];
     self.titleField.floatingLabelTextColor = floatingLabelColor;

@@ -1,110 +1,127 @@
 [
     {
         "trackTopic": "P2 Track",
-        "captainName": "X & Y",
+        "captainName": "Convention Hall",
         "topics": [
+            {
+                "topic_name": "Challenges of Deploying Bahmni & the Business of Social Impact",
+                "topic_speaker": "Gurpreet Luthra & Vivek Singh",
+                "time": "30 mins",
+                "description" : "some description goes here"
+            },
             {
                 "topic_name": "MicroServices",
                 "topic_speaker": "Sam Newman",
-                "time": "20 mins"
-            },
-            {
-                "topic_name": "Challenges of Deploying Bahmni & the Business of Social Impac",
-                "topic_speaker": "Gurpreet Luthra & Vivek Singh",
-                "time": "30 mins"
+                "time": "20 mins",
+                "description" : "some description goes here"
             },
             {
                 "topic_name": "Go'Matha",
                 "topic_speaker": "Arvind Ram Anantharam",
-                "time": "20 mins"
+                "time": "20 mins",
+                "description" : "some description goes here"
             },
             {
-                "topic_name": "Defending the Free Internet",
+                "topic_name": "IT security vs. state security: Misconceptions and what needs to be done",
                 "topic_speaker": "Andy Muller",
-                "time": "20 mins"
+                "time": "30 mins",
+                "description" : "some description goes here"
             }
         ]
     },
-
-
-    {
-        "trackTopic": "Personal Journeys",
-        "captainName": "Y & Z",
-        "topics": [
-            {
-                "topic_name": "Inclusivity",
-                "topic_speaker": "Nayana U",
-                "time": "20 mins"
-            },
-            {
-                "topic_name": "A STEP in our Journey",
-                "topic_speaker": "Srijayanth & Swamiji",
-                "time": "30 mins"
-            },
-            {
-                "topic_name": "What it is like to be a woman in my country",
-                "topic_speaker": "Desiree Santos",
-                "time": "20 mins"
-            },
-
-            {
-                "topic_name": "Life lessons",
-                "topic_speaker": "John & Nitish",
-                "time": "20 mins"
-            },
-            {
-                "topic_name": "Society, Decisions, Opinions, Environment Variables & Virtual Machines",
-                "topic_speaker": "Mihir",
-                "time": "7 mins"
-            }
-        ]
-    },
-
 
     {
         "trackTopic": "Open Track",
-        "captainName": "Z & A",
+        "captainName": "Sapphire Ballroom 1",
         "topics": [
-            {
-                "topic_name": "Working with Large Enterprises",
-                "topic_speaker": "Jagbir Singh Lehl",
-                "time": "20 mins"
-            },
             {
                 "topic_name": "Introducing the People's Archive of Rural India",
                 "topic_speaker": "P. Sainath",
-                "time": "30 mins"
+                "time": "30 - 45 mins",
+                "description" : "some description goes here"
+            },
+            {
+                "topic_name": "Working with Large Enterprises",
+                "topic_speaker": "Jagbir Singh Lehl",
+                "time": "20 mins",
+                "description" : "some description goes here"
             },
             {
                 "topic_name": "The Amazing Ecuador",
                 "topic_speaker": "María Fernanda Escudero ",
-                "time": "10 mins"
+                "time": "10 mins",
+                "description" : "some description goes here"
             },
             {
                 "topic_name": "Introducing TW Germany",
                 "topic_speaker": "Sophie Randel & Milena Trautloff",
-                "time": "10 mins"
+                "time": "10 mins",
+                "description" : "some description goes here"
             },
 
 
             {
                 "topic_name": "Redefining our IT Organisation",
                 "topic_speaker": "Sreedevi",
-                "time": "10 mins"
+                "time": "10 mins",
+                "description" : "some description goes here"
             },
-
 
             {
                 "topic_name": "Recruiting with BEE Regulations",
                 "topic_speaker": "Caroline Matsimela",
-                "time": "10 mins"
+                "time": "10 mins",
+                "description" : "some description goes here"
             },
-
-
             {
                 "topic_name": "P4 at TWI",
                 "topic_speaker": "Pradipta",
-                "time": "10 mins"
+                "time": "10 mins",
+                "description" : "some description goes here"
+            }
+        ]
+    },
+
+    {
+        "trackTopic": "Personal Journeys",
+        "captainName": "Sapphire Ballroom 2",
+        "topics": [
+            {
+                "topic_name": "A STEP in our Journey",
+                "topic_speaker": "Srijayanth & Swamiji",
+                "time": "30 mins",
+                "description" : "some description goes here"
+            },
+            {
+                "topic_name": "Inclusivity",
+                "topic_speaker": "Nayana U",
+                "time": "20 mins",
+                "description" : "some description goes here"
+            },
+            {
+                "topic_name": "What it is like to be a woman in my country",
+                "topic_speaker": "Desiree Santos",
+                "time": "20 mins",
+                "description" : "some description goes here"
+            },
+
+            {
+                "topic_name": "Life is short",
+                "topic_speaker": "John",
+                "time": "10 mins",
+                "description" : "some description goes here"
+            },
+            {
+                "topic_name": "What I would like to teach my children",
+                "topic_speaker": "Nitish",
+                "time": "10 mins",
+                "description" : "some description goes here"
+            },
+            {
+                "topic_name": "Society, Decisions, Opinions, Environment Variables & Virtual Machines",
+                "topic_speaker": "Mihir",
+                "time": "7 mins",
+                "description" : "some description goes here"
             }
         ]
     }

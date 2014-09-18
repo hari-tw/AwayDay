@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class QuestionsController;
+#import "QuestionsController.h"
 
 @interface SpeakersViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {

@@ -18,7 +18,7 @@
 
 -(void) showSliderMenu;
 
--(void) showHomeScreen;
+-(void)showTweetScreen;
 
 -(void)showNotificationScreen;
 
@@ -30,7 +30,7 @@
 
 -(void) showBreakOutSessionScreen;
 
--(void)showVideoScreen;
+-(void)showHomeScreen;
 
 -(void)showGameInfoSCreen;
 

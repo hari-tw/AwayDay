@@ -14,6 +14,7 @@
 @interface AskQuestionViewController : UIViewController<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *saveQuestion;
+@property (weak, nonatomic) IBOutlet UIButton *cancelQuestion;
 @property(nonatomic, strong) JVFloatLabeledTextField *titleField;
 @property(nonatomic, strong) JVFloatLabeledTextView *descriptionField;
 @end

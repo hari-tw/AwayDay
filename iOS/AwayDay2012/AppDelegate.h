@@ -11,15 +11,14 @@
 #import "AgendaViewController.h"
 //#import "SettingViewController.h"
 #import "UserPathViewController.h"
-#import "HomeViewController.h"
+#import "TweetViewController.h"
 #import "PathMenuViewController.h"
-#import "WeiboSDK.h"
 #import <CoreLocation/CoreLocation.h>
 #import <sqlite3.h>
 
 @class NotificationsController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, WeiboSDKDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic, strong) UINavigationController *navigationController;

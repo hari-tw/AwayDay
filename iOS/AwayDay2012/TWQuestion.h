@@ -12,5 +12,5 @@
 @property(nonatomic, strong) NSString *questionerName;
 @property(nonatomic, strong) NSString *deviceToken;
 
-+ (void)findAllInBackgroundWithBlock:(PFArrayResultBlock)resultBlock;
++ (void)findAllInBackgroundForSessionTitle:(NSString *)sessionTitle withBlock:(PFArrayResultBlock)resultBlock;
 @end

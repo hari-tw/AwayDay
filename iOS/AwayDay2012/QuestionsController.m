@@ -23,8 +23,7 @@
     AskQuestionViewController *askquestionView;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -32,20 +31,17 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self loadQuestions];
     [self setupPopupView];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,8 +71,9 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     TWQuestion *question = questions[(NSUInteger) indexPath.row];
-    return [QuestionTableViewCell heightForCellWithQuestion:question.questionText];
+    return [QuestionTableViewCell heightForCellWithQuestion:question.questionText] + 20;
 }
 
 
@@ -105,10 +102,10 @@
 }
 
 - (void)loadQuestions {
-    [TWQuestion findAllInBackgroundWithBlock:^(NSArray *qns, NSError *error) {
+    NSLog(@"inside load questions");
 
+    [TWQuestion findAllInBackgroundForSessionTitle:self.sessionTitle withBlock:^(NSArray *qns, NSError *error) {
         questions = [qns mutableCopy];
-
         NSLog(@"qns = %d", qns.count);
         [self.questionsView reloadData];
     }];
@@ -149,6 +146,7 @@
     askquestionView = (AskQuestionViewController *) [storyboad instantiateViewControllerWithIdentifier:@"askQuestion"];
     [askquestionView.view setFrame:CGRectMake(0, self.view.frame.size.height, 320, self.view.frame.size.height)];
     [askquestionView.saveQuestion addTarget:self action:@selector(saveQuestion) forControlEvents:UIControlEventTouchUpInside];
+    [askquestionView.cancelQuestion addTarget:self action:@selector(cancelQuestion) forControlEvents:UIControlEventTouchUpInside];
 
     [self.view addSubview:askquestionView.view];
 }
@@ -159,9 +157,35 @@
                          [askquestionView.view setFrame:CGRectMake(0, self.view.frame.size.height, 320, self.view.frame.size.height)];
                      }
                      completion:^(BOOL finished) {
-                         NSLog(@"askquestionView.titleField.text = %@", askquestionView.titleField.text);
-                         NSLog(@"askquestionView.description.text = %@", askquestionView.descriptionField.text);
+
+
+                         NSString *name = askquestionView.titleField.text;
+                         NSString *questionText = askquestionView.descriptionField.text;
+
+                         if (name.length > 0 && questionText.length > 0) {
+                             TWQuestion *question = [[TWQuestion alloc] init];
+                             question.questionText = questionText;
+                             question.questionerName = name;
+                             question.sessionTitle = self.sessionTitle;
+                             question.deviceToken = @"";
+
+                             [questions addObject:question];
+                             [self.questionsView reloadData];
+
+                             [question saveInBackground];
+                         }
+
                          NSLog(@"save question ");
+
+                     }];
+}
+
+- (void)cancelQuestion {
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         [askquestionView.view setFrame:CGRectMake(0, self.view.frame.size.height, 320, self.view.frame.size.height)];
+                     }
+                     completion:^(BOOL finished) {
 
                      }];
 }

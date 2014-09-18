@@ -13,29 +13,29 @@
 #import "CustomSlider.h"
 #import "CFShareCircleView.h"
 #import "BreakOutSession.h"
-#import "RNFrostedSidebar.h"
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
+#import "TWBreakoutSession.h"
+#import "AppConstant.h"
+#import "AppDelegate.h"
+#import "AppHelper.h"
+#import "TWSpeaker.h"
 
 #define HEADER_HEIGHT 60
+#define COMMENT_LABEL_WIDTH 230
 
-@interface BreakOutSessionViewController ()<RNFrostedSidebarDelegate,InviteFriendsSectionHeaderViewDelegate,UIScrollViewDelegate,CFShareCircleViewDelegate>
-
-{
-    NSMutableArray *sectionImages;
+@interface BreakOutSessionViewController () <RNFrostedSidebarDelegate, UIScrollViewDelegate, CFShareCircleViewDelegate, CustomBreakOutDelegate> {
     CustomSlider *slider;
 }
-@property (nonatomic, strong) CFShareCircleView *shareCircleView;
 
-@property (nonatomic, assign) NSInteger openSectionIndex;
-@property (nonatomic,strong) NSMutableArray *breakOutSessionDetails;
+@property(nonatomic, assign) NSInteger openSectionIndex;
+@property(nonatomic, strong) NSMutableArray *breakOutSessionDetails;
 
 @end
 
-@implementation BreakOutSessionViewController
+@implementation BreakOutSessionViewController {
+    NSInteger selectedIndex;
+}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -44,526 +44,451 @@
 }
 
 
+- (void)loadInfo {
 
--(void)loadInfo
-{
-    
-    NSMutableArray *sectionHeaderText=[[NSMutableArray alloc]initWithObjects:@"Track1",@"Track2",@"Track3",nil];
-    self.sectionInfoDictionary=[[NSMutableArray alloc]init];
-    
-    NSMutableDictionary *trackOneInfo=[[NSMutableDictionary alloc]init];
-    [trackOneInfo setObject:[sectionHeaderText objectAtIndex:0] forKey:@"sectionHeaderName"];
-    NSMutableArray *emailCellRowHeights=[[NSMutableArray alloc]init];
-    
-    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:0] topics]count];i++)
-    {
-        [emailCellRowHeights addObject:[NSNumber numberWithFloat:45]];
+    NSMutableArray *sectionHeaderText = [@[@"Track1", @"Track2", @"Track3"] mutableCopy];
+    self.sectionInfoDictionary = [[NSMutableArray alloc] init];
+
+    NSMutableDictionary *trackOneInfo = [[NSMutableDictionary alloc] init];
+    trackOneInfo[@"sectionHeaderName"] = sectionHeaderText[0];
+    NSMutableArray *emailCellRowHeights = [[NSMutableArray alloc] init];
+
+    NSNumber *rowHeight = @97.0F;
+    for (int i = 0; i < [[(self.breakOutSessionDetails)[0] topics] count]; i++) {
+        [emailCellRowHeights addObject:rowHeight];
     }
-    [trackOneInfo setObject:emailCellRowHeights forKey:@"rowHeights"];
+    trackOneInfo[@"rowHeights"] = emailCellRowHeights;
     [self.sectionInfoDictionary addObject:trackOneInfo];
-    
-    
-    NSMutableDictionary *trackTwoInfo=[[NSMutableDictionary alloc]init];
-    [trackTwoInfo setObject:[sectionHeaderText objectAtIndex:1] forKey:@"sectionHeaderName"];
-    NSMutableArray *telephoneCellrowHeight=[[NSMutableArray alloc]init];
-    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:1] topics]count];i++)
-        [telephoneCellrowHeight addObject:[NSNumber numberWithFloat:45]];
-    
-    [trackTwoInfo setObject:telephoneCellrowHeight forKey:@"rowHeights"];
+
+
+    NSMutableDictionary *trackTwoInfo = [[NSMutableDictionary alloc] init];
+    trackTwoInfo[@"sectionHeaderName"] = sectionHeaderText[1];
+    NSMutableArray *telephoneCellrowHeight = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [[(self.breakOutSessionDetails)[1] topics] count]; i++)
+        [telephoneCellrowHeight addObject:rowHeight];
+
+    trackTwoInfo[@"rowHeights"] = telephoneCellrowHeight;
     [self.sectionInfoDictionary addObject:trackTwoInfo];
-    
-    
-    
-    NSMutableDictionary *trackThreeInfo=[[NSMutableDictionary alloc]init];
-    [trackThreeInfo setObject:[sectionHeaderText objectAtIndex:2] forKey:@"sectionHeaderName"];
-    NSMutableArray *byConnectingCellrowHeight=[[NSMutableArray alloc]init];
-    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:2] topics]count];i++)
-        [byConnectingCellrowHeight addObject:[NSNumber numberWithFloat:45]];
-    
-    [trackThreeInfo setObject:byConnectingCellrowHeight forKey:@"rowHeights"];
+
+
+    NSMutableDictionary *trackThreeInfo = [[NSMutableDictionary alloc] init];
+    trackThreeInfo[@"sectionHeaderName"] = sectionHeaderText[2];
+    NSMutableArray *byConnectingCellrowHeight = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [[(self.breakOutSessionDetails)[2] topics] count]; i++)
+        [byConnectingCellrowHeight addObject:rowHeight];
+
+    trackThreeInfo[@"rowHeights"] = byConnectingCellrowHeight;
     [self.sectionInfoDictionary addObject:trackThreeInfo];
-    
-    
-//    NSMutableDictionary *trackFourInfo=[[NSMutableDictionary alloc]init];
-//    [trackFourInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
-//    NSMutableArray *discoverFriendsRowHeight=[[NSMutableArray alloc]init];
-//
-//    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:3] topics]count];i++)
-//        [discoverFriendsRowHeight addObject:[NSNumber numberWithFloat:45]];
-//    [trackFourInfo setObject:discoverFriendsRowHeight forKey:@"rowHeights"];
-//    [self.sectionInfoDictionary addObject:trackFourInfo];
-//
-//
-//
-//    NSMutableDictionary *trackFiveInfo=[[NSMutableDictionary alloc]init];
-//    [trackFiveInfo setObject:[sectionHeaderText objectAtIndex:4] forKey:@"sectionHeaderName"];
-//    NSMutableArray *tarckFiveHeight=[[NSMutableArray alloc]init];
-//
-//    for(int i=0;i<[[[self.breakOutSessionDetails objectAtIndex:4] topics]count];i++)
-//        [tarckFiveHeight addObject:[NSNumber numberWithFloat:45]];
-//    [trackFiveInfo setObject:tarckFiveHeight forKey:@"rowHeights"];
-//    [self.sectionInfoDictionary addObject:trackFiveInfo];
-    
-    
+
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    sectionImages = [[NSMutableArray alloc]initWithObjects:@"open-our-eyes 2.png",@"south-globe.png",@"Impact 2.png",@"relavance_c.png",@"innovation 3.png",nil];
-    
-    self.breakOutSessionDetails=[[NSMutableArray alloc]init];
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Break_out"
-                                                         ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
-    NSError *error = nil;
-    NSLog(@"%@",data);
-    id json = [NSJSONSerialization JSONObjectWithData:data
-                                              options:kNilOptions
-                                                error:&error];
-    
-    
-    
-    NSLog(@"%@",json);
-    
-    for(NSDictionary *dict in json)
-    {
-        
-        BreakOutSession *session = [[BreakOutSession alloc]init];
-        
-        NSLog(@"%@",[dict valueForKey:@"captainName"]);
-        NSLog(@"%@",[dict valueForKey:@"trackTopic"]);
-        session.captainName= [dict valueForKey:@"captainName"];
-        session.trackTopic= [dict valueForKey:@"trackTopic"];
-        session.topics = [dict valueForKey:@"topics"];
-        [self.breakOutSessionDetails addObject:session];
-        
-    }
-    
-    [self loadInfo];
-    self.openSectionIndex = NSNotFound;
-    
+
+    __block NSDictionary *breakoutsByStream;
+
+    [AppHelper showInfoView:self.view withText:@"Loading Data!" withLoading:YES];
+
+    [TWSpeaker findAllInBackgroundWithBlock:^(NSArray *speakers, NSError *error) {
+
+        [TWBreakoutSession findAllInBackgroundWithBlock:^(NSArray *breakouts, NSError *error) {
+
+            self.breakoutSessions = [breakouts mutableCopy];
+
+            self.breakOutSessionDetails = [[NSMutableArray alloc] init];
+
+            NSLog(@"all breakouts");
+            if (!error) {
+                breakoutsByStream = [TWBreakoutSession groupByStream:breakouts];
+                for (NSString *stream in [breakoutsByStream.allKeys sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]) {
+                    BreakOutSession *session = [[BreakOutSession alloc] init];
+                    session.trackTopic = stream;
+                    session.topics = [breakoutsByStream valueForKey:stream];
+
+                    [self setSpeakersName:speakers session:session];
+
+                    [self.breakOutSessionDetails addObject:session];
+                }
+
+                [self loadInfo];
+
+                self.openSectionIndex = NSNotFound;
+                [self buildSectionHeaderInfo];
+
+                [self.breakOutSessionTableView reloadData];
+
+                [AppHelper removeInfoView:self.view];
+            }
+        }
+
+        ];
+
+
+    }];
+
+
+}
+
+- (void)buildSectionHeaderInfo {
     if ((self.sectionInfoArray == nil) || ([self.sectionInfoArray count] != [self numberOfSectionsInTableView:self.breakOutSessionTableView])) {
-		
+
         // For each play, set up a corresponding SectionInfo object to contain the default height for each row.
         NSMutableArray *infoArray = [[NSMutableArray alloc] init];
-		
-		for (NSMutableArray *array in self.sectionInfoDictionary) {
-			
-			BreakOutSectionInfo *sectionInfo = [[BreakOutSectionInfo alloc] init];
-			sectionInfo.play = array;
-			sectionInfo.open = NO;
-			
-            //  NSNumber *defaultRowHeight = [NSNumber numberWithInteger:160];
-			NSInteger countOfTeamNames = [[sectionInfo.play valueForKey:@"rowHeights"]count];
-			for (NSInteger i = 0; i < countOfTeamNames; i++) {
-				[sectionInfo insertObject:[[sectionInfo.play valueForKey:@"rowHeights"] objectAtIndex:i] inRowHeightsAtIndex:i];
-			}
-			
-			[infoArray addObject:sectionInfo];
-		}
-		
-		self.sectionInfoArray = infoArray;
-	}
-    
-	// Do any additional setup after loading the view.
+
+        for (NSMutableArray *array in self.sectionInfoDictionary) {
+
+            BreakOutSectionInfo *sectionInfo = [[BreakOutSectionInfo alloc] init];
+            sectionInfo.play = array;
+            sectionInfo.open = NO;
+
+            NSInteger countOfTeamNames = [[sectionInfo.play valueForKey:@"rowHeights"] count];
+            for (NSInteger i = 0; i < countOfTeamNames; i++) {
+                [sectionInfo insertObject:[[sectionInfo.play valueForKey:@"rowHeights"] objectAtIndex:i] inRowHeightsAtIndex:i];
+            }
+
+            [infoArray addObject:sectionInfo];
+        }
+        self.sectionInfoArray = infoArray;
+    }
+}
+
+- (void)setSpeakersName:(NSArray *)speakers session:(BreakOutSession *)session {
+    for (TWBreakoutSession *topic in session.topics) {
+        NSString *names = @"";
+        for (id speakerId in topic.speakers) {
+            NSPredicate *idPredicate = [NSPredicate predicateWithFormat:@"objectId = %@", speakerId];
+            if ([names length] > 0)
+                names = [names stringByAppendingString:@" , "];
+            NSArray *spkrs = [speakers filteredArrayUsingPredicate:idPredicate];
+
+            if ([spkrs count] > 0)
+                names = [names stringByAppendingString:spkrs[0][@"Name"]];
+        }
+        topic.Speaker = names;
+    }
 }
 
 
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return HEADER_HEIGHT;
 }
 
 
 #pragma mark -table view data source method.
 
--(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    
-    //  return [self.plays count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    NSLog(@"_breakOutSessionDetailsCount = %d", self.breakOutSessionDetails.count);
     return self.breakOutSessionDetails.count;
 }
 
 
--(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
-    NSLog(@"%@",sectionInfo);
-	NSInteger numStoriesInSection = [[sectionInfo.play valueForKey:@"rowHeights"] count];
-	
+//    NSLog(@"%@", sectionInfo);
+    NSInteger numStoriesInSection = [[sectionInfo valueForKey:@"rowHeights"] count];
+
     return sectionInfo.open ? numStoriesInSection : 0;
 }
 
 
--(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
     static NSString *emailListIdentifier = @"breakOutCellIdentifier";
-    
-    CustomBreakOutSessionCell *cell = (CustomBreakOutSessionCell*)[tableView dequeueReusableCellWithIdentifier:emailListIdentifier];
-    
-    BreakOutSession *session = [self.breakOutSessionDetails objectAtIndex:indexPath.section];
-    
-    
-    cell.topicTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_name"]];
-    cell.topicSpeakerNameTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"topic_speaker"]];
-    cell.timeTextLabel.text= [NSString stringWithFormat:@"%@",[[session.topics objectAtIndex:indexPath.row] valueForKey:@"time"]];
-    
-    
-    
-    
-    
-    return cell;
-    
-}
 
+    CustomBreakOutSessionCell *cell = (CustomBreakOutSessionCell *) [tableView dequeueReusableCellWithIdentifier:emailListIdentifier];
+    BreakOutSession *session = (self.breakOutSessionDetails)[(NSUInteger) indexPath.section];
 
+    cell.indexPath = indexPath;
+    cell.delegate = self;
 
+    TWBreakoutSession *object = (session.topics)[indexPath.row];
+    cell.topicTextLabel.text = [NSString stringWithFormat:@"%@", object.Title];
+    cell.topicSpeakerNameTextLabel.text = [NSString stringWithFormat:@"%@", object.Speaker];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm"];
 
--(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    /*
-     Create the section header views lazily.
-     */
-	BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
-    if (!sectionInfo.headerView) {
-		//NSString *playName = [sectionInfo.play valueForKey:@"sectionHeaderName"];
-        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:[[self.breakOutSessionDetails objectAtIndex:section] trackTopic]  coordinator:[[self.breakOutSessionDetails objectAtIndex:section] captainName] image:[sectionImages objectAtIndex:section]  section:section delegate:self];
+    cell.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:[self getDate:object.Start]], [formatter stringFromDate:[self getDate:object.End]]];
+
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
+
+    if (userJoinList != nil && [userJoinList containsObject:object.objectId]) {
+        [cell.joinButton setImage:nil forState:UIControlStateNormal];
+        [cell.joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
+    } else {
+
+        [cell.joinButton setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
     }
-    
+
+    [cell.reminderButton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
+    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        if (notification.userInfo != nil && notification.userInfo.count > 0) {
+            NSString *sessionID = [notification.userInfo objectForKey:@"session_id"];
+            if ([sessionID isEqualToString:object.objectId]) {
+                [cell.reminderButton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
+            }
+        }
+    }
+    return cell;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:section];
+    if (!sectionInfo.headerView) {
+        sectionInfo.headerView = [[BreakOutSectionHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.breakOutSessionTableView.bounds.size.width, HEADER_HEIGHT) title:[[self.breakOutSessionDetails objectAtIndex:section] trackTopic] coordinator:[[self.breakOutSessionDetails objectAtIndex:section] captainName] section:section delegate:self];
+    }
+
     return sectionInfo.headerView;
-    
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[[[self.sectionInfoDictionary objectAtIndex:indexPath.section] valueForKey:@"rowHeights"] objectAtIndex:indexPath.row] floatValue];
 }
 
 
--(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    
-    //	AMGInviteFriendsSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:indexPath.section];
-    //    return [[sectionInfo objectInRowHeightsAtIndex:indexPath.row] floatValue];
-    
-    return [[[[self.sectionInfoDictionary objectAtIndex:indexPath.section] valueForKey:@"rowHeights"]objectAtIndex:indexPath.row] floatValue];
-    // Alternatively, return rowHeight.
-    
-}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    NSLog(@"selected indexPath = %@", indexPath);
 
--(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BreakOutSession *session = (self.breakOutSessionDetails)[(NSUInteger) indexPath.section];
+    TWBreakoutSession *object = (session.topics)[indexPath.row];
+
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    self.detailedViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"breakoutDetailIdentifier"];
+
+    [self.detailedViewController setSession:object];
+    [self.navigationController pushViewController:self.detailedViewController animated:YES];
 }
 
 
 //#pragma mark Section header delegate
 
--(void)sectionHeaderView:(BreakOutSectionHeaderView*)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
-	
+- (void)sectionHeaderView:(BreakOutSectionHeaderView *)sectionHeaderView sectionOpened:(NSInteger)sectionOpened {
+
     BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionOpened];
-    NSLog(@"%d",sectionOpened);
-    
-    
-	sectionInfo.open = YES;
-    
-    /*
-     Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
-     */
-    NSInteger countOfRowsToInsert = [[sectionInfo.play valueForKey:@"rowHeights"]count];
-    NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
-        [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
-    }
-    
-    /*
-     Create an array containing the index paths of the rows to delete: These correspond to the rows for each quotation in the previously-open section, if there was one.
-     */
-    NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
-    
-    NSInteger previousOpenSectionIndex = self.openSectionIndex;
-    if (previousOpenSectionIndex != NSNotFound) {
-		
-		BreakOutSectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
-        previousOpenSection.open = NO;
-        [previousOpenSection.headerView toggleOpenWithUserAction:NO];
-        NSInteger countOfRowsToDelete = [[previousOpenSection.play valueForKey:@"rowHeights"]count];
-        for (NSInteger i = 0; i < countOfRowsToDelete; i++)
-        {
-            [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
-        }
-    }
-    
-    for(NSIndexPath *index in indexPathsToDelete)
-        NSLog(@"%@",index);
-    
-    // Style the animation so that there's a smooth flow in either direction.
-    UITableViewRowAnimation insertAnimation=nil;
-    UITableViewRowAnimation deleteAnimation=nil;
-    if (previousOpenSectionIndex == NSNotFound || sectionOpened < previousOpenSectionIndex)
+//    NSLog(@"%d", sectionOpened);
+
+    if(sectionInfo)
     {
-        insertAnimation = UITableViewRowAnimationFade;
-        deleteAnimation = UITableViewRowAnimationFade;
+        sectionInfo.open = YES;
+        NSInteger countOfRowsToInsert = [[sectionInfo valueForKey:@"rowHeights"] count];
+        NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
+            [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
+        }
+
+        NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
+
+        NSInteger previousOpenSectionIndex = self.openSectionIndex;
+        if (previousOpenSectionIndex != NSNotFound) {
+
+            BreakOutSectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
+            previousOpenSection.open = NO;
+            [previousOpenSection.headerView toggleOpenWithUserAction:NO];
+            NSInteger countOfRowsToDelete = [[previousOpenSection.play valueForKey:@"rowHeights"] count];
+            for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
+                [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
+            }
+        }
+
+        for (NSIndexPath *index in indexPathsToDelete)
+            NSLog(@"%@", index);
+
+        // Style the animation so that there's a smooth flow in either direction.
+        UITableViewRowAnimation insertAnimation = nil;
+        UITableViewRowAnimation deleteAnimation = nil;
+        if (previousOpenSectionIndex == NSNotFound || sectionOpened < previousOpenSectionIndex) {
+            insertAnimation = UITableViewRowAnimationFade;
+            deleteAnimation = UITableViewRowAnimationFade;
+        }
+        else {
+            insertAnimation = UITableViewRowAnimationFade;
+            deleteAnimation = UITableViewRowAnimationFade;
+        }
+
+        // Apply the updates.
+        [self.breakOutSessionTableView beginUpdates];
+        //    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:insertAnimation];
+        [self.breakOutSessionTableView insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:insertAnimation];
+        [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
+        [self.breakOutSessionTableView endUpdates];
+        self.openSectionIndex = sectionOpened;
+
     }
-    else {
-        insertAnimation = UITableViewRowAnimationFade;
-        deleteAnimation = UITableViewRowAnimationFade;
-    }
-    
-    // Apply the updates.
-    [self.breakOutSessionTableView beginUpdates];
-    //    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:insertAnimation];
-    [self.breakOutSessionTableView insertRowsAtIndexPaths:indexPathsToInsert withRowAnimation:insertAnimation];
-    [self.breakOutSessionTableView deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:deleteAnimation];
-    [self.breakOutSessionTableView endUpdates];
-    self.openSectionIndex = sectionOpened;
-    
+
+
+
 }
-//
-//
--(void)sectionHeaderView:(BreakOutSectionHeaderView*)sectionHeaderView sectionClosed:(NSInteger)sectionClosed {
-    
-    
-    /*
-     Create an array of the index paths of the rows in the section that was closed, then delete those rows from the table view.
-     */
-	BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionClosed];
-	
+
+- (void)sectionHeaderView:(BreakOutSectionHeaderView *)sectionHeaderView sectionClosed:(NSInteger)sectionClosed {
+
+    BreakOutSectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:sectionClosed];
+
     sectionInfo.open = NO;
     NSInteger countOfRowsToDelete = [self.breakOutSessionTableView numberOfRowsInSection:sectionClosed];
-    
+
     if (countOfRowsToDelete > 0) {
         NSMutableArray *indexPathsToDelete = [[NSMutableArray alloc] init];
         for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
             [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:sectionClosed]];
         }
         [self.breakOutSessionTableView
-         deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationFade];
+                deleteRowsAtIndexPaths:indexPathsToDelete withRowAnimation:UITableViewRowAnimationFade];
     }
     self.openSectionIndex = NSNotFound;
 }
 
 
 - (void)viewDidUnload {
-    
+
     [self setBreakOutSessionTableView:nil];
     [super viewDidUnload];
 }
 
 
-
-
-
 #pragma mark -RNFrostedSidebar delegate method.
-- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index
-{
-    
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+
     switch (index) {
-        case 0:
-        {
+        case 0: {
             [slider showHomeScreen];
             [sidebar dismiss];
         }
             break;
-            
-        case 1:
-        {
+
+        case 1: {
             [slider showAgendaScreen];
             [sidebar dismiss];
-            
+
         }
             break;
-        case 2 :
-        {
+        case 2 : {
             [slider showSpeakersScreen];
             [sidebar dismiss];
-            
+
         }
             break;
-        case 3 :
-        {
+        case 3 : {
             [slider showBreakOutSessionScreen];
             [sidebar dismiss];
-            
-            
-            
         }
             break;
-        case 4 :
-        {
+        case 4 : {
             [slider showMyEventsScreen];
             [sidebar dismiss];
-            
+
         }
             break;
-        case 5 :
-        {
+        case 5 : {
             [slider showNotificationScreen];
             [sidebar dismiss];
-            
-            
         }
             break;
-//        case 6 :
-//        {
-//            [slider showNotificationScreen];
-//            [sidebar dismiss];
-//
-//        }
-//            break;
-        case 7:
-        {
+        case 6: {
+            [slider showTweetScreen];
+            [sidebar dismiss];
+
+        }
+            break;
+        case 7: {
             [sidebar dismiss];
             [slider showGameInfoSCreen];
-            // Do any additional setup after loading the view, typically from a nib.
-//            self.shareCircleView = [[CFShareCircleView alloc] init];
-//            self.shareCircleView.delegate = self;
-//            [self.shareCircleView show];
-            
+
         }
             break;
-            
-            
-            
-            
-            
         default:
             break;
     }
-    
+
 }
-
-
-- (void)shareCircleView:(CFShareCircleView *)shareCircleView didSelectSharer:(CFSharer *)sharer
-{
-    NSLog(@"Selected sharer: %@", sharer.name);
-    if([sharer.name isEqualToString:@"Twitter"])
-        [self postOnTWitterWall];
-    else
-        [self postOnFacebookWall];
-    
-}
-
-- (void)shareCircleCanceled:(NSNotification *)notification{
-    NSLog(@"Share circle view was canceled.");
-}
-
-
-
--(void)postOnFacebookWall
-{
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        
-        NSString *shareText = @"Thoughtworks Away Day-2013!";
-        [mySLComposerSheet setInitialText:shareText];
-        
-        //        [mySLComposerSheet addImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50.jpg"]]]];
-        
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-        
-        
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-        
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-            
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-        
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
-    }
-    
-    
-}
-
--(void)postOnTWitterWall
-{
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        
-        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-        
-        NSString *shareText = @"Thoughtworks Away Day-2013 (27 & 28th September)! ";
-        [mySLComposerSheet setInitialText:shareText];
-        
-        [mySLComposerSheet addImage:[UIImage imageNamed:@"home-page-new.png"]];
-        
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://thoughtworks.com"]];
-        
-        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
-            
-            switch (result) {
-                case SLComposeViewControllerResultCancelled:
-                    NSLog(@"Post Canceled");
-                    break;
-                case SLComposeViewControllerResultDone:
-                    NSLog(@"Post Sucessful");
-                    break;
-                default:
-                    break;
-            }
-        }];
-        
-        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
-    }
-    
-    
-}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    // Fades out top and bottom cells in table view as they leave the screen
-//    NSArray *visibleCells = [self.breakOutSessionTableView visibleCells];
-//    NSLog(@"%d",visibleCells.count);
-//
-//    CGPoint offset = self.breakOutSessionTableView.contentOffset;
-//    CGRect bounds = self.breakOutSessionTableView.bounds;
-//    CGSize size = self.breakOutSessionTableView.contentSize;
-//    UIEdgeInsets inset = self.breakOutSessionTableView.contentInset;
-//    float y = offset.y + bounds.size.height - inset.bottom;
-//    float h = size.height;
-//
-//
-//    if (y > h) {
-//        //self.breakOutSessionTableView.alpha = 1 - (y/h - 1)*4;
-//        for (CustomBreakOutSessionCell *cell in visibleCells) {
-//            cell.contentView.alpha = 0.0;//- (y/h - 1)*4;
-//        }
-//    } else {
-//        for (CustomBreakOutSessionCell *cell in visibleCells) {
-//            cell.contentView.alpha = 1;
-//        }
-//       // self.breakOutSessionTableView.alpha = 1;
-//    }
-//}
-//
-
-
 
 #pragma mark - action ethod.
+
 - (IBAction)sideMenuTapped:(id)sender {
-    slider = [[CustomSlider alloc]init];
+    slider = [[CustomSlider alloc] init];
     [slider showSliderMenu];
-    slider.callout.delegate=self;
-    
-    
+    slider.callout.delegate = self;
+}
+
+
+- (void)joinTappedAt:(NSIndexPath *)indexPath sender:(id)sender {
+    NSLog(@"join tapped at indexPath = %@", indexPath);
+
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSMutableArray *userJoinList = [appDelegate.userState objectForKey:kUserJoinListKey];
+
+    UIButton *joinButton = (UIButton *) sender;
+
+    BreakOutSession *session = (self.breakOutSessionDetails)[(NSUInteger) indexPath.section];
+    TWBreakoutSession *object = (session.topics)[indexPath.row];
+
+
+    if ([userJoinList containsObject:object.objectId]) {
+        [userJoinList removeObject:object.objectId];
+        [joinButton setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
+        [AppHelper showInfoView:self.view withText:@"Left!" withLoading:NO];
+    } else {
+        UserPath *path = [[UserPath alloc] init];
+        [path setPathID:[AppHelper generateUDID]];
+        [path setPathContent:[NSString stringWithFormat:@"Join %@", object.Title]];
+        [path setPathCreateTime:[NSDate date]];
+        [path save];
+
+        [userJoinList addObject:object.objectId];
+        [joinButton setImage:[UIImage imageNamed:@"unjoin_button.png"] forState:UIControlStateNormal];
+        [AppHelper showInfoView:self.view withText:@"Joined!" withLoading:NO];
+    }
+
+    [appDelegate saveUserState];
+
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(removeInfoView) userInfo:nil repeats:NO];
+}
+
+- (void)removeInfoView {
+
+    [AppHelper removeInfoView:self.view];
+}
+
+- (void)remindTappedAt:(NSIndexPath *)indexPath sender:(id)sender {
+    NSLog(@"remind tapped at indexPath = %@", indexPath);
+
+    BreakOutSession *session = (self.breakOutSessionDetails)[(NSUInteger) indexPath.section];
+    TWBreakoutSession *object = (session.topics)[indexPath.row];
+
+    if (self.reminderViewController == nil) {
+        ReminderViewController *rvc = [[ReminderViewController alloc] initWithNibName:@"ReminderViewController" bundle:nil];
+        self.reminderViewController = rvc;
+    }
+
+    NSMutableDictionary *remSession = [[NSMutableDictionary alloc] init];
+    remSession[@"title"] = object.Title;
+    remSession[@"objectId"] = object.objectId;
+    remSession[@"startTime"] = object.Start;
+
+    [self.reminderViewController setSession:remSession];
+    [self.navigationController pushViewController:self.reminderViewController animated:YES];
+}
+
+- (NSDate *)getDate:(NSString *)dateString {
+
+//    2014-09-20T15:20:00+05:30
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZ"];
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:(5.5 * 3600)]];
+
+    return [dateFormatter2 dateFromString:dateString];
 }
 
 @end

@@ -21,6 +21,5 @@
 
 -(IBAction)backButtonPressed:(id)sender;
 -(IBAction)sendButtonPressed:(id)sender;
--(IBAction)addImageButtonPressed:(id)sender;
 
 @end

@@ -12,30 +12,21 @@
 
 @implementation BreakOutSectionHeaderView
 
--(id)initWithFrame:(CGRect)frame title:(NSString*)trackTopic coordinator:(NSString *)coordinator image:(NSString *)imageName section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate
-{
+- (id)initWithFrame:(CGRect)frame title:(NSString *)trackTopic coordinator:(NSString *)coordinator section:(NSInteger)sectionNumber delegate:(id <InviteFriendsSectionHeaderViewDelegate>)delegate {
     
     self = [super initWithFrame:frame];
     
     if (self != nil) {
         
 
-        // Set up the tap gesture recognizer.
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleOpen:)];
         [self addGestureRecognizer:tapGesture];
         
-        
         self.backgroundColor = [UIColor whiteColor];
-        
-//        self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
         
         _delegate = delegate;
         self.userInteractionEnabled = YES;
-//        UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(2, 3.5, 316, 45)];
-//        
-//        imageView.image=[UIImage imageNamed:@"container.png"];
-//        [self addSubview:imageView];
-        
+
         // Create and configure the title label.
         _section = sectionNumber;
         CGRect titleLabelFrame = self.bounds;
@@ -50,16 +41,6 @@
         self.trackLabel = label;
         
 
-//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 3, 44, 44)];
-//        imageView.image = [UIImage imageNamed:imageName];
-//        [self addSubview:imageView];
-        
-
-//
-//        self.dividerImageVIew =[[UIImageView alloc]initWithFrame:CGRectMake(10, 49 ,300, 1)];
-//        self.dividerImageVIew.image = [UIImage imageNamed:@"line.png"];
-//        [self addSubview:self.dividerImageVIew];
-        
         [self.trackLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Regular" size:16]];
         [self.trackLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
        
@@ -79,11 +60,8 @@
         
         [self.coordinatorLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:11]];
         [self.coordinatorLabel setTextColor: [UIColor colorWithRed:10/255.0f green:10/255.0f blue:10/255.0f alpha:1.0f]];
-        self.coordinatorLabel.text=[NSString  stringWithFormat:@"%@" ,coordinator];
-        [self addSubview:self.coordinatorLabel];
-        
-        
-        
+//        self.coordinatorLabel.text=[NSString  stringWithFormat:@"%@" ,coordinator];
+//        [self addSubview:self.coordinatorLabel];
     }
     return self;
 }

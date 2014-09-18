@@ -1,28 +1,46 @@
 [
- {"speaker_name":"Jayathi Ghosh",
-  "speaker_topic":"World economy and India's economic prospects",
- "speaker_details":"Jayati Ghosh is a world leading economist. She is one of six recipients ever awarded the International Labour Organization's Decent Work Research Prize - in her case, to acknowledge significant research contribution on equity, development, and macroeconomic policies. She is currently Professor of Economics and Chairperson at the Centre for Economic Studies and Planning, School of Social Sciences, at the Jawaharlal Nehru University, in New Delhi, India.",
-   "speaker_image":"jayati.png"
- },
- 
- {"speaker_name":"Kalyan Varma",
- "speaker_topic":"Using open source software for society’s benefit",
- "speaker_details":"Celebrated nature photographer and great storyteller (and former techie!). Has been focusing on work showing how conservation can't be delinked from people. He recently spoke on Environment Day about the Dhangar shepherds of Maharashtra and how their lifestyle conserves grassland ecosystems.",
- "speaker_image":"kalyan.png"
- },
- 
- {"speaker_name":"Megha Bahree",
- "speaker_topic":"Fighting communal forces",
- "speaker_details":"Freelance journalist writing for Indian and global business publications.  Megha covers a variety of issues in India and its neighborhood, with a focus on business and development.  One of her award-winning pieces for Forbes in 2010 was on Maoists in Chhattisgarh and their clash with corporate India.  Several of her recent stories on India have focused on the issue of environmental clearances.",
- "speaker_image":"megha.png"},
- 
- {"speaker_name":"Paranjoy Guha Thakurta",
- "speaker_topic":" India’s recent economic development and predictors",
- "speaker_details":"Great media person whom we all know. His documentary series, Hot as Hell is a scathing commentary on how the original inhabitants of the region, the tribals or adivasis, are marginalized having been deprived of their land, their forests and their sources of water. That apart, Paranjoy is a great commentator on the free Internet, free press, crony capitalism and so much more.",
- "speaker_image":"paranjoy.png"},
- 
- {"speaker_name":"Lawrence Liang",
- "speaker_topic":" Healthcare for the underprivileged Detail",
- "speaker_details":"Lawrence Liang is a Bangalore-based lawyer and founder of the Alternative Law Forum. He works on the intersection of law and cultural politics. His work on intellectual property looks at how the digital turn has accelerated conflicts over questions of authorship, ownership and circulation in the cultural domain. His interest in free software and media piracy have led him to look at how these practices define contemporary culture.",
- "speaker_image":"liang.png"}
- ]
+
+    {
+        "speaker_name": "Mallu Swarajyam",
+        "speaker_topic": "Our revolution: the Telangana & India we fought for",
+        "speaker_details": "Mallu Swarajyam is a revolutionary leader  of the famous Telangana peasants armed struggle. She's an active participant in the welfare of local peasants and has served in public life as an MLA. Swarajyam will talk to us about what she has continued to fight for as a freedom-fighter all these years.  What is her vision of an independent, inclusive India​?.",
+        "speaker_image": "mallu.png"
+    },
+    {
+        "speaker_name": "Lawrence Liang",
+        "speaker_topic": "Data: what do law and civil society make of all its expanding attributes",
+        "speaker_details": "Lawrence Liang is a Bangalore-based lawyer and founder of the Alternative Law Forum. He works on the intersection of law and cultural politics. His work on intellectual property looks at how the digital turn has accelerated conflicts over questions of authorship, ownership and circulation in the cultural domain. His interest in free software and media piracy have led him to look at how these practices define contemporary culture.",
+        "speaker_image": "liang.png"
+    },
+
+    {
+        "speaker_name": "Jayathi Ghosh",
+        "speaker_topic": "'Achhe din' for the Indian economy: What does it mean and how do we get there?",
+        "speaker_details": "Jayati Ghosh is a world leading economist. She is one of six recipients ever awarded the International Labour Organization's Decent Work Research Prize - in her case, to acknowledge significant research contribution on equity, development, and macroeconomic policies. She is currently Professor of Economics and Chairperson at the Centre for Economic Studies and Planning, School of Social Sciences, at the Jawaharlal Nehru University, in New Delhi, India.",
+        "speaker_image": "jayati.png"
+    },
+    {
+        "speaker_name": "Paranjoy Guha Thakurta",
+        "speaker_topic": "Panel Discussion - Are enviromental clearances holding back out growth?",
+        "speaker_details": "Great media person whom we all know. His documentary series, Hot as Hell is a scathing commentary on how the original inhabitants of the region, the tribals or adivasis, are marginalized having been deprived of their land, their forests and their sources of water. That apart, Paranjoy is a great commentator on the free Internet, free press, crony capitalism and so much more.",
+        "speaker_image": "paranjoy.png"
+    },
+
+
+    {
+        "speaker_name": "Megha Bahree",
+        "speaker_topic": "Panel Discussion - Are enviromental clearances holding back out growth?",
+        "speaker_details": "Freelance journalist writing for Indian and global business publications.  Megha covers a variety of issues in India and its neighborhood, with a focus on business and development.  One of her award-winning pieces for Forbes in 2010 was on Maoists in Chhattisgarh and their clash with corporate India.  Several of her recent stories on India have focused on the issue of environmental clearances.",
+        "speaker_image": "megha.png"
+    },
+
+
+    {
+        "speaker_name": "Kalyan Varma",
+        "speaker_topic": "Panel Discussion - Are enviromental clearances holding back out growth?",
+        "speaker_details": "Celebrated nature photographer and great storyteller (and former techie!). Has been focusing on work showing how conservation can't be delinked from people. He recently spoke on Environment Day about the Dhangar shepherds of Maharashtra and how their lifestyle conserves grassland ecosystems.",
+        "speaker_image": "kalyan.png"
+    }
+
+
+]

@@ -2,39 +2,127 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7da09c0-2011-4630-b58b-51fc118b74ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/chat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/chat@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/home-page-new@4x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/question.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionsController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionsController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWQuestion.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWQuestion.m" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/Default-568h@2x.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Image/home-page-new@2x.png" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/home-page-new@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/twitter-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Image/twitter-icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/NSArray+AwayDay.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/NSArray+AwayDay.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWSpeaker.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AwayDay2012/TWSpeaker.m" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIAuthenticationDialog.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASICacheDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIDataCompressor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIDataDecompressor.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIDownloadCache.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIFormDataRequest.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIHTTPRequest.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIHTTPRequestConfig.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIHTTPRequestDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIInputStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASINetworkQueue.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/ASIProgressDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ASIHttp/Reachability.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPRequestOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPRequestOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFImageRequestOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFImageRequestOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFJSONRequestOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFJSONRequestOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFNetworkActivityIndicatorManager.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFNetworkActivityIndicatorManager.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFNetworking.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFPropertyListRequestOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFPropertyListRequestOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFURLConnectionOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFURLConnectionOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFXMLRequestOperation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFXMLRequestOperation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/UIImageView+AFNetworking.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/UIImageView+AFNetworking.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/JPush/libPushSDK-simulator.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/.svn/all-wcprops" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/.svn/entries" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/all-wcprops" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/entries" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/prop-base/close.png.svn-base" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/prop-base/close@2x.png.svn-base" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/text-base/close.png.svn-base" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/.svn/text-base/close@2x.png.svn-base" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.bundle/images/close@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/WeiboSDK.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/ExternalLibs/libWeiboSDK/libWeiboSDK.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/Handler/AgendaListRetriever.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/Handler/AgendaListRetriever.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJson.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonParser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonParser.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParser.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserAccumulator.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserAccumulator.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserAdapter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserAdapter.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserState.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamParserState.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamTokeniser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamTokeniser.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriter.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriterAccumulator.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriterAccumulator.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriterState.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonStreamWriterState.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonWriter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AwayDay2012/SBJSON/SBJsonWriter.m" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/TweetViewController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/TweetViewController.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/TweetViewController.xib" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/VideoViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AwayDay2012/VideoViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012.xcworkspace/xcuserdata/harib.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/AwayDay2012.xcworkspace/xcuserdata/harib.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image/home-page-new.png" afterPath="$PROJECT_DIR$/Image/home-page-new.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image/home-page-new@2x.png" afterPath="$PROJECT_DIR$/Image/home-page-new@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/slider-menu-icon 2.png" afterPath="$PROJECT_DIR$/AwayDay2012/slider-menu-icon 2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image/slider-menu-icon-2.png" afterPath="$PROJECT_DIR$/Image/slider-menu-icon-2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AgendaExpndedCell.xib" afterPath="$PROJECT_DIR$/AwayDay2012/AgendaExpndedCell.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AppDelegate.h" afterPath="$PROJECT_DIR$/AwayDay2012/AppDelegate.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" afterPath="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/AwayDay2012-Info.plist" afterPath="$PROJECT_DIR$/AwayDay2012/AwayDay2012-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/AwayDay2012_iOS.iml" afterPath="$PROJECT_DIR$/.idea/AwayDay2012_iOS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.h" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="$PROJECT_DIR$/AwayDay2012/Images.xcassets/LaunchImage.launchimage/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/HomeViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/HomeViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/Break_out.json" afterPath="$PROJECT_DIR$/AwayDay2012/Break_out.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.h" afterPath="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.m" afterPath="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/CustomSlider.h" afterPath="$PROJECT_DIR$/AwayDay2012/CustomSlider.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/CustomSlider.m" afterPath="$PROJECT_DIR$/AwayDay2012/CustomSlider.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/AwayDay2012/MainStoryboard.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/NotificationsController.m" afterPath="$PROJECT_DIR$/AwayDay2012/NotificationsController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m" afterPath="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/PostShareViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/QuestionsController.m" afterPath="$PROJECT_DIR$/AwayDay2012/QuestionsController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/ReminderViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/ReminderViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/ReminderViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/ReminderViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/RootViewController.xib" afterPath="$PROJECT_DIR$/AwayDay2012/RootViewController.xib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.h" afterPath="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/TWNotification.m" afterPath="$PROJECT_DIR$/AwayDay2012/TWNotification.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" afterPath="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/TWQuestion.h" afterPath="$PROJECT_DIR$/AwayDay2012/TWQuestion.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/TWQuestion.m" afterPath="$PROJECT_DIR$/AwayDay2012/TWQuestion.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/TWSession.m" afterPath="$PROJECT_DIR$/AwayDay2012/TWSession.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/UserPathViewController.m" afterPath="$PROJECT_DIR$/AwayDay2012/UserPathViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserPathViewController.xib" afterPath="$PROJECT_DIR$/UserPathViewController.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/customTableCell.h" afterPath="$PROJECT_DIR$/AwayDay2012/customTableCell.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012/customTableCell.m" afterPath="$PROJECT_DIR$/AwayDay2012/customTableCell.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AwayDay2012.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/AwayDay2012.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -53,17 +141,37 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_iPhone_5_8.0_i386_1" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_d1870078e7e019e5b405aae395d3962c611ebf7d" />
   <component name="FavoritesManager">
     <favorites_list name="AwayDay2012" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.h">
+      <file leaf-file-name="BreakOutDetailViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="512">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="912" max-vertical-offset="1440">
+              <caret line="57" column="28" selection-start-line="50" selection-start-column="6" selection-end-line="57" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpeakersViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1696" max-vertical-offset="5376">
+              <caret line="106" column="29" selection-start-line="100" selection-start-column="7" selection-end-line="106" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionsController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="464">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -72,68 +180,50 @@
       <file leaf-file-name="QuestionsController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2043" max-vertical-offset="2736">
-              <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="3200">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomSlider.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/CustomSlider.m">
+      <file leaf-file-name="BreakOutSessionViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="2240">
-              <caret line="94" column="82" selection-start-line="94" selection-start-column="68" selection-end-line="94" selection-end-column="82" />
-              <folding />
+            <state vertical-scroll-proportion="0.069565214" vertical-offset="1728" max-vertical-offset="8000">
+              <caret line="110" column="74" selection-start-line="110" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding>
+                <element signature="e#102#143#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AskQuestionViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h">
+      <file leaf-file-name="QuestionTableViewCell.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="400">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="272">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JVFloatLabeledTextView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pods/Headers/JVFloatLabeledTextField/JVFloatLabeledTextView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1330" max-vertical-offset="2080">
-              <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="8720">
-              <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Podfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Podfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="208">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionTableViewCell.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="QuestionTableViewCell.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6941432" vertical-offset="0" max-vertical-offset="944">
-              <caret line="20" column="56" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="928">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserPathViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/UserPathViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="7360">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,20 +232,18 @@
       <file leaf-file-name="AskQuestionViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="997" max-vertical-offset="1488">
-              <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-              <folding>
-                <element signature="e#96#155#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1456">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionsController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.h">
+      <file leaf-file-name="AskQuestionViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="416">
+              <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -180,63 +268,64 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFURLConnectionOperation.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/PostShareViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/Handler/AgendaListRetriever.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AppConstant.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/SessionAddress.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/CFShareCircleView.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AgendaViewController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/Break_out.json" />
-        <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/UserPathViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/VideoViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/TWNotification.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/TWSession.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/TWSession.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/GameSessionViewController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/CustomSlider.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/GameSessionViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/NotificationsController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" />
-        <option value="$PROJECT_DIR$/AwayDay2012/Post.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/Post.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/User.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h" />
         <option value="$PROJECT_DIR$/AwayDay2012/HomeViewController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/Questions.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/Question.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/TWNotification.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/Question.h" />
         <option value="$PROJECT_DIR$/AwayDay2012/customTableCell.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/customTableCell.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AgendaExpndedCell.xib" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.h" />
         <option value="$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m" />
-        <option value="$PROJECT_DIR$/AwayDay2012/TWQuestion.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/TWQuestion.m" />
-        <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/AwayDay2012/QuestionsController.h" />
-        <option value="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWQuestion.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWQuestion.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/VideoViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/HomeViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/CustomSlider.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TweetViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Speakers_Info.json" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AgendaExpndedCell.xib" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSession.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/PostShareViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Handler/AgendaListRetriever.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/Break_out.json" />
+        <option value="$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/NotificationsController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWSession.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWSession.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/NSArray+AwayDay.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/NSArray+AwayDay.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/ReminderViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AgendaViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWSpeaker.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/TWSpeaker.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AppDelegate.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h" />
+        <option value="$PROJECT_DIR$/AwayDay2012/UserPathViewController.m" />
         <option value="$PROJECT_DIR$/AwayDay2012/QuestionsController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.m" />
+        <option value="$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="813" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -264,12 +353,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -310,27 +404,8 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AwayDay2012" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AwayDay2012" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
       <pane id="DirectoryView.Xcode" />
     </panes>
   </component>
@@ -361,6 +436,11 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="945" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AwayDay2012" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.AwayDay2012">
     <configuration default="false" name="AwayDay2012" type="AppleRunConfiguration" factoryName="Application" temporary="true" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="AwayDay2012" TARGET_NAME="AwayDay2012" CONFIG_NAME="Debug" SCHEME_NAME="AwayDay2012" RUN_TARGET_PROJECT_NAME="AwayDay2012" RUN_TARGET_NAME="AwayDay2012" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -401,24 +481,6 @@
       </EXTENSION>
       <method />
     </configuration>
-    <configuration default="false" name="Pods-ASIHTTPRequest" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-ASIHTTPRequest" CONFIG_NAME="Debug" SCHEME_NAME="Pods-ASIHTTPRequest" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="Pods-Reachability" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-Reachability" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Reachability" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="AwayDay2012Test" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="AwayDay2012" TARGET_NAME="AwayDay2012Test" CONFIG_NAME="Debug" SCHEME_NAME="AwayDay2012Test" TEST_MODE="SUITE_TEST" XCODE_SKIPPED_TESTS_HASH_CODE="0">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="Pods-Bolts" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-Bolts" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Bolts" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -454,18 +516,47 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="11">
+    <configuration default="false" name="AwayDay2012Test" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="AwayDay2012" TARGET_NAME="AwayDay2012Test" CONFIG_NAME="Debug" SCHEME_NAME="AwayDay2012Test" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-AFNetworking" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-AFNetworking" CONFIG_NAME="Debug" SCHEME_NAME="Pods-AFNetworking" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-ASIHTTPRequest" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-ASIHTTPRequest" CONFIG_NAME="Debug" SCHEME_NAME="Pods-ASIHTTPRequest" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Pods-Reachability" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="Pods-Reachability" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Reachability" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="12">
       <item index="0" class="java.lang.String" itemvalue="Application.Pods-Reveal-iOS-SDK" />
       <item index="1" class="java.lang.String" itemvalue="Application.Pods" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Pods-ASIHTTPRequest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Pods-Reachability" />
-      <item index="4" class="java.lang.String" itemvalue="XCTest/Kiwi.AwayDay2012Test" />
-      <item index="5" class="java.lang.String" itemvalue="Application.Pods-Bolts" />
-      <item index="6" class="java.lang.String" itemvalue="Application.Pods-Facebook-iOS-SDK" />
-      <item index="7" class="java.lang.String" itemvalue="Application.Pods-Parse" />
-      <item index="8" class="java.lang.String" itemvalue="Application.Pods-STTwitter" />
-      <item index="9" class="java.lang.String" itemvalue="Application.AwayDay2012" />
-      <item index="10" class="java.lang.String" itemvalue="Application.Pods-JVFloatLabeledTextField" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-Bolts" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Pods-Facebook-iOS-SDK" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Pods-Parse" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Pods-STTwitter" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Pods-JVFloatLabeledTextField" />
+      <item index="7" class="java.lang.String" itemvalue="Application.AwayDay2012Test" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Pods-AFNetworking" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Pods-ASIHTTPRequest" />
+      <item index="10" class="java.lang.String" itemvalue="Application.Pods-Reachability" />
+      <item index="11" class="java.lang.String" itemvalue="Application.AwayDay2012" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -508,30 +599,52 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="813" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50208044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5013928" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32177532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3119777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819591" sideWeight="0.67318434" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32177532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819591" sideWeight="0.67318434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32033426" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231198" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3231623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50208044" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3148405" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23819591" sideWeight="0.67318434" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32038835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -557,370 +670,355 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>89</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>322</line>
+          <line>181</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>96</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m</url>
-          <line>476</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m</url>
-          <line>480</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m</url>
-          <line>487</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m</url>
-          <line>511</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/AFHTTPClient.m</url>
-          <line>515</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>106</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>167</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>171</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>142</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>148</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>151</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>155</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AwayDay2012/PostShareViewController.m</url>
-          <line>165</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="51" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="83" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.h">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="880">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/STTwitter/STTwitterAPI.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3351" max-vertical-offset="33024">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSession.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="693">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionInfo.m">
+    <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="976">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="534" max-vertical-offset="2688">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Speakers_Info.json">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/NSArray+AwayDay.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="528">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/STTwitter/STTwitter/STTwitterAppOnly.m">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionInfo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4139" max-vertical-offset="4832">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Post.h">
+    <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/objc/NSObject.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/STTwitter/STTwitter/STTwitterAPI.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18727" max-vertical-offset="70080">
-          <caret line="1186" column="8" selection-start-line="1186" selection-start-column="8" selection-end-line="1186" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="1760">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Post.m">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/agendExpandTableViewCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/User.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/ExternalLibs/AFNetworking/UIImageView+AFNetworking.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1344">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/EGORefreshTableHeaderView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1120">
-          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="560">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="231" max-vertical-offset="816">
-          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="816">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppHelper.m">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/agendExpandTableViewCell.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="617" max-vertical-offset="2224">
-          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/Session.h">
+    <entry file="file://$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="695">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4006" max-vertical-offset="16672">
+          <caret line="260" column="55" selection-start-line="260" selection-start-column="55" selection-end-line="260" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWSession.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/MainStoryboard.storyboard">
+      <provider selected="true" editor-type-id="appcode-designer">
+        <state ui-designer-zoom="1.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWSession.m">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/customTableCell.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="2352">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWNotification.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWNotification.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#97#115#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="656">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/customTableCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="1024">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/customTableCell.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="656">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Image/innovation 3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.12" vertical-offset="215" max-vertical-offset="1760">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3479" max-vertical-offset="9056">
-          <caret line="240" column="245" selection-start-line="240" selection-start-column="245" selection-end-line="240" selection-end-column="245" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2288">
-          <caret line="72" column="42" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/RootViewController.xib">
-      <provider selected="true" editor-type-id="appcode-designer">
-        <state ui-designer-zoom="1.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaCustomCell.xib">
-      <provider selected="true" editor-type-id="appcode-designer">
-        <state ui-designer-zoom="1.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaExpndedCell.xib">
-      <provider selected="true" editor-type-id="appcode-designer">
-        <state ui-designer-zoom="1.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="4176">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1024">
+          <caret line="46" column="7" selection-start-line="43" selection-start-column="3" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/SpeakersViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="576">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="544">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="7728">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#148#182#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/PostTableViewCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1072">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="36" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/NotificationsController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="5536">
-          <caret line="57" column="7" selection-start-line="48" selection-start-column="3" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="5328">
+          <caret line="206" column="7" selection-start-line="206" selection-start-column="7" selection-end-line="206" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="640">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/CustomBreakOutSessionCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="880">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2658" max-vertical-offset="5232">
-          <caret line="178" column="8" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4770" max-vertical-offset="5232">
+          <caret line="322" column="40" selection-start-line="322" selection-start-column="40" selection-end-line="322" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.m">
+    <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UILocalNotification.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="9488">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="466" max-vertical-offset="928">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppConstant.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="720">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/UserPathViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="624">
+          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/DBService.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3410" max-vertical-offset="3872">
+          <caret line="233" column="18" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/UserPath.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1200">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWSession.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/ReminderViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="3456">
-          <caret line="171" column="4" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="3456">
+          <caret line="206" column="24" selection-start-line="206" selection-start-column="1" selection-end-line="206" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWQuestion.m">
+    <entry file="file://$PROJECT_DIR$/Image/reminder_button@2x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/ReminderViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="720">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="624">
+          <caret line="28" column="38" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWQuestion.h">
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSession.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="368">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="464">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWBreakoutSession.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="1152">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWSpeaker.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="720">
+          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSectionHeaderView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="1936">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3830" max-vertical-offset="9568">
+          <caret line="256" column="8" selection-start-line="256" selection-start-column="8" selection-end-line="256" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/ExpandCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AgendaViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8395" max-vertical-offset="9088">
+          <caret line="553" column="0" selection-start-line="553" selection-start-column="0" selection-end-line="559" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/TWSpeaker.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.48" vertical-offset="0" max-vertical-offset="208">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="880">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4272">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="416">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1424">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/UserPathViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="7136">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/SpeakersViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1303" max-vertical-offset="5264">
+          <caret line="106" column="29" selection-start-line="100" selection-start-column="7" selection-end-line="106" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="743" max-vertical-offset="3120">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -928,98 +1026,34 @@
     <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3488">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/HomeViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="512">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="208">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/CustomSlider.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1072" max-vertical-offset="2240">
-          <caret line="94" column="82" selection-start-line="94" selection-start-column="68" selection-end-line="94" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode6-Beta7.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="8720">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/JVFloatLabeledTextField/JVFloatLabeledTextView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1330" max-vertical-offset="2080">
-          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="853" max-vertical-offset="1488">
-          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="e#96#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/AskQuestionViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="400">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2043" max-vertical-offset="2736">
-          <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AwayDay2012/QuestionTableViewCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6941432" vertical-offset="0" max-vertical-offset="944">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="928">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutDetailViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="1424">
+          <caret line="57" column="28" selection-start-line="50" selection-start-column="6" selection-end-line="57" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AwayDay2012/BreakOutSessionViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.069565214" vertical-offset="1728" max-vertical-offset="8000">
+          <caret line="110" column="74" selection-start-line="110" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <element signature="e#102#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

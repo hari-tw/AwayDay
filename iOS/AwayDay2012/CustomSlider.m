@@ -12,7 +12,7 @@
 #import "AgendaViewController.h"
 #import "BreakOutSessionViewController.h"
 #import "UserLocationUtilities.h"
-#import "VideoViewController.h"
+#import "HomeViewController.h"
 #import <Accounts/Accounts.h>
 #import "NotificationsController.h"
 
@@ -35,10 +35,10 @@
                         [UIImage imageNamed:@"home-button"],
                         [UIImage imageNamed:@"agenda"],
                         [UIImage imageNamed:@"speaker_icon"],
-                         [UIImage imageNamed:@"breakout-icon"],
+                        [UIImage imageNamed:@"breakout-icon"],
                         [UIImage imageNamed:@"my_schedule"],
                         [UIImage imageNamed:@"notification"],
-                      //  [UIImage imageNamed:@"share2"],
+                        [UIImage imageNamed:@"twitter-icon"],
                         
                         ];
     NSArray *colors = @[
@@ -48,7 +48,7 @@
                         [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
                         [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
-//                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
                        // [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
                         
@@ -68,10 +68,10 @@
 
 
 
--(void) showHomeScreen
+-(void)showTweetScreen
 {
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-    [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil ]] animated:YES];
+    [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:[[TweetViewController alloc]initWithNibName:@"TweetViewController" bundle:nil ]] animated:YES];
    
 }
 
@@ -114,14 +114,13 @@
     BreakOutSessionViewController *breakOutSessionViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"breakOutViewIdentifer"];
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate.navigationController pushViewController:breakOutSessionViewController animated:YES];
-
 }
 
 
--(void)showVideoScreen
+-(void)showHomeScreen
 {
     UIStoryboard *mainStoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    VideoViewController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"videoViewIdentifier"];
+    HomeViewController *videoViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewIdentifier"];
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate.navigationController pushViewController:videoViewController animated:YES];
 

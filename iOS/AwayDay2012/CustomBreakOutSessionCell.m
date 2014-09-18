@@ -26,4 +26,24 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)joinButtonTapped:(id)sender {
+
+    NSLog(@"join tapped - tableview cell");
+
+    if(self.delegate!=nil && [self.delegate respondsToSelector:@selector(joinTappedAt:sender:)])
+    {
+        [self.delegate joinTappedAt:self.indexPath sender:sender];
+    }
+}
+
+- (IBAction)reminderButtonTapped:(id)sender {
+
+    NSLog(@"remind tapped - tableview cell");
+    if(self.delegate!=nil && [self.delegate respondsToSelector:@selector(remindTappedAt:sender:)])
+    {
+        [self.delegate remindTappedAt:self.indexPath sender:sender];
+    }
+}
+
+
 @end

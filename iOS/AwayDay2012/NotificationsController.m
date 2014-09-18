@@ -83,23 +83,16 @@
         
         gameExpandedTableViewCell *cell = (gameExpandedTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-       // [cell setLabelFontsColor];
-
-        
         cell.gameNameTextLabel.text=notification.title;
         
         CGFloat labelHeight = [self getLabelHeightForIndex:indexPath.row];
-        
-        
-        
+
         NSLog(@"%f",labelHeight);
         
         cell.descriptionTextLabel.frame = CGRectMake(cell.descriptionTextLabel.frame.origin.x,
                                                      cell.descriptionTextLabel.frame.origin.y,
                                                      cell.descriptionTextLabel.frame.size.width,
                                                      labelHeight);
-        
-     //   NSUInteger numberOfLines=labelHeight/21.0f;
         
         cell.descriptionTextLabel.text=notification.message;
         NSLog(@"%@",NSStringFromCGRect(cell.descriptionTextLabel.frame));
@@ -259,8 +252,7 @@
 {
     
     switch (index) {
-        case 0:
-        {
+        case 0: {
             [slider showHomeScreen];
             [sidebar dismiss];
         }
@@ -284,9 +276,6 @@
         {
             [slider showBreakOutSessionScreen];
             [sidebar dismiss];
-            
-            
-            
         }
             break;
         case 4 :
@@ -304,13 +293,11 @@
             
         }
             break;
-//        case 6 :
-//        {
-//            [slider showNotificationScreen];
-//            [sidebar dismiss];
-//
-//        }
-//            break;
+        case 6: {
+            [slider showTweetScreen];
+            [sidebar dismiss];
+        }
+            break;
         case 7:
         {
             [slider showGameInfoSCreen];

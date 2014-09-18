@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ReminderViewController;
+
+#import "BreakOutDetailViewController.h"
+
 @interface BreakOutSessionViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 //Properties.
@@ -18,6 +22,12 @@
 //IBoutlets.
 @property (weak, nonatomic) IBOutlet UITableView *breakOutSessionTableView;
 
+
+@property(nonatomic) ReminderViewController *reminderViewController;
+
+@property(nonatomic, strong) BreakOutDetailViewController *detailedViewController;
+
+@property(nonatomic, strong) NSMutableArray *breakoutSessions;
 
 //Action method.
 - (IBAction)sideMenuTapped:(id)sender;

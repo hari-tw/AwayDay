@@ -44,10 +44,9 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    self.textLabel.frame = CGRectMake(10.0f, 10.0f, 240.0f, 20.0f);
-
+    self.textLabel.frame = CGRectMake(10.0f, 10.0f, 240.0f, 0.0f);
     CGRect detailTextLabelFrame = CGRectOffset(self.textLabel.frame, 0.0f, 25.0f);
-    detailTextLabelFrame.size.height = [[self class] heightForCellWithQuestion:self.question] - 45.0f;
+    detailTextLabelFrame.size.height = [[self class] heightForCellWithQuestion:self.question];
     self.detailTextLabel.frame = detailTextLabelFrame;
 }
 

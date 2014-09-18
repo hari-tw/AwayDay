@@ -11,14 +11,13 @@
 #import "AppDelegate.h"
 #import "AppConstant.h"
 
-//#import "CFShareCircleView.h"
-#import <Social/Social.h>
 #import "AgendatableViewCell.h"
 #import "agendExpandTableViewCell.h"
 
 #import "CustomSlider.h"
 #import "CFShareCircleView.h"
 #import "TWSession.h"
+#import "NSArray+AwayDay.h"
 
 
 #define tag_cell_view_start 1001
@@ -69,7 +68,6 @@ NSUInteger selectedSection;
     [self.refreshView setDelegate:self];
     [self.agendaTable addSubview:self.refreshView];
     [self.refreshView refreshLastUpdatedDate];
-
 
 }
 
@@ -144,7 +142,7 @@ load the agenda list and their sessions
             NSLog(@"twSession = %@", twSession);
         }
         allSessions = sessions;
-        NSDictionary *sessionsGroupedByDate = [self groupObjectsInArray:sessions byKey:@"date"];
+        NSDictionary *sessionsGroupedByDate = [NSArray groupObjectsInArray:sessions byKey:@"date"];
 
         NSMutableDictionary *tempAgendaMapping = [[NSMutableDictionary alloc] initWithCapacity:0];
 
@@ -280,13 +278,18 @@ update the top session area's UI
 
 - (IBAction)remindButtonPressed:(id)sender {
     Agenda *agenda = [self.agendaList objectAtIndex:self.selectedCell.section];
-    Session *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
+    TWSession *session = [agenda.sessions objectAtIndex:self.selectedCell.row];
 
     if (self.reminderViewController == nil) {
         ReminderViewController *rvc = [[ReminderViewController alloc] initWithNibName:@"ReminderViewController" bundle:nil];
         self.reminderViewController = rvc;
     }
-    [self.reminderViewController setSession:session];
+    NSMutableDictionary *remSession = [[NSMutableDictionary alloc]init];
+    remSession[@"title"] = session.title;
+    remSession[@"objectId"] = session.objectId;
+    remSession[@"startTime"] = session.startTime;
+    [self.reminderViewController setSession:remSession];
+
     [self.navigationController pushViewController:self.reminderViewController animated:YES];
 }
 
@@ -374,7 +377,7 @@ update the top session area's UI
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"HH:mm"];
         cell1.timeTextLabel.text = [NSString stringWithFormat:@"Time: %@ ~ %@", [formatter stringFromDate:[self getDate:session.startTime]], [formatter stringFromDate:[self getDate:session.endTime]]];
-        cell1.roomTextLabel.text = session.address;
+        cell1.roomTextLabel.text = session.location;
 
 
         AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
@@ -389,7 +392,6 @@ update the top session area's UI
         }
         [cell1.joinButton addTarget:self action:@selector(joinButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 
-
         [cell1.reminderBUtton setImage:[UIImage imageNamed:@"reminder_button.png"] forState:UIControlStateNormal];
         for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
             if (notification.userInfo != nil && notification.userInfo.count > 0) {
@@ -401,7 +403,6 @@ update the top session area's UI
         }
 
         [cell1.reminderBUtton addTarget:self action:@selector(remindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-
 
         return cell1;
     }
@@ -418,7 +419,6 @@ update the top session area's UI
 
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
-        //[self buildSessionCell:cell withSession:session];
 
         [cell.timeTextLabel setText:[NSString stringWithFormat:@"%@ ~ %@", [dateFormatter stringFromDate:[self getDate:session.startTime]], [dateFormatter stringFromDate:[self getDate:session.endTime]]]];
         [cell.sessionTitleTextLabel setText:session.title];
@@ -487,8 +487,6 @@ update the top session area's UI
     slider = [[CustomSlider alloc] init];
     [slider showSliderMenu];
     slider.callout.delegate = self;
-
-
 }
 
 #pragma mark -RNFrostedSidebar delegate method.
@@ -534,18 +532,13 @@ update the top session area's UI
 
         }
             break;
-//        case 6 : {
-//            [slider showNotificationScreen];
-//            [sidebar dismiss];
-//
-//        }
+        case 6 : {
+            [slider showTweetScreen];
+            [sidebar dismiss];
+        }
             break;
         case 7: {
             [sidebar dismiss];
-            // Do any additional setup after loading the view, typically from a nib.
-//            self.shareCircleView = [[CFShareCircleView alloc] init];
-//            self.shareCircleView.delegate = self;
-//            [self.shareCircleView show];
             [slider showGameInfoSCreen];
 
         }
@@ -556,24 +549,6 @@ update the top session area's UI
             break;
     }
 
-}
-
-
-- (NSDictionary *)groupObjectsInArray:(NSArray *)array byKey:(NSString *)key {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-
-    for (id obj in array) {
-        id keyValue = [obj valueForKey:key];
-        NSMutableArray *arr = dictionary[keyValue];
-        if (!arr) {
-            arr = [NSMutableArray array];
-            dictionary[keyValue] = arr;
-        }
-        [arr addObject:obj];
-
-    }
-    NSLog(@"dictionary = %@", dictionary);
-    return [dictionary copy];
 }
 
 - (NSDate *) getDate:(NSString *)dateString {
