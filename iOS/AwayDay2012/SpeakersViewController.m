@@ -49,6 +49,8 @@
         [speakerInfo setObject:[speaker valueForKey:@"speaker_image"] forKey:@"image"];
         [speakerInfo setObject:[speaker valueForKey:@"speaker_topic"] forKey:@"topic"];
         [speakerInfo setObject:[speaker valueForKey:@"speaker_details"] forKey:@"detail"];
+        [speakerInfo setObject:[speaker valueForKey:@"object_id"] forKey:@"object_id"];
+        [speakerInfo setObject:[speaker valueForKey:@"agenda_title"] forKey:@"agenda_title"];
         [speakersInfo addObject:speakerInfo];
     }
 
@@ -214,8 +216,14 @@
     QuestionsController *rvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"questionsController"];
     self.questionsController = rvc;
     NSLog(@"speakerInfo = %@", [speakerInfo valueForKey:@"topic"]);
+    NSLog(@"agenda_title = %@", [speakerInfo valueForKey:@"agenda_title"]);
+    NSLog(@"speaker_name = %@", [speakerInfo valueForKey:@"speakerName"]);
+    NSLog(@"object_id = %@", [speakerInfo valueForKey:@"object_id"]);
 
-    [self.questionsController setSessionTitle:[speakerInfo valueForKey:@"topic"]];
+    [self.questionsController setSessionTitle:[speakerInfo valueForKey:@"agenda_title"]];
+    [self.questionsController setSpeakerName:[speakerInfo valueForKey:@"speakerName"]];
+    [self.questionsController setObjectId:[speakerInfo valueForKey:@"object_id"]];
+
     [self.navigationController pushViewController:self.questionsController animated:YES];
 }
 

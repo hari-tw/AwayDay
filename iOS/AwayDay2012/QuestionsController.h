@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *questionsView;
 @property (weak, nonatomic) NSString *sessionTitle;
+@property (weak, nonatomic) NSString *speakerName;
+@property (weak, nonatomic) NSString *objectId;
 @property(nonatomic, strong) EGORefreshTableHeaderView *refreshView;
 
 -(IBAction) backToSpeakerView;

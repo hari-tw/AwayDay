@@ -104,12 +104,11 @@
 - (void)loadQuestions {
     NSLog(@"inside load questions");
 
-    [TWQuestion findAllInBackgroundForSessionTitle:self.sessionTitle withBlock:^(NSArray *qns, NSError *error) {
+    [TWQuestion findAllInBackgroundForSessionName:self.sessionTitle speakerName:self.speakerName withBlock:^(NSArray *qns, NSError *error) {
         questions = [qns mutableCopy];
         NSLog(@"qns = %d", qns.count);
         [self.questionsView reloadData];
     }];
-
 
 }
 
@@ -166,7 +165,8 @@
                              TWQuestion *question = [[TWQuestion alloc] init];
                              question.questionText = questionText;
                              question.questionerName = name;
-                             question.sessionTitle = self.sessionTitle;
+                             question.sessionTitle = [NSString stringWithFormat:@"%@ - %@", [self.sessionTitle componentsSeparatedByString:@"-"][0], self.speakerName];
+                             question.sessionId = self.objectId;
                              question.deviceToken = @"";
 
                              [questions addObject:question];

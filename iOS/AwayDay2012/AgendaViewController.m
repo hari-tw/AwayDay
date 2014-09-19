@@ -120,8 +120,6 @@ NSUInteger selectedSection;
     [super viewWillDisappear:YES];
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     [appDelegate.menuViewController hideNavigationMenu];
-
-
 }
 
 #pragma mark - util method
@@ -199,8 +197,8 @@ update the top session area's UI
         NSLog(@"agendaDateString = %@", agendaDateString);
         if ([todayString isEqualToString:agendaDateString]) {
             for (int k = 0; k < agenda.sessions.count; k++) {
-                Session *session = [agenda.sessions objectAtIndex:k];
-                NSDate *sessionStartTime = session.sessionStartTime;
+                TWSession *session = [agenda.sessions objectAtIndex:k];
+                NSDate *sessionStartTime = [self getDate:session.startTime];
                 if ([[sessionStartTime earlierDate:today] isEqualToDate:today]) {
                     topSessionIndex = k;
                     topAgendaIndex = i;
@@ -248,15 +246,23 @@ update the top session area's UI
 
     if ([userJoinList containsObject:session.objectId]) {
         [userJoinList removeObject:session.objectId];
+
+        UserPath *path = [[UserPath alloc] init];
+        [path setPathID:session.objectId];
+        [path setPathContent:[NSString stringWithFormat:@"%@", session.title]];
+        [path setPathCreateTime:[self getDate:session.startTime]];
+        [path drop];
+
         [joinButton setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
         [sessionTitleLabel setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
         [sessionTimeLabel setTextColor:[UIColor colorWithRed:78 / 255.0 green:78 / 255.0 blue:78 / 255.0 alpha:1.0f]];
         [AppHelper showInfoView:self.view withText:@"Left!" withLoading:NO];
+
     } else {
         UserPath *path = [[UserPath alloc] init];
-        [path setPathID:[AppHelper generateUDID]];
-        [path setPathContent:[NSString stringWithFormat:@"Join %@", session.title]];
-        [path setPathCreateTime:[NSDate date]];
+        [path setPathID:session.objectId];
+        [path setPathContent:[NSString stringWithFormat:@"%@", session.title]];
+        [path setPathCreateTime:[self getDate:session.startTime]];
         [path save];
 
         [userJoinList addObject:session.objectId];

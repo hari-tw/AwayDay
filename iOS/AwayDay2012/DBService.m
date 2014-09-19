@@ -193,7 +193,7 @@
     NSString *content=[path.pathContent stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
     
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSString *save=[NSString stringWithFormat:@"insert into user_path(path_id, path_content, create_time, has_image) values('%@','%@','%@', %d)",path.pathID, content, [formatter stringFromDate:[NSDate date]], path.hasImage.intValue];
+    NSString *save=[NSString stringWithFormat:@"insert into user_path(path_id, path_content, create_time, has_image) values('%@','%@','%@', %d)",path.pathID, content, [formatter stringFromDate:path.pathCreateTime], path.hasImage.intValue];
     
     sqlite3_stmt *stmt;
     

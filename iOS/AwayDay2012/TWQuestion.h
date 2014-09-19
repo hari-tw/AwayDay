@@ -11,6 +11,7 @@
 @property(nonatomic, strong) NSString *sessionTitle;
 @property(nonatomic, strong) NSString *questionerName;
 @property(nonatomic, strong) NSString *deviceToken;
+@property(nonatomic, strong) NSString *sessionId;
 
-+ (void)findAllInBackgroundForSessionTitle:(NSString *)sessionTitle withBlock:(PFArrayResultBlock)resultBlock;
++ (void)findAllInBackgroundForSessionName:(NSString *)sessionName speakerName:(NSString *)speakerName withBlock:(PFArrayResultBlock)resultBlock;
 @end

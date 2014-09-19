@@ -46,19 +46,19 @@
         NSMutableArray *list=[[NSMutableArray alloc]initWithCapacity:0];
         self.pathList=list;
     }
-    
+
     if(self.operationQueue==nil){
         NSOperationQueue *queue=[[NSOperationQueue alloc]init];
         self.operationQueue=queue;
     }
     [self.operationQueue setMaxConcurrentOperationCount:5];
-
     [self buildUI];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self loadUserActivity];
+    [self buildUI];
 }
 
 #pragma mark - UIAction method
@@ -430,17 +430,6 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(editingStyle==UITableViewCellEditingStyleDelete){
-        UserPath *userPath=[self.pathList objectAtIndex:indexPath.row];
-        [self deleteUserPathOnServer:userPath];
-        [userPath drop];
-        [self.pathList removeObjectAtIndex:indexPath.row];
-        [self.userPathTable reloadData];
-        [self.userRecordsCountLabel setText:[NSString stringWithFormat:@"has %d records", self.pathList.count]];
-    }
 }
 
 - (void)viewDidUnload

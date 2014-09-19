@@ -48,15 +48,6 @@
 
     textView.text = _session.Description;
 
-//    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleLabel.frame.origin.x,
-//            self.titleLabel.frame.origin.y + self.titleLabel.frame.size.height + 10,
-//            262, 20)]; // RectMake(xPos,yPos,Max Width I want, is just a container value);
-//
-//    testLabel.text = _session.Description;
-//    testLabel.font = [UIFont fontWithName:@"Helvetica" size:12.0f];
-//    testLabel.numberOfLines = 0; //will wrap text in new line
-//    [testLabel sizeToFit];
-
     [self.view addSubview:textView];
 }
 

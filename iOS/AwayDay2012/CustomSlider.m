@@ -102,8 +102,11 @@
 
 -(void) showMyEventsScreen
 {
+    UserPathViewController *uavc = [[UserPathViewController alloc] initWithNibName:@"UserPathViewController" bundle:nil];
+
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication]delegate];
-    [appDelegate.navigationController setViewControllers:[NSArray arrayWithObject:appDelegate.userPathViewController] animated:YES];
+    appDelegate.userPathViewController = uavc;
+    [appDelegate.navigationController setViewControllers:@[uavc] animated:YES];
     
 }
 

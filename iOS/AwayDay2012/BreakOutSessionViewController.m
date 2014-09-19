@@ -437,13 +437,20 @@
 
     if ([userJoinList containsObject:object.objectId]) {
         [userJoinList removeObject:object.objectId];
+
+        UserPath *path = [[UserPath alloc] init];
+        [path setPathID:object.objectId];
+        [path setPathContent:[NSString stringWithFormat:@"%@", object.Title]];
+        [path setPathCreateTime:[self getDate:object.Start]];
+        [path drop];
+
         [joinButton setImage:[UIImage imageNamed:@"join_button.png"] forState:UIControlStateNormal];
         [AppHelper showInfoView:self.view withText:@"Left!" withLoading:NO];
     } else {
         UserPath *path = [[UserPath alloc] init];
-        [path setPathID:[AppHelper generateUDID]];
-        [path setPathContent:[NSString stringWithFormat:@"Join %@", object.Title]];
-        [path setPathCreateTime:[NSDate date]];
+        [path setPathID:object.objectId];
+        [path setPathContent:[NSString stringWithFormat:@"%@", object.Title]];
+        [path setPathCreateTime:[self getDate:object.Start]];
         [path save];
 
         [userJoinList addObject:object.objectId];
